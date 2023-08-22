@@ -221,3 +221,5 @@ waf3-*-*/
 .lock-waf_*_build
 
 # End of https://www.toptal.com/developers/gitignore/api/c++,python,waf
+
+.vscode

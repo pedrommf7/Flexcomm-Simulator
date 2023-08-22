@@ -1,0 +1,4 @@
+[chassis.default2]
+model = "cpuLoad"
+percentages = [0.0, 10.0, 50.0, 100.0]
+consumptions = [10.0, 25.0, 40.0, 90.0]

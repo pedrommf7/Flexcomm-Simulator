@@ -1,0 +1,19 @@
+[simulator]
+stopTime = "3min"
+
+[ecofen]
+logFile = true
+logInterval = "5s"
+interval = "5s"
+
+[switchStats]
+enable = true
+interval = "5s"
+
+[linkStats]
+logFile = true
+logInterval = "5s"
+interval = "5s"
+
+[flowMonitor]
+enable = true
