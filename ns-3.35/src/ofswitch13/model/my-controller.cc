@@ -33,7 +33,6 @@
 #include "ns3/ofswitch13-module.h"
 #include "ns3/topology-module.h"
 #include "ns3/energy-api-module.h"
-#include "ns3/point-to-point-ethernet-net-device.h"
 
 NS_LOG_COMPONENT_DEFINE ("MyController");
 
@@ -80,7 +79,8 @@ void
 MyController::SaveDataRateInfos(){
   Graph topo = Topology::GetGraph ();
   
-  if(!referenceBandwidthValue){
+  if(!referenceBandwidthValue)
+  {
     boost::graph_traits<Graph>::edge_iterator edgeIt, edgeEnd;
     for (boost::tie (edgeIt, edgeEnd) = boost::edges (topo); edgeIt != edgeEnd; ++edgeIt)
       {
@@ -88,14 +88,13 @@ MyController::SaveDataRateInfos(){
         Ptr<Node> n1 = Topology::VertexToNode (ed.m_source);
         Ptr<Node> n2 = Topology::VertexToNode (ed.m_target);
 
+        Ptr<Channel> chnl = Topology::GetChannel(n1, n2);
+
+        uint64_t bitRate = chnl->GetDataRate(). GetBitRate();
+        referenceBandwidthValue = bitRate>referenceBandwidthValue ? bitRate : referenceBandwidthValue;
+
         if (n1->IsSwitch () && n2->IsSwitch ())
           {
-            Ptr<Channel> chnl = Topology::GetChannel(n1, n2);
-
-            uint64_t bitRate = DynamicCast<PointToPointEthernetNetDevice> (chnl->GetDevice (0))->GetDataRate(). GetBitRate();
-            if (bitRate > referenceBandwidthValue)
-              referenceBandwidthValue = bitRate;
-
             // ver se guardar só os que sao switch ou todos !!!
             SaveInfo(ed, bitRate);
           }
@@ -105,13 +104,14 @@ MyController::SaveDataRateInfos(){
 
 void MyController::SetWeightsBandwidthBased(){
   cout << "Reference Bandwidth Value: " << referenceBandwidthValue << endl;
-  if (referenceBandwidthValue)//preventing division by 0
+  if (referenceBandwidthValue)//preventing division by 0, if there is no switchs
     {
       for(std::map<Edge,uint64_t>::iterator iter = edg_to_weight.begin(); iter != edg_to_weight.end(); ++iter)
         {
           Edge ed =  iter->first;
           cout << "BitRate Base: " << iter->second << endl;
           uint64_t bitRate = referenceBandwidthValue / iter->second; // ver melhor isto !!
+          bitRate = bitRate<1 ? 1 : bitRate;
           cout << "BitRate: " << bitRate << endl;
 
           SaveInfo(ed, bitRate);
@@ -140,11 +140,17 @@ MyController::UpdateWeights ()
       float flex1 = EnergyAPI::GetFlexArray (Names::FindName (n1)).at (index);
       float flex2 = EnergyAPI::GetFlexArray (Names::FindName (n2)).at (index);
 
+      // tambem podemos usar a taxa de utilizacao da do link para a flexibilidade impactar + ou - no peso
+      // Ptr<Channel> chnl = Topology::GetChannel(n1, n2);
+      // double usagePercentage =  chnl->GetChannelUsage(); //valor em percentagem !!!
+      
       // alterar aqui a expressão que se pretende usar para calcular o impacto da flexibilidade
       int new_weight = int (weight - (flex1 + flex2)/2);
+      new_weight = new_weight<0 ? 0 : new_weight;
+      //expressao produz nrs negativos, mas depois insere 0 no maximo
 
       Topology::UpdateEdgeWeight (n1, n2, new_weight);
-      cout << "Edge: " << ed.m_source << " - " << ed.m_target << " | Weight: " << new_weight << endl;
+      cout << "Edge: " << ed.m_source << " - " << ed.m_target << " | New Weight: " << new_weight << endl;
     }
   cout << "-----------------------------" << endl;
 }

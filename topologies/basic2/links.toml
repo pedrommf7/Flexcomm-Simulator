@@ -5,12 +5,12 @@ delay = "0ms"
 
 [link2]
 edges = ["S1", "S2"]
-dataRate = "1Gbps"
+dataRate = "100Mbps"
 delay = "0ms"
 
 [link3]
 edges = ["S2", "S3"]
-dataRate = "1Gbps"
+dataRate = "200Mbps"
 delay = "0ms"
 
 [link4]
@@ -20,15 +20,15 @@ delay = "0ms"
 
 [link5]
 edges = ["S1", "S4"]
-dataRate = "1Gbps"
+dataRate = "100Mbps"
 delay = "0ms"
 
 [link6]
 edges = ["S4", "S5"]
-dataRate = "1Gbps"
+dataRate = "200Mbps"
 delay = "0ms"
 
 [link7]
 edges = ["S5", "S3"]
-dataRate = "1Gbps"
+dataRate = "200Mbps"
 delay = "0ms"
