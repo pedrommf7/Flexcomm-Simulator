@@ -126,9 +126,10 @@ void MyController::SetWeightsBandwidthBased(){
     } 
 }
 
-void
+bool
 MyController::UpdateWeights ()
 {
+  bool updated = false;
   for(std::map<Edge,uint64_t>::iterator iter = edg_to_weight.begin(); iter != edg_to_weight.end(); ++iter)
     {
       Edge ed =  iter->first;
@@ -149,10 +150,13 @@ MyController::UpdateWeights ()
       new_weight = new_weight<0 ? 0 : new_weight;
       //expressao produz nrs negativos, mas depois insere 0 no maximo
 
-      Topology::UpdateEdgeWeight (n1, n2, new_weight);
-      cout << "Edge: " << ed.m_source << " - " << ed.m_target << " | New Weight: " << new_weight << endl;
+      if (Topology::GetEdgeWeight(n1, n2) != new_weight)
+        {
+          Topology::UpdateEdgeWeight (n1, n2, new_weight);
+          updated = true;
+        }
     }
-  cout << "-----------------------------" << endl;
+  return updated;
 }
 
 //copiada do simple-controller.cc porue lá está protegida, como fazer??
@@ -184,10 +188,12 @@ MyController::ApplyRouting (uint64_t swDpId)
 void
 MyController::UpdateRouting ()
 {
-  UpdateWeights ();
-  NodeContainer switches = NodeContainer::GetGlobalSwitches ();
-  for (auto sw = switches.Begin (); sw != switches.End (); sw++)
-    ApplyRouting (Id2DpId ((*sw)->GetId ()));
+  if (UpdateWeights ())
+  {
+    NodeContainer switches = NodeContainer::GetGlobalSwitches ();
+    for (auto sw = switches.Begin (); sw != switches.End (); sw++)
+      ApplyRouting (Id2DpId ((*sw)->GetId ()));
+  }
 
   Simulator::Schedule (Minutes (1), &MyController::UpdateRouting, this);
 }

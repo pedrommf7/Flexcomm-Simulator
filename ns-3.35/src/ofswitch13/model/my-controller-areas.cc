@@ -20,39 +20,3 @@
  * Author: Pedro Miguel Marques Ferreira <pedro.m.marques@inesctec.pt>
  */
 
-#ifndef MY_CONTROLLER_H
-#define MY_CONTROLLER_H
-
-#include "ofswitch13-controller.h"
-#include "ns3/topology.h"
-
-namespace ns3 {
-
-class MyController : public OFSwitch13Controller
-{
-public:
-  MyController ();
-  virtual ~MyController ();
-  static TypeId GetTypeId (void);
-  virtual void DoDispose ();
-  void SaveDataRateInfos();
-
-protected:
-  void HandshakeSuccessful (Ptr<const RemoteSwitch> sw);
-  void ApplyRouting (uint64_t swDpId);
-  void SaveInfo(Edge ed, uint64_t weight);
-
-private:
-  void UpdateRouting ();
-  bool UpdateWeights ();
-  void SetWeightsBandwidthBased();
-
-  bool m_isFirstUpdate;
-  std::map<Edge, uint64_t> edg_to_weight;
-  static uint64_t referenceBandwidthValue;
-
-};
-
-} // namespace ns3
-
-#endif /* MY_CONTROLLER_H */

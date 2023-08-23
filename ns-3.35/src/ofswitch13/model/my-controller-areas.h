@@ -20,39 +20,13 @@
  * Author: Pedro Miguel Marques Ferreira <pedro.m.marques@inesctec.pt>
  */
 
-#ifndef MY_CONTROLLER_H
-#define MY_CONTROLLER_H
+//cada area border router deve ter uma lista de todos os hosts que estao na sua area
+// no inicio fazer o algoritmo de djikstra 
 
-#include "ofswitch13-controller.h"
-#include "ns3/topology.h"
+// calculo do melhor caminho:
 
-namespace ns3 {
+// problema de quado uma area se liga a outra area sem ser a area 0
 
-class MyController : public OFSwitch13Controller
-{
-public:
-  MyController ();
-  virtual ~MyController ();
-  static TypeId GetTypeId (void);
-  virtual void DoDispose ();
-  void SaveDataRateInfos();
-
-protected:
-  void HandshakeSuccessful (Ptr<const RemoteSwitch> sw);
-  void ApplyRouting (uint64_t swDpId);
-  void SaveInfo(Edge ed, uint64_t weight);
-
-private:
-  void UpdateRouting ();
-  bool UpdateWeights ();
-  void SetWeightsBandwidthBased();
-
-  bool m_isFirstUpdate;
-  std::map<Edge, uint64_t> edg_to_weight;
-  static uint64_t referenceBandwidthValue;
-
-};
-
-} // namespace ns3
-
-#endif /* MY_CONTROLLER_H */
+// 1. ver se o host de destino esta na mesma area do host de origem
+// 2. se estiver, calcular o caminho mais curto com base no algoritmo de dijkstra
+// 3. se nao estiver, calcular o caminho até ao area border router 
