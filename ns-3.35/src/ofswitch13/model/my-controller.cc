@@ -40,7 +40,6 @@ namespace ns3 {
 
 NS_OBJECT_ENSURE_REGISTERED (MyController);
 
-std::map<Edge, uint64_t> edg_to_weight = std::map<Edge, uint64_t> ();
 // if not initializade at 0 it will be the bandwidth reference value used to calculate the weights
 uint64_t MyController::referenceBandwidthValue = 0;
 
@@ -70,57 +69,67 @@ void MyController::DoDispose (void)
   OFSwitch13Controller::DoDispose ();
 }
 
-void
-MyController::SaveInfo(Edge ed, uint64_t weight){
-  edg_to_weight[ed] = weight;
+void 
+MyController::RemoveHostStorage(Edge ed)
+{
+
 }
 
 void 
-MyController::SaveDataRateInfos(){
-  Graph topo = Topology::GetGraph ();
+MyController::FindReferenceBandwidth(){
+  base_graph = Topology::GetGraph ();
+
+  bool findMax = !referenceBandwidthValue; 
   
-  if(!referenceBandwidthValue)
-  {
-    boost::graph_traits<Graph>::edge_iterator edgeIt, edgeEnd;
-    for (boost::tie (edgeIt, edgeEnd) = boost::edges (topo); edgeIt != edgeEnd; ++edgeIt)
-      {
-        Edge ed = *edgeIt;
-        Ptr<Node> n1 = Topology::VertexToNode (ed.m_source);
-        Ptr<Node> n2 = Topology::VertexToNode (ed.m_target);
+  std::list<Edge> edgesToRemove;
 
-        Ptr<Channel> chnl = Topology::GetChannel(n1, n2);
+  boost::graph_traits<Graph>::edge_iterator edgeIt, edgeEnd;
+  for (boost::tie (edgeIt, edgeEnd) = boost::edges (base_graph); edgeIt != edgeEnd; ++edgeIt)
+    {
+      Edge ed = *edgeIt;
+      Ptr<Node> n1 = Topology::VertexToNode (ed.m_source);
+      Ptr<Node> n2 = Topology::VertexToNode (ed.m_target);
 
-        uint64_t bitRate = chnl->GetDataRate(). GetBitRate();
-        referenceBandwidthValue = bitRate>referenceBandwidthValue ? bitRate : referenceBandwidthValue;
-
-        if (n1->IsSwitch () && n2->IsSwitch ())
-          {
-            // ver se guardar só os que sao switch ou todos !!!
-            SaveInfo(ed, bitRate);
-          }
-      }
-  }
+      if (n1->IsSwitch () && n2->IsSwitch ())
+        {
+          Ptr<Channel> chnl = Topology::GetChannel (n1, n2);
+          uint64_t bitRate = chnl->GetDataRate(). GetBitRate();
+          boost::put(edge_weight_t (), base_graph, ed, bitRate); // ver se preciso de fazer como est ano topology a separar pelos Nodes
+              
+          if(findMax)
+            {
+              referenceBandwidthValue = bitRate>referenceBandwidthValue ? bitRate : referenceBandwidthValue;
+            }
+        }
+      else
+        {
+          edgesToRemove.push_back(ed);
+        }
+    }
+  for (auto ed : edgesToRemove)
+    {
+      boost::remove_edge(ed, base_graph);
+    }
 }
 
 void MyController::SetWeightsBandwidthBased(){
   cout << "Reference Bandwidth Value: " << referenceBandwidthValue << endl;
   if (referenceBandwidthValue)//preventing division by 0, if there is no switchs
     {
-      for(std::map<Edge,uint64_t>::iterator iter = edg_to_weight.begin(); iter != edg_to_weight.end(); ++iter)
+      boost::graph_traits<Graph>::edge_iterator edgeIt, edgeEnd;
+      for (boost::tie (edgeIt, edgeEnd) = boost::edges (base_graph); edgeIt != edgeEnd; ++edgeIt)
         {
-          Edge ed =  iter->first;
-          cout << "BitRate Base: " << iter->second << endl;
-          uint64_t bitRate = referenceBandwidthValue / iter->second; // ver melhor isto !!
-          bitRate = bitRate<1 ? 1 : bitRate;
-          cout << "BitRate: " << bitRate << endl;
+          Edge ed = *edgeIt;
+          uint64_t bitRate = boost::get (edge_weight_t (), base_graph, ed); // ver se preciso de fazer como est ano topology a separar pelos Nodes
 
-          SaveInfo(ed, bitRate);
-          cout << "SAVED -> Edge: " << ed.m_source << " - " << ed.m_target << " | Weight: " << bitRate << endl;
+          uint64_t weight = bitRate>=referenceBandwidthValue ? 1 : referenceBandwidthValue / bitRate;
+
+          boost::put (edge_weight_t (), base_graph, ed, weight);
+          cout << "SAVED -> Edge: " << ed.m_source << " - " << ed.m_target << " | Weight: " << weight << endl;
 
           Ptr<Node> n1 = Topology::VertexToNode (ed.m_source);
           Ptr<Node> n2 = Topology::VertexToNode (ed.m_target);
-
-          Topology::UpdateEdgeWeight(n1, n2, int (bitRate));
+          Topology::UpdateEdgeWeight(n1, n2, weight);
         }
       cout << "-----------------------------" << endl;
     } 
@@ -130,12 +139,13 @@ bool
 MyController::UpdateWeights ()
 {
   bool updated = false;
-  for(std::map<Edge,uint64_t>::iterator iter = edg_to_weight.begin(); iter != edg_to_weight.end(); ++iter)
+  boost::graph_traits<Graph>::edge_iterator edgeIt, edgeEnd;
+  for (boost::tie (edgeIt, edgeEnd) = boost::edges (base_graph); edgeIt != edgeEnd; ++edgeIt)
     {
-      Edge ed =  iter->first;
+      Edge ed = *edgeIt;
       Ptr<Node> n1 = Topology::VertexToNode (ed.m_source);
       Ptr<Node> n2 = Topology::VertexToNode (ed.m_target);
-      uint64_t weight = iter->second;
+      uint64_t weight = boost::get (edge_weight_t (), base_graph, ed); // ver se preciso de fazer como est ano topology a separar pelos Nodes
 
       int index = int (Simulator::Now ().GetMinutes ()) % 60;
       float flex1 = EnergyAPI::GetFlexArray (Names::FindName (n1)).at (index);
@@ -144,6 +154,8 @@ MyController::UpdateWeights ()
       // tambem podemos usar a taxa de utilizacao da do link para a flexibilidade impactar + ou - no peso
       // Ptr<Channel> chnl = Topology::GetChannel(n1, n2);
       // double usagePercentage =  chnl->GetChannelUsage(); //valor em percentagem !!!
+
+      // ponderar se vemos a flexibildade como um valor unico e nao é preciso guardar a informacao inicial
       
       // alterar aqui a expressão que se pretende usar para calcular o impacto da flexibilidade
       int new_weight = int (weight - (flex1 + flex2)/2);
@@ -159,7 +171,7 @@ MyController::UpdateWeights ()
   return updated;
 }
 
-//copiada do simple-controller.cc porue lá está protegida, como fazer??
+//copiada do simple-controller.cc porque lá está protegida, como fazer??
 void
 MyController::ApplyRouting (uint64_t swDpId)
 {
@@ -171,7 +183,11 @@ MyController::ApplyRouting (uint64_t swDpId)
   for (NodeContainer::Iterator i = hosts.Begin (); i != hosts.End (); i++)
     {
       Ipv4Address remoteAddr = (*i)->GetObject<Ipv4> ()->GetAddress (1, 0).GetLocal ();
+      // ideia rui usar o djikstra apenas no inicio e depois usar outro algoritmo para ir computando os melhores caminhos
       std::vector<Ptr<Node>> path = Topology::DijkstraShortestPath (sw, *i);
+      
+      // FAZER: mudar para fazer hosts para hosts em vez de para switch's
+      // est afunção faz apenas para switchs ?????
 
       uint32_t port = ofDevice->GetPortNoConnectedTo (path.at (1));
 
@@ -212,7 +228,7 @@ MyController::HandshakeSuccessful (Ptr<const RemoteSwitch> sw)
 
   if (m_isFirstUpdate)
     {
-      SaveDataRateInfos();
+      FindReferenceBandwidth();
       SetWeightsBandwidthBased();
       UpdateWeights ();
       m_isFirstUpdate = false;

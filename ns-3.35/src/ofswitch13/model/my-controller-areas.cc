@@ -20,3 +20,6 @@
  * Author: Pedro Miguel Marques Ferreira <pedro.m.marques@inesctec.pt>
  */
 
+
+
+// para já nao deve ser para apostar nisso

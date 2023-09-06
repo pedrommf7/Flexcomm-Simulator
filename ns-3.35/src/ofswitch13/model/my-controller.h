@@ -35,12 +35,12 @@ public:
   virtual ~MyController ();
   static TypeId GetTypeId (void);
   virtual void DoDispose ();
-  void SaveDataRateInfos();
 
 protected:
   void HandshakeSuccessful (Ptr<const RemoteSwitch> sw);
   void ApplyRouting (uint64_t swDpId);
-  void SaveInfo(Edge ed, uint64_t weight);
+  void FindReferenceBandwidth();
+  void RemoveHostStorage(Edge ed);
 
 private:
   void UpdateRouting ();
@@ -48,7 +48,7 @@ private:
   void SetWeightsBandwidthBased();
 
   bool m_isFirstUpdate;
-  std::map<Edge, uint64_t> edg_to_weight;
+  Graph base_graph;
   static uint64_t referenceBandwidthValue;
 
 };
