@@ -40,7 +40,6 @@ protected:
   void HandshakeSuccessful (Ptr<const RemoteSwitch> sw);
   void ApplyRouting (uint64_t swDpId);
   void FindReferenceBandwidth();
-  void RemoveHostStorage(Edge ed);
 
 private:
   void UpdateRouting ();

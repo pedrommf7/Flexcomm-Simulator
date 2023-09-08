@@ -70,12 +70,6 @@ void MyController::DoDispose (void)
 }
 
 void 
-MyController::RemoveHostStorage(Edge ed)
-{
-
-}
-
-void 
 MyController::FindReferenceBandwidth(){
   base_graph = Topology::GetGraph ();
 
@@ -166,6 +160,7 @@ MyController::UpdateWeights ()
         {
           Topology::UpdateEdgeWeight (n1, n2, new_weight);
           updated = true;
+          // mudar isto para ajudar o controlador a saber que aresta mudou e não ter de computar os caminhos todos de novo !!!
         }
     }
   return updated;
@@ -177,28 +172,34 @@ MyController::ApplyRouting (uint64_t swDpId)
 {
   uint32_t swId = DpId2Id (swDpId);
   Ptr<Node> sw = NodeContainer::GetGlobal ().Get (swId);
-  Ptr<OFSwitch13Device> ofDevice = sw->GetObject<OFSwitch13Device> ();
-  NodeContainer hosts = NodeContainer::GetGlobalHosts ();
 
-  for (NodeContainer::Iterator i = hosts.Begin (); i != hosts.End (); i++)
+  // assim impede que switchs tenham camminhos de "reserva", 
+  // mas diminui o número de vezes que o algoritmo de descoberta de melhor caminho é chamado
+  if (sw->IsSwitch())
     {
-      Ipv4Address remoteAddr = (*i)->GetObject<Ipv4> ()->GetAddress (1, 0).GetLocal ();
-      // ideia rui usar o djikstra apenas no inicio e depois usar outro algoritmo para ir computando os melhores caminhos
-      std::vector<Ptr<Node>> path = Topology::DijkstraShortestPath (sw, *i);
-      
-      // FAZER: mudar para fazer hosts para hosts em vez de para switch's
-      // est afunção faz apenas para switchs ?????
+      Ptr<OFSwitch13Device> ofDevice = sw->GetObject<OFSwitch13Device> ();
+      NodeContainer hosts = NodeContainer::GetGlobalHosts ();
 
-      uint32_t port = ofDevice->GetPortNoConnectedTo (path.at (1));
+      for (NodeContainer::Iterator i = hosts.Begin (); i != hosts.End (); i++)
+        {
+          Ipv4Address remoteAddr = (*i)->GetObject<Ipv4> ()->GetAddress (1, 0).GetLocal ();
+          // ideia rui usar o djikstra apenas no inicio e depois usar outro algoritmo para ir computando os melhores caminhos
+          std::vector<Ptr<Node>> path = Topology::DijkstraShortestPath (sw, *i);
+          
+          uint32_t port = ofDevice->GetPortNoConnectedTo (path.at (1));
 
-      std::ostringstream cmd;
-      cmd << "flow-mod cmd=add,table=0 eth_type=0x800,ip_dst=" << remoteAddr
-          << " apply:output=" << port;
+          std::ostringstream cmd;
+          cmd << "flow-mod cmd=add,table=0 eth_type=0x800,ip_dst=" << remoteAddr
+              << " apply:output=" << port;
 
-      NS_LOG_DEBUG ("[" << swDpId << "]: " << cmd.str ());
+          NS_LOG_DEBUG ("[" << swDpId << "]: " << cmd.str ());
 
-      DpctlExecute (swDpId, cmd.str ());
+          DpctlExecute (swDpId, cmd.str ());
+        }
+
     }
+
+
 }
 
 void
@@ -225,6 +226,8 @@ MyController::HandshakeSuccessful (Ptr<const RemoteSwitch> sw)
   DpctlExecute (swDpId, "flow-mod cmd=add,table=0,prio=0 "
                         "apply:output=ctrl:128");
   DpctlExecute (swDpId, "set-config miss=128");
+
+  // restringir logo aqui os switchs para nao fazerem schedulings de nada ??????? REVER
 
   if (m_isFirstUpdate)
     {
