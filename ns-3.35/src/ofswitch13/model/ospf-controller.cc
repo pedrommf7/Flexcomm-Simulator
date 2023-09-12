@@ -2,7 +2,7 @@
 /*
  * The GPLv2 License (GPLv2)
  *
- * Copyright (c) 2023 Pedro Miguel Marques Ferreira
+ * Copyright (c) 2023 Pedro M. Ferreira
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,7 +17,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http: //www.gnu.org/licenses/>.
  *
- * Author: Pedro Miguel Marques Ferreira <pedro.m.marques@inesctec.pt>
+ * Author: Pedro M. Ferreira <pedro.m.marques@inesctec.pt>
  */
 
 #include <cstdint>
@@ -88,7 +88,7 @@ MyController::FindReferenceBandwidth(){
         {
           Ptr<Channel> chnl = Topology::GetChannel (n1, n2);
           uint64_t bitRate = chnl->GetDataRate(). GetBitRate();
-          boost::put(edge_weight_t (), base_graph, ed, bitRate); // ver se preciso de fazer como est ano topology a separar pelos Nodes
+          boost::put(edge_weight_t (), base_graph, ed, bitRate);
               
           if(findMax)
             {
@@ -98,6 +98,7 @@ MyController::FindReferenceBandwidth(){
       else
         {
           edgesToRemove.push_back(ed);
+          Topology::UpdateEdgeWeight(n1, n2, 0); // rever!!!!
         }
     }
   for (auto ed : edgesToRemove)
@@ -148,8 +149,12 @@ MyController::UpdateWeights ()
       // tambem podemos usar a taxa de utilizacao da do link para a flexibilidade impactar + ou - no peso
       // Ptr<Channel> chnl = Topology::GetChannel(n1, n2);
       // double usagePercentage =  chnl->GetChannelUsage(); //valor em percentagem !!!
+      // int new_weight = int (weight - (flex1 + flex2)/2 * (1-usagePercentage)); // quando maior for a utilizacao menor é o impacto da flexibilidade
 
       // ponderar se vemos a flexibildade como um valor unico e nao é preciso guardar a informacao inicial
+      // pode ser bom caso os switches sejam iguais e tenham o mesmo consumo, a formula de cima seria boa???? 
+      // mas podia escaxar porque calcula o min e nao o max, o djikstra so lida com pesos positivos, volta à situação??
+      // 
       
       // alterar aqui a expressão que se pretende usar para calcular o impacto da flexibilidade
       int new_weight = int (weight - (flex1 + flex2)/2);
