@@ -100,7 +100,7 @@ def build(bld):
         'model/simple-controller.cc',
         'model/simple-controller-flex.cc',
 
-        'model/my-controller.cc',
+        'model/ospf-controller.cc',
 
         'helper/ofswitch13-device-container.cc',
         'helper/ofswitch13-external-helper.cc',
@@ -126,7 +126,7 @@ def build(bld):
         'model/simple-controller.h',
         'model/simple-controller-flex.h',
 
-        'model/my-controller.h',
+        'model/ospf-controller.h',
    
         'helper/ofswitch13-device-container.h',
         'helper/ofswitch13-external-helper.h',

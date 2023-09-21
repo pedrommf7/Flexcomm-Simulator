@@ -20,19 +20,19 @@
  * Author: Pedro M. Ferreira <pedro.m.marques@inesctec.pt>
  */
 
-#ifndef MY_CONTROLLER_H
-#define MY_CONTROLLER_H
+#ifndef OSPF_CONTROLLER_H
+#define OSPF_CONTROLLER_H
 
 #include "ofswitch13-controller.h"
 #include "ns3/topology.h"
 
 namespace ns3 {
 
-class MyController : public OFSwitch13Controller
+class OspfController : public OFSwitch13Controller
 {
 public:
-  MyController ();
-  virtual ~MyController ();
+  OspfController ();
+  virtual ~OspfController ();
   static TypeId GetTypeId (void);
   virtual void DoDispose ();
 
@@ -45,6 +45,9 @@ private:
   void UpdateRouting ();
   bool UpdateWeights ();
   void SetWeightsBandwidthBased();
+  void AddSwitchHostKey(Ptr<Node> switchNode, Ptr<Node> hostNode);
+  void StorePath(Ptr<Node> switchNode, Ptr<Node> hostNode, std::vector<Ptr<Node>> path);
+  void CleanPaths(Ptr<Node> switchNode, Ptr<Node> hostNode);
 
   bool m_isFirstUpdate;
   Graph base_graph;
@@ -54,4 +57,4 @@ private:
 
 } // namespace ns3
 
-#endif /* MY_CONTROLLER_H */
+#endif /* OSPF_CONTROLLER_H */
