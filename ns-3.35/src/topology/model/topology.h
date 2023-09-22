@@ -55,6 +55,7 @@ public:
   static std::vector<Ptr<Node>> DijkstraShortestPaths (Ptr<Node> src);
   static std::vector<Ptr<Node>> DijkstraShortestPaths (Ipv4Address src);
   static std::vector<Ptr<Node>> DijkstraShortestPaths (std::string src);
+  static void DepthFirstAlgorithm(Ptr<Node> src, Ptr<Node> dst);
 
   static std::vector<std::pair<std::vector<Ptr<Node>>, int>> DijkstraShortestPaths (Ptr<Node> src,
                                                                                     Ptr<Node> dst);
@@ -70,6 +71,8 @@ public:
   static Vertex NodeToVertex (Ptr<Node> node);
 
   static Ptr<Channel> GetChannel (Ptr<Node> n1, Ptr<Node> n2);
+
+  static std::vector<Ptr<Node>> GetSuccessors (Ptr<Node> node);
 
 private:
   static Graph m_graph;

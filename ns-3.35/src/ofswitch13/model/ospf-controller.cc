@@ -44,7 +44,7 @@ namespace ns3
   class EqualCostPaths
   {
   public:
-    EqualCostPaths(){}
+    EqualCostPaths() {}
 
     void AddPath(std::vector<Ptr<Node>> path)
     {
@@ -74,11 +74,12 @@ namespace ns3
       paths_.clear();
     }
 
-    void CalculateDistances(){
+    void CalculateDistances()
+    {
       for (auto &path : paths_)
       {
         int distance = 0;
-        for (int i = 0; i < path.first.size() - 1; i++)
+        for (int i = 0; i < int(path.first.size()) - 1; i++)
         {
           Ptr<Node> n1 = path.first.at(i);
           Ptr<Node> n2 = path.first.at(i + 1);
@@ -87,7 +88,8 @@ namespace ns3
         path.second = distance;
       }
       // sort paths by distance
-      paths_.sort([](const auto &lhs, const auto &rhs) { return lhs.second < rhs.second; });
+      paths_.sort([](const auto &lhs, const auto &rhs)
+                  { return lhs.second < rhs.second; });
     }
 
   private:
@@ -129,8 +131,8 @@ namespace ns3
   {
     std::pair<Ptr<Node>, Ptr<Node>> key = std::make_pair(switchNode, hostNode);
     std::list<std::pair<std::pair<Ptr<Node>, Ptr<Node>>, EqualCostPaths>>::iterator it = std::find_if(equalCostPaths.begin(), equalCostPaths.end(),
-                                                                                                     [key](const std::pair<std::pair<Ptr<Node>, Ptr<Node>>, EqualCostPaths> &ecp)
-                                                                                                     { return ecp.first.first == key.first && ecp.first.second == key.second; });
+                                                                                                      [key](const std::pair<std::pair<Ptr<Node>, Ptr<Node>>, EqualCostPaths> &ecp)
+                                                                                                      { return ecp.first.first == key.first && ecp.first.second == key.second; });
 
     if (it == equalCostPaths.end())
     {
@@ -167,7 +169,71 @@ namespace ns3
     }
   }
 
-  
+  std::vector<std::vector<Ptr<Node>>> 
+  OspfController::Search(Ptr<Node> init, Ptr<Node> destiny, std::vector<Ptr<Node>> ignore)
+  {
+    std::vector<std::vector<Ptr<Node>>> allPaths = std::vector<std::vector<Ptr<Node>>>{};
+    if (init == destiny)
+    {
+      return allPaths; // return empty vector
+    }
+
+    std::vector<Ptr<Node>> successors = Topology::GetSuccessors(init);
+    if (std::find(successors.begin(), successors.end(), destiny) != successors.end())
+    {
+      allPaths.push_back({destiny});
+      return allPaths;
+    }
+
+    for (auto i : successors)
+    {
+      if (std::find(ignore.begin(), ignore.end(), i) == ignore.end())
+      {
+        ignore.push_back(init);
+        std::vector<std::vector<Ptr<Node>>> res = Search(i, destiny, ignore);
+        if (!res.empty())
+        {
+          for (auto j : res)
+          {
+            j.insert(j.begin(), i);
+            allPaths.push_back(j);
+          }
+        }
+      }
+    }
+    return allPaths;
+  }
+
+  void 
+  OspfController::FindAllPaths(Ptr<Node> source, Ptr<Node> destination)
+  {
+    std::cout << "FindAllPaths from: " << source->GetId() << " to: " << destination->GetId() << std::endl;
+
+    // res = Search(source, destiny, ignore)
+    // for i in res: paths.append(source + i)
+
+    // Search(initial, destiny, ignore)
+    // if initial == destiny: return []
+    // find predecessors of initial
+    //  if destiny in predecessors:
+    //   return [[destiny]]
+    // allPaths = []
+    // for i in predecessors:
+    //     if i not in ignore:
+    //         res = Search(i, destiny, ignore + [initial])
+    //         if res != []:
+    //             for j in res:
+    //                 allPaths.append([i] + j)
+
+    // return allPaths
+    std::vector<std::vector<Ptr<Node>>> res = Search(source, destination, std::vector<Ptr<Node>>{});
+    for (auto i : res)
+    {
+      AddSwitchHostKey(source, destination);
+      i.insert(i.begin(), source);
+      StorePath(source, destination, i);
+    }
+  }
 
   void
   OspfController::FindReferenceBandwidth()
@@ -283,24 +349,31 @@ namespace ns3
     Ptr<OFSwitch13Device> ofDevice = sw->GetObject<OFSwitch13Device>();
     NodeContainer hosts = NodeContainer::GetGlobalHosts();
 
-    cout << "Topology State: " << endl;
-    boost::graph_traits<Graph>::edge_iterator edgeIt, edgeEnd;
-    for (boost::tie(edgeIt, edgeEnd) = boost::edges(base_graph); edgeIt != edgeEnd; ++edgeIt)
-    {
-      Edge ed = *edgeIt;
-      Ptr<Node> n1 = Topology::VertexToNode(ed.m_source);
-      Ptr<Node> n2 = Topology::VertexToNode(ed.m_target);
-      uint64_t weight = boost::get(edge_weight_t(), base_graph, ed); // ver se preciso de fazer como est ano topology a separar pelos Nodes
-
-      cout << "Edge: " << n1->GetId() << " - " << n2->GetId() << " | Weight: " << weight << endl;
-    }
-
     for (NodeContainer::Iterator i = hosts.Begin(); i != hosts.End(); i++)
     {
       Ipv4Address remoteAddr = (*i)->GetObject<Ipv4>()->GetAddress(1, 0).GetLocal();
       // ideia rui usar o djikstra apenas no inicio e depois usar outro algoritmo para ir computando os melhores caminhos
-      Topology::DijkstraShortestPaths(sw, *i);
+      //Topology::DijkstraShortestPaths(sw, *i);
       std::vector<Ptr<Node>> path = Topology::DijkstraShortestPath(sw, *i);
+      FindAllPaths(sw, *i);
+
+      //calculate distances
+      for (auto &ecp : equalCostPaths)
+      {
+        ecp.second.CalculateDistances();
+      }
+
+      for (auto &ecp : equalCostPaths)
+      {
+        std::cout << "Switch: " << ecp.first.first->GetId() << " - Host: " << ecp.first.second->GetId() << std::endl;
+        for (auto &path : ecp.second.GetPaths())
+        {
+          std::cout << "  ";
+          for (auto &node : path.first)
+            std::cout << node->GetId() << " ";
+          std::cout << "  (" << path.second << ")" << std::endl;
+        }
+      }
 
       uint32_t port = ofDevice->GetPortNoConnectedTo(path.at(1));
 

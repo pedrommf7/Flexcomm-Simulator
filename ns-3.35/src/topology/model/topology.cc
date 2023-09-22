@@ -24,6 +24,7 @@
 #include <boost/graph/detail/adjacency_list.hpp>
 #include <boost/graph/dijkstra_shortest_paths.hpp>
 #include <boost/graph/properties.hpp>
+#include <boost/graph/depth_first_search.hpp>
 
 namespace ns3 {
 
@@ -188,6 +189,22 @@ Topology::DijkstraShortestPaths (Ptr<Node> src, Ptr<Node> dst)
                                                 predecessors.begin (), get (vertex_index, m_graph)))
                                .distance_map (make_iterator_property_map (
                                    distances.begin (), get (vertex_index, m_graph))));
+  // print predecessor map
+  std::cout << "predecessor map:" << std::endl;
+  boost::graph_traits < Graph >::vertex_iterator vertexIt, vertexEnd;
+  for (boost::tie (vertexIt, vertexEnd) = boost::vertices (m_graph); vertexIt != vertexEnd; ++vertexIt)
+    {
+      std::cout << "predecessor[" << *vertexIt << "] = " << predecessors[*vertexIt] << std::endl;
+    }
+  std::cout << std::endl;
+  // print distance map
+  std::cout << "distance map:" << std::endl;
+  for (boost::tie (vertexIt, vertexEnd) = boost::vertices (m_graph); vertexIt != vertexEnd; ++vertexIt)
+    {
+      std::cout << "distance[" << *vertexIt << "] = " << distances[*vertexIt] << std::endl;
+    }
+  std::cout << std::endl;
+
 
   // Create a vector to store the paths and their distances
   std::vector<std::pair<std::vector<Ptr<Node>>, int>> paths;
@@ -216,6 +233,14 @@ Topology::DijkstraShortestPaths (Ptr<Node> src, Ptr<Node> dst)
   // Now, the 'paths' vector contains all paths between 'source' and 'target'
   // sorted by their distances in ascending order.
   // Each entry in the 'paths' vector is a pair (path, distance).
+  std::cout << "Paths from " << src->GetId () << " to " << dst->GetId () << ":" << std::endl;
+  for (const auto &path : paths)
+    {
+      std::cout << "  ";
+      for (const auto &node : path.first)
+        std::cout << node->GetId () << " ";
+      std::cout << "  (" << path.second << ")" << std::endl;
+    }
   return paths;
 }
 
@@ -285,6 +310,17 @@ Ptr<Channel>
 Topology::GetChannel (Edge e)
 {
   return m_channels[e];
+}
+
+std::vector<Ptr<Node>>
+Topology::GetSuccessors (Ptr<Node> node)
+{
+  std::vector<Ptr<Node>> successors;
+  Vertex vd = m_vertexes[node];
+  boost::graph_traits<Graph>::adjacency_iterator ai, a_end;
+  for (boost::tie (ai, a_end) = boost::adjacent_vertices (vd, m_graph); ai != a_end; ++ai)
+    successors.push_back (m_nodes[*ai]);
+  return successors;
 }
 
 } // namespace ns3

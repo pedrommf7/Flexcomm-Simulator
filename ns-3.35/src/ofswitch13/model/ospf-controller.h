@@ -48,6 +48,8 @@ private:
   void AddSwitchHostKey(Ptr<Node> switchNode, Ptr<Node> hostNode);
   void StorePath(Ptr<Node> switchNode, Ptr<Node> hostNode, std::vector<Ptr<Node>> path);
   void CleanPaths(Ptr<Node> switchNode, Ptr<Node> hostNode);
+  std::vector<std::vector<Ptr<Node>>> Search(Ptr<Node> init, Ptr<Node> destiny, std::vector<Ptr<Node>> ignore);
+  void FindAllPaths(Ptr<Node> source, Ptr<Node> destination);
 
   bool m_isFirstUpdate;
   Graph base_graph;
