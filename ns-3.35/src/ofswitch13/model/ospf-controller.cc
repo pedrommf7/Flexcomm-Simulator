@@ -83,8 +83,10 @@ namespace ns3
         {
           Ptr<Node> n1 = path.first.at(i);
           Ptr<Node> n2 = path.first.at(i + 1);
-          distance += Topology::GetEdgeWeight(n1, n2);
+          int acc = Topology::GetEdgeWeight(n1, n2);
+          distance += acc;
         }
+
         path.second = distance;
       }
       // sort paths by distance
@@ -99,7 +101,7 @@ namespace ns3
   std::list<std::pair<std::pair<Ptr<Node>, Ptr<Node>>, EqualCostPaths>> equalCostPaths;
 
   // if not initializade at 0 it will be the bandwidth reference value used to calculate the weights
-  uint64_t OspfController::referenceBandwidthValue = 0;
+  uint64_t OspfController::referenceBandwidthValue = 2000000000;
 
   OspfController::OspfController()
   {
@@ -169,7 +171,7 @@ namespace ns3
     }
   }
 
-  std::vector<std::vector<Ptr<Node>>> 
+  std::vector<std::vector<Ptr<Node>>>
   OspfController::Search(Ptr<Node> init, Ptr<Node> destiny, std::vector<Ptr<Node>> ignore)
   {
     std::vector<std::vector<Ptr<Node>>> allPaths = std::vector<std::vector<Ptr<Node>>>{};
@@ -204,34 +206,35 @@ namespace ns3
     return allPaths;
   }
 
-  void 
+  void
   OspfController::FindAllPaths(Ptr<Node> source, Ptr<Node> destination)
   {
     std::cout << "FindAllPaths from: " << source->GetId() << " to: " << destination->GetId() << std::endl;
 
-    // res = Search(source, destiny, ignore)
-    // for i in res: paths.append(source + i)
-
-    // Search(initial, destiny, ignore)
-    // if initial == destiny: return []
-    // find predecessors of initial
-    //  if destiny in predecessors:
-    //   return [[destiny]]
-    // allPaths = []
-    // for i in predecessors:
-    //     if i not in ignore:
-    //         res = Search(i, destiny, ignore + [initial])
-    //         if res != []:
-    //             for j in res:
-    //                 allPaths.append([i] + j)
-
-    // return allPaths
     std::vector<std::vector<Ptr<Node>>> res = Search(source, destination, std::vector<Ptr<Node>>{});
     for (auto i : res)
     {
       AddSwitchHostKey(source, destination);
       i.insert(i.begin(), source);
       StorePath(source, destination, i);
+    }
+  }
+
+  std::vector<Ptr<Node>>
+  OspfController::GetShortesPath(Ptr<Node> source, Ptr<Node> destination)
+  {
+    auto it = std::find_if(equalCostPaths.begin(), equalCostPaths.end(),
+                           [source, destination](const std::pair<std::pair<Ptr<Node>, Ptr<Node>>, EqualCostPaths> &ecp)
+                           { return ecp.first.first == source && ecp.first.second == destination; });
+
+    if (it != equalCostPaths.end())
+    {
+      return it->second.GetShortestPath();
+    }
+    else
+    {
+      NS_LOG_ERROR("Illegal path");
+      return std::vector<Ptr<Node>>{};
     }
   }
 
@@ -298,10 +301,9 @@ namespace ns3
     }
   }
 
-  bool
+  void
   OspfController::UpdateWeights()
   {
-    bool updated = false;
     boost::graph_traits<Graph>::edge_iterator edgeIt, edgeEnd;
     for (boost::tie(edgeIt, edgeEnd) = boost::edges(base_graph); edgeIt != edgeEnd; ++edgeIt)
     {
@@ -329,14 +331,9 @@ namespace ns3
       new_weight = new_weight < 0 ? 0 : new_weight;
       // expressao produz nrs negativos, mas depois insere 0 no maximo
 
-      if (Topology::GetEdgeWeight(n1, n2) != new_weight)
-      {
-        Topology::UpdateEdgeWeight(n1, n2, new_weight);
-        updated = true;
-        // mudar isto para ajudar o controlador a saber que aresta mudou e não ter de computar os caminhos todos de novo !!!
-      }
+      Topology::UpdateEdgeWeight(n1, n2, new_weight);
+      // mudar isto para ajudar o controlador a saber que aresta mudou e não ter de computar os caminhos todos de novo !!!
     }
-    return updated;
   }
 
   // copiada do simple-controller.cc porque lá está protegida, como fazer??
@@ -353,27 +350,8 @@ namespace ns3
     {
       Ipv4Address remoteAddr = (*i)->GetObject<Ipv4>()->GetAddress(1, 0).GetLocal();
       // ideia rui usar o djikstra apenas no inicio e depois usar outro algoritmo para ir computando os melhores caminhos
-      //Topology::DijkstraShortestPaths(sw, *i);
-      std::vector<Ptr<Node>> path = Topology::DijkstraShortestPath(sw, *i);
-      FindAllPaths(sw, *i);
-
-      //calculate distances
-      for (auto &ecp : equalCostPaths)
-      {
-        ecp.second.CalculateDistances();
-      }
-
-      for (auto &ecp : equalCostPaths)
-      {
-        std::cout << "Switch: " << ecp.first.first->GetId() << " - Host: " << ecp.first.second->GetId() << std::endl;
-        for (auto &path : ecp.second.GetPaths())
-        {
-          std::cout << "  ";
-          for (auto &node : path.first)
-            std::cout << node->GetId() << " ";
-          std::cout << "  (" << path.second << ")" << std::endl;
-        }
-      }
+      // Topology::DijkstraShortestPaths(sw, *i);
+      std::vector<Ptr<Node>> path = GetShortesPath(sw, *i);
 
       uint32_t port = ofDevice->GetPortNoConnectedTo(path.at(1));
 
@@ -390,12 +368,32 @@ namespace ns3
   void
   OspfController::UpdateRouting()
   {
-    if (UpdateWeights())
+    UpdateWeights();
+    // calculate distances
+    for (auto &ecp : equalCostPaths)
     {
-      NodeContainer switches = NodeContainer::GetGlobalSwitches();
-      for (auto sw = switches.Begin(); sw != switches.End(); sw++)
-        ApplyRouting(Id2DpId((*sw)->GetId()));
+      ecp.second.CalculateDistances();
     }
+
+    NodeContainer switches = NodeContainer::GetGlobalSwitches();
+    for (auto sw = switches.Begin(); sw != switches.End(); sw++)
+      ApplyRouting(Id2DpId((*sw)->GetId()));
+
+    std::cout << "Equal Cost Paths: " << std::endl;
+    for (auto &ecp : equalCostPaths)
+    {
+      std::cout << "Switch: " << ecp.first.first->GetId() << " - Host: " << ecp.first.second->GetId() << std::endl;
+      for (auto &path : ecp.second.GetPaths())
+      {
+        std::cout << "  ";
+        for (auto &node : path.first)
+        {
+          std::cout << node->GetId() << " ";
+        }
+        std::cout << "  (" << path.second << ")" << std::endl;
+      }
+    }
+    std::cout << "-----------------------------" << std::endl;
 
     Simulator::Schedule(Minutes(1), &OspfController::UpdateRouting, this);
   }
@@ -418,14 +416,22 @@ namespace ns3
     {
       FindReferenceBandwidth();
       SetWeightsBandwidthBased();
-      UpdateWeights();
+
+      // pode ser melhorado este sistema de procura, aprender a usar o djikstra do boost
+      NodeContainer hosts = NodeContainer::GetGlobalHosts();
+      NodeContainer switches = NodeContainer::GetGlobalSwitches();
+      for (auto sw = switches.Begin(); sw != switches.End(); sw++)
+      {
+        Ptr<Node> switchNode = NodeContainer::GetGlobal().Get((*sw)->GetId());
+        for (auto hst = hosts.Begin(); hst != hosts.End(); hst++)
+        {
+          Ptr<Node> hostNode = NodeContainer::GetGlobal().Get((*hst)->GetId());
+          FindAllPaths(switchNode, hostNode);
+        }
+      }
       UpdateRouting();
       m_isFirstUpdate = false;
     }
-    else
-    {
-      ApplyRouting(swDpId);
-    }
+    ApplyRouting(swDpId);
   }
-
 } // namespace ns3
