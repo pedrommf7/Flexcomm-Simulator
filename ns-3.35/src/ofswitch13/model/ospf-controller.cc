@@ -69,6 +69,26 @@ namespace ns3
       return paths_;
     }
 
+    std::list<std::pair<std::vector<Ptr<Node>>, int>> GetShortestsPathsInRange(int percentage) const
+    {
+      // Get all the paths with a distance in the range of the shortest path distance
+      std::list<std::pair<std::vector<Ptr<Node>>, int>> shortestsPaths;
+      int shortestDistance = paths_.front().second;
+      int range = shortestDistance * percentage / 100;
+      for (auto &path : paths_)
+      {
+        if (path.second <= shortestDistance + range)
+        {
+          shortestsPaths.push_back(path);
+        }
+        else
+        {
+          break;
+        }
+      }
+      return shortestsPaths;
+    }
+
     void CleanPaths()
     {
       paths_.clear();
@@ -328,6 +348,10 @@ namespace ns3
 
       // alterar aqui a expressão que se pretende usar para calcular o impacto da flexibilidade
       int new_weight = int(weight - (flex1 + flex2) / 2);
+      if (new_weight < 0)
+      {
+        std::cout << "WARNING NEGATIVE WEIGHT: " << new_weight << std::endl;
+      }
       new_weight = new_weight < 0 ? 0 : new_weight;
       // expressao produz nrs negativos, mas depois insere 0 no maximo
 
@@ -336,7 +360,6 @@ namespace ns3
     }
   }
 
-  // copiada do simple-controller.cc porque lá está protegida, como fazer??
   void
   OspfController::ApplyRouting(uint64_t swDpId)
   {
