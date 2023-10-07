@@ -1,0 +1,79 @@
+[app1]
+type = "constSend"
+startTime = "5s"
+stopTime = "5min"
+host = "h1"
+remote = "h2"
+dataRate = "20Mbps"
+
+[app2]
+type = "constSend"
+startTime = "5s"
+stopTime = "5min"
+host = "h2"
+remote = "h3"
+dataRate = "20Mbps"
+
+[app3]
+type = "constSend"
+startTime = "5s"
+stopTime = "5min"
+host = "h3"
+remote = "h4"
+dataRate = "20Mbps"
+
+[app4]
+type = "constSend"
+startTime = "5s"
+stopTime = "5min"
+host = "h4"
+remote = "h5"
+dataRate = "20Mbps"
+
+[app5]
+type = "constSend"
+startTime = "5s"
+stopTime = "5min"
+host = "h5"
+remote = "h6"
+dataRate = "20Mbps"
+
+[app6]
+type = "constSend"
+startTime = "5s"
+stopTime = "5min"
+host = "h6"
+remote = "h7"
+dataRate = "20Mbps"
+
+[app7]
+type = "constSend"
+startTime = "5s"
+stopTime = "5min"
+host = "h7"
+remote = "h8"
+dataRate = "20Mbps"
+
+[app8]
+type = "constSend"
+startTime = "5s"
+stopTime = "5min"
+host = "h8"
+remote = "h9"
+dataRate = "20Mbps"
+
+[app9]
+type = "constSend"
+startTime = "5s"
+stopTime = "5min"
+host = "h9"
+remote = "h10"
+dataRate = "20Mbps"
+
+[app10]
+type = "constSend"
+startTime = "5s"
+stopTime = "5min"
+host = "h10"
+remote = "h1"
+dataRate = "20Mbps"

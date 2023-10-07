@@ -34,6 +34,8 @@
 #include "ns3/topology-module.h"
 #include "ns3/energy-api-module.h"
 
+#include <chrono> //remove after
+
 NS_LOG_COMPONENT_DEFINE("OspfController");
 
 namespace ns3
@@ -121,7 +123,7 @@ namespace ns3
   std::list<std::pair<std::pair<Ptr<Node>, Ptr<Node>>, EqualCostPaths>> equalCostPaths;
 
   // if not initializade at 0 it will be the bandwidth reference value used to calculate the weights
-  uint64_t OspfController::referenceBandwidthValue = 2000000000;
+  uint64_t OspfController::referenceBandwidthValue = 0;
 
   OspfController::OspfController()
   {
@@ -192,9 +194,9 @@ namespace ns3
   }
 
   std::vector<std::vector<Ptr<Node>>>
-  OspfController::Search(Ptr<Node> init, Ptr<Node> destiny, std::vector<Ptr<Node>> ignore)
+  OspfController::Search(Ptr<Node> init, Ptr<Node> destiny, std::vector<Ptr<Node>> &ignore)
   {
-    std::vector<std::vector<Ptr<Node>>> allPaths = std::vector<std::vector<Ptr<Node>>>{};
+    std::vector<std::vector<Ptr<Node>>> allPaths;
     if (init == destiny)
     {
       return allPaths; // return empty vector
@@ -207,31 +209,34 @@ namespace ns3
       return allPaths;
     }
 
+    ignore.push_back(init);
     for (auto i : successors)
     {
       if (std::find(ignore.begin(), ignore.end(), i) == ignore.end())
       {
-        ignore.push_back(init);
         std::vector<std::vector<Ptr<Node>>> res = Search(i, destiny, ignore);
         if (!res.empty())
         {
-          for (auto j : res)
+          for (auto &j : res)
           {
+            j.reserve(j.size() + 1);
             j.insert(j.begin(), i);
-            allPaths.push_back(j);
+            allPaths.push_back(std::move(j));
           }
         }
       }
     }
+    ignore.pop_back();
     return allPaths;
   }
 
   void
   OspfController::FindAllPaths(Ptr<Node> source, Ptr<Node> destination)
   {
-    std::cout << "FindAllPaths from: " << source->GetId() << " to: " << destination->GetId() << std::endl;
+    // std::cout << "FindAllPaths from: " << source->GetId() << " to: " << destination->GetId() << std::endl;
 
-    std::vector<std::vector<Ptr<Node>>> res = Search(source, destination, std::vector<Ptr<Node>>{});
+    std::vector<Ptr<Node>> ignore = std::vector<Ptr<Node>>();
+    std::vector<std::vector<Ptr<Node>>> res = Search(source, destination, ignore);
     for (auto i : res)
     {
       AddSwitchHostKey(source, destination);
@@ -281,9 +286,7 @@ namespace ns3
         boost::put(edge_weight_t(), base_graph, ed, bitRate);
 
         if (findMax)
-        {
           referenceBandwidthValue = bitRate > referenceBandwidthValue ? bitRate : referenceBandwidthValue;
-        }
       }
       else
       {
@@ -311,7 +314,7 @@ namespace ns3
         uint64_t weight = bitRate >= referenceBandwidthValue ? 1 : referenceBandwidthValue / bitRate;
 
         boost::put(edge_weight_t(), base_graph, ed, weight);
-        cout << "SAVED -> Edge: " << ed.m_source << " - " << ed.m_target << " | Weight: " << weight << endl;
+        // cout << "SAVED -> Edge: " << ed.m_source << " - " << ed.m_target << " | Weight: " << weight << endl;
 
         Ptr<Node> n1 = Topology::VertexToNode(ed.m_source);
         Ptr<Node> n2 = Topology::VertexToNode(ed.m_target);
@@ -374,17 +377,55 @@ namespace ns3
       Ipv4Address remoteAddr = (*i)->GetObject<Ipv4>()->GetAddress(1, 0).GetLocal();
       // ideia rui usar o djikstra apenas no inicio e depois usar outro algoritmo para ir computando os melhores caminhos
       // Topology::DijkstraShortestPaths(sw, *i);
-      std::vector<Ptr<Node>> path = GetShortesPath(sw, *i);
+      try{
 
-      uint32_t port = ofDevice->GetPortNoConnectedTo(path.at(1));
+        std::vector<Ptr<Node>> path = GetShortesPath(sw, *i);
 
-      std::ostringstream cmd;
-      cmd << "flow-mod cmd=add,table=0 eth_type=0x800,ip_dst=" << remoteAddr
-          << " apply:output=" << port;
+        uint32_t port = ofDevice->GetPortNoConnectedTo(path.at(1));
 
-      NS_LOG_DEBUG("[" << swDpId << "]: " << cmd.str());
+        std::ostringstream cmd;
+        cmd << "flow-mod cmd=add,table=0 eth_type=0x800,ip_dst=" << remoteAddr
+            << " apply:output=" << port;
 
-      DpctlExecute(swDpId, cmd.str());
+        NS_LOG_DEBUG("[" << swDpId << "]: " << cmd.str());
+
+        DpctlExecute(swDpId, cmd.str());
+      }
+      catch(const std::exception& e)
+      {
+        std::cerr << e.what() << '\n';
+      }
+    }
+  }
+
+  void
+  OspfController::ApplyRouting(uint64_t swDpId, Ptr<Node> host, Ptr<Node> nextJump)
+  {
+    uint32_t swId = DpId2Id(swDpId);
+    Ptr<Node> sw = NodeContainer::GetGlobal().Get(swId);
+
+    Ptr<OFSwitch13Device> ofDevice = sw->GetObject<OFSwitch13Device>();
+
+    Ipv4Address remoteAddr = host->GetObject<Ipv4>()->GetAddress(1, 0).GetLocal();
+    uint32_t port = ofDevice->GetPortNoConnectedTo(nextJump);
+
+    std::ostringstream cmd;
+    cmd << "flow-mod cmd=add,table=0 eth_type=0x800,ip_dst=" << remoteAddr
+        << " apply:output=" << port;
+
+    NS_LOG_DEBUG("[" << swDpId << "]: " << cmd.str());
+
+    DpctlExecute(swDpId, cmd.str());
+  }
+
+  void
+  OspfController::ApplyRoutingFromPath(std::vector<Ptr<Node>> path)
+  {
+    Ptr<Node> hostBegin = path.front();
+    Ptr<Node> hostEnd = path.back();
+    for (int i = 1; i < int(path.size()) - 2; i++)
+    {
+      ApplyRouting(Id2DpId(path.at(i)->GetId()), hostBegin, path.at(i + 1));
     }
   }
 
@@ -398,14 +439,22 @@ namespace ns3
       ecp.second.CalculateDistances();
     }
 
-    NodeContainer switches = NodeContainer::GetGlobalSwitches();
-    for (auto sw = switches.Begin(); sw != switches.End(); sw++)
-      ApplyRouting(Id2DpId((*sw)->GetId()));
-
+    // NodeContainer switches = NodeContainer::GetGlobalSwitches();
+    // for (auto sw = switches.Begin(); sw != switches.End(); sw++)
+    // {
+    //   ApplyRouting(Id2DpId((*sw)->GetId()));
+    // }
     std::cout << "Equal Cost Paths: " << std::endl;
     for (auto &ecp : equalCostPaths)
     {
-      std::cout << "Switch: " << ecp.first.first->GetId() << " - Host: " << ecp.first.second->GetId() << std::endl;
+      // get shortest path
+      std::vector<Ptr<Node>> shortestPath = ecp.second.GetShortestPath();
+      ApplyRoutingFromPath(shortestPath);
+      //reverse shortest path
+      std::reverse(shortestPath.begin(), shortestPath.end());
+      ApplyRoutingFromPath(shortestPath);
+
+      std::cout << "HostBegin: " << ecp.first.first->GetId() << " - HostEnd: " << ecp.first.second->GetId() << std::endl;
       for (auto &path : ecp.second.GetPaths())
       {
         std::cout << "  ";
@@ -440,21 +489,32 @@ namespace ns3
       FindReferenceBandwidth();
       SetWeightsBandwidthBased();
 
+      auto start = std::chrono::high_resolution_clock::now();
+
       // pode ser melhorado este sistema de procura, aprender a usar o djikstra do boost
       NodeContainer hosts = NodeContainer::GetGlobalHosts();
-      NodeContainer switches = NodeContainer::GetGlobalSwitches();
-      for (auto sw = switches.Begin(); sw != switches.End(); sw++)
+      for (auto hst1 = hosts.Begin(); hst1 != hosts.End(); hst1++)
       {
-        Ptr<Node> switchNode = NodeContainer::GetGlobal().Get((*sw)->GetId());
-        for (auto hst = hosts.Begin(); hst != hosts.End(); hst++)
+        Ptr<Node> hostNode1 = NodeContainer::GetGlobal().Get((*hst1)->GetId());
+        for (auto hst2 = hst1 + 1; hst2 != hosts.End(); hst2++)
         {
-          Ptr<Node> hostNode = NodeContainer::GetGlobal().Get((*hst)->GetId());
-          FindAllPaths(switchNode, hostNode);
+          Ptr<Node> hostNode2 = NodeContainer::GetGlobal().Get((*hst2)->GetId());
+          std::cout << "FindAllPaths from: " << hostNode1->GetId() << " to: " << hostNode2->GetId() << std::endl;
+          FindAllPaths(hostNode1, hostNode2);
         }
       }
+      auto end = std::chrono::high_resolution_clock::now();
+      auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
+      uint64_t milliseconds = duration.count() / 1000;
+      uint64_t seconds = milliseconds / 1000;
+      milliseconds = milliseconds % 1000;
+
+      std::cout << "-----> FindAllPaths Time: " << seconds << "s " << milliseconds << "ms" << std::endl;
+      std::cout << "-----------------------------" << std::endl;
+
       UpdateRouting();
       m_isFirstUpdate = false;
     }
-    ApplyRouting(swDpId);
+    // ApplyRouting(swDpId);
   }
 } // namespace ns3

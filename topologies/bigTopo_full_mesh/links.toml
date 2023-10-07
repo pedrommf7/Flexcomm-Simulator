@@ -1,0 +1,7649 @@
+[l1]
+edges = [ "s1", "s2",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l2]
+edges = [ "s1", "s3",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l3]
+edges = [ "s1", "s4",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l4]
+edges = [ "s1", "s5",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l5]
+edges = [ "s1", "s6",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l6]
+edges = [ "s1", "s7",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l7]
+edges = [ "s1", "s8",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l8]
+edges = [ "s1", "s9",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l9]
+edges = [ "s1", "s10",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l10]
+edges = [ "s1", "s11",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l11]
+edges = [ "s1", "s12",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l12]
+edges = [ "s1", "s13",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l13]
+edges = [ "s1", "s14",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l14]
+edges = [ "s1", "s15",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l15]
+edges = [ "s1", "s16",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l16]
+edges = [ "s1", "s17",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l17]
+edges = [ "s1", "s18",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l18]
+edges = [ "s1", "s19",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l19]
+edges = [ "s1", "s20",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l20]
+edges = [ "s1", "s21",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l21]
+edges = [ "s1", "s22",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l22]
+edges = [ "s1", "s23",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l23]
+edges = [ "s1", "s24",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l24]
+edges = [ "s1", "s25",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l25]
+edges = [ "s1", "s26",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l26]
+edges = [ "s1", "s27",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l27]
+edges = [ "s1", "s28",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l28]
+edges = [ "s1", "s29",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l29]
+edges = [ "s1", "s30",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l30]
+edges = [ "s1", "s31",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l31]
+edges = [ "s1", "s32",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l32]
+edges = [ "s1", "s33",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l33]
+edges = [ "s1", "s34",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l34]
+edges = [ "s1", "s35",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l35]
+edges = [ "s1", "s36",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l36]
+edges = [ "s1", "s37",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l37]
+edges = [ "s1", "s38",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l38]
+edges = [ "s1", "s39",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l39]
+edges = [ "s1", "s40",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l40]
+edges = [ "s1", "s41",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l41]
+edges = [ "s1", "s42",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l42]
+edges = [ "s1", "s43",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l43]
+edges = [ "s1", "s44",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l44]
+edges = [ "s1", "s45",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l45]
+edges = [ "s1", "s46",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l46]
+edges = [ "s1", "s47",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l47]
+edges = [ "s1", "s48",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l48]
+edges = [ "s1", "s49",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l49]
+edges = [ "s1", "s50",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l50]
+edges = [ "s2", "s3",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l51]
+edges = [ "s2", "s4",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l52]
+edges = [ "s2", "s5",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l53]
+edges = [ "s2", "s6",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l54]
+edges = [ "s2", "s7",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l55]
+edges = [ "s2", "s8",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l56]
+edges = [ "s2", "s9",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l57]
+edges = [ "s2", "s10",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l58]
+edges = [ "s2", "s11",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l59]
+edges = [ "s2", "s12",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l60]
+edges = [ "s2", "s13",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l61]
+edges = [ "s2", "s14",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l62]
+edges = [ "s2", "s15",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l63]
+edges = [ "s2", "s16",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l64]
+edges = [ "s2", "s17",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l65]
+edges = [ "s2", "s18",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l66]
+edges = [ "s2", "s19",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l67]
+edges = [ "s2", "s20",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l68]
+edges = [ "s2", "s21",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l69]
+edges = [ "s2", "s22",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l70]
+edges = [ "s2", "s23",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l71]
+edges = [ "s2", "s24",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l72]
+edges = [ "s2", "s25",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l73]
+edges = [ "s2", "s26",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l74]
+edges = [ "s2", "s27",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l75]
+edges = [ "s2", "s28",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l76]
+edges = [ "s2", "s29",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l77]
+edges = [ "s2", "s30",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l78]
+edges = [ "s2", "s31",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l79]
+edges = [ "s2", "s32",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l80]
+edges = [ "s2", "s33",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l81]
+edges = [ "s2", "s34",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l82]
+edges = [ "s2", "s35",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l83]
+edges = [ "s2", "s36",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l84]
+edges = [ "s2", "s37",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l85]
+edges = [ "s2", "s38",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l86]
+edges = [ "s2", "s39",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l87]
+edges = [ "s2", "s40",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l88]
+edges = [ "s2", "s41",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l89]
+edges = [ "s2", "s42",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l90]
+edges = [ "s2", "s43",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l91]
+edges = [ "s2", "s44",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l92]
+edges = [ "s2", "s45",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l93]
+edges = [ "s2", "s46",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l94]
+edges = [ "s2", "s47",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l95]
+edges = [ "s2", "s48",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l96]
+edges = [ "s2", "s49",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l97]
+edges = [ "s2", "s50",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l98]
+edges = [ "s3", "s4",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l99]
+edges = [ "s3", "s5",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l100]
+edges = [ "s3", "s6",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l101]
+edges = [ "s3", "s7",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l102]
+edges = [ "s3", "s8",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l103]
+edges = [ "s3", "s9",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l104]
+edges = [ "s3", "s10",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l105]
+edges = [ "s3", "s11",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l106]
+edges = [ "s3", "s12",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l107]
+edges = [ "s3", "s13",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l108]
+edges = [ "s3", "s14",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l109]
+edges = [ "s3", "s15",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l110]
+edges = [ "s3", "s16",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l111]
+edges = [ "s3", "s17",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l112]
+edges = [ "s3", "s18",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l113]
+edges = [ "s3", "s19",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l114]
+edges = [ "s3", "s20",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l115]
+edges = [ "s3", "s21",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l116]
+edges = [ "s3", "s22",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l117]
+edges = [ "s3", "s23",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l118]
+edges = [ "s3", "s24",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l119]
+edges = [ "s3", "s25",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l120]
+edges = [ "s3", "s26",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l121]
+edges = [ "s3", "s27",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l122]
+edges = [ "s3", "s28",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l123]
+edges = [ "s3", "s29",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l124]
+edges = [ "s3", "s30",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l125]
+edges = [ "s3", "s31",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l126]
+edges = [ "s3", "s32",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l127]
+edges = [ "s3", "s33",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l128]
+edges = [ "s3", "s34",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l129]
+edges = [ "s3", "s35",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l130]
+edges = [ "s3", "s36",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l131]
+edges = [ "s3", "s37",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l132]
+edges = [ "s3", "s38",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l133]
+edges = [ "s3", "s39",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l134]
+edges = [ "s3", "s40",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l135]
+edges = [ "s3", "s41",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l136]
+edges = [ "s3", "s42",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l137]
+edges = [ "s3", "s43",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l138]
+edges = [ "s3", "s44",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l139]
+edges = [ "s3", "s45",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l140]
+edges = [ "s3", "s46",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l141]
+edges = [ "s3", "s47",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l142]
+edges = [ "s3", "s48",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l143]
+edges = [ "s3", "s49",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l144]
+edges = [ "s3", "s50",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l145]
+edges = [ "s4", "s5",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l146]
+edges = [ "s4", "s6",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l147]
+edges = [ "s4", "s7",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l148]
+edges = [ "s4", "s8",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l149]
+edges = [ "s4", "s9",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l150]
+edges = [ "s4", "s10",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l151]
+edges = [ "s4", "s11",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l152]
+edges = [ "s4", "s12",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l153]
+edges = [ "s4", "s13",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l154]
+edges = [ "s4", "s14",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l155]
+edges = [ "s4", "s15",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l156]
+edges = [ "s4", "s16",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l157]
+edges = [ "s4", "s17",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l158]
+edges = [ "s4", "s18",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l159]
+edges = [ "s4", "s19",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l160]
+edges = [ "s4", "s20",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l161]
+edges = [ "s4", "s21",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l162]
+edges = [ "s4", "s22",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l163]
+edges = [ "s4", "s23",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l164]
+edges = [ "s4", "s24",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l165]
+edges = [ "s4", "s25",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l166]
+edges = [ "s4", "s26",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l167]
+edges = [ "s4", "s27",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l168]
+edges = [ "s4", "s28",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l169]
+edges = [ "s4", "s29",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l170]
+edges = [ "s4", "s30",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l171]
+edges = [ "s4", "s31",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l172]
+edges = [ "s4", "s32",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l173]
+edges = [ "s4", "s33",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l174]
+edges = [ "s4", "s34",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l175]
+edges = [ "s4", "s35",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l176]
+edges = [ "s4", "s36",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l177]
+edges = [ "s4", "s37",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l178]
+edges = [ "s4", "s38",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l179]
+edges = [ "s4", "s39",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l180]
+edges = [ "s4", "s40",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l181]
+edges = [ "s4", "s41",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l182]
+edges = [ "s4", "s42",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l183]
+edges = [ "s4", "s43",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l184]
+edges = [ "s4", "s44",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l185]
+edges = [ "s4", "s45",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l186]
+edges = [ "s4", "s46",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l187]
+edges = [ "s4", "s47",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l188]
+edges = [ "s4", "s48",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l189]
+edges = [ "s4", "s49",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l190]
+edges = [ "s4", "s50",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l191]
+edges = [ "s5", "s6",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l192]
+edges = [ "s5", "s7",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l193]
+edges = [ "s5", "s8",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l194]
+edges = [ "s5", "s9",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l195]
+edges = [ "s5", "s10",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l196]
+edges = [ "s5", "s11",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l197]
+edges = [ "s5", "s12",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l198]
+edges = [ "s5", "s13",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l199]
+edges = [ "s5", "s14",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l200]
+edges = [ "s5", "s15",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l201]
+edges = [ "s5", "s16",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l202]
+edges = [ "s5", "s17",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l203]
+edges = [ "s5", "s18",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l204]
+edges = [ "s5", "s19",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l205]
+edges = [ "s5", "s20",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l206]
+edges = [ "s5", "s21",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l207]
+edges = [ "s5", "s22",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l208]
+edges = [ "s5", "s23",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l209]
+edges = [ "s5", "s24",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l210]
+edges = [ "s5", "s25",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l211]
+edges = [ "s5", "s26",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l212]
+edges = [ "s5", "s27",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l213]
+edges = [ "s5", "s28",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l214]
+edges = [ "s5", "s29",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l215]
+edges = [ "s5", "s30",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l216]
+edges = [ "s5", "s31",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l217]
+edges = [ "s5", "s32",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l218]
+edges = [ "s5", "s33",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l219]
+edges = [ "s5", "s34",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l220]
+edges = [ "s5", "s35",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l221]
+edges = [ "s5", "s36",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l222]
+edges = [ "s5", "s37",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l223]
+edges = [ "s5", "s38",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l224]
+edges = [ "s5", "s39",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l225]
+edges = [ "s5", "s40",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l226]
+edges = [ "s5", "s41",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l227]
+edges = [ "s5", "s42",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l228]
+edges = [ "s5", "s43",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l229]
+edges = [ "s5", "s44",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l230]
+edges = [ "s5", "s45",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l231]
+edges = [ "s5", "s46",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l232]
+edges = [ "s5", "s47",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l233]
+edges = [ "s5", "s48",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l234]
+edges = [ "s5", "s49",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l235]
+edges = [ "s5", "s50",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l236]
+edges = [ "s6", "s7",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l237]
+edges = [ "s6", "s8",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l238]
+edges = [ "s6", "s9",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l239]
+edges = [ "s6", "s10",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l240]
+edges = [ "s6", "s11",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l241]
+edges = [ "s6", "s12",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l242]
+edges = [ "s6", "s13",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l243]
+edges = [ "s6", "s14",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l244]
+edges = [ "s6", "s15",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l245]
+edges = [ "s6", "s16",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l246]
+edges = [ "s6", "s17",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l247]
+edges = [ "s6", "s18",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l248]
+edges = [ "s6", "s19",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l249]
+edges = [ "s6", "s20",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l250]
+edges = [ "s6", "s21",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l251]
+edges = [ "s6", "s22",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l252]
+edges = [ "s6", "s23",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l253]
+edges = [ "s6", "s24",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l254]
+edges = [ "s6", "s25",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l255]
+edges = [ "s6", "s26",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l256]
+edges = [ "s6", "s27",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l257]
+edges = [ "s6", "s28",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l258]
+edges = [ "s6", "s29",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l259]
+edges = [ "s6", "s30",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l260]
+edges = [ "s6", "s31",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l261]
+edges = [ "s6", "s32",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l262]
+edges = [ "s6", "s33",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l263]
+edges = [ "s6", "s34",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l264]
+edges = [ "s6", "s35",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l265]
+edges = [ "s6", "s36",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l266]
+edges = [ "s6", "s37",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l267]
+edges = [ "s6", "s38",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l268]
+edges = [ "s6", "s39",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l269]
+edges = [ "s6", "s40",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l270]
+edges = [ "s6", "s41",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l271]
+edges = [ "s6", "s42",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l272]
+edges = [ "s6", "s43",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l273]
+edges = [ "s6", "s44",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l274]
+edges = [ "s6", "s45",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l275]
+edges = [ "s6", "s46",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l276]
+edges = [ "s6", "s47",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l277]
+edges = [ "s6", "s48",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l278]
+edges = [ "s6", "s49",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l279]
+edges = [ "s6", "s50",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l280]
+edges = [ "s7", "s8",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l281]
+edges = [ "s7", "s9",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l282]
+edges = [ "s7", "s10",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l283]
+edges = [ "s7", "s11",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l284]
+edges = [ "s7", "s12",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l285]
+edges = [ "s7", "s13",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l286]
+edges = [ "s7", "s14",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l287]
+edges = [ "s7", "s15",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l288]
+edges = [ "s7", "s16",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l289]
+edges = [ "s7", "s17",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l290]
+edges = [ "s7", "s18",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l291]
+edges = [ "s7", "s19",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l292]
+edges = [ "s7", "s20",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l293]
+edges = [ "s7", "s21",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l294]
+edges = [ "s7", "s22",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l295]
+edges = [ "s7", "s23",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l296]
+edges = [ "s7", "s24",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l297]
+edges = [ "s7", "s25",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l298]
+edges = [ "s7", "s26",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l299]
+edges = [ "s7", "s27",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l300]
+edges = [ "s7", "s28",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l301]
+edges = [ "s7", "s29",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l302]
+edges = [ "s7", "s30",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l303]
+edges = [ "s7", "s31",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l304]
+edges = [ "s7", "s32",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l305]
+edges = [ "s7", "s33",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l306]
+edges = [ "s7", "s34",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l307]
+edges = [ "s7", "s35",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l308]
+edges = [ "s7", "s36",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l309]
+edges = [ "s7", "s37",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l310]
+edges = [ "s7", "s38",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l311]
+edges = [ "s7", "s39",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l312]
+edges = [ "s7", "s40",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l313]
+edges = [ "s7", "s41",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l314]
+edges = [ "s7", "s42",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l315]
+edges = [ "s7", "s43",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l316]
+edges = [ "s7", "s44",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l317]
+edges = [ "s7", "s45",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l318]
+edges = [ "s7", "s46",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l319]
+edges = [ "s7", "s47",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l320]
+edges = [ "s7", "s48",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l321]
+edges = [ "s7", "s49",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l322]
+edges = [ "s7", "s50",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l323]
+edges = [ "s8", "s9",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l324]
+edges = [ "s8", "s10",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l325]
+edges = [ "s8", "s11",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l326]
+edges = [ "s8", "s12",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l327]
+edges = [ "s8", "s13",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l328]
+edges = [ "s8", "s14",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l329]
+edges = [ "s8", "s15",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l330]
+edges = [ "s8", "s16",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l331]
+edges = [ "s8", "s17",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l332]
+edges = [ "s8", "s18",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l333]
+edges = [ "s8", "s19",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l334]
+edges = [ "s8", "s20",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l335]
+edges = [ "s8", "s21",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l336]
+edges = [ "s8", "s22",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l337]
+edges = [ "s8", "s23",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l338]
+edges = [ "s8", "s24",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l339]
+edges = [ "s8", "s25",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l340]
+edges = [ "s8", "s26",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l341]
+edges = [ "s8", "s27",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l342]
+edges = [ "s8", "s28",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l343]
+edges = [ "s8", "s29",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l344]
+edges = [ "s8", "s30",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l345]
+edges = [ "s8", "s31",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l346]
+edges = [ "s8", "s32",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l347]
+edges = [ "s8", "s33",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l348]
+edges = [ "s8", "s34",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l349]
+edges = [ "s8", "s35",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l350]
+edges = [ "s8", "s36",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l351]
+edges = [ "s8", "s37",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l352]
+edges = [ "s8", "s38",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l353]
+edges = [ "s8", "s39",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l354]
+edges = [ "s8", "s40",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l355]
+edges = [ "s8", "s41",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l356]
+edges = [ "s8", "s42",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l357]
+edges = [ "s8", "s43",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l358]
+edges = [ "s8", "s44",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l359]
+edges = [ "s8", "s45",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l360]
+edges = [ "s8", "s46",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l361]
+edges = [ "s8", "s47",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l362]
+edges = [ "s8", "s48",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l363]
+edges = [ "s8", "s49",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l364]
+edges = [ "s8", "s50",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l365]
+edges = [ "s9", "s10",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l366]
+edges = [ "s9", "s11",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l367]
+edges = [ "s9", "s12",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l368]
+edges = [ "s9", "s13",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l369]
+edges = [ "s9", "s14",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l370]
+edges = [ "s9", "s15",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l371]
+edges = [ "s9", "s16",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l372]
+edges = [ "s9", "s17",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l373]
+edges = [ "s9", "s18",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l374]
+edges = [ "s9", "s19",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l375]
+edges = [ "s9", "s20",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l376]
+edges = [ "s9", "s21",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l377]
+edges = [ "s9", "s22",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l378]
+edges = [ "s9", "s23",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l379]
+edges = [ "s9", "s24",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l380]
+edges = [ "s9", "s25",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l381]
+edges = [ "s9", "s26",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l382]
+edges = [ "s9", "s27",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l383]
+edges = [ "s9", "s28",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l384]
+edges = [ "s9", "s29",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l385]
+edges = [ "s9", "s30",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l386]
+edges = [ "s9", "s31",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l387]
+edges = [ "s9", "s32",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l388]
+edges = [ "s9", "s33",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l389]
+edges = [ "s9", "s34",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l390]
+edges = [ "s9", "s35",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l391]
+edges = [ "s9", "s36",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l392]
+edges = [ "s9", "s37",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l393]
+edges = [ "s9", "s38",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l394]
+edges = [ "s9", "s39",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l395]
+edges = [ "s9", "s40",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l396]
+edges = [ "s9", "s41",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l397]
+edges = [ "s9", "s42",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l398]
+edges = [ "s9", "s43",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l399]
+edges = [ "s9", "s44",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l400]
+edges = [ "s9", "s45",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l401]
+edges = [ "s9", "s46",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l402]
+edges = [ "s9", "s47",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l403]
+edges = [ "s9", "s48",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l404]
+edges = [ "s9", "s49",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l405]
+edges = [ "s9", "s50",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l406]
+edges = [ "s10", "s11",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l407]
+edges = [ "s10", "s12",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l408]
+edges = [ "s10", "s13",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l409]
+edges = [ "s10", "s14",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l410]
+edges = [ "s10", "s15",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l411]
+edges = [ "s10", "s16",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l412]
+edges = [ "s10", "s17",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l413]
+edges = [ "s10", "s18",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l414]
+edges = [ "s10", "s19",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l415]
+edges = [ "s10", "s20",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l416]
+edges = [ "s10", "s21",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l417]
+edges = [ "s10", "s22",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l418]
+edges = [ "s10", "s23",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l419]
+edges = [ "s10", "s24",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l420]
+edges = [ "s10", "s25",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l421]
+edges = [ "s10", "s26",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l422]
+edges = [ "s10", "s27",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l423]
+edges = [ "s10", "s28",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l424]
+edges = [ "s10", "s29",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l425]
+edges = [ "s10", "s30",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l426]
+edges = [ "s10", "s31",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l427]
+edges = [ "s10", "s32",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l428]
+edges = [ "s10", "s33",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l429]
+edges = [ "s10", "s34",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l430]
+edges = [ "s10", "s35",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l431]
+edges = [ "s10", "s36",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l432]
+edges = [ "s10", "s37",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l433]
+edges = [ "s10", "s38",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l434]
+edges = [ "s10", "s39",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l435]
+edges = [ "s10", "s40",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l436]
+edges = [ "s10", "s41",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l437]
+edges = [ "s10", "s42",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l438]
+edges = [ "s10", "s43",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l439]
+edges = [ "s10", "s44",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l440]
+edges = [ "s10", "s45",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l441]
+edges = [ "s10", "s46",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l442]
+edges = [ "s10", "s47",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l443]
+edges = [ "s10", "s48",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l444]
+edges = [ "s10", "s49",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l445]
+edges = [ "s10", "s50",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l446]
+edges = [ "s11", "s12",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l447]
+edges = [ "s11", "s13",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l448]
+edges = [ "s11", "s14",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l449]
+edges = [ "s11", "s15",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l450]
+edges = [ "s11", "s16",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l451]
+edges = [ "s11", "s17",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l452]
+edges = [ "s11", "s18",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l453]
+edges = [ "s11", "s19",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l454]
+edges = [ "s11", "s20",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l455]
+edges = [ "s11", "s21",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l456]
+edges = [ "s11", "s22",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l457]
+edges = [ "s11", "s23",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l458]
+edges = [ "s11", "s24",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l459]
+edges = [ "s11", "s25",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l460]
+edges = [ "s11", "s26",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l461]
+edges = [ "s11", "s27",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l462]
+edges = [ "s11", "s28",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l463]
+edges = [ "s11", "s29",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l464]
+edges = [ "s11", "s30",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l465]
+edges = [ "s11", "s31",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l466]
+edges = [ "s11", "s32",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l467]
+edges = [ "s11", "s33",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l468]
+edges = [ "s11", "s34",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l469]
+edges = [ "s11", "s35",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l470]
+edges = [ "s11", "s36",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l471]
+edges = [ "s11", "s37",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l472]
+edges = [ "s11", "s38",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l473]
+edges = [ "s11", "s39",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l474]
+edges = [ "s11", "s40",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l475]
+edges = [ "s11", "s41",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l476]
+edges = [ "s11", "s42",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l477]
+edges = [ "s11", "s43",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l478]
+edges = [ "s11", "s44",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l479]
+edges = [ "s11", "s45",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l480]
+edges = [ "s11", "s46",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l481]
+edges = [ "s11", "s47",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l482]
+edges = [ "s11", "s48",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l483]
+edges = [ "s11", "s49",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l484]
+edges = [ "s11", "s50",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l485]
+edges = [ "s12", "s13",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l486]
+edges = [ "s12", "s14",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l487]
+edges = [ "s12", "s15",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l488]
+edges = [ "s12", "s16",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l489]
+edges = [ "s12", "s17",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l490]
+edges = [ "s12", "s18",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l491]
+edges = [ "s12", "s19",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l492]
+edges = [ "s12", "s20",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l493]
+edges = [ "s12", "s21",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l494]
+edges = [ "s12", "s22",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l495]
+edges = [ "s12", "s23",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l496]
+edges = [ "s12", "s24",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l497]
+edges = [ "s12", "s25",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l498]
+edges = [ "s12", "s26",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l499]
+edges = [ "s12", "s27",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l500]
+edges = [ "s12", "s28",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l501]
+edges = [ "s12", "s29",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l502]
+edges = [ "s12", "s30",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l503]
+edges = [ "s12", "s31",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l504]
+edges = [ "s12", "s32",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l505]
+edges = [ "s12", "s33",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l506]
+edges = [ "s12", "s34",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l507]
+edges = [ "s12", "s35",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l508]
+edges = [ "s12", "s36",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l509]
+edges = [ "s12", "s37",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l510]
+edges = [ "s12", "s38",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l511]
+edges = [ "s12", "s39",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l512]
+edges = [ "s12", "s40",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l513]
+edges = [ "s12", "s41",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l514]
+edges = [ "s12", "s42",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l515]
+edges = [ "s12", "s43",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l516]
+edges = [ "s12", "s44",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l517]
+edges = [ "s12", "s45",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l518]
+edges = [ "s12", "s46",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l519]
+edges = [ "s12", "s47",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l520]
+edges = [ "s12", "s48",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l521]
+edges = [ "s12", "s49",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l522]
+edges = [ "s12", "s50",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l523]
+edges = [ "s13", "s14",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l524]
+edges = [ "s13", "s15",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l525]
+edges = [ "s13", "s16",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l526]
+edges = [ "s13", "s17",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l527]
+edges = [ "s13", "s18",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l528]
+edges = [ "s13", "s19",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l529]
+edges = [ "s13", "s20",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l530]
+edges = [ "s13", "s21",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l531]
+edges = [ "s13", "s22",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l532]
+edges = [ "s13", "s23",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l533]
+edges = [ "s13", "s24",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l534]
+edges = [ "s13", "s25",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l535]
+edges = [ "s13", "s26",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l536]
+edges = [ "s13", "s27",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l537]
+edges = [ "s13", "s28",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l538]
+edges = [ "s13", "s29",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l539]
+edges = [ "s13", "s30",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l540]
+edges = [ "s13", "s31",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l541]
+edges = [ "s13", "s32",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l542]
+edges = [ "s13", "s33",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l543]
+edges = [ "s13", "s34",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l544]
+edges = [ "s13", "s35",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l545]
+edges = [ "s13", "s36",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l546]
+edges = [ "s13", "s37",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l547]
+edges = [ "s13", "s38",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l548]
+edges = [ "s13", "s39",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l549]
+edges = [ "s13", "s40",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l550]
+edges = [ "s13", "s41",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l551]
+edges = [ "s13", "s42",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l552]
+edges = [ "s13", "s43",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l553]
+edges = [ "s13", "s44",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l554]
+edges = [ "s13", "s45",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l555]
+edges = [ "s13", "s46",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l556]
+edges = [ "s13", "s47",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l557]
+edges = [ "s13", "s48",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l558]
+edges = [ "s13", "s49",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l559]
+edges = [ "s13", "s50",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l560]
+edges = [ "s14", "s15",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l561]
+edges = [ "s14", "s16",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l562]
+edges = [ "s14", "s17",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l563]
+edges = [ "s14", "s18",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l564]
+edges = [ "s14", "s19",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l565]
+edges = [ "s14", "s20",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l566]
+edges = [ "s14", "s21",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l567]
+edges = [ "s14", "s22",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l568]
+edges = [ "s14", "s23",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l569]
+edges = [ "s14", "s24",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l570]
+edges = [ "s14", "s25",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l571]
+edges = [ "s14", "s26",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l572]
+edges = [ "s14", "s27",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l573]
+edges = [ "s14", "s28",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l574]
+edges = [ "s14", "s29",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l575]
+edges = [ "s14", "s30",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l576]
+edges = [ "s14", "s31",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l577]
+edges = [ "s14", "s32",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l578]
+edges = [ "s14", "s33",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l579]
+edges = [ "s14", "s34",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l580]
+edges = [ "s14", "s35",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l581]
+edges = [ "s14", "s36",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l582]
+edges = [ "s14", "s37",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l583]
+edges = [ "s14", "s38",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l584]
+edges = [ "s14", "s39",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l585]
+edges = [ "s14", "s40",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l586]
+edges = [ "s14", "s41",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l587]
+edges = [ "s14", "s42",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l588]
+edges = [ "s14", "s43",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l589]
+edges = [ "s14", "s44",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l590]
+edges = [ "s14", "s45",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l591]
+edges = [ "s14", "s46",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l592]
+edges = [ "s14", "s47",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l593]
+edges = [ "s14", "s48",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l594]
+edges = [ "s14", "s49",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l595]
+edges = [ "s14", "s50",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l596]
+edges = [ "s15", "s16",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l597]
+edges = [ "s15", "s17",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l598]
+edges = [ "s15", "s18",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l599]
+edges = [ "s15", "s19",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l600]
+edges = [ "s15", "s20",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l601]
+edges = [ "s15", "s21",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l602]
+edges = [ "s15", "s22",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l603]
+edges = [ "s15", "s23",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l604]
+edges = [ "s15", "s24",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l605]
+edges = [ "s15", "s25",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l606]
+edges = [ "s15", "s26",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l607]
+edges = [ "s15", "s27",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l608]
+edges = [ "s15", "s28",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l609]
+edges = [ "s15", "s29",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l610]
+edges = [ "s15", "s30",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l611]
+edges = [ "s15", "s31",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l612]
+edges = [ "s15", "s32",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l613]
+edges = [ "s15", "s33",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l614]
+edges = [ "s15", "s34",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l615]
+edges = [ "s15", "s35",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l616]
+edges = [ "s15", "s36",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l617]
+edges = [ "s15", "s37",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l618]
+edges = [ "s15", "s38",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l619]
+edges = [ "s15", "s39",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l620]
+edges = [ "s15", "s40",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l621]
+edges = [ "s15", "s41",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l622]
+edges = [ "s15", "s42",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l623]
+edges = [ "s15", "s43",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l624]
+edges = [ "s15", "s44",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l625]
+edges = [ "s15", "s45",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l626]
+edges = [ "s15", "s46",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l627]
+edges = [ "s15", "s47",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l628]
+edges = [ "s15", "s48",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l629]
+edges = [ "s15", "s49",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l630]
+edges = [ "s15", "s50",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l631]
+edges = [ "s16", "s17",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l632]
+edges = [ "s16", "s18",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l633]
+edges = [ "s16", "s19",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l634]
+edges = [ "s16", "s20",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l635]
+edges = [ "s16", "s21",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l636]
+edges = [ "s16", "s22",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l637]
+edges = [ "s16", "s23",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l638]
+edges = [ "s16", "s24",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l639]
+edges = [ "s16", "s25",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l640]
+edges = [ "s16", "s26",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l641]
+edges = [ "s16", "s27",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l642]
+edges = [ "s16", "s28",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l643]
+edges = [ "s16", "s29",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l644]
+edges = [ "s16", "s30",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l645]
+edges = [ "s16", "s31",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l646]
+edges = [ "s16", "s32",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l647]
+edges = [ "s16", "s33",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l648]
+edges = [ "s16", "s34",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l649]
+edges = [ "s16", "s35",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l650]
+edges = [ "s16", "s36",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l651]
+edges = [ "s16", "s37",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l652]
+edges = [ "s16", "s38",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l653]
+edges = [ "s16", "s39",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l654]
+edges = [ "s16", "s40",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l655]
+edges = [ "s16", "s41",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l656]
+edges = [ "s16", "s42",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l657]
+edges = [ "s16", "s43",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l658]
+edges = [ "s16", "s44",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l659]
+edges = [ "s16", "s45",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l660]
+edges = [ "s16", "s46",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l661]
+edges = [ "s16", "s47",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l662]
+edges = [ "s16", "s48",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l663]
+edges = [ "s16", "s49",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l664]
+edges = [ "s16", "s50",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l665]
+edges = [ "s17", "s18",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l666]
+edges = [ "s17", "s19",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l667]
+edges = [ "s17", "s20",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l668]
+edges = [ "s17", "s21",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l669]
+edges = [ "s17", "s22",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l670]
+edges = [ "s17", "s23",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l671]
+edges = [ "s17", "s24",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l672]
+edges = [ "s17", "s25",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l673]
+edges = [ "s17", "s26",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l674]
+edges = [ "s17", "s27",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l675]
+edges = [ "s17", "s28",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l676]
+edges = [ "s17", "s29",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l677]
+edges = [ "s17", "s30",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l678]
+edges = [ "s17", "s31",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l679]
+edges = [ "s17", "s32",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l680]
+edges = [ "s17", "s33",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l681]
+edges = [ "s17", "s34",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l682]
+edges = [ "s17", "s35",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l683]
+edges = [ "s17", "s36",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l684]
+edges = [ "s17", "s37",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l685]
+edges = [ "s17", "s38",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l686]
+edges = [ "s17", "s39",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l687]
+edges = [ "s17", "s40",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l688]
+edges = [ "s17", "s41",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l689]
+edges = [ "s17", "s42",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l690]
+edges = [ "s17", "s43",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l691]
+edges = [ "s17", "s44",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l692]
+edges = [ "s17", "s45",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l693]
+edges = [ "s17", "s46",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l694]
+edges = [ "s17", "s47",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l695]
+edges = [ "s17", "s48",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l696]
+edges = [ "s17", "s49",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l697]
+edges = [ "s17", "s50",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l698]
+edges = [ "s18", "s19",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l699]
+edges = [ "s18", "s20",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l700]
+edges = [ "s18", "s21",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l701]
+edges = [ "s18", "s22",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l702]
+edges = [ "s18", "s23",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l703]
+edges = [ "s18", "s24",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l704]
+edges = [ "s18", "s25",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l705]
+edges = [ "s18", "s26",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l706]
+edges = [ "s18", "s27",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l707]
+edges = [ "s18", "s28",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l708]
+edges = [ "s18", "s29",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l709]
+edges = [ "s18", "s30",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l710]
+edges = [ "s18", "s31",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l711]
+edges = [ "s18", "s32",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l712]
+edges = [ "s18", "s33",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l713]
+edges = [ "s18", "s34",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l714]
+edges = [ "s18", "s35",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l715]
+edges = [ "s18", "s36",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l716]
+edges = [ "s18", "s37",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l717]
+edges = [ "s18", "s38",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l718]
+edges = [ "s18", "s39",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l719]
+edges = [ "s18", "s40",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l720]
+edges = [ "s18", "s41",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l721]
+edges = [ "s18", "s42",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l722]
+edges = [ "s18", "s43",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l723]
+edges = [ "s18", "s44",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l724]
+edges = [ "s18", "s45",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l725]
+edges = [ "s18", "s46",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l726]
+edges = [ "s18", "s47",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l727]
+edges = [ "s18", "s48",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l728]
+edges = [ "s18", "s49",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l729]
+edges = [ "s18", "s50",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l730]
+edges = [ "s19", "s20",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l731]
+edges = [ "s19", "s21",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l732]
+edges = [ "s19", "s22",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l733]
+edges = [ "s19", "s23",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l734]
+edges = [ "s19", "s24",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l735]
+edges = [ "s19", "s25",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l736]
+edges = [ "s19", "s26",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l737]
+edges = [ "s19", "s27",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l738]
+edges = [ "s19", "s28",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l739]
+edges = [ "s19", "s29",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l740]
+edges = [ "s19", "s30",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l741]
+edges = [ "s19", "s31",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l742]
+edges = [ "s19", "s32",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l743]
+edges = [ "s19", "s33",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l744]
+edges = [ "s19", "s34",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l745]
+edges = [ "s19", "s35",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l746]
+edges = [ "s19", "s36",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l747]
+edges = [ "s19", "s37",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l748]
+edges = [ "s19", "s38",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l749]
+edges = [ "s19", "s39",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l750]
+edges = [ "s19", "s40",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l751]
+edges = [ "s19", "s41",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l752]
+edges = [ "s19", "s42",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l753]
+edges = [ "s19", "s43",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l754]
+edges = [ "s19", "s44",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l755]
+edges = [ "s19", "s45",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l756]
+edges = [ "s19", "s46",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l757]
+edges = [ "s19", "s47",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l758]
+edges = [ "s19", "s48",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l759]
+edges = [ "s19", "s49",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l760]
+edges = [ "s19", "s50",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l761]
+edges = [ "s20", "s21",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l762]
+edges = [ "s20", "s22",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l763]
+edges = [ "s20", "s23",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l764]
+edges = [ "s20", "s24",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l765]
+edges = [ "s20", "s25",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l766]
+edges = [ "s20", "s26",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l767]
+edges = [ "s20", "s27",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l768]
+edges = [ "s20", "s28",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l769]
+edges = [ "s20", "s29",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l770]
+edges = [ "s20", "s30",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l771]
+edges = [ "s20", "s31",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l772]
+edges = [ "s20", "s32",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l773]
+edges = [ "s20", "s33",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l774]
+edges = [ "s20", "s34",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l775]
+edges = [ "s20", "s35",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l776]
+edges = [ "s20", "s36",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l777]
+edges = [ "s20", "s37",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l778]
+edges = [ "s20", "s38",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l779]
+edges = [ "s20", "s39",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l780]
+edges = [ "s20", "s40",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l781]
+edges = [ "s20", "s41",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l782]
+edges = [ "s20", "s42",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l783]
+edges = [ "s20", "s43",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l784]
+edges = [ "s20", "s44",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l785]
+edges = [ "s20", "s45",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l786]
+edges = [ "s20", "s46",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l787]
+edges = [ "s20", "s47",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l788]
+edges = [ "s20", "s48",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l789]
+edges = [ "s20", "s49",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l790]
+edges = [ "s20", "s50",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l791]
+edges = [ "s21", "s22",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l792]
+edges = [ "s21", "s23",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l793]
+edges = [ "s21", "s24",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l794]
+edges = [ "s21", "s25",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l795]
+edges = [ "s21", "s26",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l796]
+edges = [ "s21", "s27",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l797]
+edges = [ "s21", "s28",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l798]
+edges = [ "s21", "s29",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l799]
+edges = [ "s21", "s30",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l800]
+edges = [ "s21", "s31",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l801]
+edges = [ "s21", "s32",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l802]
+edges = [ "s21", "s33",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l803]
+edges = [ "s21", "s34",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l804]
+edges = [ "s21", "s35",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l805]
+edges = [ "s21", "s36",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l806]
+edges = [ "s21", "s37",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l807]
+edges = [ "s21", "s38",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l808]
+edges = [ "s21", "s39",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l809]
+edges = [ "s21", "s40",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l810]
+edges = [ "s21", "s41",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l811]
+edges = [ "s21", "s42",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l812]
+edges = [ "s21", "s43",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l813]
+edges = [ "s21", "s44",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l814]
+edges = [ "s21", "s45",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l815]
+edges = [ "s21", "s46",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l816]
+edges = [ "s21", "s47",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l817]
+edges = [ "s21", "s48",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l818]
+edges = [ "s21", "s49",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l819]
+edges = [ "s21", "s50",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l820]
+edges = [ "s22", "s23",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l821]
+edges = [ "s22", "s24",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l822]
+edges = [ "s22", "s25",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l823]
+edges = [ "s22", "s26",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l824]
+edges = [ "s22", "s27",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l825]
+edges = [ "s22", "s28",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l826]
+edges = [ "s22", "s29",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l827]
+edges = [ "s22", "s30",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l828]
+edges = [ "s22", "s31",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l829]
+edges = [ "s22", "s32",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l830]
+edges = [ "s22", "s33",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l831]
+edges = [ "s22", "s34",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l832]
+edges = [ "s22", "s35",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l833]
+edges = [ "s22", "s36",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l834]
+edges = [ "s22", "s37",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l835]
+edges = [ "s22", "s38",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l836]
+edges = [ "s22", "s39",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l837]
+edges = [ "s22", "s40",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l838]
+edges = [ "s22", "s41",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l839]
+edges = [ "s22", "s42",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l840]
+edges = [ "s22", "s43",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l841]
+edges = [ "s22", "s44",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l842]
+edges = [ "s22", "s45",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l843]
+edges = [ "s22", "s46",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l844]
+edges = [ "s22", "s47",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l845]
+edges = [ "s22", "s48",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l846]
+edges = [ "s22", "s49",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l847]
+edges = [ "s22", "s50",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l848]
+edges = [ "s23", "s24",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l849]
+edges = [ "s23", "s25",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l850]
+edges = [ "s23", "s26",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l851]
+edges = [ "s23", "s27",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l852]
+edges = [ "s23", "s28",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l853]
+edges = [ "s23", "s29",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l854]
+edges = [ "s23", "s30",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l855]
+edges = [ "s23", "s31",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l856]
+edges = [ "s23", "s32",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l857]
+edges = [ "s23", "s33",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l858]
+edges = [ "s23", "s34",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l859]
+edges = [ "s23", "s35",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l860]
+edges = [ "s23", "s36",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l861]
+edges = [ "s23", "s37",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l862]
+edges = [ "s23", "s38",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l863]
+edges = [ "s23", "s39",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l864]
+edges = [ "s23", "s40",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l865]
+edges = [ "s23", "s41",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l866]
+edges = [ "s23", "s42",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l867]
+edges = [ "s23", "s43",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l868]
+edges = [ "s23", "s44",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l869]
+edges = [ "s23", "s45",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l870]
+edges = [ "s23", "s46",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l871]
+edges = [ "s23", "s47",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l872]
+edges = [ "s23", "s48",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l873]
+edges = [ "s23", "s49",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l874]
+edges = [ "s23", "s50",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l875]
+edges = [ "s24", "s25",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l876]
+edges = [ "s24", "s26",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l877]
+edges = [ "s24", "s27",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l878]
+edges = [ "s24", "s28",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l879]
+edges = [ "s24", "s29",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l880]
+edges = [ "s24", "s30",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l881]
+edges = [ "s24", "s31",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l882]
+edges = [ "s24", "s32",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l883]
+edges = [ "s24", "s33",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l884]
+edges = [ "s24", "s34",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l885]
+edges = [ "s24", "s35",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l886]
+edges = [ "s24", "s36",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l887]
+edges = [ "s24", "s37",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l888]
+edges = [ "s24", "s38",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l889]
+edges = [ "s24", "s39",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l890]
+edges = [ "s24", "s40",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l891]
+edges = [ "s24", "s41",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l892]
+edges = [ "s24", "s42",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l893]
+edges = [ "s24", "s43",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l894]
+edges = [ "s24", "s44",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l895]
+edges = [ "s24", "s45",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l896]
+edges = [ "s24", "s46",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l897]
+edges = [ "s24", "s47",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l898]
+edges = [ "s24", "s48",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l899]
+edges = [ "s24", "s49",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l900]
+edges = [ "s24", "s50",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l901]
+edges = [ "s25", "s26",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l902]
+edges = [ "s25", "s27",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l903]
+edges = [ "s25", "s28",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l904]
+edges = [ "s25", "s29",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l905]
+edges = [ "s25", "s30",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l906]
+edges = [ "s25", "s31",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l907]
+edges = [ "s25", "s32",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l908]
+edges = [ "s25", "s33",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l909]
+edges = [ "s25", "s34",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l910]
+edges = [ "s25", "s35",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l911]
+edges = [ "s25", "s36",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l912]
+edges = [ "s25", "s37",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l913]
+edges = [ "s25", "s38",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l914]
+edges = [ "s25", "s39",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l915]
+edges = [ "s25", "s40",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l916]
+edges = [ "s25", "s41",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l917]
+edges = [ "s25", "s42",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l918]
+edges = [ "s25", "s43",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l919]
+edges = [ "s25", "s44",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l920]
+edges = [ "s25", "s45",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l921]
+edges = [ "s25", "s46",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l922]
+edges = [ "s25", "s47",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l923]
+edges = [ "s25", "s48",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l924]
+edges = [ "s25", "s49",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l925]
+edges = [ "s25", "s50",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l926]
+edges = [ "s26", "s27",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l927]
+edges = [ "s26", "s28",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l928]
+edges = [ "s26", "s29",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l929]
+edges = [ "s26", "s30",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l930]
+edges = [ "s26", "s31",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l931]
+edges = [ "s26", "s32",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l932]
+edges = [ "s26", "s33",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l933]
+edges = [ "s26", "s34",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l934]
+edges = [ "s26", "s35",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l935]
+edges = [ "s26", "s36",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l936]
+edges = [ "s26", "s37",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l937]
+edges = [ "s26", "s38",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l938]
+edges = [ "s26", "s39",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l939]
+edges = [ "s26", "s40",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l940]
+edges = [ "s26", "s41",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l941]
+edges = [ "s26", "s42",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l942]
+edges = [ "s26", "s43",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l943]
+edges = [ "s26", "s44",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l944]
+edges = [ "s26", "s45",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l945]
+edges = [ "s26", "s46",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l946]
+edges = [ "s26", "s47",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l947]
+edges = [ "s26", "s48",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l948]
+edges = [ "s26", "s49",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l949]
+edges = [ "s26", "s50",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l950]
+edges = [ "s27", "s28",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l951]
+edges = [ "s27", "s29",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l952]
+edges = [ "s27", "s30",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l953]
+edges = [ "s27", "s31",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l954]
+edges = [ "s27", "s32",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l955]
+edges = [ "s27", "s33",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l956]
+edges = [ "s27", "s34",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l957]
+edges = [ "s27", "s35",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l958]
+edges = [ "s27", "s36",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l959]
+edges = [ "s27", "s37",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l960]
+edges = [ "s27", "s38",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l961]
+edges = [ "s27", "s39",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l962]
+edges = [ "s27", "s40",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l963]
+edges = [ "s27", "s41",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l964]
+edges = [ "s27", "s42",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l965]
+edges = [ "s27", "s43",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l966]
+edges = [ "s27", "s44",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l967]
+edges = [ "s27", "s45",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l968]
+edges = [ "s27", "s46",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l969]
+edges = [ "s27", "s47",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l970]
+edges = [ "s27", "s48",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l971]
+edges = [ "s27", "s49",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l972]
+edges = [ "s27", "s50",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l973]
+edges = [ "s28", "s29",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l974]
+edges = [ "s28", "s30",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l975]
+edges = [ "s28", "s31",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l976]
+edges = [ "s28", "s32",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l977]
+edges = [ "s28", "s33",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l978]
+edges = [ "s28", "s34",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l979]
+edges = [ "s28", "s35",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l980]
+edges = [ "s28", "s36",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l981]
+edges = [ "s28", "s37",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l982]
+edges = [ "s28", "s38",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l983]
+edges = [ "s28", "s39",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l984]
+edges = [ "s28", "s40",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l985]
+edges = [ "s28", "s41",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l986]
+edges = [ "s28", "s42",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l987]
+edges = [ "s28", "s43",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l988]
+edges = [ "s28", "s44",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l989]
+edges = [ "s28", "s45",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l990]
+edges = [ "s28", "s46",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l991]
+edges = [ "s28", "s47",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l992]
+edges = [ "s28", "s48",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l993]
+edges = [ "s28", "s49",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l994]
+edges = [ "s28", "s50",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l995]
+edges = [ "s29", "s30",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l996]
+edges = [ "s29", "s31",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l997]
+edges = [ "s29", "s32",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l998]
+edges = [ "s29", "s33",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l999]
+edges = [ "s29", "s34",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1000]
+edges = [ "s29", "s35",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1001]
+edges = [ "s29", "s36",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1002]
+edges = [ "s29", "s37",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1003]
+edges = [ "s29", "s38",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1004]
+edges = [ "s29", "s39",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1005]
+edges = [ "s29", "s40",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1006]
+edges = [ "s29", "s41",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1007]
+edges = [ "s29", "s42",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1008]
+edges = [ "s29", "s43",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1009]
+edges = [ "s29", "s44",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1010]
+edges = [ "s29", "s45",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1011]
+edges = [ "s29", "s46",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1012]
+edges = [ "s29", "s47",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1013]
+edges = [ "s29", "s48",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1014]
+edges = [ "s29", "s49",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1015]
+edges = [ "s29", "s50",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1016]
+edges = [ "s30", "s31",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1017]
+edges = [ "s30", "s32",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1018]
+edges = [ "s30", "s33",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1019]
+edges = [ "s30", "s34",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1020]
+edges = [ "s30", "s35",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1021]
+edges = [ "s30", "s36",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1022]
+edges = [ "s30", "s37",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1023]
+edges = [ "s30", "s38",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1024]
+edges = [ "s30", "s39",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1025]
+edges = [ "s30", "s40",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1026]
+edges = [ "s30", "s41",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1027]
+edges = [ "s30", "s42",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1028]
+edges = [ "s30", "s43",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1029]
+edges = [ "s30", "s44",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1030]
+edges = [ "s30", "s45",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1031]
+edges = [ "s30", "s46",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1032]
+edges = [ "s30", "s47",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1033]
+edges = [ "s30", "s48",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1034]
+edges = [ "s30", "s49",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1035]
+edges = [ "s30", "s50",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1036]
+edges = [ "s31", "s32",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1037]
+edges = [ "s31", "s33",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1038]
+edges = [ "s31", "s34",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1039]
+edges = [ "s31", "s35",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1040]
+edges = [ "s31", "s36",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1041]
+edges = [ "s31", "s37",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1042]
+edges = [ "s31", "s38",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1043]
+edges = [ "s31", "s39",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1044]
+edges = [ "s31", "s40",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1045]
+edges = [ "s31", "s41",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1046]
+edges = [ "s31", "s42",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1047]
+edges = [ "s31", "s43",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1048]
+edges = [ "s31", "s44",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1049]
+edges = [ "s31", "s45",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1050]
+edges = [ "s31", "s46",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1051]
+edges = [ "s31", "s47",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1052]
+edges = [ "s31", "s48",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1053]
+edges = [ "s31", "s49",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1054]
+edges = [ "s31", "s50",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1055]
+edges = [ "s32", "s33",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1056]
+edges = [ "s32", "s34",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1057]
+edges = [ "s32", "s35",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1058]
+edges = [ "s32", "s36",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1059]
+edges = [ "s32", "s37",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1060]
+edges = [ "s32", "s38",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1061]
+edges = [ "s32", "s39",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1062]
+edges = [ "s32", "s40",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1063]
+edges = [ "s32", "s41",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1064]
+edges = [ "s32", "s42",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1065]
+edges = [ "s32", "s43",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1066]
+edges = [ "s32", "s44",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1067]
+edges = [ "s32", "s45",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1068]
+edges = [ "s32", "s46",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1069]
+edges = [ "s32", "s47",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1070]
+edges = [ "s32", "s48",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1071]
+edges = [ "s32", "s49",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1072]
+edges = [ "s32", "s50",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1073]
+edges = [ "s33", "s34",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1074]
+edges = [ "s33", "s35",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1075]
+edges = [ "s33", "s36",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1076]
+edges = [ "s33", "s37",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1077]
+edges = [ "s33", "s38",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1078]
+edges = [ "s33", "s39",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1079]
+edges = [ "s33", "s40",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1080]
+edges = [ "s33", "s41",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1081]
+edges = [ "s33", "s42",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1082]
+edges = [ "s33", "s43",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1083]
+edges = [ "s33", "s44",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1084]
+edges = [ "s33", "s45",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1085]
+edges = [ "s33", "s46",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1086]
+edges = [ "s33", "s47",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1087]
+edges = [ "s33", "s48",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1088]
+edges = [ "s33", "s49",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1089]
+edges = [ "s33", "s50",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1090]
+edges = [ "s34", "s35",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1091]
+edges = [ "s34", "s36",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1092]
+edges = [ "s34", "s37",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1093]
+edges = [ "s34", "s38",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1094]
+edges = [ "s34", "s39",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1095]
+edges = [ "s34", "s40",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1096]
+edges = [ "s34", "s41",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1097]
+edges = [ "s34", "s42",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1098]
+edges = [ "s34", "s43",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1099]
+edges = [ "s34", "s44",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1100]
+edges = [ "s34", "s45",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1101]
+edges = [ "s34", "s46",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1102]
+edges = [ "s34", "s47",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1103]
+edges = [ "s34", "s48",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1104]
+edges = [ "s34", "s49",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1105]
+edges = [ "s34", "s50",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1106]
+edges = [ "s35", "s36",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1107]
+edges = [ "s35", "s37",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1108]
+edges = [ "s35", "s38",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1109]
+edges = [ "s35", "s39",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1110]
+edges = [ "s35", "s40",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1111]
+edges = [ "s35", "s41",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1112]
+edges = [ "s35", "s42",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1113]
+edges = [ "s35", "s43",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1114]
+edges = [ "s35", "s44",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1115]
+edges = [ "s35", "s45",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1116]
+edges = [ "s35", "s46",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1117]
+edges = [ "s35", "s47",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1118]
+edges = [ "s35", "s48",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1119]
+edges = [ "s35", "s49",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1120]
+edges = [ "s35", "s50",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1121]
+edges = [ "s36", "s37",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1122]
+edges = [ "s36", "s38",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1123]
+edges = [ "s36", "s39",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1124]
+edges = [ "s36", "s40",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1125]
+edges = [ "s36", "s41",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1126]
+edges = [ "s36", "s42",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1127]
+edges = [ "s36", "s43",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1128]
+edges = [ "s36", "s44",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1129]
+edges = [ "s36", "s45",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1130]
+edges = [ "s36", "s46",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1131]
+edges = [ "s36", "s47",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1132]
+edges = [ "s36", "s48",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1133]
+edges = [ "s36", "s49",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1134]
+edges = [ "s36", "s50",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1135]
+edges = [ "s37", "s38",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1136]
+edges = [ "s37", "s39",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1137]
+edges = [ "s37", "s40",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1138]
+edges = [ "s37", "s41",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1139]
+edges = [ "s37", "s42",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1140]
+edges = [ "s37", "s43",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1141]
+edges = [ "s37", "s44",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1142]
+edges = [ "s37", "s45",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1143]
+edges = [ "s37", "s46",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1144]
+edges = [ "s37", "s47",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1145]
+edges = [ "s37", "s48",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1146]
+edges = [ "s37", "s49",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1147]
+edges = [ "s37", "s50",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1148]
+edges = [ "s38", "s39",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1149]
+edges = [ "s38", "s40",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1150]
+edges = [ "s38", "s41",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1151]
+edges = [ "s38", "s42",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1152]
+edges = [ "s38", "s43",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1153]
+edges = [ "s38", "s44",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1154]
+edges = [ "s38", "s45",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1155]
+edges = [ "s38", "s46",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1156]
+edges = [ "s38", "s47",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1157]
+edges = [ "s38", "s48",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1158]
+edges = [ "s38", "s49",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1159]
+edges = [ "s38", "s50",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1160]
+edges = [ "s39", "s40",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1161]
+edges = [ "s39", "s41",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1162]
+edges = [ "s39", "s42",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1163]
+edges = [ "s39", "s43",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1164]
+edges = [ "s39", "s44",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1165]
+edges = [ "s39", "s45",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1166]
+edges = [ "s39", "s46",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1167]
+edges = [ "s39", "s47",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1168]
+edges = [ "s39", "s48",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1169]
+edges = [ "s39", "s49",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1170]
+edges = [ "s39", "s50",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1171]
+edges = [ "s40", "s41",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1172]
+edges = [ "s40", "s42",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1173]
+edges = [ "s40", "s43",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1174]
+edges = [ "s40", "s44",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1175]
+edges = [ "s40", "s45",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1176]
+edges = [ "s40", "s46",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1177]
+edges = [ "s40", "s47",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1178]
+edges = [ "s40", "s48",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1179]
+edges = [ "s40", "s49",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1180]
+edges = [ "s40", "s50",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1181]
+edges = [ "s41", "s42",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1182]
+edges = [ "s41", "s43",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1183]
+edges = [ "s41", "s44",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1184]
+edges = [ "s41", "s45",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1185]
+edges = [ "s41", "s46",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1186]
+edges = [ "s41", "s47",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1187]
+edges = [ "s41", "s48",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1188]
+edges = [ "s41", "s49",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1189]
+edges = [ "s41", "s50",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1190]
+edges = [ "s42", "s43",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1191]
+edges = [ "s42", "s44",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1192]
+edges = [ "s42", "s45",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1193]
+edges = [ "s42", "s46",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1194]
+edges = [ "s42", "s47",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1195]
+edges = [ "s42", "s48",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1196]
+edges = [ "s42", "s49",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1197]
+edges = [ "s42", "s50",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1198]
+edges = [ "s43", "s44",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1199]
+edges = [ "s43", "s45",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1200]
+edges = [ "s43", "s46",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1201]
+edges = [ "s43", "s47",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1202]
+edges = [ "s43", "s48",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1203]
+edges = [ "s43", "s49",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1204]
+edges = [ "s43", "s50",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1205]
+edges = [ "s44", "s45",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1206]
+edges = [ "s44", "s46",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1207]
+edges = [ "s44", "s47",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1208]
+edges = [ "s44", "s48",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1209]
+edges = [ "s44", "s49",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1210]
+edges = [ "s44", "s50",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1211]
+edges = [ "s45", "s46",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1212]
+edges = [ "s45", "s47",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1213]
+edges = [ "s45", "s48",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1214]
+edges = [ "s45", "s49",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1215]
+edges = [ "s45", "s50",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1216]
+edges = [ "s46", "s47",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1217]
+edges = [ "s46", "s48",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1218]
+edges = [ "s46", "s49",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1219]
+edges = [ "s46", "s50",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1220]
+edges = [ "s47", "s48",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1221]
+edges = [ "s47", "s49",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1222]
+edges = [ "s47", "s50",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1223]
+edges = [ "s48", "s49",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1224]
+edges = [ "s48", "s50",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1225]
+edges = [ "s49", "s50",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1226]
+edges = [ "s1", "h1",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1227]
+edges = [ "s2", "h2",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1228]
+edges = [ "s3", "h3",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1229]
+edges = [ "s4", "h4",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1230]
+edges = [ "s5", "h5",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1231]
+edges = [ "s6", "h6",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1232]
+edges = [ "s7", "h7",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1233]
+edges = [ "s8", "h8",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1234]
+edges = [ "s9", "h9",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1235]
+edges = [ "s10", "h10",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1236]
+edges = [ "s11", "h11",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1237]
+edges = [ "s12", "h12",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1238]
+edges = [ "s13", "h13",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1239]
+edges = [ "s14", "h14",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1240]
+edges = [ "s15", "h15",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1241]
+edges = [ "s16", "h16",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1242]
+edges = [ "s17", "h17",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1243]
+edges = [ "s18", "h18",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1244]
+edges = [ "s19", "h19",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1245]
+edges = [ "s20", "h20",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1246]
+edges = [ "s21", "h21",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1247]
+edges = [ "s22", "h22",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1248]
+edges = [ "s23", "h23",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1249]
+edges = [ "s24", "h24",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1250]
+edges = [ "s25", "h25",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1251]
+edges = [ "s26", "h26",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1252]
+edges = [ "s27", "h27",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1253]
+edges = [ "s28", "h28",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1254]
+edges = [ "s29", "h29",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1255]
+edges = [ "s30", "h30",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1256]
+edges = [ "s31", "h31",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1257]
+edges = [ "s32", "h32",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1258]
+edges = [ "s33", "h33",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1259]
+edges = [ "s34", "h34",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1260]
+edges = [ "s35", "h35",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1261]
+edges = [ "s36", "h36",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1262]
+edges = [ "s37", "h37",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1263]
+edges = [ "s38", "h38",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1264]
+edges = [ "s39", "h39",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1265]
+edges = [ "s40", "h40",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1266]
+edges = [ "s41", "h41",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1267]
+edges = [ "s42", "h42",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1268]
+edges = [ "s43", "h43",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1269]
+edges = [ "s44", "h44",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1270]
+edges = [ "s45", "h45",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1271]
+edges = [ "s46", "h46",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1272]
+edges = [ "s47", "h47",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1273]
+edges = [ "s48", "h48",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1274]
+edges = [ "s49", "h49",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false
+
+[l1275]
+edges = [ "s50", "h50",]
+dataRate = "100Gbps"
+delay = "1ms"
+pcap = false

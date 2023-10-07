@@ -39,6 +39,8 @@ public:
 protected:
   void HandshakeSuccessful (Ptr<const RemoteSwitch> sw);
   void ApplyRouting (uint64_t swDpId);
+  void ApplyRouting(uint64_t swDpId, Ptr<Node> host, Ptr<Node> nextJump);
+  void ApplyRoutingFromPath(std::vector<Ptr<Node>> path);
   void FindReferenceBandwidth();
 
 private:
@@ -48,7 +50,7 @@ private:
   void AddSwitchHostKey(Ptr<Node> switchNode, Ptr<Node> hostNode);
   void StorePath(Ptr<Node> switchNode, Ptr<Node> hostNode, std::vector<Ptr<Node>> path);
   void CleanPaths(Ptr<Node> switchNode, Ptr<Node> hostNode);
-  std::vector<std::vector<Ptr<Node>>> Search(Ptr<Node> init, Ptr<Node> destiny, std::vector<Ptr<Node>> ignore);
+  std::vector<std::vector<Ptr<Node>>> Search(Ptr<Node> init, Ptr<Node> destiny, std::vector<Ptr<Node>>& ignore);
   void FindAllPaths(Ptr<Node> source, Ptr<Node> destination);
   std::vector<Ptr<Node>> GetShortesPath(Ptr<Node> source, Ptr<Node> destination);
 

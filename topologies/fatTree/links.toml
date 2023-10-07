@@ -1,0 +1,155 @@
+[l1]
+edges = ["tor1", "server1"]
+
+[l2]
+edges = ["tor1", "server2"]
+
+[l3]
+edges = ["tor2", "server3"]
+
+[l4]
+edges = ["tor2", "server4"]
+
+[l5]
+edges = ["tor3", "server5"]
+
+[l6]
+edges = ["tor3", "server6"]
+
+[l7]
+edges = ["tor4", "server7"]
+
+[l8]
+edges = ["tor4", "server8"]
+
+[l9]
+edges = ["tor5", "server9"]
+
+[l10]
+edges = ["tor5", "server10"]
+
+[l11]
+edges = ["tor6", "server11"]
+
+[l12]
+edges = ["tor6", "server12"]
+
+[l13]
+edges = ["tor7", "server13"]
+
+[l14]
+edges = ["tor7", "server14"]
+
+[l15]
+edges = ["tor8", "server15"]
+
+[l16]
+edges = ["tor8", "server16"]
+
+[l17]
+edges = ["agg1", "tor1"]
+
+[l18]
+edges = ["agg1", "tor2"]
+
+[l19]
+edges = ["agg2", "tor1"]
+
+[l20]
+edges = ["agg2", "tor2"]
+
+[l21]
+edges = ["agg3", "tor3"]
+
+[l22]
+edges = ["agg3", "tor4"]
+
+[l23]
+edges = ["agg4", "tor3"]
+
+[l24]
+edges = ["agg4", "tor4"]
+
+[l25]
+edges = ["agg5", "tor5"]
+
+[l26]
+edges = ["agg5", "tor6"]
+
+[l27]
+edges = ["agg6", "tor5"]
+
+[l28]
+edges = ["agg6", "tor6"]
+
+[l29]
+edges = ["agg7", "tor7"]
+
+[l30]
+edges = ["agg7", "tor8"]
+
+[l31]
+edges = ["agg8", "tor7"]
+
+[l32]
+edges = ["agg8", "tor8"]
+
+[l33]
+edges = ["agg1", "agg2"]
+
+[l34]
+edges = ["agg3", "agg4"]
+
+[l35]
+edges = ["agg5", "agg6"]
+
+[l36]
+edges = ["agg7", "agg8"]
+
+[l37]
+edges = ["agg1", "core1"]
+
+[l38]
+edges = ["agg1", "core2"]
+
+[l39]
+edges = ["agg2", "core1"]
+
+[l40]
+edges = ["agg2", "core2"]
+
+[l41]
+edges = ["agg3", "core1"]
+
+[l42]
+edges = ["agg3", "core2"]
+
+[l43]
+edges = ["agg4", "core1"]
+
+[l44]
+edges = ["agg4", "core2"]
+
+[l45]
+edges = ["agg5", "core1"]
+
+[l46]
+edges = ["agg5", "core2"]
+
+[l47]
+edges = ["agg6", "core1"]
+
+[l48]
+edges = ["agg6", "core2"]
+
+[l49]
+edges = ["agg7", "core1"]
+
+[l50]
+edges = ["agg7", "core2"]
+
+[l51]
+edges = ["agg8", "core1"]
+
+[l52]
+edges = ["agg8", "core2"]

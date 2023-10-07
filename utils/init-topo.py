@@ -108,11 +108,11 @@ def create_apps(topo_path):
 
         for i in range(args.n_apps):
             apps[f"app{i+1}"] = {
-                "type": "<type>",
+                "type": "constSend",
                 "startTime": "1s",
                 "stopTime": "60s",
-                "host": "<host>",
-                "remote": "<remote>",
+                "host": f"h{i+1}",
+                "remote": f"h{i+2}",
             }
 
         toml.dump(apps, apps_file)
@@ -121,6 +121,25 @@ def create_apps(topo_path):
 # Create energy-templates.toml
 def create_energy_templates(topo_path):
     open(os.path.join(topo_path, "energy-templates.toml"), "w")
+
+# Create flex.json
+def create_estimate(topo_path):
+    with open(os.path.join(topo_path, "estimate.json"), "w") as estimate_file:
+        estimate_file.write("{\n")
+        for i in range(1, args.n_switches):
+            estimate_file.write(f"\t\"s{i}\": [\n\t\t0,\n\t\t0,\n\t\t0,\n\t\t0,\n\t\t0,\n\t\t0\n\t],\n")
+        estimate_file.write(f"\t\"s{i+1}\": [\n\t\t0,\n\t\t0,\n\t\t0,\n\t\t0,\n\t\t0,\n\t\t0\n\t]\n")
+        estimate_file.write("}\n")
+
+# Create flex.json
+def create_flex(topo_path):
+    with open(os.path.join(topo_path, "flex.json"), "w") as flex_file:
+        flex_file.write("{\n")
+        for i in range(1, args.n_switches):
+            flex_file.write(f"\t\"s{i}\": [\n\t\t0,\n\t\t0,\n\t\t0,\n\t\t0,\n\t\t0,\n\t\t0\n\t],\n")
+        flex_file.write(f"\t\"s{i+1}\": [\n\t\t0,\n\t\t0,\n\t\t0,\n\t\t0,\n\t\t0,\n\t\t0\n\t]\n")
+        flex_file.write("}\n")
+
 
 
 def create_topo():
@@ -138,6 +157,8 @@ def create_topo():
     create_links(topo_path)
     create_apps(topo_path)
     create_energy_templates(topo_path)
+    create_estimate(topo_path)
+    create_flex(topo_path)
 
 
 if __name__ == "__main__":

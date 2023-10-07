@@ -1,0 +1,2762 @@
+[l1]
+edges = ["core1", "core2"]
+dataRate = "50Gb/s"
+delay = "834ns"
+
+[l2]
+edges = ["core3", "core4"]
+dataRate = "50Gb/s"
+delay = "834ns"
+
+[l3]
+edges = ["core5", "core6"]
+dataRate = "50Gb/s"
+delay = "834ns"
+
+[l4]
+edges = ["core7", "core8"]
+dataRate = "50Gb/s"
+delay = "834ns"
+
+[l5]
+edges = ["core2", "core3"]
+dataRate = "50Gb/s"
+delay = "33us"
+
+[l6]
+edges = ["core6", "core7"]
+dataRate = "50Gb/s"
+delay = "33us"
+
+[l7]
+edges = ["core1", "core4"]
+dataRate = "50Gb/s"
+delay = "33us"
+
+[l8]
+edges = ["core5", "core8"]
+dataRate = "50Gb/s"
+delay = "33us"
+
+[l9]
+edges = ["core2", "core7"]
+dataRate = "50Gb/s"
+delay = "2ms"
+
+[l10]
+edges = ["core3", "core6"]
+dataRate = "50Gb/s"
+delay = "2ms"
+
+[l11]
+edges = ["core1", "core8"]
+dataRate = "50Gb/s"
+delay = "2ms"
+
+[l12]
+edges = ["core4", "core5"]
+dataRate = "50Gb/s"
+delay = "2ms"
+
+[l13]
+edges = ["core1", "internet"]
+dataRate = "100Gb/s"
+delay = "834ns"
+
+[l14]
+edges = ["core2", "internet"]
+dataRate = "100Gb/s"
+delay = "834ns"
+
+[l15]
+edges = ["core3", "internet"]
+dataRate = "100Gb/s"
+delay = "834ns"
+
+[l16]
+edges = ["core4", "internet"]
+dataRate = "100Gb/s"
+delay = "834ns"
+
+[link17]
+edges = ["back1", "back2"]
+dataRate = "20Gb/s"
+delay = "834ns"
+
+[link18]
+edges = ["back3", "back4"]
+dataRate = "20Gb/s"
+delay = "834ns"
+
+[link19]
+edges = ["back5", "back6"]
+dataRate = "20Gb/s"
+delay = "834ns"
+
+[link20]
+edges = ["back7", "back8"]
+dataRate = "20Gb/s"
+delay = "834ns"
+
+[link21]
+edges = ["back9", "back10"]
+dataRate = "20Gb/s"
+delay = "834ns"
+
+[link22]
+edges = ["back11", "back12"]
+dataRate = "20Gb/s"
+delay = "834ns"
+
+[link23]
+edges = ["back13", "back14"]
+dataRate = "20Gb/s"
+delay = "834ns"
+
+[link24]
+edges = ["back15", "back16"]
+dataRate = "20Gb/s"
+delay = "834ns"
+
+[link25]
+edges = ["back17", "back18"]
+dataRate = "20Gb/s"
+delay = "834ns"
+
+[link26]
+edges = ["back19", "back20"]
+dataRate = "20Gb/s"
+delay = "834ns"
+
+[link27]
+edges = ["back21", "back22"]
+dataRate = "20Gb/s"
+delay = "834ns"
+
+[link28]
+edges = ["back23", "back24"]
+dataRate = "20Gb/s"
+delay = "834ns"
+
+[link29]
+edges = ["back25", "back26"]
+dataRate = "20Gb/s"
+delay = "834ns"
+
+[link30]
+edges = ["back27", "back28"]
+dataRate = "20Gb/s"
+delay = "834ns"
+
+[link31]
+edges = ["back29", "back30"]
+dataRate = "20Gb/s"
+delay = "834ns"
+
+[link32]
+edges = ["back31", "back32"]
+dataRate = "20Gb/s"
+delay = "834ns"
+
+[link33]
+edges = ["back33", "back34"]
+dataRate = "20Gb/s"
+delay = "834ns"
+
+[link34]
+edges = ["back35", "back36"]
+dataRate = "20Gb/s"
+delay = "834ns"
+
+[link35]
+edges = ["back37", "back38"]
+dataRate = "20Gb/s"
+delay = "834ns"
+
+[link36]
+edges = ["back39", "back40"]
+dataRate = "20Gb/s"
+delay = "834ns"
+
+[link37]
+edges = ["back41", "back42"]
+dataRate = "20Gb/s"
+delay = "834ns"
+
+[link38]
+edges = ["back43", "back44"]
+dataRate = "20Gb/s"
+delay = "834ns"
+
+[link39]
+edges = ["back45", "back46"]
+dataRate = "20Gb/s"
+delay = "834ns"
+
+[link40]
+edges = ["back47", "back48"]
+dataRate = "20Gb/s"
+delay = "834ns"
+
+[link41]
+edges = ["back49", "back50"]
+dataRate = "20Gb/s"
+delay = "834ns"
+
+[link42]
+edges = ["back51", "back52"]
+dataRate = "20Gb/s"
+delay = "834ns"
+
+[link43]
+edges = ["back53", "back54"]
+dataRate = "20Gb/s"
+delay = "834ns"
+
+[link44]
+edges = ["back55", "back56"]
+dataRate = "20Gb/s"
+delay = "834ns"
+
+
+############################
+
+[link45]
+edges = ["back1", "core1"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link46]
+edges = ["back2", "core7"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link47]
+edges = ["back3", "core1"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link48]
+edges = ["back4", "core7"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link49]
+edges = ["back5", "core1"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link50]
+edges = ["back6", "core7"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link51]
+edges = ["back7", "core1"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link52]
+edges = ["back8", "core7"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link53]
+edges = ["back9", "core1"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link54]
+edges = ["back10", "core7"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link55]
+edges = ["back11", "core1"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link56]
+edges = ["back12", "core7"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link57]
+edges = ["back13", "core1"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link58]
+edges = ["back14", "core7"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+##############################
+
+[link59]
+edges = ["back15", "core2"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link60]
+edges = ["back16", "core8"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link61]
+edges = ["back17", "core2"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link62]
+edges = ["back18", "core8"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link63]
+edges = ["back19", "core2"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link64]
+edges = ["back20", "core8"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link65]
+edges = ["back21", "core2"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link66]
+edges = ["back22", "core8"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link67]
+edges = ["back23", "core2"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link68]
+edges = ["back24", "core8"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link69]
+edges = ["back25", "core2"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link70]
+edges = ["back26", "core8"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link71]
+edges = ["back27", "core2"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link72]
+edges = ["back28", "core8"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+
+##############################
+
+[link73]
+edges = ["back29", "core3"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link74]
+edges = ["back30", "core5"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link75]
+edges = ["back31", "core3"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link76]
+edges = ["back32", "core5"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link77]
+edges = ["back33", "core3"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link78]
+edges = ["back34", "core5"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link79]
+edges = ["back35", "core3"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link80]
+edges = ["back36", "core5"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link81]
+edges = ["back37", "core3"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link82]
+edges = ["back38", "core5"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link83]
+edges = ["back39", "core3"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link84]
+edges = ["back40", "core5"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link85]
+edges = ["back41", "core3"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link86]
+edges = ["back42", "core5"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+
+##############################
+
+[link87]
+edges = ["back43", "core4"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link88]
+edges = ["back44", "core6"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link89]
+edges = ["back45", "core4"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link90]
+edges = ["back46", "core6"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link91]
+edges = ["back47", "core4"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link92]
+edges = ["back48", "core6"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link93]
+edges = ["back49", "core4"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link94]
+edges = ["back50", "core6"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link95]
+edges = ["back51", "core4"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link96]
+edges = ["back52", "core6"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link97]
+edges = ["back53", "core4"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link98]
+edges = ["back54", "core6"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link99]
+edges = ["back55", "core4"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+[link100]
+edges = ["back56", "core6"]
+dataRate = "20Gb/s"
+delay = "1ms"
+
+###################################
+###################################
+###################################
+
+[link101]
+edges = ["back1", "metro1"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link102]
+edges = ["back1", "metro2"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link103]
+edges = ["back2", "metro1"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link104]
+edges = ["back2", "metro2"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link105]
+edges = ["back3", "metro3"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link106]
+edges = ["back3", "metro4"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link107]
+edges = ["back4", "metro3"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link108]
+edges = ["back4", "metro4"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link109]
+edges = ["back5", "metro5"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link110]
+edges = ["back5", "metro6"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link111]
+edges = ["back6", "metro5"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link112]
+edges = ["back6", "metro6"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link113]
+edges = ["back7", "metro7"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link114]
+edges = ["back7", "metro8"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link115]
+edges = ["back8", "metro7"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link116]
+edges = ["back8", "metro8"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link117]
+edges = ["back9", "metro9"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link118]
+edges = ["back9", "metro10"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link119]
+edges = ["back10", "metro9"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link120]
+edges = ["back10", "metro10"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link121]
+edges = ["back11", "metro11"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link122]
+edges = ["back11", "metro12"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link123]
+edges = ["back12", "metro11"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link124]
+edges = ["back12", "metro12"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link125]
+edges = ["back13", "metro13"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link126]
+edges = ["back13", "metro14"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link127]
+edges = ["back14", "metro13"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link128]
+edges = ["back14", "metro14"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link129]
+edges = ["back15", "metro15"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link130]
+edges = ["back15", "metro16"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link131]
+edges = ["back16", "metro15"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link132]
+edges = ["back16", "metro16"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link133]
+edges = ["back17", "metro17"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link134]
+edges = ["back17", "metro18"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link135]
+edges = ["back18", "metro17"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link136]
+edges = ["back18", "metro18"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link137]
+edges = ["back19", "metro19"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link138]
+edges = ["back19", "metro20"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link139]
+edges = ["back20", "metro19"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link140]
+edges = ["back20", "metro20"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link141]
+edges = ["back21", "metro21"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link142]
+edges = ["back21", "metro22"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link143]
+edges = ["back22", "metro21"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link144]
+edges = ["back22", "metro22"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link145]
+edges = ["back23", "metro23"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link146]
+edges = ["back23", "metro24"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link147]
+edges = ["back24", "metro23"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link148]
+edges = ["back24", "metro24"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link149]
+edges = ["back25", "metro25"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link150]
+edges = ["back25", "metro26"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link151]
+edges = ["back26", "metro25"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link152]
+edges = ["back26", "metro26"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link153]
+edges = ["back27", "metro27"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link154]
+edges = ["back27", "metro28"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link155]
+edges = ["back28", "metro27"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link156]
+edges = ["back28", "metro28"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link157]
+edges = ["back29", "metro29"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link158]
+edges = ["back29", "metro30"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link159]
+edges = ["back30", "metro29"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link160]
+edges = ["back30", "metro30"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link161]
+edges = ["back31", "metro31"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link162]
+edges = ["back31", "metro32"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link163]
+edges = ["back32", "metro31"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link164]
+edges = ["back32", "metro32"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link165]
+edges = ["back33", "metro33"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link166]
+edges = ["back33", "metro34"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link167]
+edges = ["back34", "metro33"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link168]
+edges = ["back34", "metro34"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link169]
+edges = ["back35", "metro35"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link170]
+edges = ["back35", "metro36"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link171]
+edges = ["back36", "metro35"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link172]
+edges = ["back36", "metro36"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link173]
+edges = ["back37", "metro37"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link174]
+edges = ["back37", "metro38"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link175]
+edges = ["back38", "metro37"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link176]
+edges = ["back38", "metro38"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link177]
+edges = ["back39", "metro39"]
+dataRate = "10Gb/s"
+
+[link178]
+edges = ["back39", "metro40"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link179]
+edges = ["back40", "metro39"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link180]
+edges = ["back40", "metro40"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link181]
+edges = ["back41", "metro41"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link182]
+edges = ["back41", "metro42"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link183]
+edges = ["back42", "metro41"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link184]
+edges = ["back42", "metro42"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link185]
+edges = ["back43", "metro43"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link186]
+edges = ["back43", "metro44"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link187]
+edges = ["back44", "metro43"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link188]
+edges = ["back44", "metro44"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link189]
+edges = ["back45", "metro45"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link190]
+edges = ["back45", "metro46"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link191]
+edges = ["back46", "metro45"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link192]
+edges = ["back46", "metro46"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link193]
+edges = ["back47", "metro47"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link194]
+edges = ["back47", "metro48"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link195]
+edges = ["back48", "metro47"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link196]
+edges = ["back48", "metro48"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link197]
+edges = ["back49", "metro49"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link198]
+edges = ["back49", "metro50"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link199]
+edges = ["back50", "metro49"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link200]
+edges = ["back50", "metro50"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link201]
+edges = ["back51", "metro51"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link202]
+edges = ["back51", "metro52"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link203]
+edges = ["back52", "metro51"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link204]
+edges = ["back52", "metro52"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link205]
+edges = ["back53", "metro53"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link206]
+edges = ["back53", "metro54"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link207]
+edges = ["back54", "metro53"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link208]
+edges = ["back54", "metro54"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link209]
+edges = ["back55", "metro55"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link210]
+edges = ["back55", "metro56"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link211]
+edges = ["back56", "metro55"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+[link212]
+edges = ["back56", "metro56"]
+dataRate = "10Gb/s"
+delay = "834ns"
+
+###############################
+###############################
+###############################
+[link213]
+edges = ["feeder1", "metro1"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link214]
+edges = ["feeder1", "metro2"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link215]
+edges = ["feeder2", "metro1"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link216]
+edges = ["feeder2", "metro2"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link217]
+edges = ["feeder3", "metro1"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link218]
+edges = ["feeder3", "metro2"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link219]
+edges = ["feeder4", "metro1"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link220]
+edges = ["feeder4", "metro2"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link221]
+edges = ["feeder5", "metro3"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link222]
+edges = ["feeder5", "metro4"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link223]
+edges = ["feeder6", "metro3"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link224]
+edges = ["feeder6", "metro4"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link225]
+edges = ["feeder7", "metro3"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link226]
+edges = ["feeder7", "metro4"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link227]
+edges = ["feeder8", "metro3"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link228]
+edges = ["feeder8", "metro4"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link229]
+edges = ["feeder9", "metro5"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link230]
+edges = ["feeder9", "metro6"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link231]
+edges = ["feeder10", "metro5"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link232]
+edges = ["feeder10", "metro6"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link233]
+edges = ["feeder11", "metro5"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link234]
+edges = ["feeder11", "metro6"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link235]
+edges = ["feeder12", "metro5"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link236]
+edges = ["feeder12", "metro6"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link237]
+edges = ["feeder13", "metro7"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link238]
+edges = ["feeder13", "metro8"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link239]
+edges = ["feeder14", "metro7"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link240]
+edges = ["feeder14", "metro8"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link241]
+edges = ["feeder15", "metro7"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link242]
+edges = ["feeder15", "metro8"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link243]
+edges = ["feeder16", "metro7"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link244]
+edges = ["feeder16", "metro8"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link245]
+edges = ["feeder17", "metro9"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link246]
+edges = ["feeder17", "metro10"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link247]
+edges = ["feeder18", "metro9"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link248]
+edges = ["feeder18", "metro10"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link249]
+edges = ["feeder19", "metro9"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link250]
+edges = ["feeder19", "metro10"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link251]
+edges = ["feeder20", "metro9"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link252]
+edges = ["feeder20", "metro10"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link253]
+edges = ["feeder21", "metro11"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link254]
+edges = ["feeder21", "metro12"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link255]
+edges = ["feeder22", "metro11"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link256]
+edges = ["feeder22", "metro12"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link257]
+edges = ["feeder23", "metro11"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link258]
+edges = ["feeder23", "metro12"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link259]
+edges = ["feeder24", "metro11"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link260]
+edges = ["feeder24", "metro12"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link261]
+edges = ["feeder25", "metro13"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link262]
+edges = ["feeder25", "metro14"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link263]
+edges = ["feeder26", "metro13"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link264]
+edges = ["feeder26", "metro14"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link265]
+edges = ["feeder27", "metro13"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link266]
+edges = ["feeder27", "metro14"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link267]
+edges = ["feeder28", "metro13"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link268]
+edges = ["feeder28", "metro14"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link269]
+edges = ["feeder29", "metro15"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link270]
+edges = ["feeder29", "metro16"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link271]
+edges = ["feeder30", "metro15"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link272]
+edges = ["feeder30", "metro16"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link273]
+edges = ["feeder31", "metro15"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link274]
+edges = ["feeder31", "metro16"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link275]
+edges = ["feeder32", "metro15"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link276]
+edges = ["feeder32", "metro16"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link277]
+edges = ["feeder33", "metro17"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link278]
+edges = ["feeder33", "metro18"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link279]
+edges = ["feeder34", "metro17"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link280]
+edges = ["feeder34", "metro18"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link281]
+edges = ["feeder35", "metro17"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link282]
+edges = ["feeder35", "metro18"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link283]
+edges = ["feeder36", "metro17"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link284]
+edges = ["feeder36", "metro18"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link285]
+edges = ["feeder37", "metro19"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link286]
+edges = ["feeder37", "metro20"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link287]
+edges = ["feeder38", "metro19"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link288]
+edges = ["feeder38", "metro20"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link289]
+edges = ["feeder39", "metro19"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link290]
+edges = ["feeder39", "metro20"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link291]
+edges = ["feeder40", "metro19"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link292]
+edges = ["feeder40", "metro20"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link293]
+edges = ["feeder41", "metro21"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link294]
+edges = ["feeder41", "metro22"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link295]
+edges = ["feeder42", "metro21"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link296]
+edges = ["feeder42", "metro22"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link297]
+edges = ["feeder43", "metro21"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link298]
+edges = ["feeder43", "metro22"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link299]
+edges = ["feeder44", "metro21"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link300]
+edges = ["feeder44", "metro22"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link301]
+edges = ["feeder45", "metro23"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link302]
+edges = ["feeder45", "metro24"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link303]
+edges = ["feeder46", "metro23"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link304]
+edges = ["feeder46", "metro24"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link305]
+edges = ["feeder47", "metro23"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link306]
+edges = ["feeder47", "metro24"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link307]
+edges = ["feeder48", "metro23"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link308]
+edges = ["feeder48", "metro24"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link309]
+edges = ["feeder49", "metro25"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link310]
+edges = ["feeder49", "metro26"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link311]
+edges = ["feeder50", "metro25"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link312]
+edges = ["feeder50", "metro26"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link313]
+edges = ["feeder51", "metro25"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link314]
+edges = ["feeder51", "metro26"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link315]
+edges = ["feeder52", "metro25"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link316]
+edges = ["feeder52", "metro26"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link317]
+edges = ["feeder53", "metro27"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link318]
+edges = ["feeder53", "metro28"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link319]
+edges = ["feeder54", "metro27"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link320]
+edges = ["feeder54", "metro28"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link321]
+edges = ["feeder55", "metro27"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link322]
+edges = ["feeder55", "metro28"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link323]
+edges = ["feeder56", "metro27"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link324]
+edges = ["feeder56", "metro28"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link325]
+edges = ["feeder57", "metro29"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link326]
+edges = ["feeder57", "metro30"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link327]
+edges = ["feeder58", "metro29"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link328]
+edges = ["feeder58", "metro30"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link329]
+edges = ["feeder59", "metro29"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link330]
+edges = ["feeder59", "metro30"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link331]
+edges = ["feeder60", "metro29"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link332]
+edges = ["feeder60", "metro30"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link333]
+edges = ["feeder61", "metro31"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link334]
+edges = ["feeder61", "metro32"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link335]
+edges = ["feeder62", "metro31"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link336]
+edges = ["feeder62", "metro32"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link337]
+edges = ["feeder63", "metro31"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link338]
+edges = ["feeder63", "metro32"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link339]
+edges = ["feeder64", "metro31"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link340]
+edges = ["feeder64", "metro32"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link341]
+edges = ["feeder65", "metro33"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link342]
+edges = ["feeder65", "metro34"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link343]
+edges = ["feeder66", "metro33"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link344]
+edges = ["feeder66", "metro34"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link345]
+edges = ["feeder67", "metro33"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link346]
+edges = ["feeder67", "metro34"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link347]
+edges = ["feeder68", "metro33"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link348]
+edges = ["feeder68", "metro34"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link349]
+edges = ["feeder69", "metro35"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link350]
+edges = ["feeder69", "metro36"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link351]
+edges = ["feeder70", "metro35"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link352]
+edges = ["feeder70", "metro36"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link353]
+edges = ["feeder71", "metro35"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link354]
+edges = ["feeder71", "metro36"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link355]
+edges = ["feeder72", "metro35"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link356]
+edges = ["feeder72", "metro36"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link357]
+edges = ["feeder73", "metro37"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link358]
+edges = ["feeder73", "metro38"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link359]
+edges = ["feeder74", "metro37"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link360]
+edges = ["feeder74", "metro38"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link361]
+edges = ["feeder75", "metro37"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link362]
+edges = ["feeder75", "metro38"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link363]
+edges = ["feeder76", "metro37"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link364]
+edges = ["feeder76", "metro38"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link365]
+edges = ["feeder77", "metro39"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link366]
+edges = ["feeder77", "metro40"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link367]
+edges = ["feeder78", "metro39"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link368]
+edges = ["feeder78", "metro40"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link369]
+edges = ["feeder79", "metro39"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link370]
+edges = ["feeder79", "metro40"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link371]
+edges = ["feeder80", "metro39"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link372]
+edges = ["feeder80", "metro40"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link373]
+edges = ["feeder81", "metro41"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link374]
+edges = ["feeder81", "metro42"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link375]
+edges = ["feeder82", "metro41"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link376]
+edges = ["feeder82", "metro42"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link377]
+edges = ["feeder83", "metro41"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link378]
+edges = ["feeder83", "metro42"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link379]
+edges = ["feeder84", "metro41"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link380]
+edges = ["feeder84", "metro42"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link381]
+edges = ["feeder85", "metro43"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link382]
+edges = ["feeder85", "metro44"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link383]
+edges = ["feeder86", "metro43"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link384]
+edges = ["feeder86", "metro44"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link385]
+edges = ["feeder87", "metro43"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link386]
+edges = ["feeder87", "metro44"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link387]
+edges = ["feeder88", "metro43"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link388]
+edges = ["feeder88", "metro44"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link389]
+edges = ["feeder89", "metro45"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link390]
+edges = ["feeder89", "metro46"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link391]
+edges = ["feeder90", "metro45"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link392]
+edges = ["feeder90", "metro46"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link393]
+edges = ["feeder91", "metro45"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link394]
+edges = ["feeder91", "metro46"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link395]
+edges = ["feeder92", "metro45"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link396]
+edges = ["feeder92", "metro46"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link397]
+edges = ["feeder93", "metro47"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link398]
+edges = ["feeder93", "metro48"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link399]
+edges = ["feeder94", "metro47"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link400]
+edges = ["feeder94", "metro48"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link401]
+edges = ["feeder95", "metro47"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link402]
+edges = ["feeder95", "metro48"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link403]
+edges = ["feeder96", "metro47"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link404]
+edges = ["feeder96", "metro48"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link405]
+edges = ["feeder97", "metro49"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link406]
+edges = ["feeder97", "metro50"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link407]
+edges = ["feeder98", "metro49"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link408]
+edges = ["feeder98", "metro50"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link409]
+edges = ["feeder99", "metro49"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link410]
+edges = ["feeder99", "metro50"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link411]
+edges = ["feeder100", "metro49"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link412]
+edges = ["feeder100", "metro50"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link413]
+edges = ["feeder101", "metro51"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link414]
+edges = ["feeder101", "metro52"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link415]
+edges = ["feeder102", "metro51"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link416]
+edges = ["feeder102", "metro52"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link417]
+edges = ["feeder103", "metro51"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link418]
+edges = ["feeder103", "metro52"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link419]
+edges = ["feeder104", "metro51"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link420]
+edges = ["feeder104", "metro52"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link421]
+edges = ["feeder105", "metro53"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link422]
+edges = ["feeder105", "metro54"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link423]
+edges = ["feeder106", "metro53"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link424]
+edges = ["feeder106", "metro54"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link425]
+edges = ["feeder107", "metro53"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link426]
+edges = ["feeder107", "metro54"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link427]
+edges = ["feeder108", "metro53"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link428]
+edges = ["feeder108", "metro54"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link429]
+edges = ["feeder109", "metro55"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link430]
+edges = ["feeder109", "metro56"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link431]
+edges = ["feeder110", "metro55"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link432]
+edges = ["feeder110", "metro56"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link433]
+edges = ["feeder111", "metro55"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link434]
+edges = ["feeder111", "metro56"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link435]
+edges = ["feeder112", "metro55"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+[link436]
+edges = ["feeder112", "metro56"]
+dataRate = "10Gb/s"
+delay = "83us"
+
+############# HOSTS CONNECTIONS ###########
+[link437]
+edges = ["internet", "host_internet"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link438]
+edges = ["feeder1", "host_feeder1"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link439]
+edges = ["feeder2", "host_feeder2"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link440]
+edges = ["feeder3", "host_feeder3"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link441]
+edges = ["feeder4", "host_feeder4"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link442]
+edges = ["feeder5", "host_feeder5"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link443]
+edges = ["feeder6", "host_feeder6"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link444]
+edges = ["feeder7", "host_feeder7"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link445]
+edges = ["feeder8", "host_feeder8"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link446]
+edges = ["feeder9", "host_feeder9"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link447]
+edges = ["feeder10", "host_feeder10"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link448]
+edges = ["feeder11", "host_feeder11"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link449]
+edges = ["feeder12", "host_feeder12"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link450]
+edges = ["feeder13", "host_feeder13"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link451]
+edges = ["feeder14", "host_feeder14"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link452]
+edges = ["feeder15", "host_feeder15"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link453]
+edges = ["feeder16", "host_feeder16"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link454]
+edges = ["feeder17", "host_feeder17"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link455]
+edges = ["feeder18", "host_feeder18"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link456]
+edges = ["feeder19", "host_feeder19"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link457]
+edges = ["feeder20", "host_feeder20"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link458]
+edges = ["feeder21", "host_feeder21"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link459]
+edges = ["feeder22", "host_feeder22"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link460]
+edges = ["feeder23", "host_feeder23"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link461]
+edges = ["feeder24", "host_feeder24"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link462]
+edges = ["feeder25", "host_feeder25"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link463]
+edges = ["feeder26", "host_feeder26"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link464]
+edges = ["feeder27", "host_feeder27"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link465]
+edges = ["feeder28", "host_feeder28"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link466]
+edges = ["feeder29", "host_feeder29"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link467]
+edges = ["feeder30", "host_feeder30"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link468]
+edges = ["feeder31", "host_feeder31"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link469]
+edges = ["feeder32", "host_feeder32"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link470]
+edges = ["feeder33", "host_feeder33"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link471]
+edges = ["feeder34", "host_feeder34"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link472]
+edges = ["feeder35", "host_feeder35"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link473]
+edges = ["feeder36", "host_feeder36"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link474]
+edges = ["feeder37", "host_feeder37"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link475]
+edges = ["feeder38", "host_feeder38"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link476]
+edges = ["feeder39", "host_feeder39"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link477]
+edges = ["feeder40", "host_feeder40"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link478]
+edges = ["feeder41", "host_feeder41"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link479]
+edges = ["feeder42", "host_feeder42"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link480]
+edges = ["feeder43", "host_feeder43"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link481]
+edges = ["feeder44", "host_feeder44"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link482]
+edges = ["feeder45", "host_feeder45"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link483]
+edges = ["feeder46", "host_feeder46"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link484]
+edges = ["feeder47", "host_feeder47"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link485]
+edges = ["feeder48", "host_feeder48"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link486]
+edges = ["feeder49", "host_feeder49"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link487]
+edges = ["feeder50", "host_feeder50"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link488]
+edges = ["feeder51", "host_feeder51"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link489]
+edges = ["feeder52", "host_feeder52"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link490]
+edges = ["feeder53", "host_feeder53"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link491]
+edges = ["feeder54", "host_feeder54"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link492]
+edges = ["feeder55", "host_feeder55"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link493]
+edges = ["feeder56", "host_feeder56"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link494]
+edges = ["feeder57", "host_feeder57"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link495]
+edges = ["feeder58", "host_feeder58"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link496]
+edges = ["feeder59", "host_feeder59"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link497]
+edges = ["feeder60", "host_feeder60"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link498]
+edges = ["feeder61", "host_feeder61"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link499]
+edges = ["feeder62", "host_feeder62"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link500]
+edges = ["feeder63", "host_feeder63"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link501]
+edges = ["feeder64", "host_feeder64"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link502]
+edges = ["feeder65", "host_feeder65"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link503]
+edges = ["feeder66", "host_feeder66"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link504]
+edges = ["feeder67", "host_feeder67"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link505]
+edges = ["feeder68", "host_feeder68"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link506]
+edges = ["feeder69", "host_feeder69"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link507]
+edges = ["feeder70", "host_feeder70"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link508]
+edges = ["feeder71", "host_feeder71"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link509]
+edges = ["feeder72", "host_feeder72"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link510]
+edges = ["feeder73", "host_feeder73"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link511]
+edges = ["feeder74", "host_feeder74"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link512]
+edges = ["feeder75", "host_feeder75"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link513]
+edges = ["feeder76", "host_feeder76"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link514]
+edges = ["feeder77", "host_feeder77"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link515]
+edges = ["feeder78", "host_feeder78"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link516]
+edges = ["feeder79", "host_feeder79"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link517]
+edges = ["feeder80", "host_feeder80"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link518]
+edges = ["feeder81", "host_feeder81"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link519]
+edges = ["feeder82", "host_feeder82"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link520]
+edges = ["feeder83", "host_feeder83"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link521]
+edges = ["feeder84", "host_feeder84"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link522]
+edges = ["feeder85", "host_feeder85"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link523]
+edges = ["feeder86", "host_feeder86"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link524]
+edges = ["feeder87", "host_feeder87"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link525]
+edges = ["feeder88", "host_feeder88"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link526]
+edges = ["feeder89", "host_feeder89"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link527]
+edges = ["feeder90", "host_feeder90"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link528]
+edges = ["feeder91", "host_feeder91"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link529]
+edges = ["feeder92", "host_feeder92"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link530]
+edges = ["feeder93", "host_feeder93"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link531]
+edges = ["feeder94", "host_feeder94"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link532]
+edges = ["feeder95", "host_feeder95"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link533]
+edges = ["feeder96", "host_feeder96"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link534]
+edges = ["feeder97", "host_feeder97"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link535]
+edges = ["feeder98", "host_feeder98"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link536]
+edges = ["feeder99", "host_feeder99"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link537]
+edges = ["feeder100", "host_feeder100"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link538]
+edges = ["feeder101", "host_feeder101"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link539]
+edges = ["feeder102", "host_feeder102"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link540]
+edges = ["feeder103", "host_feeder103"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link541]
+edges = ["feeder104", "host_feeder104"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link542]
+edges = ["feeder105", "host_feeder105"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link543]
+edges = ["feeder106", "host_feeder106"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link544]
+edges = ["feeder107", "host_feeder107"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link545]
+edges = ["feeder108", "host_feeder108"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link546]
+edges = ["feeder109", "host_feeder109"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link547]
+edges = ["feeder110", "host_feeder110"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link548]
+edges = ["feeder111", "host_feeder111"]
+dataRate = "100000Gb/s"
+delay = "0ms"
+
+[link549]
+edges = ["feeder112", "host_feeder112"]
+dataRate = "100000Gb/s"
+delay = "0ms"

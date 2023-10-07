@@ -1,0 +1,101 @@
+[tor1]
+type = "switch"
+
+[tor2]
+type = "switch"
+
+[tor3]
+type = "switch"
+
+[tor4]
+type = "switch"
+
+[tor5]
+type = "switch"
+
+[tor6]
+type = "switch"
+
+[tor7]
+type = "switch"
+
+[tor8]
+type = "switch"
+
+[agg1]
+type = "switch"
+
+[agg2]
+type = "switch"
+
+[agg3]
+type = "switch"
+
+[agg4]
+type = "switch"
+
+[agg5]
+type = "switch"
+
+[agg6]
+type = "switch"
+
+[agg7]
+type = "switch"
+
+[agg8]
+type = "switch"
+
+[core1]
+type = "switch"
+
+[core2]
+type = "switch"
+
+[server1]
+type = "host"
+
+[server2]
+type = "host"
+
+[server3]
+type = "host"
+
+[server4]
+type = "host"
+
+[server5]
+type = "host"
+
+[server6]
+type = "host"
+
+[server7]
+type = "host"
+
+[server8]
+type = "host"
+
+[server9]
+type = "host"
+
+[server10]
+type = "host"
+
+[server11]
+type = "host"
+
+[server12]
+type = "host"
+
+[server13]
+type = "host"
+
+[server14]
+type = "host"
+
+[server15]
+type = "host"
+
+[server16]
+type = "host"

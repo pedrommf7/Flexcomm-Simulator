@@ -1,0 +1,101 @@
+#### HOsTS ####
+[h1]
+type = "host"
+
+[h2]
+type = "host"
+
+[h3]
+type = "host"
+
+[h4]
+type = "host"
+
+[h5]
+type = "host"
+
+[h6]
+type = "host"
+
+[h7]
+type = "host"
+
+[h8]
+type = "host"
+
+[h9]
+type = "host"
+
+[h10]
+type = "host"
+
+#### sWITCHES ####
+[s1]
+type = "switch"
+cpuCapacity = "10Gbps"
+
+[s1.chassis]
+template = "default"
+
+[s2]
+type = "switch"
+cpuCapacity = "10Gbps"
+
+[s2.chassis]
+template = "default"
+
+[s3]
+type = "switch"
+cpuCapacity = "10Gbps"
+
+[s3.chassis]
+template = "default"
+
+[s4]
+type = "switch"
+cpuCapacity = "10Gbps"
+
+[s4.chassis]
+template = "default"
+
+[s5]
+type = "switch"
+cpuCapacity = "10Gbps"
+
+[s5.chassis]
+template = "default"
+
+[s6]
+type = "switch"
+cpuCapacity = "10Gbps"
+
+[s6.chassis]
+template = "default"
+
+[s7]
+type = "switch"
+cpuCapacity = "10Gbps"
+
+[s7.chassis]
+template = "default"
+
+[s8]
+type = "switch"
+cpuCapacity = "10Gbps"
+
+[s8.chassis]
+template = "default"
+
+[s9]
+type = "switch"
+cpuCapacity = "10Gbps"
+
+[s9.chassis]
+template = "default"
+
+[s10]
+type = "switch"
+cpuCapacity = "10Gbps"
+
+[s10.chassis]
+template = "default"

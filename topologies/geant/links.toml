@@ -1,0 +1,303 @@
+[l0]
+edges=["s0", "s1"]
+
+[l1]
+edges=["s0", "s2"]
+
+[l2]
+edges=["s0", "s4"]
+
+[l3]
+edges=["s0", "s34"]
+
+[l4]
+edges=["s0", "s30"]
+
+[l5]
+edges=["s1", "s33"]
+
+[l6]
+edges=["s2", "s32"]
+
+[l7]
+edges=["s2", "s35"]
+
+[l8]
+edges=["s2", "s4"]
+
+[l9]
+edges=["s2", "s38"]
+
+[l10]
+edges=["s2", "s36"]
+
+[l11]
+edges=["s2", "s31"]
+
+[l12]
+edges=["s3", "s10"]
+
+[l13]
+edges=["s3", "s19"]
+
+[l14]
+edges=["s3", "s4"]
+
+[l15]
+edges=["s3", "s5"]
+
+[l16]
+edges=["s3", "s30"]
+
+[l17]
+edges=["s4", "s5"]
+
+[l18]
+edges=["s4", "s6"]
+
+[l19]
+edges=["s4", "s8"]
+
+[l20]
+edges=["s4", "s16"]
+
+[l21]
+edges=["s4", "s17"]
+
+[l22]
+edges=["s4", "s29"]
+
+[l23]
+edges=["s4", "s31"]
+
+[l24]
+edges=["s5", "s23"]
+
+[l25]
+edges=["s6", "s7"]
+
+[l26]
+edges=["s7", "s8"]
+
+[l27]
+edges=["s7", "s25"]
+
+[l28]
+edges=["s7", "s34"]
+
+[l29]
+edges=["s8", "s9"]
+
+[l30]
+edges=["s8", "s25"]
+
+[l31]
+edges=["s9", "s25"]
+
+[l32]
+edges=["s9", "s18"]
+
+[l33]
+edges=["s9", "s29"]
+
+[l34]
+edges=["s9", "s15"]
+
+[l35]
+edges=["s11", "s13"]
+
+[l36]
+edges=["s12", "s14"]
+
+[l37]
+edges=["s12", "s20"]
+
+[l38]
+edges=["s12", "s13"]
+
+[l39]
+edges=["s12", "s22"]
+
+[l40]
+edges=["s12", "s15"]
+
+[l41]
+edges=["s13", "s22"]
+
+[l42]
+edges=["s13", "s14"]
+
+[l43]
+edges=["s15", "s29"]
+
+[l44]
+edges=["s16", "s34"]
+
+[l45]
+edges=["s17", "s30"]
+
+[l46]
+edges=["s21", "s27"]
+
+[l47]
+edges=["s22", "s26"]
+
+[l48]
+edges=["s22", "s27"]
+
+[l49]
+edges=["s22", "s23"]
+
+[l50]
+edges=["s23", "s29"]
+
+[l51]
+edges=["s24", "s25"]
+
+[l52]
+edges=["s24", "s34"]
+
+[l53]
+edges=["s27", "s28"]
+
+[l54]
+edges=["s28", "s29"]
+
+[l55]
+edges=["s30", "s39"]
+
+[l56]
+edges=["s32", "s34"]
+
+[l57]
+edges=["s33", "s34"]
+
+[l58]
+edges=["s35", "s36"]
+
+[l59]
+edges=["s36", "s37"]
+
+[l60]
+edges=["s38", "s39"]
+
+[l61]
+edges=["s0","h0"]
+
+[l62]
+edges=["s1","h1"]
+
+[l63]
+edges=["s2","h2"]
+
+[l64]
+edges=["s3","h3"]
+
+[l65]
+edges=["s4","h4"]
+
+[l66]
+edges=["s5","h5"]
+
+[l67]
+edges=["s6","h6"]
+
+[l68]
+edges=["s7","h7"]
+
+[l69]
+edges=["s8","h8"]
+
+[l70]
+edges=["s9","h9"]
+
+[l71]
+edges=["s10","h10"]
+
+[l72]
+edges=["s11","h11"]
+
+[l73]
+edges=["s12","h12"]
+
+[l74]
+edges=["s13","h13"]
+
+[l75]
+edges=["s14","h14"]
+
+[l76]
+edges=["s15","h15"]
+
+[l77]
+edges=["s16","h16"]
+
+[l78]
+edges=["s17","h17"]
+
+[l79]
+edges=["s18","h18"]
+
+[l80]
+edges=["s19","h19"]
+
+[l81]
+edges=["s20","h20"]
+
+[l82]
+edges=["s21","h21"]
+
+[l83]
+edges=["s22","h22"]
+
+[l84]
+edges=["s23","h23"]
+
+[l85]
+edges=["s24","h24"]
+
+[l86]
+edges=["s25","h25"]
+
+[l87]
+edges=["s26","h26"]
+
+[l88]
+edges=["s27","h27"]
+
+[l89]
+edges=["s28","h28"]
+
+[l90]
+edges=["s29","h29"]
+
+[l91]
+edges=["s30","h30"]
+
+[l92]
+edges=["s31","h31"]
+
+[l93]
+edges=["s32","h32"]
+
+[l94]
+edges=["s33","h33"]
+
+[l95]
+edges=["s34","h34"]
+
+[l96]
+edges=["s35","h35"]
+
+[l97]
+edges=["s36","h36"]
+
+[l98]
+edges=["s37","h37"]
+
+[l99]
+edges=["s38","h38"]
+
+[l100]
+edges=["s39","h39"]
+

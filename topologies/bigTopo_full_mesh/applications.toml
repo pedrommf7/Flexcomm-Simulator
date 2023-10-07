@@ -1,0 +1,6 @@
+[app1]
+type = "constSend"
+startTime = "1s"
+stopTime = "60s"
+host = "h1"
+remote = "h2"

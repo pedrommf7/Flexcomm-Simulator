@@ -1,0 +1,477 @@
+[internet]
+type = "switch"
+
+[internet.chassis]
+template = "default-model"
+
+[core1]
+type = "switch"
+
+[core1.chassis]
+template = "default-model"
+
+[core2]
+type = "switch"
+
+[core2.chassis]
+template = "default-model"
+
+[core3]
+type = "switch"
+
+[core3.chassis]
+template = "default-model"
+
+[core4]
+type = "switch"
+
+[core4.chassis]
+template = "default-model"
+
+[core5]
+type = "switch"
+
+[core5.chassis]
+template = "default-model"
+
+[core6]
+type = "switch"
+
+[core6.chassis]
+template = "default-model"
+
+[core7]
+type = "switch"
+
+[core7.chassis]
+template = "default-model"
+
+[core8]
+type = "switch"
+
+[core8.chassis]
+template = "default-model"
+
+[back1]
+type = "switch"
+
+[back1.chassis]
+template = "default-model"
+
+[back2]
+type = "switch"
+
+[back2.chassis]
+template = "default-model"
+
+[back3]
+type = "switch"
+
+[back3.chassis]
+template = "default-model"
+
+[back4]
+type = "switch"
+
+[back4.chassis]
+template = "default-model"
+
+[back5]
+type = "switch"
+
+[back5.chassis]
+template = "default-model"
+
+[back6]
+type = "switch"
+
+[back6.chassis]
+template = "default-model"
+
+[back7]
+type = "switch"
+
+[back7.chassis]
+template = "default-model"
+
+[back8]
+type = "switch"
+
+[back8.chassis]
+template = "default-model"
+
+[back9]
+type = "switch"
+
+[back9.chassis]
+template = "default-model"
+
+[back10]
+type = "switch"
+
+[back10.chassis]
+template = "default-model"
+
+[back11]
+type = "switch"
+
+[back11.chassis]
+template = "default-model"
+
+[back12]
+type = "switch"
+
+[back12.chassis]
+template = "default-model"
+
+[back13]
+type = "switch"
+
+[back13.chassis]
+template = "default-model"
+
+[back14]
+type = "switch"
+
+[back14.chassis]
+template = "default-model"
+
+
+[metro1]
+type = "switch"
+
+[metro1.chassis]
+template = "default-model"
+
+[metro2]
+type = "switch"
+
+[metro2.chassis]
+template = "default-model"
+
+[metro3]
+type = "switch"
+
+[metro3.chassis]
+template = "default-model"
+
+[metro4]
+type = "switch"
+
+[metro4.chassis]
+template = "default-model"
+
+[metro5]
+type = "switch"
+
+[metro5.chassis]
+template = "default-model"
+
+[metro6]
+type = "switch"
+
+[metro6.chassis]
+template = "default-model"
+
+[metro7]
+type = "switch"
+
+[metro7.chassis]
+template = "default-model"
+
+[metro8]
+type = "switch"
+
+[metro8.chassis]
+template = "default-model"
+
+[metro9]
+type = "switch"
+
+[metro9.chassis]
+template = "default-model"
+
+[metro10]
+type = "switch"
+
+[metro10.chassis]
+template = "default-model"
+
+[metro11]
+type = "switch"
+
+[metro11.chassis]
+template = "default-model"
+
+[metro12]
+type = "switch"
+
+[metro12.chassis]
+template = "default-model"
+
+[metro13]
+type = "switch"
+
+[metro13.chassis]
+template = "default-model"
+
+[metro14]
+type = "switch"
+
+[metro14.chassis]
+template = "default-model"
+
+[feeder1]
+type = "switch"
+
+[feeder1.chassis]
+template = "default-model"
+
+[feeder2]
+type = "switch"
+
+[feeder2.chassis]
+template = "default-model"
+
+[feeder3]
+type = "switch"
+
+[feeder3.chassis]
+template = "default-model"
+
+[feeder4]
+type = "switch"
+
+[feeder4.chassis]
+template = "default-model"
+
+[feeder5]
+type = "switch"
+
+[feeder5.chassis]
+template = "default-model"
+
+[feeder6]
+type = "switch"
+
+[feeder6.chassis]
+template = "default-model"
+
+[feeder7]
+type = "switch"
+
+[feeder7.chassis]
+template = "default-model"
+
+[feeder8]
+type = "switch"
+
+[feeder8.chassis]
+template = "default-model"
+
+[feeder9]
+type = "switch"
+
+[feeder9.chassis]
+template = "default-model"
+
+[feeder10]
+type = "switch"
+
+[feeder10.chassis]
+template = "default-model"
+
+[feeder11]
+type = "switch"
+
+[feeder11.chassis]
+template = "default-model"
+
+[feeder12]
+type = "switch"
+
+[feeder12.chassis]
+template = "default-model"
+
+[feeder13]
+type = "switch"
+
+[feeder13.chassis]
+template = "default-model"
+
+[feeder14]
+type = "switch"
+
+[feeder14.chassis]
+template = "default-model"
+
+[feeder15]
+type = "switch"
+
+[feeder15.chassis]
+template = "default-model"
+
+[feeder16]
+type = "switch"
+
+[feeder16.chassis]
+template = "default-model"
+
+[feeder17]
+type = "switch"
+
+[feeder17.chassis]
+template = "default-model"
+
+[feeder18]
+type = "switch"
+
+[feeder18.chassis]
+template = "default-model"
+
+[feeder19]
+type = "switch"
+
+[feeder19.chassis]
+template = "default-model"
+
+[feeder20]
+type = "switch"
+
+[feeder20.chassis]
+template = "default-model"
+
+[feeder21]
+type = "switch"
+
+[feeder21.chassis]
+template = "default-model"
+
+[feeder22]
+type = "switch"
+
+[feeder22.chassis]
+template = "default-model"
+
+[feeder23]
+type = "switch"
+
+[feeder23.chassis]
+template = "default-model"
+
+[feeder24]
+type = "switch"
+
+[feeder24.chassis]
+template = "default-model"
+
+[feeder25]
+type = "switch"
+
+[feeder25.chassis]
+template = "default-model"
+
+[feeder26]
+type = "switch"
+
+[feeder26.chassis]
+template = "default-model"
+
+[feeder27]
+type = "switch"
+
+[feeder27.chassis]
+template = "default-model"
+
+[feeder28]
+type = "switch"
+
+[feeder28.chassis]
+template = "default-model"
+
+[host_internet]
+type = "host"
+
+[host_feeder1]
+type = "host"
+
+[host_feeder2]
+type = "host"
+
+[host_feeder3]
+type = "host"
+
+[host_feeder4]
+type = "host"
+
+[host_feeder5]
+type = "host"
+
+[host_feeder6]
+type = "host"
+
+[host_feeder7]
+type = "host"
+
+[host_feeder8]
+type = "host"
+
+[host_feeder9]
+type = "host"
+
+[host_feeder10]
+type = "host"
+
+[host_feeder11]
+type = "host"
+
+[host_feeder12]
+type = "host"
+
+[host_feeder13]
+type = "host"
+
+[host_feeder14]
+type = "host"
+
+[host_feeder15]
+type = "host"
+
+[host_feeder16]
+type = "host"
+
+[host_feeder17]
+type = "host"
+
+[host_feeder18]
+type = "host"
+
+[host_feeder19]
+type = "host"
+
+[host_feeder20]
+type = "host"
+
+[host_feeder21]
+type = "host"
+
+[host_feeder22]
+type = "host"
+
+[host_feeder23]
+type = "host"
+
+[host_feeder24]
+type = "host"
+
+[host_feeder25]
+type = "host"
+
+[host_feeder26]
+type = "host"
+
+[host_feeder27]
+type = "host"
+
+[host_feeder28]
+type = "host"

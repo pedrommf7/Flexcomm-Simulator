@@ -1,0 +1,239 @@
+[s0]
+type = "switch"
+
+[s1]
+type = "switch"
+
+[s2]
+type = "switch"
+
+[s3]
+type = "switch"
+
+[s4]
+type = "switch"
+
+[s5]
+type = "switch"
+
+[s6]
+type = "switch"
+
+[s7]
+type = "switch"
+
+[s8]
+type = "switch"
+
+[s9]
+type = "switch"
+
+[s10]
+type = "switch"
+
+[s11]
+type = "switch"
+
+[s12]
+type = "switch"
+
+[s13]
+type = "switch"
+
+[s14]
+type = "switch"
+
+[s15]
+type = "switch"
+
+[s16]
+type = "switch"
+
+[s17]
+type = "switch"
+
+[s18]
+type = "switch"
+
+[s19]
+type = "switch"
+
+[s20]
+type = "switch"
+
+[s21]
+type = "switch"
+
+[s22]
+type = "switch"
+
+[s23]
+type = "switch"
+
+[s24]
+type = "switch"
+
+[s25]
+type = "switch"
+
+[s26]
+type = "switch"
+
+[s27]
+type = "switch"
+
+[s28]
+type = "switch"
+
+[s29]
+type = "switch"
+
+[s30]
+type = "switch"
+
+[s31]
+type = "switch"
+
+[s32]
+type = "switch"
+
+[s33]
+type = "switch"
+
+[s34]
+type = "switch"
+
+[s35]
+type = "switch"
+
+[s36]
+type = "switch"
+
+[s37]
+type = "switch"
+
+[s38]
+type = "switch"
+
+[s39]
+type = "switch"
+
+[h0]
+type = "host"
+
+[h1]
+type = "host"
+
+[h2]
+type = "host"
+
+[h3]
+type = "host"
+
+[h4]
+type = "host"
+
+[h5]
+type = "host"
+
+[h6]
+type = "host"
+
+[h7]
+type = "host"
+
+[h8]
+type = "host"
+
+[h9]
+type = "host"
+
+[h10]
+type = "host"
+
+[h11]
+type = "host"
+
+[h12]
+type = "host"
+
+[h13]
+type = "host"
+
+[h14]
+type = "host"
+
+[h15]
+type = "host"
+
+[h16]
+type = "host"
+
+[h17]
+type = "host"
+
+[h18]
+type = "host"
+
+[h19]
+type = "host"
+
+[h20]
+type = "host"
+
+[h21]
+type = "host"
+
+[h22]
+type = "host"
+
+[h23]
+type = "host"
+
+[h24]
+type = "host"
+
+[h25]
+type = "host"
+
+[h26]
+type = "host"
+
+[h27]
+type = "host"
+
+[h28]
+type = "host"
+
+[h29]
+type = "host"
+
+[h30]
+type = "host"
+
+[h31]
+type = "host"
+
+[h32]
+type = "host"
+
+[h33]
+type = "host"
+
+[h34]
+type = "host"
+
+[h35]
+type = "host"
+
+[h36]
+type = "host"
+
+[h37]
+type = "host"
+
+[h38]
+type = "host"
+
+[h39]
+type = "host"

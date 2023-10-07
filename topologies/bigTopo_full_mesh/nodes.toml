@@ -1,0 +1,351 @@
+#### HOSTS ####
+[h1]
+type = "host"
+
+[h2]
+type = "host"
+
+[h3]
+type = "host"
+
+[h4]
+type = "host"
+
+[h5]
+type = "host"
+
+[h6]
+type = "host"
+
+[h7]
+type = "host"
+
+[h8]
+type = "host"
+
+[h9]
+type = "host"
+
+[h10]
+type = "host"
+
+[h11]
+type = "host"
+
+[h12]
+type = "host"
+
+[h13]
+type = "host"
+
+[h14]
+type = "host"
+
+[h15]
+type = "host"
+
+[h16]
+type = "host"
+
+[h17]
+type = "host"
+
+[h18]
+type = "host"
+
+[h19]
+type = "host"
+
+[h20]
+type = "host"
+
+[h21]
+type = "host"
+
+[h22]
+type = "host"
+
+[h23]
+type = "host"
+
+[h24]
+type = "host"
+
+[h25]
+type = "host"
+
+[h26]
+type = "host"
+
+[h27]
+type = "host"
+
+[h28]
+type = "host"
+
+[h29]
+type = "host"
+
+[h30]
+type = "host"
+
+[h31]
+type = "host"
+
+[h32]
+type = "host"
+
+[h33]
+type = "host"
+
+[h34]
+type = "host"
+
+[h35]
+type = "host"
+
+[h36]
+type = "host"
+
+[h37]
+type = "host"
+
+[h38]
+type = "host"
+
+[h39]
+type = "host"
+
+[h40]
+type = "host"
+
+[h41]
+type = "host"
+
+[h42]
+type = "host"
+
+[h43]
+type = "host"
+
+[h44]
+type = "host"
+
+[h45]
+type = "host"
+
+[h46]
+type = "host"
+
+[h47]
+type = "host"
+
+[h48]
+type = "host"
+
+[h49]
+type = "host"
+
+[h50]
+type = "host"
+
+#### SWITCHES ####
+[s1]
+type = "switch"
+cpuCapacity = "100Gbps"
+
+[s2]
+type = "switch"
+cpuCapacity = "100Gbps"
+
+[s3]
+type = "switch"
+cpuCapacity = "100Gbps"
+
+[s4]
+type = "switch"
+cpuCapacity = "100Gbps"
+
+[s5]
+type = "switch"
+cpuCapacity = "100Gbps"
+
+[s6]
+type = "switch"
+cpuCapacity = "100Gbps"
+
+[s7]
+type = "switch"
+cpuCapacity = "100Gbps"
+
+[s8]
+type = "switch"
+cpuCapacity = "100Gbps"
+
+[s9]
+type = "switch"
+cpuCapacity = "100Gbps"
+
+[s10]
+type = "switch"
+cpuCapacity = "100Gbps"
+
+[s11]
+type = "switch"
+cpuCapacity = "100Gbps"
+
+[s12]
+type = "switch"
+cpuCapacity = "100Gbps"
+
+[s13]
+type = "switch"
+cpuCapacity = "100Gbps"
+
+[s14]
+type = "switch"
+cpuCapacity = "100Gbps"
+
+[s15]
+type = "switch"
+cpuCapacity = "100Gbps"
+
+[s16]
+type = "switch"
+cpuCapacity = "100Gbps"
+
+[s17]
+type = "switch"
+cpuCapacity = "100Gbps"
+
+[s18]
+type = "switch"
+cpuCapacity = "100Gbps"
+
+[s19]
+type = "switch"
+cpuCapacity = "100Gbps"
+
+[s20]
+type = "switch"
+cpuCapacity = "100Gbps"
+
+[s21]
+type = "switch"
+cpuCapacity = "100Gbps"
+
+[s22]
+type = "switch"
+cpuCapacity = "100Gbps"
+
+[s23]
+type = "switch"
+cpuCapacity = "100Gbps"
+
+[s24]
+type = "switch"
+cpuCapacity = "100Gbps"
+
+[s25]
+type = "switch"
+cpuCapacity = "100Gbps"
+
+[s26]
+type = "switch"
+cpuCapacity = "100Gbps"
+
+[s27]
+type = "switch"
+cpuCapacity = "100Gbps"
+
+[s28]
+type = "switch"
+cpuCapacity = "100Gbps"
+
+[s29]
+type = "switch"
+cpuCapacity = "100Gbps"
+
+[s30]
+type = "switch"
+cpuCapacity = "100Gbps"
+
+[s31]
+type = "switch"
+cpuCapacity = "100Gbps"
+
+[s32]
+type = "switch"
+cpuCapacity = "100Gbps"
+
+[s33]
+type = "switch"
+cpuCapacity = "100Gbps"
+
+[s34]
+type = "switch"
+cpuCapacity = "100Gbps"
+
+[s35]
+type = "switch"
+cpuCapacity = "100Gbps"
+
+[s36]
+type = "switch"
+cpuCapacity = "100Gbps"
+
+[s37]
+type = "switch"
+cpuCapacity = "100Gbps"
+
+[s38]
+type = "switch"
+cpuCapacity = "100Gbps"
+
+[s39]
+type = "switch"
+cpuCapacity = "100Gbps"
+
+[s40]
+type = "switch"
+cpuCapacity = "100Gbps"
+
+[s41]
+type = "switch"
+cpuCapacity = "100Gbps"
+
+[s42]
+type = "switch"
+cpuCapacity = "100Gbps"
+
+[s43]
+type = "switch"
+cpuCapacity = "100Gbps"
+
+[s44]
+type = "switch"
+cpuCapacity = "100Gbps"
+
+[s45]
+type = "switch"
+cpuCapacity = "100Gbps"
+
+[s46]
+type = "switch"
+cpuCapacity = "100Gbps"
+
+[s47]
+type = "switch"
+cpuCapacity = "100Gbps"
+
+[s48]
+type = "switch"
+cpuCapacity = "100Gbps"
+
+[s49]
+type = "switch"
+cpuCapacity = "100Gbps"
+
+[s50]
+type = "switch"
+cpuCapacity = "100Gbps"
