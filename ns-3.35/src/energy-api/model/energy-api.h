@@ -39,6 +39,8 @@ public:
 
   static vector<float> GetFlexArray (string id);
   static vector<float> GetEstimateArray (string id);
+  static float GetFlexArrayAt (string id, int atIndex);
+  static float GetEstimateArrayAt (string id, int atIndex);
 
   static void AddFlexArray (string id, vector<float> arr);
   static void AddEstimateArray (string id, vector<float> arr);

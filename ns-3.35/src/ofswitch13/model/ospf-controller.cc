@@ -76,10 +76,10 @@ namespace ns3
       // Get all the paths with a distance in the range of the shortest path distance
       std::list<std::pair<std::vector<Ptr<Node>>, int>> shortestsPaths;
       int shortestDistance = paths_.front().second;
-      int range = shortestDistance * percentage / 100;
+      int range = shortestDistance * percentage / 100 + shortestDistance;
       for (auto &path : paths_)
       {
-        if (path.second <= shortestDistance + range)
+        if (path.second <= range)
         {
           shortestsPaths.push_back(path);
         }
@@ -163,6 +163,11 @@ namespace ns3
       EqualCostPaths ecp;
       equalCostPaths.emplace_back(std::make_pair(key, ecp));
     }
+    else
+    {
+      NS_LOG_ERROR("Illegal path");
+      std::cout << "Illegal path [AddSwitchHostKey] from: " << switchNode->GetId() << " to: " << hostNode->GetId() << std::endl;
+    }
   }
 
   void OspfController::StorePath(Ptr<Node> switchNode, Ptr<Node> hostNode, std::vector<Ptr<Node>> path)
@@ -178,6 +183,7 @@ namespace ns3
     else
     {
       NS_LOG_ERROR("Illegal path");
+      std::cout << "Illegal path [StorePath] from: " << switchNode->GetId() << " to: " << hostNode->GetId() << std::endl;
     }
   }
 
@@ -190,6 +196,11 @@ namespace ns3
     if (it != equalCostPaths.end())
     {
       it->second.CleanPaths();
+    }
+    else
+    {
+      NS_LOG_ERROR("Illegal path");
+      std::cout << "Illegal path [CleanPaths] from: " << switchNode->GetId() << " to: " << hostNode->GetId() << std::endl;
     }
   }
 
@@ -237,11 +248,19 @@ namespace ns3
 
     std::vector<Ptr<Node>> ignore = std::vector<Ptr<Node>>();
     std::vector<std::vector<Ptr<Node>>> res = Search(source, destination, ignore);
-    for (auto i : res)
+    if (!res.empty())
     {
       AddSwitchHostKey(source, destination);
-      i.insert(i.begin(), source);
-      StorePath(source, destination, i);
+      for (auto &i : res)
+      {
+        i.insert(i.begin(), source);
+        StorePath(source, destination, i);
+      }
+    }
+    else
+    {
+      NS_LOG_ERROR("No paths found");
+      std::cout << "No paths found from: " << source->GetId() << " to: " << destination->GetId() << std::endl;
     }
   }
 
@@ -259,6 +278,7 @@ namespace ns3
     else
     {
       NS_LOG_ERROR("Illegal path");
+      std::cout << "Illegal path [GetShortesPath] from: " << source->GetId() << " to: " << destination->GetId() << std::endl;
       return std::vector<Ptr<Node>>{};
     }
   }
@@ -336,8 +356,10 @@ namespace ns3
       uint64_t weight = boost::get(edge_weight_t(), base_graph, ed); // ver se preciso de fazer como est ano topology a separar pelos Nodes
 
       int index = int(Simulator::Now().GetMinutes()) % 60;
-      float flex1 = EnergyAPI::GetFlexArray(Names::FindName(n1)).at(index);
-      float flex2 = EnergyAPI::GetFlexArray(Names::FindName(n2)).at(index);
+
+      float flex1 = EnergyAPI::GetFlexArrayAt(Names::FindName(n1), index);
+
+      float flex2 = EnergyAPI::GetFlexArrayAt(Names::FindName(n2), index);
 
       // tambem podemos usar a taxa de utilizacao da do link para a flexibilidade impactar + ou - no peso
       // Ptr<Channel> chnl = Topology::GetChannel(n1, n2);
@@ -377,7 +399,8 @@ namespace ns3
       Ipv4Address remoteAddr = (*i)->GetObject<Ipv4>()->GetAddress(1, 0).GetLocal();
       // ideia rui usar o djikstra apenas no inicio e depois usar outro algoritmo para ir computando os melhores caminhos
       // Topology::DijkstraShortestPaths(sw, *i);
-      try{
+      try
+      {
 
         std::vector<Ptr<Node>> path = GetShortesPath(sw, *i);
 
@@ -391,7 +414,7 @@ namespace ns3
 
         DpctlExecute(swDpId, cmd.str());
       }
-      catch(const std::exception& e)
+      catch (const std::exception &e)
       {
         std::cerr << e.what() << '\n';
       }
@@ -450,7 +473,7 @@ namespace ns3
       // get shortest path
       std::vector<Ptr<Node>> shortestPath = ecp.second.GetShortestPath();
       ApplyRoutingFromPath(shortestPath);
-      //reverse shortest path
+      // reverse shortest path
       std::reverse(shortestPath.begin(), shortestPath.end());
       ApplyRoutingFromPath(shortestPath);
 
