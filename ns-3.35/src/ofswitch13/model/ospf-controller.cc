@@ -116,6 +116,18 @@ namespace ns3
                   { return lhs.second < rhs.second; });
     }
 
+    void cutNumberStoredPaths(int maxPaths)
+    {
+      paths_.sort([](const auto &lhs, const auto &rhs)
+                  { return lhs.first.size() < rhs.first.size(); });
+
+      //remove all paths that exceed the max number of paths
+      if (int(paths_.size()) > maxPaths)
+      {
+        paths_.resize(maxPaths);
+      }
+    }
+
   private:
     std::list<std::pair<std::vector<Ptr<Node>>, int>> paths_; // Vector of paths from switch to host
   };
@@ -241,13 +253,62 @@ namespace ns3
     return allPaths;
   }
 
+  std::vector<std::vector<Ptr<Node>>>
+  OspfController::SearchWithDepth(Ptr<Node> init, Ptr<Node> destiny, std::vector<Ptr<Node>> &ignore , int maxDepth, int currentDepth)
+  {
+    std::vector<std::vector<Ptr<Node>>> allPaths;
+    if (init == destiny)
+    {
+      return allPaths; // return empty vector
+    }
+
+    if (currentDepth >= maxDepth)
+    {
+      return allPaths; // return empty vector to stop the search
+    }
+
+    std::vector<Ptr<Node>> successors = Topology::GetSuccessors(init);
+    if (std::find(successors.begin(), successors.end(), destiny) != successors.end())
+    {
+      allPaths.push_back({destiny});
+      return allPaths;
+    }
+
+    ignore.push_back(init);
+    for (auto i : successors)
+    {
+      if (std::find(ignore.begin(), ignore.end(), i) == ignore.end())
+      {
+        std::vector<std::vector<Ptr<Node>>> res = SearchWithDepth(i, destiny, ignore, maxDepth, currentDepth + 1);
+        if (!res.empty())
+        {
+          for (auto &j : res)
+          {
+            j.reserve(j.size() + 1);
+            j.insert(j.begin(), i);
+            allPaths.push_back(std::move(j));
+          }
+        }
+      }
+    }
+    ignore.pop_back();
+    return allPaths;
+  }
+
   void
   OspfController::FindAllPaths(Ptr<Node> source, Ptr<Node> destination)
   {
-    // std::cout << "FindAllPaths from: " << source->GetId() << " to: " << destination->GetId() << std::endl;
-
     std::vector<Ptr<Node>> ignore = std::vector<Ptr<Node>>();
-    std::vector<std::vector<Ptr<Node>>> res = Search(source, destination, ignore);
+
+    // std::vector<std::vector<Ptr<Node>>> res = Search(source, destination, ignore);
+    
+    //double ratio = 1.5; // change here to manage the max depth of the search
+    //int MAX_DEPTH = int(ratio * FindMaxDepth(source, destination));
+    int MAX_DEPTH = FindMaxDepth(source, destination);
+    MAX_DEPTH = int(std::sqrt(3.0*MAX_DEPTH+5)) + MAX_DEPTH;
+    std::cout << "MAX DEPTH from:" << source->GetId() << " to: " << destination->GetId() << " : " << MAX_DEPTH << std::endl;
+    std::vector<std::vector<Ptr<Node>>> res = SearchWithDepth(source, destination, ignore, MAX_DEPTH, 0);
+    
     if (!res.empty())
     {
       AddSwitchHostKey(source, destination);
@@ -280,6 +341,14 @@ namespace ns3
       NS_LOG_ERROR("Illegal path");
       std::cout << "Illegal path [GetShortesPath] from: " << source->GetId() << " to: " << destination->GetId() << std::endl;
       return std::vector<Ptr<Node>>{};
+    }
+  }
+
+  void
+  OspfController::ResizeStoredPaths(int maxStorageNumber){
+    for (auto &ecp : equalCostPaths)
+    {
+      ecp.second.cutNumberStoredPaths(maxStorageNumber);
     }
   }
 
@@ -320,6 +389,12 @@ namespace ns3
     }
   }
 
+  int 
+  OspfController::FindMaxDepth(Ptr<Node> source, Ptr<Node> destiny){
+    int nrJumps = int((Topology::DijkstraShortestPath (source, destiny)).size());
+    return --nrJumps;
+  }
+
   void OspfController::SetWeightsBandwidthBased()
   {
     cout << "Reference Bandwidth Value: " << referenceBandwidthValue << endl;
@@ -329,7 +404,7 @@ namespace ns3
       for (boost::tie(edgeIt, edgeEnd) = boost::edges(base_graph); edgeIt != edgeEnd; ++edgeIt)
       {
         Edge ed = *edgeIt;
-        uint64_t bitRate = boost::get(edge_weight_t(), base_graph, ed); // ver se preciso de fazer como est ano topology a separar pelos Nodes
+        uint64_t bitRate = boost::get(edge_weight_t(), base_graph, ed); // ver se preciso de fazer como esta ano topology a separar pelos Nodes
 
         uint64_t weight = bitRate >= referenceBandwidthValue ? 1 : referenceBandwidthValue / bitRate;
 
@@ -381,7 +456,6 @@ namespace ns3
       // expressao produz nrs negativos, mas depois insere 0 no maximo
 
       Topology::UpdateEdgeWeight(n1, n2, new_weight);
-      // mudar isto para ajudar o controlador a saber que aresta mudou e não ter de computar os caminhos todos de novo !!!
     }
   }
 
@@ -397,11 +471,8 @@ namespace ns3
     for (NodeContainer::Iterator i = hosts.Begin(); i != hosts.End(); i++)
     {
       Ipv4Address remoteAddr = (*i)->GetObject<Ipv4>()->GetAddress(1, 0).GetLocal();
-      // ideia rui usar o djikstra apenas no inicio e depois usar outro algoritmo para ir computando os melhores caminhos
-      // Topology::DijkstraShortestPaths(sw, *i);
       try
       {
-
         std::vector<Ptr<Node>> path = GetShortesPath(sw, *i);
 
         uint32_t port = ofDevice->GetPortNoConnectedTo(path.at(1));
@@ -461,12 +532,7 @@ namespace ns3
     {
       ecp.second.CalculateDistances();
     }
-
-    // NodeContainer switches = NodeContainer::GetGlobalSwitches();
-    // for (auto sw = switches.Begin(); sw != switches.End(); sw++)
-    // {
-    //   ApplyRouting(Id2DpId((*sw)->GetId()));
-    // }
+    
     std::cout << "Equal Cost Paths: " << std::endl;
     for (auto &ecp : equalCostPaths)
     {
@@ -478,15 +544,21 @@ namespace ns3
       ApplyRoutingFromPath(shortestPath);
 
       std::cout << "HostBegin: " << ecp.first.first->GetId() << " - HostEnd: " << ecp.first.second->GetId() << std::endl;
+      int i=0;
       for (auto &path : ecp.second.GetPaths())
       {
-        std::cout << "  ";
+        std::cout << "Best Path " << i++ << ": ";
         for (auto &node : path.first)
         {
           std::cout << node->GetId() << " ";
         }
         std::cout << "  (" << path.second << ")" << std::endl;
+        if (i == 1)
+        {
+          break;
+        }
       }
+      std::cout << "Number of paths: " << ecp.second.GetPaths().size() << std::endl;
     }
     std::cout << "-----------------------------" << std::endl;
 
@@ -531,13 +603,19 @@ namespace ns3
       uint64_t milliseconds = duration.count() / 1000;
       uint64_t seconds = milliseconds / 1000;
       milliseconds = milliseconds % 1000;
+      uint64_t minutes = seconds / 60;
+      seconds = seconds % 60;
+      uint64_t hours = minutes / 60;
+      minutes = minutes % 60;
 
-      std::cout << "-----> FindAllPaths Time: " << seconds << "s " << milliseconds << "ms" << std::endl;
+      std::cout << "-----> FindAllPaths Time: " << hours << "h " << minutes << "m " << seconds << "s " << milliseconds << "ms" << std::endl;
       std::cout << "-----------------------------" << std::endl;
+
+      ResizeStoredPaths(30);// Set here the max number of paths that can be stored
 
       UpdateRouting();
       m_isFirstUpdate = false;
     }
-    // ApplyRouting(swDpId);
+    // ApplyRouting(swDpId); // descomentar depois e meter a função correta !!!
   }
 } // namespace ns3

@@ -26,39 +26,41 @@
 #include "ofswitch13-controller.h"
 #include "ns3/topology.h"
 
-namespace ns3 {
-
-class OspfController : public OFSwitch13Controller
+namespace ns3
 {
-public:
-  OspfController ();
-  virtual ~OspfController ();
-  static TypeId GetTypeId (void);
-  virtual void DoDispose ();
+  class OspfController : public OFSwitch13Controller
+  {
+  public:
+    OspfController();
+    virtual ~OspfController();
+    static TypeId GetTypeId(void);
+    virtual void DoDispose();
 
-protected:
-  void HandshakeSuccessful (Ptr<const RemoteSwitch> sw);
-  void ApplyRouting (uint64_t swDpId);
-  void ApplyRouting(uint64_t swDpId, Ptr<Node> host, Ptr<Node> nextJump);
-  void ApplyRoutingFromPath(std::vector<Ptr<Node>> path);
-  void FindReferenceBandwidth();
+  protected:
+    void HandshakeSuccessful(Ptr<const RemoteSwitch> sw);
+    void ApplyRouting(uint64_t swDpId);
+    void ApplyRouting(uint64_t swDpId, Ptr<Node> host, Ptr<Node> nextJump);
+    void ApplyRoutingFromPath(std::vector<Ptr<Node>> path);
+    void FindReferenceBandwidth();
 
-private:
-  void UpdateRouting ();
-  void UpdateWeights ();
-  void SetWeightsBandwidthBased();
-  void AddSwitchHostKey(Ptr<Node> switchNode, Ptr<Node> hostNode);
-  void StorePath(Ptr<Node> switchNode, Ptr<Node> hostNode, std::vector<Ptr<Node>> path);
-  void CleanPaths(Ptr<Node> switchNode, Ptr<Node> hostNode);
-  std::vector<std::vector<Ptr<Node>>> Search(Ptr<Node> init, Ptr<Node> destiny, std::vector<Ptr<Node>>& ignore);
-  void FindAllPaths(Ptr<Node> source, Ptr<Node> destination);
-  std::vector<Ptr<Node>> GetShortesPath(Ptr<Node> source, Ptr<Node> destination);
+  private:
+    void UpdateRouting();
+    void UpdateWeights();
+    void SetWeightsBandwidthBased();
+    void AddSwitchHostKey(Ptr<Node> switchNode, Ptr<Node> hostNode);
+    void StorePath(Ptr<Node> switchNode, Ptr<Node> hostNode, std::vector<Ptr<Node>> path);
+    void CleanPaths(Ptr<Node> switchNode, Ptr<Node> hostNode);
+    std::vector<std::vector<Ptr<Node>>> Search(Ptr<Node> init, Ptr<Node> destiny, std::vector<Ptr<Node>> &ignore);
+    std::vector<std::vector<Ptr<Node>>> SearchWithDepth(Ptr<Node> init, Ptr<Node> destiny, std::vector<Ptr<Node>> &ignore, int maxDepth, int currentDepth);
+    void FindAllPaths(Ptr<Node> source, Ptr<Node> destination);
+    std::vector<Ptr<Node>> GetShortesPath(Ptr<Node> source, Ptr<Node> destination);
+    int FindMaxDepth(Ptr<Node> source, Ptr<Node> destiny);
+    void ResizeStoredPaths(int maxStorageNumber);
 
-  bool m_isFirstUpdate;
-  Graph base_graph;
-  static uint64_t referenceBandwidthValue;
-
-};
+    bool m_isFirstUpdate;
+    Graph base_graph;
+    static uint64_t referenceBandwidthValue;
+  };
 
 } // namespace ns3
 
