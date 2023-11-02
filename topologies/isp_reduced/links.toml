@@ -1,85 +1,3 @@
-[l1]
-edges = ["core1", "core2"]
-dataRate = "50Gb/s"
-delay = "834ns"
-
-[l2]
-edges = ["core3", "core4"]
-dataRate = "50Gb/s"
-delay = "834ns"
-
-[l3]
-edges = ["core5", "core6"]
-dataRate = "50Gb/s"
-delay = "834ns"
-
-[l4]
-edges = ["core7", "core8"]
-dataRate = "50Gb/s"
-delay = "834ns"
-
-[l5]
-edges = ["core2", "core3"]
-dataRate = "50Gb/s"
-delay = "33us"
-
-[l6]
-edges = ["core6", "core7"]
-dataRate = "50Gb/s"
-delay = "33us"
-
-[l7]
-edges = ["core1", "core4"]
-dataRate = "50Gb/s"
-delay = "33us"
-
-[l8]
-edges = ["core5", "core8"]
-dataRate = "50Gb/s"
-delay = "33us"
-
-[l9]
-edges = ["core2", "core7"]
-dataRate = "50Gb/s"
-delay = "2ms"
-
-[l10]
-edges = ["core3", "core6"]
-dataRate = "50Gb/s"
-delay = "2ms"
-
-[l11]
-edges = ["core1", "core8"]
-dataRate = "50Gb/s"
-delay = "2ms"
-
-[l12]
-edges = ["core4", "core5"]
-dataRate = "50Gb/s"
-delay = "2ms"
-
-[l13]
-edges = ["core1", "internet"]
-dataRate = "100Gb/s"
-delay = "834ns"
-
-[l14]
-edges = ["core2", "internet"]
-dataRate = "100Gb/s"
-delay = "834ns"
-
-[l15]
-edges = ["core3", "internet"]
-dataRate = "100Gb/s"
-delay = "834ns"
-
-[l16]
-edges = ["core4", "internet"]
-dataRate = "100Gb/s"
-delay = "834ns"
-
-
-
 
 
 
@@ -624,10 +542,7 @@ delay = "83us"
 
 
 ############# HOSTS CONNECTIONS ###########
-[link437]
-edges = ["internet", "host_internet"]
-dataRate = "100000Gb/s"
-delay = "0ms"
+
 
 [link438]
 edges = ["feeder1", "host_feeder1"]

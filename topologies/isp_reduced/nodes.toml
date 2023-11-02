@@ -1,8 +1,3 @@
-[internet]
-type = "switch"
-
-[internet.chassis]
-template = "default-model"
 
 [core1]
 type = "switch"
@@ -10,35 +5,6 @@ type = "switch"
 [core1.chassis]
 template = "default-model"
 
-[core2]
-type = "switch"
-
-[core2.chassis]
-template = "default-model"
-
-[core3]
-type = "switch"
-
-[core3.chassis]
-template = "default-model"
-
-[core4]
-type = "switch"
-
-[core4.chassis]
-template = "default-model"
-
-[core5]
-type = "switch"
-
-[core5.chassis]
-template = "default-model"
-
-[core6]
-type = "switch"
-
-[core6.chassis]
-template = "default-model"
 
 [core7]
 type = "switch"
@@ -46,11 +12,6 @@ type = "switch"
 [core7.chassis]
 template = "default-model"
 
-[core8]
-type = "switch"
-
-[core8.chassis]
-template = "default-model"
 
 [back1]
 type = "switch"
