@@ -101,6 +101,7 @@ def build(bld):
         'model/simple-controller-flex.cc',
 
         'model/ospf-controller.cc',
+        # 'model/path-store.cc',
 
         'helper/ofswitch13-device-container.cc',
         'helper/ofswitch13-external-helper.cc',
@@ -127,6 +128,7 @@ def build(bld):
         'model/simple-controller-flex.h',
 
         'model/ospf-controller.h',
+        # 'model/path-store.h',
    
         'helper/ofswitch13-device-container.h',
         'helper/ofswitch13-external-helper.h',
