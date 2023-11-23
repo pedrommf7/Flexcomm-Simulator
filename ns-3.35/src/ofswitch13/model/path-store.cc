@@ -26,90 +26,109 @@ NS_LOG_COMPONENT_DEFINE("PathStore");
 
 namespace ns3
 {
-    NS_OBJECT_ENSURE_REGISTERED(PathStore);
+  NS_OBJECT_ENSURE_REGISTERED(PathStore);
 
-    PathStore::PathStore() : paths_() {
-        NS_LOG_FUNCTION(this);
-    }
+  PathStore::PathStore() : paths_()
+  {
+    NS_LOG_FUNCTION(this);
+  }
 
-    PathStore::~PathStore() {
-        NS_LOG_FUNCTION(this);
-        CleanPaths();
-    }
+  PathStore::~PathStore()
+  {
+    NS_LOG_FUNCTION(this);
+    CleanPaths();
+  }
 
+  TypeId
+  PathStore::GetTypeId(void)
+  {
+    static TypeId tid = TypeId("ns3::PathStore")
+                            .SetParent<Object>()
+                            .AddConstructor<PathStore>();
+    return tid;
+  }
 
-    TypeId GetTypeId(void)
+  void
+  PathStore::AddPath(std::vector<Ptr<Node>> path)
+  {
+    paths_.emplace_back(std::make_pair(std::move(path), -1));
+  }
+
+  std::vector<Ptr<Node>>
+  PathStore::GetShortestPath() const
+  {
+    // Get the first path with the shortest distance
+    return paths_.front().first;
+  }
+
+  std::pair<std::vector<Ptr<Node>>, int>
+  PathStore::GetShortestPathAndDistance() const
+  {
+    // Get the first path with the shortest distance
+    return paths_.front();
+  }
+
+  std::list<std::pair<std::vector<Ptr<Node>>, int>>
+  PathStore::GetPaths() const
+  {
+    // Get all the paths and their distances
+    return paths_;
+  }
+
+  std::list<std::pair<std::vector<Ptr<Node>>, int>>
+  PathStore::GetShortestsPathsInRange(int percentage) const
+  {
+    // Get all the paths with a distance in the range of the shortest path distance
+    std::list<std::pair<std::vector<Ptr<Node>>, int>> shortestsPaths;
+    int shortestDistance = paths_.front().second;
+    int range = shortestDistance * percentage / 100 + shortestDistance;
+    for (auto &path : paths_)
     {
-        static TypeId tid = TypeId("ns3::PathStore")
-                                .AddConstructor<PathStore>();
-        return tid;
+      if (path.second <= range)
+        shortestsPaths.push_back(path);
+      else
+        break;
     }
+    return shortestsPaths;
+  }
 
-    void PathStore::AddPath(std::vector<Ptr<Node>> path)
+  void
+  PathStore::CleanPaths()
+  {
+    paths_.clear();
+  }
+
+  void
+  PathStore::CalculateDistances()
+  {
+    for (auto &path : paths_)
     {
-        paths_.emplace_back(std::make_pair(std::move(path), -1));
-    }
+      int distance = 0;
+      for (int i = 0; i < int(path.first.size()) - 1; i++)
+      {
+        Ptr<Node> n1 = path.first.at(i);
+        Ptr<Node> n2 = path.first.at(i + 1);
+        int acc = Topology::GetEdgeWeight(n1, n2);
+        distance += acc;
+      }
 
-    std::vector<Ptr<Node>> PathStore::GetShortestPath() const
+      path.second = distance;
+    }
+    // sort paths by distance
+    paths_.sort([](const auto &lhs, const auto &rhs)
+                { return lhs.second < rhs.second; });
+  }
+
+  void
+  PathStore::CutNumberStoredPaths(int maxPaths)
+  {
+    paths_.sort([](const auto &lhs, const auto &rhs)
+                { return lhs.first.size() < rhs.first.size(); });
+
+    // remove all paths that exceed the max number of paths stored
+    if (int(paths_.size()) > maxPaths)
     {
-        // Get the first path with the shortest distance
-        return paths_.front().first;
+      paths_.resize(maxPaths);
     }
-
-    std::pair<std::vector<Ptr<Node>>, int> PathStore::GetShortestPathAndDistance() const
-    {
-        // Get the first path with the shortest distance
-        return paths_.front();
-    }
-
-    std::list<std::pair<std::vector<Ptr<Node>>, int>> PathStore::GetPaths() const
-    {
-        // Get all the paths and their distances
-        return paths_;
-    }
-
-    std::list<std::pair<std::vector<Ptr<Node>>, int>> PathStore::GetShortestsPathsInRange(int percentage) const
-    {
-        // Get all the paths with a distance in the range of the shortest path distance
-        std::list<std::pair<std::vector<Ptr<Node>>, int>> shortestsPaths;
-        int shortestDistance = paths_.front().second;
-        int range = shortestDistance * percentage / 100 + shortestDistance;
-        for (auto &path : paths_)
-        {
-            if (path.second <= range)
-            {
-                shortestsPaths.push_back(path);
-            }
-            else
-            {
-                break;
-            }
-        }
-        return shortestsPaths;
-    }
-
-    void PathStore::CleanPaths()
-    {
-        paths_.clear();
-    }
-
-    void PathStore::CalculateDistances()
-    {
-        for (auto &path : paths_)
-        {
-            int distance = 0;
-            for (int i = 0; i < int(path.first.size()) - 1; i++)
-            {
-                Ptr<Node> n1 = path.first.at(i);
-                Ptr<Node> n2 = path.first.at(i + 1);
-                int acc = Topology::GetEdgeWeight(n1, n2);
-                distance += acc;
-            }
-
-            path.second = distance;
-        }
-        // sort paths by distance
-        paths_.sort([](const auto &lhs, const auto &rhs)
-                    { return lhs.second < rhs.second; });
-    }
+  }
 } // namespace ns3

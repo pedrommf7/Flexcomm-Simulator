@@ -1,0 +1,197 @@
+mkdir -p outputs/bench1
+./ns-3.35/waf -t ns-3.35 --run "flexcomm --topo=bench1 --ctrl=ns3::OspfController --checksum=false --estifile=estimate.json --flexfile=flex.json" --cwd=../outputs 
+Waf: Entering directory `/home/extinto77/Desktop/UNI/flexcomm/Flexcomm-Simulator/ns-3.35/build'
+Waf: Leaving directory `/home/extinto77/Desktop/UNI/flexcomm/Flexcomm-Simulator/ns-3.35/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.610s)
+../topologies/bench1/flex.json not found. Skipping flexibility values.
+../topologies/bench1/estimate.json not found. Skipping estimate values.
+--------------------------------------------------------------
+Parsing Time: 0s 220ms
+Reference Bandwidth Value: 4000000000
+-----------------------------
+FindAllPaths from: 0 to: 1
+FindAllPaths from: 0 to: 2
+FindAllPaths from: 0 to: 3
+FindAllPaths from: 0 to: 4
+FindAllPaths from: 0 to: 5
+FindAllPaths from: 0 to: 6
+FindAllPaths from: 0 to: 7
+FindAllPaths from: 0 to: 8
+FindAllPaths from: 0 to: 9
+FindAllPaths from: 1 to: 2
+FindAllPaths from: 1 to: 3
+FindAllPaths from: 1 to: 4
+FindAllPaths from: 1 to: 5
+FindAllPaths from: 1 to: 6
+FindAllPaths from: 1 to: 7
+FindAllPaths from: 1 to: 8
+FindAllPaths from: 1 to: 9
+FindAllPaths from: 2 to: 3
+FindAllPaths from: 2 to: 4
+FindAllPaths from: 2 to: 5
+FindAllPaths from: 2 to: 6
+FindAllPaths from: 2 to: 7
+FindAllPaths from: 2 to: 8
+FindAllPaths from: 2 to: 9
+FindAllPaths from: 3 to: 4
+FindAllPaths from: 3 to: 5
+FindAllPaths from: 3 to: 6
+FindAllPaths from: 3 to: 7
+FindAllPaths from: 3 to: 8
+FindAllPaths from: 3 to: 9
+FindAllPaths from: 4 to: 5
+FindAllPaths from: 4 to: 6
+FindAllPaths from: 4 to: 7
+FindAllPaths from: 4 to: 8
+FindAllPaths from: 4 to: 9
+FindAllPaths from: 5 to: 6
+FindAllPaths from: 5 to: 7
+FindAllPaths from: 5 to: 8
+FindAllPaths from: 5 to: 9
+FindAllPaths from: 6 to: 7
+FindAllPaths from: 6 to: 8
+FindAllPaths from: 6 to: 9
+FindAllPaths from: 7 to: 8
+FindAllPaths from: 7 to: 9
+FindAllPaths from: 8 to: 9
+-----> FindAllPaths Time: 0h 3m 4s 159ms
+-----------------------------
+Equal Cost Paths: 
+HostBegin: 0 - HostEnd: 1
+Best Path 0: 0 10 11 1   (4)
+Number of paths: 109601
+HostBegin: 0 - HostEnd: 2
+Best Path 0: 0 10 12 2   (4)
+Number of paths: 109601
+HostBegin: 0 - HostEnd: 3
+Best Path 0: 0 10 13 3   (4)
+Number of paths: 109601
+HostBegin: 0 - HostEnd: 4
+Best Path 0: 0 10 14 4   (4)
+Number of paths: 109601
+HostBegin: 0 - HostEnd: 5
+Best Path 0: 0 10 15 5   (4)
+Number of paths: 109601
+HostBegin: 0 - HostEnd: 6
+Best Path 0: 0 10 16 6   (4)
+Number of paths: 109601
+HostBegin: 0 - HostEnd: 7
+Best Path 0: 0 10 17 7   (4)
+Number of paths: 109601
+HostBegin: 0 - HostEnd: 8
+Best Path 0: 0 10 18 8   (4)
+Number of paths: 109601
+HostBegin: 0 - HostEnd: 9
+Best Path 0: 0 10 19 9   (4)
+Number of paths: 109601
+HostBegin: 1 - HostEnd: 2
+Best Path 0: 1 11 12 2   (4)
+Number of paths: 109601
+HostBegin: 1 - HostEnd: 3
+Best Path 0: 1 11 13 3   (4)
+Number of paths: 109601
+HostBegin: 1 - HostEnd: 4
+Best Path 0: 1 11 14 4   (4)
+Number of paths: 109601
+HostBegin: 1 - HostEnd: 5
+Best Path 0: 1 11 15 5   (4)
+Number of paths: 109601
+HostBegin: 1 - HostEnd: 6
+Best Path 0: 1 11 16 6   (4)
+Number of paths: 109601
+HostBegin: 1 - HostEnd: 7
+Best Path 0: 1 11 17 7   (4)
+Number of paths: 109601
+HostBegin: 1 - HostEnd: 8
+Best Path 0: 1 11 18 8   (4)
+Number of paths: 109601
+HostBegin: 1 - HostEnd: 9
+Best Path 0: 1 11 19 9   (4)
+Number of paths: 109601
+HostBegin: 2 - HostEnd: 3
+Best Path 0: 2 12 13 3   (4)
+Number of paths: 109601
+HostBegin: 2 - HostEnd: 4
+Best Path 0: 2 12 14 4   (4)
+Number of paths: 109601
+HostBegin: 2 - HostEnd: 5
+Best Path 0: 2 12 15 5   (4)
+Number of paths: 109601
+HostBegin: 2 - HostEnd: 6
+Best Path 0: 2 12 16 6   (4)
+Number of paths: 109601
+HostBegin: 2 - HostEnd: 7
+Best Path 0: 2 12 17 7   (4)
+Number of paths: 109601
+HostBegin: 2 - HostEnd: 8
+Best Path 0: 2 12 18 8   (4)
+Number of paths: 109601
+HostBegin: 2 - HostEnd: 9
+Best Path 0: 2 12 19 9   (4)
+Number of paths: 109601
+HostBegin: 3 - HostEnd: 4
+Best Path 0: 3 13 14 4   (4)
+Number of paths: 109601
+HostBegin: 3 - HostEnd: 5
+Best Path 0: 3 13 15 5   (4)
+Number of paths: 109601
+HostBegin: 3 - HostEnd: 6
+Best Path 0: 3 13 16 6   (4)
+Number of paths: 109601
+HostBegin: 3 - HostEnd: 7
+Best Path 0: 3 13 17 7   (4)
+Number of paths: 109601
+HostBegin: 3 - HostEnd: 8
+Best Path 0: 3 13 18 8   (4)
+Number of paths: 109601
+HostBegin: 3 - HostEnd: 9
+Best Path 0: 3 13 19 9   (4)
+Number of paths: 109601
+HostBegin: 4 - HostEnd: 5
+Best Path 0: 4 14 15 5   (4)
+Number of paths: 109601
+HostBegin: 4 - HostEnd: 6
+Best Path 0: 4 14 16 6   (4)
+Number of paths: 109601
+HostBegin: 4 - HostEnd: 7
+Best Path 0: 4 14 17 7   (4)
+Number of paths: 109601
+HostBegin: 4 - HostEnd: 8
+Best Path 0: 4 14 18 8   (4)
+Number of paths: 109601
+HostBegin: 4 - HostEnd: 9
+Best Path 0: 4 14 19 9   (4)
+Number of paths: 109601
+HostBegin: 5 - HostEnd: 6
+Best Path 0: 5 15 16 6   (4)
+Number of paths: 109601
+HostBegin: 5 - HostEnd: 7
+Best Path 0: 5 15 17 7   (4)
+Number of paths: 109601
+HostBegin: 5 - HostEnd: 8
+Best Path 0: 5 15 18 8   (4)
+Number of paths: 109601
+HostBegin: 5 - HostEnd: 9
+Best Path 0: 5 15 19 9   (4)
+Number of paths: 109601
+HostBegin: 6 - HostEnd: 7
+Best Path 0: 6 16 17 7   (4)
+Number of paths: 109601
+HostBegin: 6 - HostEnd: 8
+Best Path 0: 6 16 18 8   (4)
+Number of paths: 109601
+HostBegin: 6 - HostEnd: 9
+Best Path 0: 6 16 19 9   (4)
+Number of paths: 109601
+HostBegin: 7 - HostEnd: 8
+Best Path 0: 7 17 18 8   (4)
+Number of paths: 109601
+HostBegin: 7 - HostEnd: 9
+Best Path 0: 7 17 19 9   (4)
+Number of paths: 109601
+HostBegin: 8 - HostEnd: 9
+Best Path 0: 8 18 19 9   (4)
+Number of paths: 109601
+-----------------------------
+[01;31mInterrupted[0m interrompido !!!! 

@@ -1,0 +1,63 @@
+mkdir -p outputs/example
+./ns-3.35/waf -t ns-3.35 --run "flexcomm --topo=example --ctrl=ns3::OspfController --checksum=false --estifile=estimate.json --flexfile=flex.json" --cwd=../outputs 
+Waf: Entering directory `/home/extinto77/Desktop/UNI/flexcomm/Flexcomm-Simulator/ns-3.35/build'
+Waf: Leaving directory `/home/extinto77/Desktop/UNI/flexcomm/Flexcomm-Simulator/ns-3.35/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.997s)
+--------------------------------------------------------------
+Parsing Time: 0s 160ms
+Reference Bandwidth Value: 4000000000
+-----------------------------
+FindAllPaths from: 0 to: 1
+-----> FindAllPaths Time: 0h 0m 0s 0ms
+-----------------------------
+WARNING NEGATIVE WEIGHT: -1
+WARNING NEGATIVE WEIGHT: -21
+WARNING NEGATIVE WEIGHT: -1
+WARNING NEGATIVE WEIGHT: -21
+Equal Cost Paths: 
+HostBegin: 0 - HostEnd: 1
+Best Path 0: 0 2 4 3 1   (0)
+Number of paths: 2
+-----------------------------
+WARNING NEGATIVE WEIGHT: -6
+WARNING NEGATIVE WEIGHT: -16
+WARNING NEGATIVE WEIGHT: -6
+WARNING NEGATIVE WEIGHT: -16
+Equal Cost Paths: 
+HostBegin: 0 - HostEnd: 1
+Best Path 0: 0 2 4 3 1   (0)
+Number of paths: 2
+-----------------------------
+WARNING NEGATIVE WEIGHT: -11
+WARNING NEGATIVE WEIGHT: -11
+WARNING NEGATIVE WEIGHT: -11
+WARNING NEGATIVE WEIGHT: -11
+Equal Cost Paths: 
+HostBegin: 0 - HostEnd: 1
+Best Path 0: 0 2 4 3 1   (0)
+Number of paths: 2
+-----------------------------
+WARNING NEGATIVE WEIGHT: -16
+WARNING NEGATIVE WEIGHT: -6
+WARNING NEGATIVE WEIGHT: -16
+WARNING NEGATIVE WEIGHT: -6
+Equal Cost Paths: 
+HostBegin: 0 - HostEnd: 1
+Best Path 0: 0 2 4 3 1   (0)
+Number of paths: 2
+-----------------------------
+WARNING NEGATIVE WEIGHT: -21
+WARNING NEGATIVE WEIGHT: -1
+WARNING NEGATIVE WEIGHT: -21
+WARNING NEGATIVE WEIGHT: -1
+Equal Cost Paths: 
+HostBegin: 0 - HostEnd: 1
+Best Path 0: 0 2 4 3 1   (0)
+Number of paths: 2
+-----------------------------
+Nº Events: 855561
+Execution Time: 0h 1m 47s
+--------------------------------------------------------------
+--- H1 <--> 10.1.1.2 ping statistics ---
+299 packets transmitted, 0 received, 100% packet loss, time +2.99e+05ms

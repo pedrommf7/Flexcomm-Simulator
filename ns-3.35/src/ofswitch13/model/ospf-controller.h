@@ -56,6 +56,7 @@ namespace ns3
     std::vector<Ptr<Node>> GetShortesPath(Ptr<Node> source, Ptr<Node> destination);
     int FindMaxDepth(Ptr<Node> source, Ptr<Node> destiny);
     void ResizeStoredPaths(int maxStorageNumber);
+    void StartRoutingLoop();
 
     bool m_isFirstUpdate;
     Graph base_graph;

@@ -1,0 +1,68 @@
+mkdir -p outputs/basic
+./ns-3.35/waf -t ns-3.35 --run "flexcomm --topo=basic --ctrl=ns3::OspfController --checksum=false --estifile=estimate.json --flexfile=flex.json" --cwd=../outputs 
+Waf: Entering directory `/home/extinto77/Desktop/UNI/flexcomm/Flexcomm-Simulator/ns-3.35/build'
+[1691/2171] Compiling ns-3.35/src/ofswitch13/model/ospf-controller.cc
+[2114/2171] Linking ns-3.35/build/lib/libns3.35-ofswitch13-debug.so
+[2115/2171] Linking ns-3.35/build/lib/libns3.35-ecofen-debug.so
+[2116/2171] Linking ns-3.35/build/lib/libns3.35-parser-debug.so
+[2117/2171] Linking ns-3.35/build/lib/libns3.35-switch-stats-debug.so
+[2118/2171] Linking ns-3.35/build/scratch/ecofen-simple
+[2119/2171] Linking ns-3.35/build/scratch/ofswitch13-first
+[2120/2171] Linking ns-3.35/build/scratch/scratch-simulator
+[2121/2171] Linking ns-3.35/build/scratch/flexcomm
+[2122/2171] Linking ns-3.35/build/scratch/subdir/subdir
+[2123/2171] Linking ns-3.35/build/utils/ns3.35-test-runner-debug
+[2124/2171] Linking ns-3.35/build/utils/ns3.35-print-introspected-doxygen-debug
+Waf: Leaving directory `/home/extinto77/Desktop/UNI/flexcomm/Flexcomm-Simulator/ns-3.35/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (22.800s)
+--------------------------------------------------------------
+Parsing Time: 0s 120ms
+Reference Bandwidth Value: 4000000000
+-----------------------------
+FindAllPaths from: 0 to: 1
+-----> FindAllPaths Time: 0h 0m 0s 0ms
+-----------------------------
+WARNING NEGATIVE WEIGHT: -281
+WARNING NEGATIVE WEIGHT: -581
+WARNING NEGATIVE WEIGHT: -281
+Equal Cost Paths: 
+HostBegin: 0 - HostEnd: 1
+Best Path 0: 0 2 5 6 4 1   (0)
+Number of paths: 2
+-----------------------------
+WARNING NEGATIVE WEIGHT: -281
+WARNING NEGATIVE WEIGHT: -581
+WARNING NEGATIVE WEIGHT: -281
+Equal Cost Paths: 
+HostBegin: 0 - HostEnd: 1
+Best Path 0: 0 2 5 6 4 1   (0)
+Number of paths: 2
+-----------------------------
+WARNING NEGATIVE WEIGHT: -281
+WARNING NEGATIVE WEIGHT: -581
+WARNING NEGATIVE WEIGHT: -281
+Equal Cost Paths: 
+HostBegin: 0 - HostEnd: 1
+Best Path 0: 0 2 5 6 4 1   (0)
+Number of paths: 2
+-----------------------------
+WARNING NEGATIVE WEIGHT: -281
+WARNING NEGATIVE WEIGHT: -581
+WARNING NEGATIVE WEIGHT: -281
+Equal Cost Paths: 
+HostBegin: 0 - HostEnd: 1
+Best Path 0: 0 2 5 6 4 1   (0)
+Number of paths: 2
+-----------------------------
+WARNING NEGATIVE WEIGHT: -281
+WARNING NEGATIVE WEIGHT: -581
+WARNING NEGATIVE WEIGHT: -281
+Equal Cost Paths: 
+HostBegin: 0 - HostEnd: 1
+Best Path 0: 0 2 5 6 4 1   (0)
+Number of paths: 2
+-----------------------------
+Nº Events: 854738
+Execution Time: 0h 2m 13s
+--------------------------------------------------------------
