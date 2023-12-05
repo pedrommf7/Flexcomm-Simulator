@@ -1,5 +1,0 @@
-implement lastUpdate by minute, multiple switches can trigger the apllyRouting but only if another minute(routingLoop is 1 minute but can change to bugger value)
-
-Reduzir armazenamento, guardar apenas caminhos A -> B e não A -> B + B-> A, usar o id para ordenar o par (Host1, Host2) e intrepertar ao contrário se for preciso !!!!
-
-ver tamanho maximo do peso, se for 1 byte no cabeçalho só pode ser até 2⁸-1
