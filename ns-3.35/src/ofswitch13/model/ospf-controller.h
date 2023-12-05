@@ -24,6 +24,7 @@
 #define OSPF_CONTROLLER_H
 
 #include "ofswitch13-controller.h"
+#include <boost/graph/adjacency_list.hpp>
 #include "ns3/topology.h"
 
 namespace ns3

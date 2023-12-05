@@ -223,3 +223,6 @@ waf3-*-*/
 # End of https://www.toptal.com/developers/gitignore/api/c++,python,waf
 
 .vscode
+
+terminal_outputs/*
+TODO

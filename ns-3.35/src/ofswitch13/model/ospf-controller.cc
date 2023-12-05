@@ -211,25 +211,31 @@ namespace ns3
   void
   OspfController::FindAllPaths(Ptr<Node> source, Ptr<Node> destination)
   {
-    std::vector<Ptr<Node>> ignore = std::vector<Ptr<Node>>();
+    /*                      SEARCH WITH DEPTH n SHORTEST PATHS WITH LIMITATION ON NUMBER OF HOPS
+    // std::vector<Ptr<Node>> ignore = std::vector<Ptr<Node>>();
 
-    // std::vector<std::vector<Ptr<Node>>> res = Search(source, destination, ignore);
+    // // std::vector<std::vector<Ptr<Node>>> res = Search(source, destination, ignore);
 
-    // double ratio = 1.5; // change here to manage the max depth of the search
-    // int MAX_DEPTH = int(ratio * FindMaxDepth(source, destination));
-    int MAX_DEPTH = FindMaxDepth(source, destination);
-    MAX_DEPTH = int(std::sqrt(3.0 * MAX_DEPTH + 5)) + MAX_DEPTH;
-    // std::cout << "MAX DEPTH from:" << source->GetId() << " to: " << destination->GetId() << " : " << MAX_DEPTH << std::endl;
-    std::vector<std::vector<Ptr<Node>>> res = SearchWithDepth(source, destination, ignore, MAX_DEPTH, 0);
+    // // double ratio = 1.5; // change here to manage the max depth of the search
+    // // int MAX_DEPTH = int(ratio * FindMaxDepth(source, destination));
+    // int MAX_DEPTH = FindMaxDepth(source, destination);
+    // MAX_DEPTH = int(std::sqrt(3.0 * MAX_DEPTH + 5)) + MAX_DEPTH;
+    // // std::cout << "MAX DEPTH from:" << source->GetId() << " to: " << destination->GetId() << " : " << MAX_DEPTH << std::endl;
+    // std::vector<std::vector<Ptr<Node>>> res = SearchWithDepth(source, destination, ignore, MAX_DEPTH, 0);
 
-    if (!res.empty())
-    {
-      AddSwitchHostKey(source, destination);
-      for (auto &i : res)
-      {
-        i.insert(i.begin(), source);
-        StorePath(source, destination, i);
-      }
+    // if (!res.empty())
+    // {
+    //   AddSwitchHostKey(source, destination);
+    //   for (auto &i : res)
+    //   {
+    //     i.insert(i.begin(), source);
+    //     StorePath(source, destination, i);
+    //   }
+    // }
+    */
+    PathStore ps = Topology::Dijkstra_k_ShortestPaths(source, destination, 7);
+    if(ps.PathStore::GetNumberOfStoredPaths() > 0){
+      std::cout << "Number of paths: " << ps.PathStore::GetNumberOfStoredPaths() << std::endl;
     }
     else
     {
@@ -271,7 +277,7 @@ namespace ns3
   {
     base_graph = Topology::GetGraph();
 
-    bool findMax = !referenceBandwidthValue;
+    bool findMax = !referenceBandwidthValue;// if not setted manually, find the max value
 
     std::list<Edge> edgesToRemove;
 
@@ -312,30 +318,28 @@ namespace ns3
   void OspfController::SetWeightsBandwidthBased()
   {
     cout << "Reference Bandwidth Value: " << referenceBandwidthValue << endl;
-    if (referenceBandwidthValue) // preventing division by 0, if there is no switchs
+
+    boost::graph_traits<Graph>::edge_iterator edgeIt, edgeEnd;
+    for (boost::tie(edgeIt, edgeEnd) = boost::edges(base_graph); edgeIt != edgeEnd; ++edgeIt)
     {
-      boost::graph_traits<Graph>::edge_iterator edgeIt, edgeEnd;
-      for (boost::tie(edgeIt, edgeEnd) = boost::edges(base_graph); edgeIt != edgeEnd; ++edgeIt)
-      {
-        Edge ed = *edgeIt;
-        uint64_t bitRate = boost::get(edge_weight_t(), base_graph, ed); // ver se preciso de fazer como esta ano topology a separar pelos Nodes
+      Edge ed = *edgeIt;
+      uint64_t bitRate = boost::get(edge_weight_t(), base_graph, ed); // ver se preciso de fazer como esta ano topology a separar pelos Nodes
 
-        uint64_t weight = (uint64_t)((double)referenceBandwidthValue / (double)bitRate + 0.5);
-        if (weight < 1)
-          weight = 1;
-        else if (weight > UINT64_MAX)
-          weight = UINT64_MAX;
+      uint64_t weight = (uint64_t)((double)referenceBandwidthValue / (double)bitRate + 0.5);
+      if (weight < 1)
+        weight = 1;
+      else if (weight > UINT64_MAX) //rever !!!!
+        weight = UINT64_MAX;
 
-        boost::put(edge_weight_t(), base_graph, ed, weight);
-        // cout << "SAVED -> Edge: " << ed.m_source << " - " << ed.m_target << " | Weight: " << weight << endl;
+      boost::put(edge_weight_t(), base_graph, ed, weight);
+      // cout << "SAVED -> Edge: " << ed.m_source << " - " << ed.m_target << " | Weight: " << weight << endl;
 
-        Ptr<Node> n1 = Topology::VertexToNode(ed.m_source);
-        Ptr<Node> n2 = Topology::VertexToNode(ed.m_target);
-        Topology::UpdateEdgeWeight(n1, n2, weight);
-      }
-      cout << "-----------------------------" << endl;
+      Ptr<Node> n1 = Topology::VertexToNode(ed.m_source);
+      Ptr<Node> n2 = Topology::VertexToNode(ed.m_target);
+      Topology::UpdateEdgeWeight(n1, n2, weight);
     }
-    //else throw error???
+    cout << "-----------------------------" << endl;
+
   }
 
   void
@@ -493,7 +497,7 @@ namespace ns3
         {
           Ptr<Node> hostNode2 = NodeContainer::GetGlobal().Get((*hst2)->GetId());
           // std::cout << "FindAllPaths from: " << hostNode1->GetId() << " to: " << hostNode2->GetId() << std::endl;
-          FindAllPaths(hostNode1, hostNode2);
+          FindAllPaths(hostNode1, hostNode2);//.......
         }
       }
       auto end = std::chrono::high_resolution_clock::now();
@@ -512,8 +516,8 @@ namespace ns3
       ResizeStoredPaths(30); // Set here the max number of paths that can be stored
 
       StartRoutingLoop();
-      lastUpdate = Simulator::Now();
       m_isFirstUpdate = false;
+      lastUpdate = Simulator::Now();
     }
     else if (Simulator::Now() - lastUpdate >= Minutes(1))
     {

@@ -267,7 +267,6 @@ namespace ns3
       std::vector<Ptr<Node>> currentPath = pathNweight.first;
       int currentWeight = pathNweight.second;
 
-
       Vertex currentVertex = NodeToVertex(currentPath.back());
 
       // Explore neighbors
