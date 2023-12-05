@@ -27,6 +27,7 @@
 #include "ns3/node.h"
 #include <boost/graph/adjacency_list.hpp>
 #include "ns3/channel.h"
+#include "ns3/ofswitch13-module.h"
 
 using namespace boost;
 
@@ -58,6 +59,8 @@ public:
 
   static std::vector<std::pair<std::vector<Ptr<Node>>, int>> DijkstraShortestPaths (Ptr<Node> src,
                                                                                     Ptr<Node> dst);
+  
+  static PathStore Dijkstra_k_ShortestPaths(Ptr<Node> src, Ptr<Node> dst, int k_paths);
 
   static void UpdateEdgeWeight (Ptr<Node> n1, Ptr<Node> n2, int newWeight);
   static int GetEdgeWeight (Ptr<Node> n1, Ptr<Node> n2);

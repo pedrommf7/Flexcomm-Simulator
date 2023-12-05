@@ -48,17 +48,67 @@ namespace ns3
     return tid;
   }
 
+  std::vector<Ptr<Node>>
+  PathStore::CheckExists(std::vector<Ptr<Node>> path){
+    for (auto &p : paths_)
+    {
+      if (p.first == path)
+        return p.first;
+    }
+    return {};
+  }
+
+  void
+  PathStore::SortPathsAscending()
+  {
+    paths_.sort([](const auto &lhs, const auto &rhs)
+                { return lhs.second < rhs.second; });
+  }
+
+  void
+  PathStore::SortPathsDescending()
+  {
+    paths_.sort([](const auto &lhs, const auto &rhs)
+                { return lhs.second > rhs.second; });
+  }
+
   void
   PathStore::AddPath(std::vector<Ptr<Node>> path)
   {
-    paths_.emplace_back(std::make_pair(std::move(path), -1));
+    if (CheckExists(path).size() > 0)
+      return;
+    paths_.emplace_back(std::make_pair(std::move(path), INT_MAX	));
+    SortPathsAscending();
+  }
+
+  void
+  PathStore::AddPath(std::vector<Ptr<Node>> path, int distance)
+  {
+    if (CheckExists(path).size() > 0)
+      return;
+    paths_.emplace_back(std::make_pair(std::move(path), distance));
+    SortPathsAscending();
+  }
+
+  void 
+  PathStore::RemovePath(std::vector<Ptr<Node>> path){
+    paths_.remove_if([path](const auto &p){
+      return p.first == path;
+    });
   }
 
   std::vector<Ptr<Node>>
-  PathStore::GetShortestPath() const
+  PathStore::GetShortestPath()
   {
-    // Get the first path with the shortest distance
+    SortPathsAscending();
     return paths_.front().first;
+  }
+
+  std::vector<Ptr<Node>>
+  PathStore::GetBiggestPath()
+  {
+    SortPathsAscending();
+    return paths_.back().first;
   }
 
   std::pair<std::vector<Ptr<Node>>, int>
@@ -92,6 +142,16 @@ namespace ns3
     return shortestsPaths;
   }
 
+  int 
+  PathStore::GetDistance(std::vector<Ptr<Node>> path){
+    for(auto &p : paths_){
+      if(p.first == path)
+        return p.second;
+    }
+
+    return -1;
+  }
+
   void
   PathStore::CleanPaths()
   {
@@ -114,21 +174,14 @@ namespace ns3
 
       path.second = distance;
     }
+
     // sort paths by distance
-    paths_.sort([](const auto &lhs, const auto &rhs)
-                { return lhs.second < rhs.second; });
+    PathStore::SortPathsAscending();
   }
 
-  void
-  PathStore::CutNumberStoredPaths(int maxPaths)
+  int PathStore::GetNumberOfStoredPaths() const
   {
-    paths_.sort([](const auto &lhs, const auto &rhs)
-                { return lhs.first.size() < rhs.first.size(); });
-
-    // remove all paths that exceed the max number of paths stored
-    if (int(paths_.size()) > maxPaths)
-    {
-      paths_.resize(maxPaths);
-    }
+    return paths_.size();
   }
+
 } // namespace ns3

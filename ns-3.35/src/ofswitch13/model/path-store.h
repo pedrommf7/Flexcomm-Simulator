@@ -35,18 +35,28 @@ namespace ns3
     ~PathStore(); // Destructor
     static TypeId GetTypeId(void);
 
+    void SortPathsAscending();
+    void SortPathsDescending();
+
+    std::vector<Ptr<Node>> CheckExists(std::vector<Ptr<Node>> path);
     void AddPath(std::vector<Ptr<Node>> path);
-    std::vector<Ptr<Node>> GetShortestPath() const;
+    void AddPath(std::vector<Ptr<Node>> path, int distance);
+    void RemovePath(std::vector<Ptr<Node>> path);
+    std::vector<Ptr<Node>> GetShortestPath();
+    std::vector<Ptr<Node>> GetBiggestPath();
     std::pair<std::vector<Ptr<Node>>, int> GetShortestPathAndDistance() const;
     std::list<std::pair<std::vector<Ptr<Node>>, int>> GetPaths() const;
     std::list<std::pair<std::vector<Ptr<Node>>, int>> GetShortestsPathsInRange(int percentage) const;
+    int GetDistance(std::vector<Ptr<Node>> path);
     void CalculateDistances();
     void CutNumberStoredPaths(int maxPaths);
     void CleanPaths();
+    int GetNumberOfStoredPaths() const;
 
   private:
     std::list<std::pair<std::vector<Ptr<Node>>, int>> paths_; // List of paths from switch to host
   };
+  
 } // namespace ns3
 
 #endif /* PATH_STORE_H */
