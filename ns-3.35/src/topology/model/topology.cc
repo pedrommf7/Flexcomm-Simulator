@@ -24,7 +24,6 @@
 #include <boost/graph/detail/adjacency_list.hpp>
 #include <boost/graph/dijkstra_shortest_paths.hpp>
 #include <boost/graph/properties.hpp>
-#include <boost/graph/depth_first_search.hpp>
 
 namespace ns3
 {
@@ -84,6 +83,54 @@ namespace ns3
     Vertex vd2 = m_vertexes[n2];
     Edge e = add_edge(vd1, vd2, 1, m_graph).first;
     m_channels[e] = channel;
+  }
+
+  // void
+  // Topology::AddLink(Vertex v1, Vertex v2, int cost, Ptr<Channel> channel)
+  // {
+  //   Edge e = add_edge(v1, v2, cost, m_graph).first;
+  //   m_channels[e] = channel;
+  // }
+
+  // Ptr<Channel>
+  // Topology::RemoveLink(Vertex v1, Vertex v2)
+  // {
+  //   std::pair<Edge, bool> pair = boost::edge(v1, v2, m_graph);
+
+  //   if (pair.second)
+  //   {
+  //     Edge e = pair.first;
+  //     remove_edge(e, m_graph);
+  //     // remove channel from m_channels
+  //     Ptr<Channel> channel = m_channels[e];
+  //     m_channels.erase(e);
+  //     return channel;
+  //   }
+  //   return NULL;
+  // }
+
+  // Ptr<Channel>
+  // Topology::RemoveLink(Ptr<Node> n1, Ptr<Node> n2)
+  // {
+  //   return RemoveLink(m_vertexes[n1], m_vertexes[n2]);
+  // }
+
+  Edge 
+  Topology::GetEdge(Vertex v1, Vertex v2)
+  {
+    std::pair<Edge, bool> pair = boost::edge(v1, v2, m_graph);
+
+    if (pair.second)
+      return pair.first;
+    else
+      std::cerr << "Error: Edge not exists!!!" << v1 << " " << v2 << std::endl;
+    return Edge();
+  }
+
+  Edge
+  Topology::GetEdge(Ptr<Node> n1, Ptr<Node> n2)
+  {
+    return GetEdge(m_vertexes[n1], m_vertexes[n2]);
   }
 
   std::vector<Vertex>
@@ -245,68 +292,232 @@ namespace ns3
     return paths;
   }
 
-  PathStore
-  Topology::Dijkstra_k_ShortestPaths(Ptr<Node> src, Ptr<Node> dst, int k_paths)
+  int Topology::CalculateCost(std::vector<Vertex> path)
   {
-    
-    PathStore shortestPaths = PathStore();
-    PathStore paths = PathStore();
-    if (k_paths <= 0)
+    int cost = 0;
+    for (auto i = path.begin(); i != path.end() - 1; i++)
     {
-      std::cerr << "k must be greater than 0" << std::endl;
-      return shortestPaths;
+      int c = GetEdgeWeight(*i, *(i + 1));
+      if (cost < 0)
+        std::cerr << "[Calculate Cost]Error: Edge not exists!" << std::endl;
+      else
+        cost += c;
     }
-
-    // Initialize with the source vertex
-    std::vector<Ptr<Node>> path {src};
-    paths.AddPath(path, 0);
-
-    while (paths.GetNumberOfStoredPaths()>0 && shortestPaths.GetNumberOfStoredPaths()<k_paths)
-    {
-      std::pair<std::vector<Ptr<Node>>, int> pathNweight = paths.GetShortestPathAndDistance();
-      std::vector<Ptr<Node>> currentPath = pathNweight.first;
-      int currentWeight = pathNweight.second;
-
-      Vertex currentVertex = NodeToVertex(currentPath.back());
-
-      // Explore neighbors
-      boost::graph_traits<Graph>::out_edge_iterator ei, ei_end;
-      for (boost::tie(ei, ei_end) = out_edges(currentVertex, m_graph); ei != ei_end; ++ei)
-      {
-        int neighbor = target(*ei, m_graph);
-        int weight = get(boost::edge_weight, m_graph, *ei);
-
-        // Check if the neighbor is already in the path to avoid cycles
-        if (std::find(currentPath.begin(), currentPath.end(), neighbor) == currentPath.end())
-        {
-          std::vector<Ptr<Node>> newPath = currentPath;
-          newPath.push_back(VertexToNode(neighbor));
-          paths.AddPath(newPath, currentWeight + weight);
-        }
-      }
-
-      if (currentVertex != NodeToVertex(src))
-      {
-        int weight = paths.GetDistance(currentPath);
-        if (weight < 0)
-          std::cerr << "Error: path not found" << std::endl;
-        else
-          shortestPaths.AddPath(currentPath, weight);
-      }
-    }
-
-    // Print the results
-    for (const auto &path : shortestPaths.GetPaths())
-    {
-      std::vector<Ptr<Node>> p = path.first;
-      std::cout << "Path: ";
-      for (const auto &node : p)
-        std::cout << node->GetId() << " ";
-      std::cout << "Total Weight: " << path.second << std::endl;
-    }
-
-    return shortestPaths;
+    return cost;
   }
+
+  int Topology::CalculateCost(std::vector<Ptr<Node>> path)
+  {
+    int cost = 0;
+    for (auto i = path.begin(); i != path.end() - 1; i++)
+    {
+      int c = GetEdgeWeight(*i, *(i + 1));
+      if (cost < 0)
+        std::cerr << "[Calculate Cost]Error: Edge not exists!" << std::endl;
+      else
+        cost += c;
+    }
+    return cost;
+  }
+
+  // // Algorithm from https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=2ef1903a2f59f4c065b56ea0f5fab6fa4561eb5c
+  // std::vector<std::pair<std::vector<Ptr<Node>>, int>>
+  // Topology::Dijkstra_k_ShortestPaths(Ptr<Node> src, Ptr<Node> dst, int k_paths)
+  // {
+  //   if (k_paths <= 0)
+  //   {
+  //     std::cerr << "k must be greater than 0" << std::endl;
+  //     return {};
+  //   }
+  //   std::vector<std::pair<std::vector<Vertex>, int>> paths = {};
+  //   Vertex srcV = NodeToVertex(src);
+  //   Vertex dstV = NodeToVertex(dst);
+
+  //   std::vector<Vertex> sp = DijkstraShortestPathInternal(srcV, dstV);
+  //   if ((int)sp.size() > 0)
+  //   {
+  //     int cost = CalculateCost(sp);
+  //     paths.emplace_back(std::move(sp), cost);
+  //   }
+  //   int n = 1;
+  //   int index = 0;
+
+  //   while ((int)paths.size() > 0 && n < k_paths && index < (int)paths.size())
+  //   {
+  //     std::vector<Vertex> p = paths.at(index).first;
+  //     std::cout << "Analyzing path: ";
+  //     for (auto i = p.begin(); i != p.end(); i++)
+  //       std::cout << VertexToNode(*i)->GetId() << " ";
+  //     std::cout << std::endl;
+
+  //     // find edge with minimum cost
+  //     // int minCost = INT_MAX;
+
+  //     std::vector<std::pair<std::pair<Vertex, Vertex>, int>> edgs = {};
+  //     for (auto i = p.begin() + 1; i != p.end() - 2; i++) // not considering first and last links to avoid removing the source and destination nodes
+  //     {
+  //       int c = GetEdgeWeight(*i, *(i + 1));
+  //       if (c < 0)
+  //         std::cerr << "[Dijkstra_k_ShortestPaths]Error: Edge not exists! " << std::endl;
+  //       else
+  //         edgs.push_back(std::make_pair(std::make_pair(*i, *(i + 1)), c));
+  //       // else if (c < minCost)
+  //       // {
+  //       //   minCost = c;
+  //       //   v1 = *i;
+  //       //   v2 = *(i + 1);
+  //       // }
+  //       std::cout << "Edge: " << VertexToNode(*i)->GetId() << " " << VertexToNode(*(i + 1))->GetId() << " Cost: " << c << std::endl;
+  //     }
+
+  //     // sorts edgs vector
+  //     std::sort(edgs.begin(), edgs.end(),
+  //               [](const auto &lhs, const auto &rhs)
+  //               { return lhs.second < rhs.second; });
+
+  //     bool skip = false;
+  //     for (auto i = edgs.begin(); !skip && i != edgs.end(); i++)
+  //     {
+  //       std::cout << "entrou nos links" << std::endl;
+  //       Vertex v1 = (*i).first.first;
+  //       Vertex v2 = (*i).first.second;
+  //       Ptr<Channel> chnl = RemoveLink(v1, v2);
+
+  //       std::vector<Vertex> newSP = DijkstraShortestPathInternal(srcV, dstV);
+  //       bool existsStored = false;
+  //       if ((int)newSP.size() > 0)
+  //       {
+  //         for (const auto &pB : paths)
+  //         {
+  //           if (pB.first == newSP)
+  //           {
+  //             existsStored = true;
+  //             break;
+  //           }
+  //         }
+  //         if (!existsStored)
+  //         {
+  //           int newC = CalculateCost(newSP);
+  //           paths.emplace_back(std::move(newSP), newC);
+  //           n++;
+  //           skip = true;
+  //           std::cout << "      New path found" << std::endl;
+  //         }
+  //         else{
+  //           std::cout << "      Path already exists: ";
+  //           for (const auto &nn : newSP)
+  //             std::cout << VertexToNode(nn)->GetId() << " ";
+  //           std::cout << std::endl;
+  //         }
+  //       }
+
+  //       AddLink(v1, v2, (*i).second, chnl);
+  //     }
+
+  //     index++;
+  //     if ((int)paths.size() <= 0 )
+  //       std::cout << "Failed at 1 condition" << std::endl;
+  //     else if (n >= k_paths)
+  //       std::cout << "Failed at 2 condition" << std::endl;
+  //     else if (index >= (int)paths.size())
+  //       std::cout << "Failed at 3 condition" << std::endl;
+  //     else
+  //       std::cout << "OK" << std::endl;
+      
+  //     std::cout << "      index: " << index << " paths.size(): " << paths.size() << " n: " << n << std::endl;
+  //   }
+
+  //   // //Ptr<PathStore> shortestPaths = CreateObject<PathStore> ();
+  //   // std::vector<std::pair<std::vector<Ptr<Node>>, int>> shortestPaths = std::vector<std::pair<std::vector<Ptr<Node>>, int>>();
+
+  //   // if (k_paths <= 0)
+  //   // {
+  //   //   std::cerr << "k must be greater than 0" << std::endl;
+  //   //   return shortestPaths;
+  //   // }
+
+  //   // // Ptr<PathStore> paths = CreateObject<PathStore> ();
+  //   // std::vector<std::pair<std::vector<Ptr<Node>>, int>> paths = std::vector<std::pair<std::vector<Ptr<Node>>, int>>();
+
+  //   // // Initialize with the source vertex
+  //   // std::vector<Ptr<Node>> path {src};
+  //   // //paths->AddPath(path, 0);
+  //   // paths.emplace_back(std::move(path), 0);
+
+  //   // while ((int)paths.size() > 0 && (int)shortestPaths.size() < k_paths)
+  //   // {
+  //   //   // std::pair<std::vector<Ptr<Node>>, int> pathNweight = paths->GetShortestPathAndDistance();
+  //   //   int currentWeight = INT_MAX;
+  //   //   std::vector<Ptr<Node>> currentPath;
+  //   //   for (const auto &p : paths){
+  //   //     if (p.second < currentWeight)
+  //   //     {
+  //   //       currentWeight = p.second;
+  //   //       currentPath = p.first;
+  //   //     }
+  //   //   }
+
+  //   //   Vertex currentVertex = NodeToVertex(currentPath.back());
+
+  //   //   // Explore neighbors
+  //   //   boost::graph_traits<Graph>::out_edge_iterator ei, ei_end;
+  //   //   for (boost::tie(ei, ei_end) = out_edges(currentVertex, m_graph); ei != ei_end; ++ei)
+  //   //   {
+  //   //     Ptr<Node> neighbor = VertexToNode(target(*ei, m_graph));
+  //   //     int weight = get(boost::edge_weight, m_graph, *ei);
+
+  //   //     // Check if the neighbor is already in the path to avoid cycles
+  //   //     if (std::find(currentPath.begin(), currentPath.end(), neighbor) == currentPath.end())
+  //   //     {
+  //   //       std::vector<Ptr<Node>> newPath = currentPath;
+  //   //       newPath.push_back(neighbor);
+  //   //       paths.emplace_back(std::move(newPath), currentWeight + weight);
+  //   //     }
+  //   //   }
+
+  //   //   if (currentVertex != NodeToVertex(src))
+  //   //   {
+  //   //     //paths->GetDistance(currentPath);
+  //   //     int weight=-1;
+  //   //     for (const auto &p : paths){
+  //   //       if (p.first == currentPath)
+  //   //       {
+  //   //         weight = p.second;
+  //   //         break;
+  //   //       }
+  //   //     }
+  //   //     if (weight < 0)
+  //   //       std::cerr << "Error: path not found" << std::endl;
+  //   //     else
+  //   //       shortestPaths.emplace_back(std::move(currentPath), weight);
+  //   //   }
+  //   // }
+
+  //   // // Print the results
+  //   // for (const auto &pp : shortestPaths)
+  //   // {
+  //   //   std::vector<Ptr<Node>> p = pp.first;
+  //   //   std::cout << "Path: ";
+  //   //   for (const auto &node : p)
+  //   //     std::cout << node->GetId() << " ";
+  //   //   std::cout << "Total Weight: " << pp.second << std::endl;
+  //   // }
+
+  //   std::vector<std::pair<std::vector<Ptr<ns3::Node>>, int>> conversion = {};
+  //   int pathNr = 1;
+  //   for (auto i = paths.begin(); i != paths.end(); i++)
+  //   {
+  //     // std::cout << "Path " << pathNr << ": ";
+  //     // for (auto j = (*i).first.begin(); j != (*i).first.end(); j++)
+  //     //   std::cout << VertexToNode(*j)->GetId() << " ";
+  //     // std::cout << std::endl;
+  //     // std::cout << "      Total Weight: " << (*i).second << std::endl;
+  //     pathNr++;
+  //     conversion.emplace_back(std::move(VertexToNode((*i).first)), (*i).second);
+  //   }
+  //   std::cout << "From: " << src->GetId() << " To: " << dst->GetId() << ", found " << pathNr-1 << " paths" << std::endl;
+  //   return conversion;
+  // }
 
   Graph
   Topology::GetGraph()
@@ -353,6 +564,15 @@ namespace ns3
     return -1;
   }
 
+  int Topology::GetEdgeWeight(Vertex v1, Vertex v2)
+  {
+    std::pair<Edge, bool> pair = boost::edge(v1, v2, m_graph);
+
+    if (pair.second)
+      return Topology::GetEdgeWeight(pair.first);
+    return -1;
+  }
+
   int Topology::GetEdgeWeight(Edge e)
   {
     return get(edge_weight_t(), m_graph, e);
@@ -382,6 +602,16 @@ namespace ns3
     boost::graph_traits<Graph>::adjacency_iterator ai, a_end;
     for (boost::tie(ai, a_end) = boost::adjacent_vertices(vd, m_graph); ai != a_end; ++ai)
       successors.push_back(m_nodes[*ai]);
+    return successors;
+  }
+
+  std::vector<Vertex>
+  Topology::GetSuccessors(Vertex vd)
+  {
+    std::vector<Vertex> successors;
+    boost::graph_traits<Graph>::adjacency_iterator ai, a_end;
+    for (boost::tie(ai, a_end) = boost::adjacent_vertices(vd, m_graph); ai != a_end; ++ai)
+      successors.push_back(*ai);
     return successors;
   }
 

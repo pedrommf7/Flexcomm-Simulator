@@ -49,7 +49,7 @@ namespace ns3
     std::list<std::pair<std::vector<Ptr<Node>>, int>> GetShortestsPathsInRange(int percentage) const;
     int GetDistance(std::vector<Ptr<Node>> path);
     void CalculateDistances();
-    void CutNumberStoredPaths(int maxPaths);
+    //void CutNumberStoredPaths(int maxPaths);
     void CleanPaths();
     int GetNumberOfStoredPaths() const;
 

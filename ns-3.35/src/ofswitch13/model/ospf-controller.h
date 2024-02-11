@@ -39,7 +39,7 @@ namespace ns3
 
   protected:
     void HandshakeSuccessful(Ptr<const RemoteSwitch> sw);
-    void ApplyRouting(uint64_t swDpId);
+    //void ApplyRouting(uint64_t swDpId);
     void ApplyRouting(uint64_t swDpId, Ptr<Node> host, Ptr<Node> nextJump);
     void ApplyRoutingFromPath(std::vector<Ptr<Node>> path);
     void FindReferenceBandwidth();
@@ -47,10 +47,11 @@ namespace ns3
   private:
     void UpdateRouting();
     void UpdateWeights();
+    void UpdateDistances();
     void SetWeightsBandwidthBased();
-    void AddSwitchHostKey(Ptr<Node> switchNode, Ptr<Node> hostNode);
-    void StorePath(Ptr<Node> switchNode, Ptr<Node> hostNode, std::vector<Ptr<Node>> path);
-    void CleanPaths(Ptr<Node> switchNode, Ptr<Node> hostNode);
+    void AddHostsKey(std::pair<Ptr<Node>, Ptr<Node>> key);
+    void StorePath(Ptr<Node> source, Ptr<Node> destination, std::vector<Ptr<Node>> path, int distance);
+    //void CleanPaths(Ptr<Node> switchNode, Ptr<Node> hostNode);
     std::vector<std::vector<Ptr<Node>>> Search(Ptr<Node> init, Ptr<Node> destiny, std::vector<Ptr<Node>> &ignore);
     std::vector<std::vector<Ptr<Node>>> SearchWithDepth(Ptr<Node> init, Ptr<Node> destiny, std::vector<Ptr<Node>> &ignore, int maxDepth, int currentDepth);
     void FindAllPaths(Ptr<Node> source, Ptr<Node> destination);
@@ -58,7 +59,11 @@ namespace ns3
     int FindMaxDepth(Ptr<Node> source, Ptr<Node> destiny);
     void ResizeStoredPaths(int maxStorageNumber);
     void StartRoutingLoop();
-
+    void SortStoredPathsAscending();
+    void SortStoredPathsDescending();
+    bool CheckExistsPath(std::vector<Ptr<Node>> path, std::vector<std::pair<std::vector<Ptr<Node>>,int>> paths_);
+    std::vector<std::pair<std::vector<Ptr<Node>>,int>> GetPaths(std::pair<Ptr<Node>, Ptr<Node>> key);
+    
     bool m_isFirstUpdate;
     Graph base_graph;
     static uint64_t referenceBandwidthValue;

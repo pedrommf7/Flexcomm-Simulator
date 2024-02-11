@@ -27,74 +27,85 @@
 #include "ns3/node.h"
 #include <boost/graph/adjacency_list.hpp>
 #include "ns3/channel.h"
-#include "ns3/ofswitch13-module.h"
 
 using namespace boost;
 
-namespace ns3 {
-
-typedef adjacency_list<vecS, vecS, undirectedS, Ptr<Node>, property<edge_weight_t, int>> Graph;
-typedef graph_traits<Graph>::vertex_descriptor Vertex;
-typedef graph_traits<Graph>::edge_descriptor Edge;
-
-class Topology : public Object
+namespace ns3
 {
-public:
-  static TypeId GetTypeId (void);
-  Topology ();
-  ~Topology ();
+  typedef adjacency_list<vecS, vecS, undirectedS, Ptr<Node>, property<edge_weight_t, int>> Graph;
+  typedef graph_traits<Graph>::vertex_descriptor Vertex;
+  typedef graph_traits<Graph>::edge_descriptor Edge;
 
-  static void AddSwitch (Ptr<Node> sw);
-  static void AddHost (Ptr<Node> host, Ipv4Address ip);
-  static void AddLink (Ptr<Node> n1, Ptr<Node> n2, Ptr<Channel> channel);
+  class Topology : public Object
+  {
+  public:
+    static TypeId GetTypeId(void);
+    Topology();
+    ~Topology();
 
-  static std::vector<Ptr<Node>> DijkstraShortestPath (Ptr<Node> src, Ptr<Node> dst);
-  static std::vector<Ptr<Node>> DijkstraShortestPath (Ptr<Node> src, Ipv4Address dst);
-  static std::vector<Ptr<Node>> DijkstraShortestPath (Ipv4Address src, Ptr<Node> dst);
-  static std::vector<Ptr<Node>> DijkstraShortestPath (Ipv4Address src, Ipv4Address dst);
-  static std::vector<Ptr<Node>> DijkstraShortestPath (std::string src, std::string dst);
-  static std::vector<Ptr<Node>> DijkstraShortestPaths (Ptr<Node> src);
-  static std::vector<Ptr<Node>> DijkstraShortestPaths (Ipv4Address src);
-  static std::vector<Ptr<Node>> DijkstraShortestPaths (std::string src);
+    static void AddSwitch(Ptr<Node> sw);
+    static void AddHost(Ptr<Node> host, Ipv4Address ip);
+    static void AddLink(Ptr<Node> n1, Ptr<Node> n2, Ptr<Channel> channel);
 
-  static std::vector<std::pair<std::vector<Ptr<Node>>, int>> DijkstraShortestPaths (Ptr<Node> src,
-                                                                                    Ptr<Node> dst);
-  
-  static PathStore Dijkstra_k_ShortestPaths(Ptr<Node> src, Ptr<Node> dst, int k_paths);
+    static std::vector<Ptr<Node>> DijkstraShortestPath(Ptr<Node> src, Ptr<Node> dst);
+    static std::vector<Ptr<Node>> DijkstraShortestPath(Ptr<Node> src, Ipv4Address dst);
+    static std::vector<Ptr<Node>> DijkstraShortestPath(Ipv4Address src, Ptr<Node> dst);
+    static std::vector<Ptr<Node>> DijkstraShortestPath(Ipv4Address src, Ipv4Address dst);
+    static std::vector<Ptr<Node>> DijkstraShortestPath(std::string src, std::string dst);
+    static std::vector<Ptr<Node>> DijkstraShortestPaths(Ptr<Node> src);
+    static std::vector<Ptr<Node>> DijkstraShortestPaths(Ipv4Address src);
+    static std::vector<Ptr<Node>> DijkstraShortestPaths(std::string src);
 
-  static void UpdateEdgeWeight (Ptr<Node> n1, Ptr<Node> n2, int newWeight);
-  static int GetEdgeWeight (Ptr<Node> n1, Ptr<Node> n2);
+    static std::vector<std::pair<std::vector<Ptr<Node>>, int>> DijkstraShortestPaths(Ptr<Node> src,
+                                                                                     Ptr<Node> dst);
 
-  static Graph GetGraph ();
+    static std::vector<std::pair<std::vector<Ptr<Node>>, int>> Dijkstra_k_ShortestPaths(Ptr<Node> src, 
+                                                                                        Ptr<Node> dst, 
+                                                                                        int k_paths);
 
-  static Ptr<Node> VertexToNode (Vertex vd);
-  static std::vector<Ptr<Node>> VertexToNode (std::vector<Vertex> path);
+    static void UpdateEdgeWeight(Ptr<Node> n1, Ptr<Node> n2, int newWeight);
+    static int GetEdgeWeight(Ptr<Node> n1, Ptr<Node> n2);
+    static int CalculateCost(std::vector<Ptr<Node>> path);
+    static Edge GetEdge(Vertex v1, Vertex v2);
+    static Edge GetEdge(Ptr<Node> n1, Ptr<Node> n2);
+    static Ptr<Channel> RemoveLink(Vertex v1, Vertex v2);
+    static Ptr<Channel> RemoveLink(Ptr<Node> n1, Ptr<Node> n2);
 
-  static Vertex NodeToVertex (Ptr<Node> node);
+    static Graph GetGraph();
 
-  static Ptr<Channel> GetChannel (Ptr<Node> n1, Ptr<Node> n2);
+    static Ptr<Node> VertexToNode(Vertex vd);
+    static std::vector<Ptr<Node>> VertexToNode(std::vector<Vertex> path);
 
-  static std::vector<Ptr<Node>> GetSuccessors (Ptr<Node> node);
+    static Vertex NodeToVertex(Ptr<Node> node);
 
-private:
-  static Graph m_graph;
+    static Ptr<Channel> GetChannel(Ptr<Node> n1, Ptr<Node> n2);
 
-  // NOTE: Perhaps we can simplify this using vertex/edge properties
-  static std::map<Ptr<Node>, Vertex> m_vertexes;
-  static std::map<Vertex, Ptr<Node>> m_nodes;
-  static std::map<Ipv4Address, Vertex> m_ip_to_vertex;
-  static std::map<Vertex, Ipv4Address> m_vertex_to_ip;
-  static std::map<Edge, Ptr<Channel>> m_channels;
+    static std::vector<Ptr<Node>> GetSuccessors(Ptr<Node> node);
 
-  static std::vector<Vertex> DijkstraShortestPathsInternal (Vertex src);
-  static std::vector<Vertex> DijkstraShortestPathInternal (Vertex src, Vertex dst);
-  static void UpdateEdgeWeight (Edge ed, int newWeight);
-  static int GetEdgeWeight (Edge ed);
+  private:
+    static Graph m_graph;
 
-  static Ptr<Channel> GetChannel (Edge e);
+    // NOTE: Perhaps we can simplify this using vertex/edge properties
+    static std::map<Ptr<Node>, Vertex> m_vertexes;
+    static std::map<Vertex, Ptr<Node>> m_nodes;
+    static std::map<Ipv4Address, Vertex> m_ip_to_vertex;
+    static std::map<Vertex, Ipv4Address> m_vertex_to_ip;
+    static std::map<Edge, Ptr<Channel>> m_channels;
 
-  static Vertex AddNode (Ptr<Node> node);
-};
+    static void AddLink(Vertex v1, Vertex v2, int cost, Ptr<Channel> channel);
+    static std::vector<Vertex> GetSuccessors(Vertex vd);
+    static int GetEdgeWeight(Vertex v1, Vertex v2);
+    static int CalculateCost(std::vector<Vertex> path);
+    
+    static std::vector<Vertex> DijkstraShortestPathsInternal(Vertex src);
+    static std::vector<Vertex> DijkstraShortestPathInternal(Vertex src, Vertex dst);
+    static void UpdateEdgeWeight(Edge ed, int newWeight);
+    static int GetEdgeWeight(Edge ed);
+
+    static Ptr<Channel> GetChannel(Edge e);
+
+    static Vertex AddNode(Ptr<Node> node);
+  };
 
 } // namespace ns3
 
