@@ -1,0 +1,15 @@
+[app3]
+type = "constSend"
+host = "H7"
+remote = "H8"
+dataRate = "5Mb/s"
+startTime = "10s"
+stopTime = "190s"
+
+[app4]
+type = "constSend"
+host = "H8"
+remote = "H7"
+dataRate = "5Mb/s"
+startTime = "10s"
+stopTime = "190s"

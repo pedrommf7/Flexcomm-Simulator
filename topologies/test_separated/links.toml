@@ -1,0 +1,89 @@
+[link1]
+edges = ["H1", "S1"]
+dataRate = "100Mbps"
+delay = "0ms"
+
+[link2]
+edges = ["S1", "S2"]
+dataRate = "100Mbps"
+delay = "0ms"
+
+[link3]
+edges = ["S2", "S3"]
+dataRate = "100Mbps"
+delay = "0ms"
+
+[link4]
+edges = ["S3", "H2"]
+dataRate = "100Mbps"
+delay = "0ms"
+
+[link5]
+edges = ["H3", "S4"]
+dataRate = "100Mbps"
+delay = "0ms"
+
+[link6]
+edges = ["S4", "S5"]
+dataRate = "100Mbps"
+delay = "0ms"
+
+[link7]
+edges = ["S5", "S6"]
+dataRate = "100Mbps"
+delay = "0ms"
+
+[link8]
+edges = ["S6", "H4"]
+dataRate = "100Mbps"
+delay = "0ms"
+
+[link9]
+edges = ["H5", "S7"]
+dataRate = "100Mbps"
+delay = "0ms"
+
+[link10]
+edges = ["S7", "S8"]
+dataRate = "100Mbps"
+delay = "0ms"
+
+[link11]
+edges = ["S8", "S9"]
+dataRate = "100Mbps"
+delay = "0ms"
+
+[link12]
+edges = ["S9", "H6"]
+dataRate = "100Mbps"
+delay = "0ms"
+
+[link13]
+edges = ["H7", "S10"]
+dataRate = "100Mbps"
+delay = "0ms"
+
+[link14]
+edges = ["S10", "S11"]
+dataRate = "100Mbps"
+delay = "0ms"
+
+[link15]
+edges = ["S11", "S12"]
+dataRate = "100Mbps"
+delay = "0ms"
+
+[link16]
+edges = ["S12", "S13"]
+dataRate = "100Mbps"
+delay = "0ms"
+
+[link17]
+edges = ["S13", "S14"]
+dataRate = "100Mbps"
+delay = "0ms"
+
+[link18]
+edges = ["S14", "H8"]
+dataRate = "100Mbps"
+delay = "0ms"

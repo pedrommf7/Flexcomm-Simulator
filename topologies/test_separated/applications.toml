@@ -1,0 +1,23 @@
+[app1]
+type = "constSend"
+host = "H3"
+remote = "H4"
+dataRate = "10Mbps"
+
+[app2]
+type = "constSend"
+host = "H5"
+remote = "H6"
+dataRate = "10Mbps"
+
+[app3]
+type = "constSend"
+host = "H7"
+remote = "H8"
+dataRate = "10Mbps"
+
+[app4]
+type = "constSend"
+host = "H8"
+remote = "H7"
+dataRate = "10Mbps"

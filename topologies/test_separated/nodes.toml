@@ -1,0 +1,121 @@
+[H1]
+type = "host"
+
+[H2]
+type = "host"
+
+[H3]
+type = "host"
+
+[H4]
+type = "host"
+
+[H5]
+type = "host"
+
+[H6]
+type = "host"
+
+[H7]
+type = "host"
+
+[H8]
+type = "host"
+
+[S1]
+type = "switch"
+cpuCapacity = "5Mbps"
+
+[S1.chassis]
+template = "strong"
+
+[S2]
+type = "switch"
+cpuCapacity = "5Mbps"
+
+[S2.chassis]
+template = "strong"
+
+[S3]
+type = "switch"
+cpuCapacity = "5Mbps"
+
+[S3.chassis]
+template = "strong"
+
+[S4]
+type = "switch"
+cpuCapacity = "5Mbps"
+
+[S4.chassis]
+template = "strong"
+
+[S5]
+type = "switch"
+cpuCapacity = "5Mbps"
+
+[S5.chassis]
+template = "strong"
+
+[S6]
+type = "switch"
+cpuCapacity = "5Mbps"
+
+[S6.chassis]
+template = "strong"
+
+[S7]
+type = "switch"
+cpuCapacity = "5Mbps"
+
+[S7.chassis]
+template = "weak"
+
+[S8]
+type = "switch"
+cpuCapacity = "5Mbps"
+
+[S8.chassis]
+template = "weak"
+
+[S9]
+type = "switch"
+cpuCapacity = "5Mbps"
+
+[S9.chassis]
+template = "weak"
+
+[S10]
+type = "switch"
+cpuCapacity = "5Mbps"
+
+[S10.chassis]
+template = "strong"
+
+[S11]
+type = "switch"
+cpuCapacity = "5Mbps"
+
+[S11.chassis]
+template = "strong"
+
+[S12]
+type = "switch"
+cpuCapacity = "5Mbps"
+
+[S12.chassis]
+template = "strong"
+
+[S13]
+type = "switch"
+cpuCapacity = "5Mbps"
+
+[S13.chassis]
+template = "strong"
+
+[S14]
+type = "switch"
+cpuCapacity = "5Mbps"
+
+[S14.chassis]
+template = "strong"

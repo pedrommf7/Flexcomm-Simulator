@@ -1,0 +1,19 @@
+[link9]
+edges = ["H5", "S7"]
+dataRate = "100Mbps"
+delay = "0ms"
+
+[link10]
+edges = ["S7", "S8"]
+dataRate = "100Mbps"
+delay = "0ms"
+
+[link11]
+edges = ["S8", "S9"]
+dataRate = "100Mbps"
+delay = "0ms"
+
+[link12]
+edges = ["S9", "H6"]
+dataRate = "100Mbps"
+delay = "0ms"

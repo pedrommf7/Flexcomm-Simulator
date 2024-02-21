@@ -1,0 +1,26 @@
+[H3]
+type = "host"
+
+[H4]
+type = "host"
+
+[S4]
+type = "switch"
+cpuCapacity = "5Mbps"
+
+[S4.chassis]
+template = "strong"
+
+[S5]
+type = "switch"
+cpuCapacity = "5Mbps"
+
+[S5.chassis]
+template = "strong"
+
+[S6]
+type = "switch"
+cpuCapacity = "5Mbps"
+
+[S6.chassis]
+template = "strong"

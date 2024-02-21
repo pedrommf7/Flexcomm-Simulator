@@ -1,0 +1,40 @@
+[H7]
+type = "host"
+
+[H8]
+type = "host"
+
+[S10]
+type = "switch"
+cpuCapacity = "25Mbps"
+
+[S10.chassis]
+template = "strong"
+
+[S11]
+type = "switch"
+cpuCapacity = "25Mbps"
+
+[S11.chassis]
+template = "strong"
+
+[S12]
+type = "switch"
+cpuCapacity = "25Mbps"
+
+[S12.chassis]
+template = "weak"
+
+[S13]
+type = "switch"
+cpuCapacity = "25Mbps"
+
+[S13.chassis]
+template = "weak"
+
+[S14]
+type = "switch"
+cpuCapacity = "25Mbps"
+
+[S14.chassis]
+template = "strong"

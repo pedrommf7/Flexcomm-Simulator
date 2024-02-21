@@ -1,0 +1,33 @@
+[H1]
+type = "host"
+
+[H2]
+type = "host"
+
+[S1]
+type = "switch"
+cpuCapacity = "1Gbps"
+
+[S1.chassis]
+template = "default2"
+
+[S2]
+type = "switch"
+cpuCapacity = "1Gbps"
+
+[S2.chassis]
+template = "default2"
+
+[S3]
+type = "switch"
+cpuCapacity = "1Gbps"
+
+[S3.chassis]
+template = "default2"
+
+[S4]
+type = "switch"
+cpuCapacity = "1Gbps"
+
+[S4.chassis]
+template = "default2"
