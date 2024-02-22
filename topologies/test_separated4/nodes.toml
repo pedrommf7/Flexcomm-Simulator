@@ -6,35 +6,35 @@ type = "host"
 
 [S10]
 type = "switch"
-cpuCapacity = "25Mbps"
+cpuCapacity = "5Mbps"
 
 [S10.chassis]
 template = "strong"
 
 [S11]
 type = "switch"
-cpuCapacity = "25Mbps"
+cpuCapacity = "5Mbps"
 
 [S11.chassis]
 template = "strong"
 
 [S12]
 type = "switch"
-cpuCapacity = "25Mbps"
+cpuCapacity = "5Mbps"
 
 [S12.chassis]
-template = "weak"
+template = "strong"
 
 [S13]
 type = "switch"
-cpuCapacity = "25Mbps"
+cpuCapacity = "5Mbps"
 
 [S13.chassis]
-template = "weak"
+template = "strong"
 
 [S14]
 type = "switch"
-cpuCapacity = "25Mbps"
+cpuCapacity = "5Mbps"
 
 [S14.chassis]
 template = "strong"

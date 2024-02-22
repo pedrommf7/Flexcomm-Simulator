@@ -2,4 +2,4 @@
 type = "constSend"
 host = "H5"
 remote = "H6"
-dataRate = "10Mbps"
+dataRate = "3Mbps"

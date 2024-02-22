@@ -1,15 +1,18 @@
 [app3]
-type = "constSend"
+type = "sinSend"
 host = "H7"
 remote = "H8"
-dataRate = "5Mb/s"
+const = "1.5Mb/s"
+b = 1.0
 startTime = "10s"
 stopTime = "190s"
 
 [app4]
-type = "constSend"
+type = "sinSend"
 host = "H8"
 remote = "H7"
-dataRate = "5Mb/s"
+const = "1.5Mb/s"
+b = 1.0
+c = 2.0
 startTime = "10s"
 stopTime = "190s"
