@@ -1,0 +1,6 @@
+[app3]
+type = "sinSend"
+host = "H7"
+remote = "H8"
+const = "2Mb/s"
+b = 1

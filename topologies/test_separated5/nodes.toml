@@ -1,0 +1,40 @@
+[H7]
+type = "host"
+
+[H8]
+type = "host"
+
+[S10]
+type = "switch"
+cpuCapacity = "5Mbps"
+
+[S10.chassis]
+template = "coreDevice"
+
+[S11]
+type = "switch"
+cpuCapacity = "5Mbps"
+
+[S11.chassis]
+template = "coreDevice"
+
+[S12]
+type = "switch"
+cpuCapacity = "5Mbps"
+
+[S12.chassis]
+template = "coreDevice"
+
+[S13]
+type = "switch"
+cpuCapacity = "5Mbps"
+
+[S13.chassis]
+template = "coreDevice"
+
+[S14]
+type = "switch"
+cpuCapacity = "5Mbps"
+
+[S14.chassis]
+template = "coreDevice"

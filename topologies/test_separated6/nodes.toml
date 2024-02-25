@@ -1,0 +1,40 @@
+[H7]
+type = "host"
+
+[H8]
+type = "host"
+
+[S10]
+type = "switch"
+cpuCapacity = "5Mbps"
+
+[S10.chassis]
+template = "metroTransport"
+
+[S11]
+type = "switch"
+cpuCapacity = "5Mbps"
+
+[S11.chassis]
+template = "metroTransport"
+
+[S12]
+type = "switch"
+cpuCapacity = "5Mbps"
+
+[S12.chassis]
+template = "metroTransport"
+
+[S13]
+type = "switch"
+cpuCapacity = "5Mbps"
+
+[S13.chassis]
+template = "metroTransport"
+
+[S14]
+type = "switch"
+cpuCapacity = "5Mbps"
+
+[S14.chassis]
+template = "metroTransport"

@@ -4,29 +4,29 @@ echo 'Insert the topology folder name:'
 read topo
 
 echo '
-------------> [COMMAND] python ./utils/topo-vis.py --topology='$topo'
+------------> [COMMAND] ./utils/topo-vis.py --topology='$topo'
 '
 ./utils/topo-vis.py --topology=$topo --showHosts &
 
 echo '
-------------> [COMMAND] python ./utils/flowmo-parser.py outputs/'$topo'/flow-monitor.xml
+------------> [COMMAND] ./utils/flowmo-parser.py outputs/'$topo'/flow-monitor.xml
 '
 ./utils/flowmo-parser.py outputs/$topo/flow-monitor.xml
 
 echo '
 
-------------> [COMMAND] python ./utils/ecofen-parser.py outputs/'$topo'/flow-monitor.xml
+------------> [COMMAND] ./utils/ecofen-parser.py outputs/'$topo'/ecofen-trace.csv
 '
-./utils/ecofen-parser.py outputs/$topo/ecofen-trace
+./utils/ecofen-parser.py outputs/$topo/ecofen-trace.csv
 
 echo '
 
-------------> [COMMAND] python ./utils/switch-stats-parser.py outputs/'$topo'/flow-monitor.xml
+------------> [COMMAND] ././utils/switch-stats-parser.py outputs/'$topo'/switch-stats.csv
 '
-./utils/switch-stats-parser.py outputs/$topo/switch-stats
+./utils/switch-stats-parser.py outputs/$topo/switch-stats.csv
 
 echo '
 
-------------> [COMMAND] python ./utils/link-stats-parser.py outputs/'$topo'/flow-monitor.xml
+------------> [COMMAND] ././utils/link-stats-parser.py outputs/'$topo'/link-stats.csv
 '
-./utils/link-stats-parser.py outputs/$topo/link-stats
+./utils/link-stats-parser.py outputs/$topo/link-stats.csv

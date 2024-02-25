@@ -12,3 +12,13 @@ consumptions = [10.0, 20.0, 35.0, 80.0, 150.0, 200.0]
 model = "cpuLoad"
 percentages = [0.0, 0.10, 0.25, 0.50, 0.75, 1.0]
 consumptions = [5.0, 15.0, 30.0, 55.0, 80.0, 120.0]
+
+[chassis.coreDevice]
+model = "cpuLoadDiscrete"
+percentages = [0.0, 0.25, 0.50, 0.75, 1.0]
+consumptions = [7000.0, 8000.0, 9000.0, 10000.0, 11000.0]
+
+[chassis.metroTransport]
+model = "cpuLoadDiscrete"
+percentages = [0.0, 0.25, 0.50, 0.75, 1.0]
+consumptions = [4000.0, 4575.0, 5150.0, 57250.0, 6300.0]

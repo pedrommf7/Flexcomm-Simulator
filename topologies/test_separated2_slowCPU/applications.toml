@@ -1,0 +1,5 @@
+[app1]
+type = "constSend"
+host = "H3"
+remote = "H4"
+dataRate = "3Mbps"
