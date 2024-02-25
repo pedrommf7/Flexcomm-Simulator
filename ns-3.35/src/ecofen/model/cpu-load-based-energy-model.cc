@@ -70,6 +70,18 @@ CpuLoadBasedEnergyModel::GetPowerConsumption ()
              ((m_values[i] - m_values[i - 1]) / (m_percentages[i] - m_percentages[i - 1]));
 }
 
+double
+CpuLoadBasedEnergyModel::GetMaxPowerConsumption ()
+{
+  return m_values.back ();
+}
+
+double
+CpuLoadBasedEnergyModel::GetMinPowerConsumption ()
+{
+  return m_values.front ();
+}
+
 void
 CpuLoadBasedEnergyModel::SetUsageValues (std::map<double, double> values)
 {
