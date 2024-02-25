@@ -45,6 +45,8 @@ namespace ns3
     void FindReferenceBandwidth();
 
   private:
+    void PrintCosts();
+    void StatsLoop(int index);
     void UpdateRouting();
     void UpdateWeights();
     void UpdateDistances();
