@@ -46,7 +46,7 @@ namespace ns3
 
   private:
     void PrintCosts();
-    void StatsLoop(int index);
+    void StatsLoop();
     void UpdateRouting();
     void UpdateWeights();
     void UpdateDistances();

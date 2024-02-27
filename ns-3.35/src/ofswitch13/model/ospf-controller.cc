@@ -544,38 +544,25 @@ namespace ns3
     Simulator::Schedule(Minutes(1), &OspfController::StartRoutingLoop, this);
   }
 
-  void OspfController::StatsLoop(int index)
+  void OspfController::StatsLoop()
   {
     std::cout << "-----[Stats Loop]-----" << std::endl;
-    boost::graph_traits<Graph>::edge_iterator edgeIt, edgeEnd;
-    for (boost::tie(edgeIt, edgeEnd) = boost::edges(base_graph); edgeIt != edgeEnd; ++edgeIt)
+    // iterate switches
+    boost::graph_traits<Graph>::vertex_iterator vertexIt, vertexEnd;
+    for (boost::tie(vertexIt, vertexEnd) = boost::vertices(base_graph); vertexIt != vertexEnd; ++vertexIt)
     {
-      Edge ed = *edgeIt;
-      Ptr<Node> n1 = Topology::VertexToNode(ed.m_source);
-      Ptr<Node> n2 = Topology::VertexToNode(ed.m_target);
-
-      if (n1->GetId() == 2)
+      Ptr<Node> n1 = Topology::VertexToNode(*vertexIt);
+      if (n1->IsSwitch())
       {
-        Ptr<NodeEnergyModel> noem1 = n1->GetObject<NodeEnergyModel>();
-
-        if (noem1)
+        Ptr<CpuLoadBasedEnergyModel> cpuLBE = n1->GetObject<CpuLoadBasedEnergyModel>();
+        if (cpuLBE)
         {
-          Ptr<OFSwitch13Device> of = n1->GetObject<OFSwitch13Device>();
-          double n1Consumption = noem1->GetTotalPowerConsumption(n1);
-
-          std::cout << "[Consumption] " << index << " " << n1Consumption << std::endl;
-          double n1CpuUsage = of->GetCpuUsage();
-          Ptr<CpuLoadBasedEnergyModel> cpuLBE = n1->GetObject<CpuLoadBasedEnergyModel>();
-          if (cpuLBE){
-            double minC = cpuLBE->GetMinPowerConsumption();
-            n1CpuUsage = n1CpuUsage * (cpuLBE->GetMaxPowerConsumption()-minC) + minC;
-          }
-          std::cout << "[CPU] " << index << " " << n1CpuUsage << std::endl;
+          std::cout << "[MinMax] " << Names::FindName (n1) << 
+                        " " << cpuLBE->GetMinPowerConsumption() << 
+                        " " << cpuLBE->GetMaxPowerConsumption() << std::endl;
         }
       }
     }
-    index++;
-    Simulator::Schedule(Seconds(10), &OspfController::StatsLoop, this, index);
   }
 
   void OspfController::HandshakeSuccessful(Ptr<const RemoteSwitch> sw)
@@ -628,7 +615,7 @@ namespace ns3
       ResizeStoredPaths(7); // Set here the max number of paths that can be stored
 
       StartRoutingLoop();
-      StatsLoop(0);
+      StatsLoop();
       m_isFirstUpdate = false;
       lastUpdate = Simulator::Now();
     }

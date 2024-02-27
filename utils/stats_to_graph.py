@@ -3,50 +3,82 @@
 import sys
 import re
 import matplotlib.pyplot as plt
+import pandas as pd
 
-# Function to parse the file and extract CPU and Consumption data
+# Function to parse the file and extract MinMax data
 def parse_file(file_path):
-    cpu_data = []
-    consumption_data = []
+    min_max_data = {}
 
     with open(file_path, 'r') as file:
         for line in file:
-            cpu_match = re.match(r"\[CPU\] ([\d.]+) ([\d.]+)", line)
-            consumption_match = re.match(r"\[Consumption\] ([\d.]+) ([\d.]+)", line)
+            minmax_match = re.match(r"\[MinMax\] ([\w\d]+) ([\d.]+) ([\d.]+)", line)
 
-            if cpu_match:
-                x, y = map(float, cpu_match.groups())
-                cpu_data.append((x, y))
-            elif consumption_match:
-                x, y = map(float, consumption_match.groups())
-                consumption_data.append((x, y))
+            if minmax_match:
+                x, y = map(float, minmax_match.groups()[1:])
+                min_max_data[minmax_match.groups()[0]] = (x, y)
+
+    return min_max_data
+
+def read_csv_files(cpu_file_path, consumption_file_path, switch_name):
+    print("CPU File Path", cpu_file_path)
+    print("Consumption File Path", consumption_file_path)
+    cpu_data = pd.read_csv(cpu_file_path, delimiter=';')
+    consumption_data = pd.read_csv(consumption_file_path, delimiter=';')
+
+    cpu_data = cpu_data[cpu_data['NodeName'] == switch_name]
+    consumption_data = consumption_data[consumption_data['NodeName'] == switch_name]
 
     return cpu_data, consumption_data
 
 # Function to plot the data
-def plot_graph(cpu_data, consumption_data):
-    cpu_x, cpu_y = zip(*cpu_data)
-    consumption_x, consumption_y = zip(*consumption_data)
+def plot_graph(trace_folder, min_max_data, switch_name):
+    min_value, max_value = min_max_data[switch_name]
 
-    plt.plot(cpu_x, cpu_y, label='CPU')
-    plt.plot(consumption_x, consumption_y, label='Consumption')
-    
-    plt.xlabel("Time")
-    plt.ylabel('Values')
-    plt.legend()
+    cpu_data, consumption_data = read_csv_files(f'{trace_folder}/switch-stats.csv', f'{trace_folder}/ecofen-trace.csv', switch_name)
+
+    # print("Cpu Data\n", cpu_data)
+    # print("Consumption Data\n", consumption_data)
+    cpu_x, cpu_y = cpu_data['Time'].tolist(), cpu_data['CPU_Usage'].tolist()
+    consumption_x, consumption_y = consumption_data['Time'].tolist(), consumption_data['Consumption'].tolist()
+    # print("CPU X\n", cpu_x)
+    # print("CPU Y\n", cpu_y)
+    # print("Consumption X\n", consumption_x)
+    # print("Consumption Y\n", consumption_y)
+
+    fig, ax1 = plt.subplots()
+    ax1.set_title(f"{trace_folder} -> {switch_name}")
+
+    color = 'tab:red'
+    ax1.set_xlabel("Time (s)")
+    ax1.set_ylabel('Consumption (Wh)', color=color)
+    ax1.plot(consumption_x, consumption_y, color=color)
+    ax1.tick_params(axis='y', labelcolor=color)
+    ax1.set_ylim(min_value-5, max_value+5)
+
+    ax2 = ax1.twinx()  # instantiate a second axes that shares the same x-axis
+
+    color = 'tab:blue'
+    ax2.set_ylabel('Usage (%)', color=color)  # we already handled the x-label with ax1
+    ax2.plot(cpu_x, cpu_y, color=color)
+    ax2.tick_params(axis='y', labelcolor=color)
+    ax2.set_ylim(-0.1, 1.1)
+
+    fig.tight_layout()  # otherwise the right y-label is slightly clipped
     plt.show()
 
 # Check if a filename is provided as a command-line argument
-if len(sys.argv) != 2:
-    print("Usage: python script.py <filename>")
+if len(sys.argv) != 3:
+    print("Usage: python stats_to_graph.py <trace_folder> <output_file>")
     sys.exit(1)
 
 # Get the filename from the command-line argument
-file_path = sys.argv[1]
-print(f'File Path: {file_path}')
+trace_folder = sys.argv[1]
+output_file = sys.argv[2]
 
-cpu_data, consumption_data = parse_file(file_path)
-print(f'CPU Data: {cpu_data}')
-print(f'Consumption Data: {consumption_data}')
+min_max_data = parse_file(output_file)
+all_switchs = list(min_max_data.keys())
+switch_name = input(f"Available switchs names: {all_switchs} \nInsert the switch name:")
 
-plot_graph(cpu_data, consumption_data)
+plot_graph(trace_folder, min_max_data, switch_name)
+
+
