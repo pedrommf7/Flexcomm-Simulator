@@ -68,8 +68,8 @@ namespace ns3
     if (i == 0)
       return m_values[0];
 
-    if (i >= m_percentages.size()) // cpuUsage is greater than the last known percentage
-      return m_values.back();      // return the last known value
+    if (i >= m_values.size()) // cpuUsage is greater than the last known percentage
+      return m_values.back(); // return the last known value
 
     // Linear interpolation
     return m_values[i - 1] +
