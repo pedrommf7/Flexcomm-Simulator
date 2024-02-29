@@ -51,12 +51,18 @@ CpuLoadBasedDiscreteEnergyModel::GetPowerConsumption ()
   double cpuUsage = device->GetCpuUsage ();
 
   int i = 0;
+  int exceeded = 1;
   for (double percent : m_percentages)
     {
-      if (cpuUsage <= percent)
+      if (cpuUsage <= percent){
+        exceeded = 0;
         break;
+      }
       i++;
     }
+  if(exceeded){
+    i = m_percentages.size() - 1;
+  }
   return m_values[i];
 }
 

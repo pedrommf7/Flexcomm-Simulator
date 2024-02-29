@@ -54,15 +54,25 @@ CpuLoadBasedEnergyModel::GetPowerConsumption ()
   double cpuUsage = device->GetCpuUsage ();
 
   int i = 0;
+  int exceeded = 1;
   for (double percent : m_percentages)
     {
-      if (cpuUsage <= percent)
+      if(cpuUsage == percent)//impedir interpolação se cpuUsage for igual a um dos valores existentes
+        return m_values[i];
+      
+      if (cpuUsage <= percent){
+        exceeded = 0;
         break;
+      }
       i++;
     }
 
   if (i == 0)
     return m_values[0];
+  
+  if(exceeded){
+    i = m_percentages.size() - 1;
+  }
 
   // Linear interpolation
   return m_values[i - 1] +
