@@ -42,11 +42,11 @@ def plot_graph(trace_folder, min_max_data, switch_name):
     # print("Consumption Data\n", consumption_data)
     cpu_x, cpu_y = cpu_data['Time'].tolist(), cpu_data['CPU_Usage'].tolist()
     consumption_x, consumption_y = consumption_data['Time'].tolist(), consumption_data['Consumption'].tolist()
-    cpu_x = [round(elem, 2) for elem in cpu_x]
-    cpu_y = [round(elem, 2) for elem in cpu_y]
-    consumption_x = [round(elem, 2) for elem in consumption_x]
-    consumption_y = [round(elem, 2) for elem in consumption_y]
-    
+    cpu_x = [round(elem, 3) for elem in cpu_x]
+    cpu_y = [round(elem, 3) for elem in cpu_y]
+    consumption_x = [round(elem, 3) for elem in consumption_x]
+    consumption_y = [round(elem, 3) for elem in consumption_y]
+
     # print("CPU X\n", cpu_x)
     print("CPU Y\n", cpu_y)
     # print("Consumption X\n", consumption_x)
@@ -61,7 +61,7 @@ def plot_graph(trace_folder, min_max_data, switch_name):
     ax1.plot(consumption_x, consumption_y, color=color)
     ax1.tick_params(axis='y', labelcolor=color)
     if min_value is not None and max_value is not None:
-        ax1.set_ylim(min_value-5, max_value+5)
+        ax1.set_ylim(min_value*0.95, max_value*1.05)
 
     ax2 = ax1.twinx()  # instantiate a second axes that shares the same x-axis
 
@@ -69,7 +69,7 @@ def plot_graph(trace_folder, min_max_data, switch_name):
     ax2.set_ylabel('Usage (%)', color=color)  # we already handled the x-label with ax1
     ax2.plot(cpu_x, cpu_y, color=color)
     ax2.tick_params(axis='y', labelcolor=color)
-    ax2.set_ylim(-0.1, 1.1)
+    ax2.set_ylim(-0.01, 1.01)
 
     fig.tight_layout()  # otherwise the right y-label is slightly clipped
     plt.show()
@@ -89,7 +89,7 @@ if len(sys.argv) == 3:
     min_max_data = parse_file(output_file)
     all_switchs = list(min_max_data.keys())
 
-switch_name = input(f"Available switchs names: {all_switchs} \nInsert the switch name:")
+switch_name = input(f"Available switchs names: {all_switchs} \nInsert the switch name: ")
 
 plot_graph(trace_folder, min_max_data, switch_name)
 

@@ -39,6 +39,8 @@ def plot_graph(trace_folders, cpuMaxCapacity):
     plt.title(f'Switch CPU Capacity: {cpuMaxCapacity}Mbps')
     plt.ylabel('Consumption (Wh)')
     plt.xlabel("Time (s)")
+    plt.ylim(bottom=0)
+    max_y_global = 0
     color_index = 0
     for trace_folder in trace_folders:
         consumption_data, switchs = read_csv_files(f'{trace_folder}/ecofen-trace.csv')
@@ -51,22 +53,25 @@ def plot_graph(trace_folders, cpuMaxCapacity):
         # print("Consumption Data\n", consumption_data)
         # cpu_x, cpu_y = cpu_data['Time'].tolist(), cpu_data['CPU_Usage'].tolist()
         consumption_x, consumption_y = consumption_data['Time'].tolist(), consumption_data['Consumption'].tolist()
-        consumption_x = [round(elem, 2) for elem in consumption_x]
-        consumption_x = [0 if elem<0 else elem for elem in consumption_x]
-        consumption_y = [round(elem, 2) for elem in consumption_y]
-        consumption_y = [0 if elem<0 else elem for elem in consumption_y]
+        consumption_x = [round(elem, 3) for elem in consumption_x]
+        consumption_y = [round(elem, 3) for elem in consumption_y]
 
         # print("CPU X\n", cpu_x)
         # print("CPU Y\n", cpu_y)
-        # print(switchsNr-1, "Jump Consumption X\n", consumption_x)
         print(switchsNr-1, "Jump Consumption Y\n", consumption_y)
 
         col = colors[color_index % len(colors)]
+        max_y = max(consumption_y)
         plt.plot(consumption_x, consumption_y, label=f'Jumps:{switchsNr-1}', color=col)
-        plt.axhline(y=max(consumption_y), color=col, linestyle='--', label=f'Max: {max(consumption_y):.2f}')
+        plt.axhline(y=max_y, color=col, linestyle='--', label=f'Max: {max_y:.2f}')
+
         color_index += 1
+        max_y *= 1.05
+        if max_y > max_y_global:
+            max_y_global = max_y
 
         
+    plt.ylim(top=max_y_global)
     plt.legend()
     plt.show()
 
