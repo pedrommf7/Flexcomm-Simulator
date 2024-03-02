@@ -27,49 +27,54 @@
 #include <boost/graph/adjacency_list.hpp>
 #include "ns3/topology.h"
 
-namespace ns3
+namespace ns3 {
+class OspfController : public OFSwitch13Controller
 {
-  class OspfController : public OFSwitch13Controller
-  {
-  public:
-    OspfController();
-    virtual ~OspfController();
-    static TypeId GetTypeId(void);
-    virtual void DoDispose();
+public:
+  OspfController ();
+  virtual ~OspfController ();
+  static TypeId GetTypeId (void);
+  virtual void DoDispose ();
 
-  protected:
-    void HandshakeSuccessful(Ptr<const RemoteSwitch> sw);
-    //void ApplyRouting(uint64_t swDpId);
-    void ApplyRouting(uint64_t swDpId, Ptr<Node> host, Ptr<Node> nextJump);
-    void ApplyRoutingFromPath(std::vector<Ptr<Node>> path);
-    void FindReferenceBandwidth();
+protected:
+  void HandshakeSuccessful (Ptr<const RemoteSwitch> sw);
+  //void ApplyRouting(uint64_t swDpId);
+  void ApplyRouting (uint64_t swDpId, Ptr<Node> host, Ptr<Node> nextJump);
+  void ApplyRoutingFromPath (std::vector<Ptr<Node>> path);
+  void FindReferenceBandwidth ();
 
-  private:
-    void PrintCosts();
-    void StatsLoop();
-    void UpdateRouting();
-    void UpdateWeights();
-    void UpdateDistances();
-    void SetWeightsBandwidthBased();
-    void AddHostsKey(std::pair<Ptr<Node>, Ptr<Node>> key);
-    void StorePath(Ptr<Node> source, Ptr<Node> destination, std::vector<Ptr<Node>> path, int distance);
-    //void CleanPaths(Ptr<Node> switchNode, Ptr<Node> hostNode);
-    std::vector<std::vector<Ptr<Node>>> Search(Ptr<Node> init, Ptr<Node> destiny, std::vector<Ptr<Node>> &ignore);
-    std::vector<std::vector<Ptr<Node>>> SearchWithDepth(Ptr<Node> init, Ptr<Node> destiny, std::vector<Ptr<Node>> &ignore, int maxDepth, int currentDepth);
-    void FindAllPaths(Ptr<Node> source, Ptr<Node> destination);
-    std::vector<Ptr<Node>> GetShortesPath(Ptr<Node> source, Ptr<Node> destination);
-    int FindMaxDepth(Ptr<Node> source, Ptr<Node> destiny);
-    void ResizeStoredPaths(int maxStorageNumber);
-    void StartRoutingLoop();
-    void SortStoredPathsAscending();
-    void SortStoredPathsDescending();
-    bool CheckExistsPath(std::vector<Ptr<Node>> path, std::vector<std::pair<std::vector<Ptr<Node>>,int>> paths_);
-    std::vector<std::pair<std::vector<Ptr<Node>>,int>> GetPaths(std::pair<Ptr<Node>, Ptr<Node>> key);
-    
-    bool m_isFirstUpdate;
-    Graph base_graph;
-    static uint64_t referenceBandwidthValue;
-  };
+private:
+  void PrintCosts ();
+  void StatsLoop ();
+  void UpdateRouting ();
+  void UpdateWeights ();
+  void UpdateDistances ();
+  void SetWeightsBandwidthBased ();
+  void AddHostsKey (std::pair<Ptr<Node>, Ptr<Node>> key);
+  void StorePath (Ptr<Node> source, Ptr<Node> destination, std::vector<Ptr<Node>> path,
+                  int distance);
+  //void CleanPaths(Ptr<Node> switchNode, Ptr<Node> hostNode);
+  std::vector<std::vector<Ptr<Node>>> Search (Ptr<Node> init, Ptr<Node> destiny,
+                                              std::vector<Ptr<Node>> &ignore);
+  std::vector<std::vector<Ptr<Node>>> SearchWithDepth (Ptr<Node> init, Ptr<Node> destiny,
+                                                       std::vector<Ptr<Node>> &ignore, int maxDepth,
+                                                       int currentDepth);
+  void FindAllPaths (Ptr<Node> source, Ptr<Node> destination);
+  std::vector<Ptr<Node>> GetShortesPath (Ptr<Node> source, Ptr<Node> destination);
+  int FindMaxDepth (Ptr<Node> source, Ptr<Node> destiny);
+  void ResizeStoredPaths (int maxStorageNumber);
+  void StartRoutingLoop ();
+  void SortStoredPathsAscending ();
+  void SortStoredPathsDescending ();
+  bool CheckExistsPath (std::vector<Ptr<Node>> path,
+                        std::vector<std::pair<std::vector<Ptr<Node>>, int>> paths_);
+  std::vector<std::pair<std::vector<Ptr<Node>>, int>>
+  GetPaths (std::pair<Ptr<Node>, Ptr<Node>> key);
+
+  bool m_isFirstUpdate;
+  Graph base_graph;
+  static uint64_t referenceBandwidthValue;
+};
 
 } // namespace ns3
 

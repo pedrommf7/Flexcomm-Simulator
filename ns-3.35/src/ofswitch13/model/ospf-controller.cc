@@ -37,346 +37,376 @@
 
 #include <chrono> //remove after
 
-NS_LOG_COMPONENT_DEFINE("OspfController");
+NS_LOG_COMPONENT_DEFINE ("OspfController");
 
-namespace ns3
+namespace ns3 {
+
+NS_OBJECT_ENSURE_REGISTERED (OspfController);
+
+std::vector<std::pair<std::pair< // source e destiny
+                          Ptr<Node>, Ptr<Node>>,
+                      std::vector< // todos caminhos existentes
+                          std::pair<std::vector<Ptr<Node>>, // 1 caminho
+                                    int // distancia
+                                    >>>>
+    equalCostPaths;
+
+// if not initializade at 0 it will be the bandwidth reference value used to calculate the weights
+uint64_t OspfController::referenceBandwidthValue = 0;
+Time lastUpdate;
+
+OspfController::OspfController ()
 {
+  NS_LOG_FUNCTION (this);
+  m_isFirstUpdate = true;
+}
 
-  NS_OBJECT_ENSURE_REGISTERED(OspfController);
+OspfController::~OspfController ()
+{
+  NS_LOG_FUNCTION (this);
+}
 
-  std::vector<
-      std::pair<
-          std::pair< // source e destiny
-              Ptr<Node>,
-              Ptr<Node>>,
-          std::vector< // todos caminhos existentes
-              std::pair<
-                  std::vector<Ptr<Node>>, // 1 caminho
-                  int                     // distancia
-                  >>>>
-      equalCostPaths;
+TypeId
+OspfController::GetTypeId (void)
+{
+  static TypeId tid = TypeId ("ns3::OspfController")
+                          .SetParent<OFSwitch13Controller> ()
+                          .SetGroupName ("OFSwitch13")
+                          .AddConstructor<OspfController> ();
+  return tid;
+}
 
-  // if not initializade at 0 it will be the bandwidth reference value used to calculate the weights
-  uint64_t OspfController::referenceBandwidthValue = 0;
-  Time lastUpdate;
+void
+OspfController::DoDispose (void)
+{
+  NS_LOG_FUNCTION (this);
+  OFSwitch13Controller::DoDispose ();
+}
 
-  OspfController::OspfController()
-  {
-    NS_LOG_FUNCTION(this);
-    m_isFirstUpdate = true;
-  }
-
-  OspfController::~OspfController()
-  {
-    NS_LOG_FUNCTION(this);
-  }
-
-  TypeId OspfController::GetTypeId(void)
-  {
-    static TypeId tid = TypeId("ns3::OspfController")
-                            .SetParent<OFSwitch13Controller>()
-                            .SetGroupName("OFSwitch13")
-                            .AddConstructor<OspfController>();
-    return tid;
-  }
-
-  void OspfController::DoDispose(void)
-  {
-    NS_LOG_FUNCTION(this);
-    OFSwitch13Controller::DoDispose();
-  }
-
-  // ---------------------- Stored Paths ----------------------
-  void OspfController::SortStoredPathsAscending()
-  {
-    for (auto &ecp : equalCostPaths)
+// ---------------------- Stored Paths ----------------------
+void
+OspfController::SortStoredPathsAscending ()
+{
+  for (auto &ecp : equalCostPaths)
     {
       std::vector<std::pair<std::vector<Ptr<Node>>, int>> paths_ = ecp.second;
 
-      std::sort(paths_.begin(), paths_.end(), [](const auto &lhs, const auto &rhs)
-                { if (lhs.second == rhs.second)
-                    return lhs.first.size() < rhs.first.size();
-                  else
-                    return lhs.second < rhs.second; });
+      std::sort (paths_.begin (), paths_.end (), [] (const auto &lhs, const auto &rhs) {
+        if (lhs.second == rhs.second)
+          return lhs.first.size () < rhs.first.size ();
+        else
+          return lhs.second < rhs.second;
+      });
     }
-  }
+}
 
-  void OspfController::SortStoredPathsDescending()
-  {
-    for (auto &ecp : equalCostPaths)
+void
+OspfController::SortStoredPathsDescending ()
+{
+  for (auto &ecp : equalCostPaths)
     {
       std::vector<std::pair<std::vector<Ptr<Node>>, int>> paths_ = ecp.second;
 
-      std::sort(paths_.begin(), paths_.end(), [](const auto &lhs, const auto &rhs)
-                { if (lhs.second == rhs.second)
-                    return lhs.first.size() > rhs.first.size();
-                  else
-                    return lhs.second > rhs.second; });
+      std::sort (paths_.begin (), paths_.end (), [] (const auto &lhs, const auto &rhs) {
+        if (lhs.second == rhs.second)
+          return lhs.first.size () > rhs.first.size ();
+        else
+          return lhs.second > rhs.second;
+      });
     }
-  }
+}
 
-  void OspfController::AddHostsKey(std::pair<Ptr<Node>, Ptr<Node>> key)
-  {
-    if (std::find_if(equalCostPaths.begin(), equalCostPaths.end(),
-                     [key](const std::pair<std::pair<Ptr<Node>, Ptr<Node>>, std::vector<std::pair<std::vector<Ptr<Node>>, int>>> &ecp)
-                     { return ecp.first == key; }) == equalCostPaths.end())
+void
+OspfController::AddHostsKey (std::pair<Ptr<Node>, Ptr<Node>> key)
+{
+  if (std::find_if (
+          equalCostPaths.begin (), equalCostPaths.end (),
+          [key] (const std::pair<std::pair<Ptr<Node>, Ptr<Node>>,
+                                 std::vector<std::pair<std::vector<Ptr<Node>>, int>>> &ecp) {
+            return ecp.first == key;
+          }) == equalCostPaths.end ())
     {
-      std::vector<std::pair<std::vector<Ptr<Node>>, int>> paths_ = std::vector<std::pair<std::vector<Ptr<Node>>, int>>();
-      equalCostPaths.emplace_back(std::make_pair(key, paths_));
+      std::vector<std::pair<std::vector<Ptr<Node>>, int>> paths_ =
+          std::vector<std::pair<std::vector<Ptr<Node>>, int>> ();
+      equalCostPaths.emplace_back (std::make_pair (key, paths_));
     }
-  }
+}
 
-  bool OspfController::CheckExistsPath(std::vector<Ptr<Node>> path, std::vector<std::pair<std::vector<Ptr<Node>>, int>> paths_)
-  {
-    std::vector<std::pair<std::vector<Ptr<Node>>, int>>::iterator it = std::find_if(paths_.begin(), paths_.end(),
-                                                                                    [path](const std::pair<std::vector<Ptr<Node>>, int> &p)
-                                                                                    { return p.first == path; });
+bool
+OspfController::CheckExistsPath (std::vector<Ptr<Node>> path,
+                                 std::vector<std::pair<std::vector<Ptr<Node>>, int>> paths_)
+{
+  std::vector<std::pair<std::vector<Ptr<Node>>, int>>::iterator it = std::find_if (
+      paths_.begin (), paths_.end (),
+      [path] (const std::pair<std::vector<Ptr<Node>>, int> &p) { return p.first == path; });
 
-    return it != paths_.end();
-  }
+  return it != paths_.end ();
+}
 
-  std::vector<std::pair<std::vector<Ptr<Node>>, int>>
-  OspfController::GetPaths(std::pair<Ptr<Node>, Ptr<Node>> key)
-  {
-    auto it = std::find_if(equalCostPaths.begin(), equalCostPaths.end(),
-                           [key](const std::pair<std::pair<Ptr<Node>, Ptr<Node>>, std::vector<std::pair<std::vector<Ptr<Node>>, int>>> &ecp)
-                           { return ecp.first == key; });
+std::vector<std::pair<std::vector<Ptr<Node>>, int>>
+OspfController::GetPaths (std::pair<Ptr<Node>, Ptr<Node>> key)
+{
+  auto it = std::find_if (
+      equalCostPaths.begin (), equalCostPaths.end (),
+      [key] (const std::pair<std::pair<Ptr<Node>, Ptr<Node>>,
+                             std::vector<std::pair<std::vector<Ptr<Node>>, int>>> &ecp) {
+        return ecp.first == key;
+      });
 
-    if (it != equalCostPaths.end())
-      return it->second;
+  if (it != equalCostPaths.end ())
+    return it->second;
 
-    else
-      return std::vector<std::pair<std::vector<Ptr<Node>>, int>>{};
-  }
+  else
+    return std::vector<std::pair<std::vector<Ptr<Node>>, int>>{};
+}
 
-  void OspfController::StorePath(Ptr<Node> source, Ptr<Node> destination, std::vector<Ptr<Node>> path, int distance)
-  {
-    std::pair<Ptr<Node>, Ptr<Node>> key;
-    if (source->GetId() < destination->GetId())
-      key = std::make_pair(source, destination);
-    else
-      key = std::make_pair(destination, source);
+void
+OspfController::StorePath (Ptr<Node> source, Ptr<Node> destination, std::vector<Ptr<Node>> path,
+                           int distance)
+{
+  std::pair<Ptr<Node>, Ptr<Node>> key;
+  if (source->GetId () < destination->GetId ())
+    key = std::make_pair (source, destination);
+  else
+    key = std::make_pair (destination, source);
 
-    OspfController::AddHostsKey(key);
+  OspfController::AddHostsKey (key);
 
-    for (auto &ecp : equalCostPaths)
+  for (auto &ecp : equalCostPaths)
     {
       if (ecp.first == key)
-      {
-        std::vector<std::pair<std::vector<Ptr<Node>>, int>> paths_ = ecp.second;
-        if (!OspfController::CheckExistsPath(path, paths_))
         {
-          paths_.emplace_back(std::make_pair(path, distance));
-          ecp.second = paths_;
+          std::vector<std::pair<std::vector<Ptr<Node>>, int>> paths_ = ecp.second;
+          if (!OspfController::CheckExistsPath (path, paths_))
+            {
+              paths_.emplace_back (std::make_pair (path, distance));
+              ecp.second = paths_;
+            }
+          break;
         }
-        break;
-      }
     }
-  }
+}
 
-  void OspfController::ResizeStoredPaths(int maxStorageNumber)
-  {
-    OspfController::SortStoredPathsAscending();
-    for (auto &ecp : equalCostPaths)
+void
+OspfController::ResizeStoredPaths (int maxStorageNumber)
+{
+  OspfController::SortStoredPathsAscending ();
+  for (auto &ecp : equalCostPaths)
     {
       std::vector<std::pair<std::vector<Ptr<Node>>, int>> paths_ = ecp.second;
-      if (int(paths_.size()) > maxStorageNumber)
-      {
-        paths_.resize(maxStorageNumber);
-      }
+      if (int (paths_.size ()) > maxStorageNumber)
+        {
+          paths_.resize (maxStorageNumber);
+        }
     }
-  }
+}
 
-  // -----------------------------------------------------------------
+// -----------------------------------------------------------------
 
-  std::vector<std::vector<Ptr<Node>>>
-  OspfController::SearchWithDepth(Ptr<Node> source, Ptr<Node> destiny, std::vector<Ptr<Node>> &ignore, int maxDepth, int currentDepth)
-  {
-    std::vector<std::vector<Ptr<Node>>> allPaths;
-    if (source == destiny)
+std::vector<std::vector<Ptr<Node>>>
+OspfController::SearchWithDepth (Ptr<Node> source, Ptr<Node> destiny,
+                                 std::vector<Ptr<Node>> &ignore, int maxDepth, int currentDepth)
+{
+  std::vector<std::vector<Ptr<Node>>> allPaths;
+  if (source == destiny)
     {
       return allPaths; // return empty vector
     }
 
-    if (currentDepth >= maxDepth)
+  if (currentDepth >= maxDepth)
     {
       return allPaths; // return empty vector to stop the search
     }
 
-    std::vector<Ptr<Node>> successors = Topology::GetSuccessors(source);
-    if (std::find(successors.begin(), successors.end(), destiny) != successors.end())
+  std::vector<Ptr<Node>> successors = Topology::GetSuccessors (source);
+  if (std::find (successors.begin (), successors.end (), destiny) != successors.end ())
     {
-      allPaths.push_back({destiny});
+      allPaths.push_back ({destiny});
       return allPaths;
     }
 
-    ignore.push_back(source);
-    for (auto i : successors)
+  ignore.push_back (source);
+  for (auto i : successors)
     {
-      if (std::find(ignore.begin(), ignore.end(), i) == ignore.end())
-      {
-        std::vector<std::vector<Ptr<Node>>> res = SearchWithDepth(i, destiny, ignore, maxDepth, currentDepth + 1);
-        if (!res.empty())
+      if (std::find (ignore.begin (), ignore.end (), i) == ignore.end ())
         {
-          for (auto &j : res)
-          {
-            j.reserve(j.size() + 1);
-            j.insert(j.begin(), i);
-            allPaths.push_back(std::move(j));
-          }
+          std::vector<std::vector<Ptr<Node>>> res =
+              SearchWithDepth (i, destiny, ignore, maxDepth, currentDepth + 1);
+          if (!res.empty ())
+            {
+              for (auto &j : res)
+                {
+                  j.reserve (j.size () + 1);
+                  j.insert (j.begin (), i);
+                  allPaths.push_back (std::move (j));
+                }
+            }
         }
-      }
     }
-    ignore.pop_back();
-    return allPaths;
-  }
+  ignore.pop_back ();
+  return allPaths;
+}
 
-  void OspfController::FindAllPaths(Ptr<Node> source, Ptr<Node> destination)
-  {
-    std::cout << "FindAllPaths from: " << source->GetId() << " to: " << destination->GetId() << " -> ";
-    //                      SEARCH WITH DEPTH n SHORTEST PATHS WITH LIMITATION ON NUMBER OF HOPS
-    std::vector<Ptr<Node>> ignore = std::vector<Ptr<Node>>();
+void
+OspfController::FindAllPaths (Ptr<Node> source, Ptr<Node> destination)
+{
+  std::cout << "FindAllPaths from: " << source->GetId () << " to: " << destination->GetId ()
+            << " -> ";
+  //                      SEARCH WITH DEPTH n SHORTEST PATHS WITH LIMITATION ON NUMBER OF HOPS
+  std::vector<Ptr<Node>> ignore = std::vector<Ptr<Node>> ();
 
-    double ratio = 1.5; // change here to manage the max depth of the search
-    int MAX_DEPTH = int(ratio * FindMaxDepth(source, destination)) + 2;
-    std::vector<std::vector<Ptr<Node>>> res = SearchWithDepth(source, destination, ignore, MAX_DEPTH, 0);
+  double ratio = 1.5; // change here to manage the max depth of the search
+  int MAX_DEPTH = int (ratio * FindMaxDepth (source, destination)) + 2;
+  std::vector<std::vector<Ptr<Node>>> res =
+      SearchWithDepth (source, destination, ignore, MAX_DEPTH, 0);
 
-    if (!res.empty())
+  if (!res.empty ())
     {
       for (auto &i : res)
-      {
-        i.insert(i.begin(), source);
+        {
+          i.insert (i.begin (), source);
 
-        int distance = Topology::CalculateCost(i);
+          int distance = Topology::CalculateCost (i);
 
-        StorePath(source, destination, i, distance);
-      }
+          StorePath (source, destination, i, distance);
+        }
     }
 
-    int tam = (int)res.size();
-    if (tam > 0)
+  int tam = (int) res.size ();
+  if (tam > 0)
     {
       std::cout << "Number of paths found: " << tam << std::endl;
     }
-    else
+  else
     {
-      NS_LOG_ERROR("No paths found");
-      std::cout << "No paths found from: " << source->GetId() << " to: " << destination->GetId() << std::endl;
+      NS_LOG_ERROR ("No paths found");
+      std::cout << "No paths found from: " << source->GetId () << " to: " << destination->GetId ()
+                << std::endl;
     }
-  }
+}
 
-  // std::vector<Ptr<Node>>
-  // OspfController::GetShortesPath(Ptr<Node> source, Ptr<Node> destination)
-  // {
-  //   auto it = std::find_if(equalCostPaths.begin(), equalCostPaths.end(),
-  //                          [source, destination](const std::pair<std::pair<Ptr<Node>, Ptr<Node>>, Ptr<PathStore>> &ecp)
-  //                          { return ecp.first.first == source && ecp.first.second == destination; });
+// std::vector<Ptr<Node>>
+// OspfController::GetShortesPath(Ptr<Node> source, Ptr<Node> destination)
+// {
+//   auto it = std::find_if(equalCostPaths.begin(), equalCostPaths.end(),
+//                          [source, destination](const std::pair<std::pair<Ptr<Node>, Ptr<Node>>, Ptr<PathStore>> &ecp)
+//                          { return ecp.first.first == source && ecp.first.second == destination; });
 
-  //   if (it != equalCostPaths.end())
-  //   {
-  //     return it->second->GetShortestPath();
-  //   }
-  //   else
-  //   {
-  //     NS_LOG_ERROR("Illegal path");
-  //     std::cout << "Illegal path [GetShortesPath] from: " << source->GetId() << " to: " << destination->GetId() << std::endl;
-  //     return std::vector<Ptr<Node>>{};
-  //   }
-  // }
+//   if (it != equalCostPaths.end())
+//   {
+//     return it->second->GetShortestPath();
+//   }
+//   else
+//   {
+//     NS_LOG_ERROR("Illegal path");
+//     std::cout << "Illegal path [GetShortesPath] from: " << source->GetId() << " to: " << destination->GetId() << std::endl;
+//     return std::vector<Ptr<Node>>{};
+//   }
+// }
 
-  void OspfController::FindReferenceBandwidth()
-  {
-    base_graph = Topology::GetGraph();
+void
+OspfController::FindReferenceBandwidth ()
+{
+  base_graph = Topology::GetGraph ();
 
-    bool findMax = !referenceBandwidthValue; // if not setted manually, find the max value
+  bool findMax = !referenceBandwidthValue; // if not setted manually, find the max value
 
-    std::list<Edge> edgesToRemove;
+  std::list<Edge> edgesToRemove;
 
-    boost::graph_traits<Graph>::edge_iterator edgeIt, edgeEnd;
-    for (boost::tie(edgeIt, edgeEnd) = boost::edges(base_graph); edgeIt != edgeEnd; ++edgeIt)
+  boost::graph_traits<Graph>::edge_iterator edgeIt, edgeEnd;
+  for (boost::tie (edgeIt, edgeEnd) = boost::edges (base_graph); edgeIt != edgeEnd; ++edgeIt)
     {
       Edge ed = *edgeIt;
-      Ptr<Node> n1 = Topology::VertexToNode(ed.m_source);
-      Ptr<Node> n2 = Topology::VertexToNode(ed.m_target);
+      Ptr<Node> n1 = Topology::VertexToNode (ed.m_source);
+      Ptr<Node> n2 = Topology::VertexToNode (ed.m_target);
 
-      if (n1->IsSwitch() && n2->IsSwitch())
-      {
-        Ptr<Channel> chnl = Topology::GetChannel(n1, n2);
-        uint64_t bitRate = chnl->GetDataRate().GetBitRate();
-        boost::put(edge_weight_t(), base_graph, ed, bitRate);
+      if (n1->IsSwitch () && n2->IsSwitch ())
+        {
+          Ptr<Channel> chnl = Topology::GetChannel (n1, n2);
+          uint64_t bitRate = chnl->GetDataRate ().GetBitRate ();
+          boost::put (edge_weight_t (), base_graph, ed, bitRate);
 
-        if (findMax)
-          referenceBandwidthValue = bitRate > referenceBandwidthValue ? bitRate : referenceBandwidthValue;
-      }
+          if (findMax)
+            referenceBandwidthValue =
+                bitRate > referenceBandwidthValue ? bitRate : referenceBandwidthValue;
+        }
       else
-      {
-        edgesToRemove.push_back(ed);
-        Topology::UpdateEdgeWeight(n1, n2, 0); // rever!!!!
-      }
+        {
+          edgesToRemove.push_back (ed);
+          Topology::UpdateEdgeWeight (n1, n2, 0); // rever!!!!
+        }
     }
-    for (auto ed : edgesToRemove)
+  for (auto ed : edgesToRemove)
     {
-      boost::remove_edge(ed, base_graph);
+      boost::remove_edge (ed, base_graph);
     }
-  }
+}
 
-  int OspfController::FindMaxDepth(Ptr<Node> source, Ptr<Node> destiny)
-  {
-    int nrJumps = int((Topology::DijkstraShortestPath(source, destiny)).size());
-    return --nrJumps;
-  }
+int
+OspfController::FindMaxDepth (Ptr<Node> source, Ptr<Node> destiny)
+{
+  int nrJumps = int ((Topology::DijkstraShortestPath (source, destiny)).size ());
+  return --nrJumps;
+}
 
-  void OspfController::SetWeightsBandwidthBased()
-  {
-    cout << "Reference Bandwidth Value: " << referenceBandwidthValue << endl;
+void
+OspfController::SetWeightsBandwidthBased ()
+{
+  cout << "Reference Bandwidth Value: " << referenceBandwidthValue << endl;
 
-    boost::graph_traits<Graph>::edge_iterator edgeIt, edgeEnd;
-    for (boost::tie(edgeIt, edgeEnd) = boost::edges(base_graph); edgeIt != edgeEnd; ++edgeIt)
+  boost::graph_traits<Graph>::edge_iterator edgeIt, edgeEnd;
+  for (boost::tie (edgeIt, edgeEnd) = boost::edges (base_graph); edgeIt != edgeEnd; ++edgeIt)
     {
       Edge ed = *edgeIt;
-      uint64_t bitRate = boost::get(edge_weight_t(), base_graph, ed); // ver se preciso de fazer como esta ano topology a separar pelos Nodes
+      uint64_t bitRate =
+          boost::get (edge_weight_t (), base_graph,
+                      ed); // ver se preciso de fazer como esta ano topology a separar pelos Nodes
 
-      uint64_t weight = (uint64_t)((double)referenceBandwidthValue / (double)bitRate + 0.5);
+      uint64_t weight = (uint64_t) ((double) referenceBandwidthValue / (double) bitRate + 0.5);
       if (weight < 1)
         weight = 1;
       else if (weight > UINT64_MAX) // rever !!!!
         weight = UINT64_MAX;
 
-      boost::put(edge_weight_t(), base_graph, ed, weight);
+      boost::put (edge_weight_t (), base_graph, ed, weight);
       // cout << "SAVED -> Edge: " << ed.m_source << " - " << ed.m_target << " | Weight: " << weight << endl;
 
-      Ptr<Node> n1 = Topology::VertexToNode(ed.m_source);
-      Ptr<Node> n2 = Topology::VertexToNode(ed.m_target);
-      Topology::UpdateEdgeWeight(n1, n2, weight);
+      Ptr<Node> n1 = Topology::VertexToNode (ed.m_source);
+      Ptr<Node> n2 = Topology::VertexToNode (ed.m_target);
+      Topology::UpdateEdgeWeight (n1, n2, weight);
     }
-    cout << "-----------------------------" << endl;
-  }
+  cout << "-----------------------------" << endl;
+}
 
-  void OspfController::UpdateDistances()
-  {
-    for (auto &ecp : equalCostPaths)
+void
+OspfController::UpdateDistances ()
+{
+  for (auto &ecp : equalCostPaths)
     {
       std::vector<std::pair<std::vector<Ptr<Node>>, int>> paths_ = ecp.second;
 
       for (auto &path : paths_)
-      {
-        int distance = Topology::CalculateCost(path.first);
-        path.second = distance;
-      }
+        {
+          int distance = Topology::CalculateCost (path.first);
+          path.second = distance;
+        }
     }
-  }
+}
 
-  void OspfController::UpdateWeights()
-  {
-    boost::graph_traits<Graph>::edge_iterator edgeIt, edgeEnd;
-    for (boost::tie(edgeIt, edgeEnd) = boost::edges(base_graph); edgeIt != edgeEnd; ++edgeIt)
+void
+OspfController::UpdateWeights ()
+{
+  boost::graph_traits<Graph>::edge_iterator edgeIt, edgeEnd;
+  for (boost::tie (edgeIt, edgeEnd) = boost::edges (base_graph); edgeIt != edgeEnd; ++edgeIt)
     {
       Edge ed = *edgeIt;
-      Ptr<Node> n1 = Topology::VertexToNode(ed.m_source);
-      Ptr<Node> n2 = Topology::VertexToNode(ed.m_target);
-      uint64_t weight = boost::get(edge_weight_t(), base_graph, ed); // ver se preciso de fazer como est ano topology a separar pelos Nodes
+      Ptr<Node> n1 = Topology::VertexToNode (ed.m_source);
+      Ptr<Node> n2 = Topology::VertexToNode (ed.m_target);
+      uint64_t weight =
+          boost::get (edge_weight_t (), base_graph,
+                      ed); // ver se preciso de fazer como est ano topology a separar pelos Nodes
 
-      int index = int(Simulator::Now().GetMinutes()) % 60;
+      int index = int (Simulator::Now ().GetMinutes ()) % 60;
 
       // float flex1 = EnergyAPI::GetFlexArrayAt(Names::FindName(n1), index);
 
@@ -438,94 +468,99 @@ namespace ns3
 
       int new_weight = weight + totCons;
       if (new_weight < 0)
-      {
-        std::cout << "WARNING NEGATIVE WEIGHT: " << new_weight << std::endl;
-      }
+        {
+          std::cout << "WARNING NEGATIVE WEIGHT: " << new_weight << std::endl;
+        }
       new_weight = new_weight < 0 ? 0 : new_weight;
       // expressao produz nrs negativos, mas depois insere 0 no maximo
 
-      Topology::UpdateEdgeWeight(n1, n2, new_weight);
+      Topology::UpdateEdgeWeight (n1, n2, new_weight);
     }
-    UpdateDistances();
-  }
+  UpdateDistances ();
+}
 
-  void OspfController::ApplyRouting(uint64_t swDpId, Ptr<Node> host, Ptr<Node> nextJump)
-  {
-    uint32_t swId = DpId2Id(swDpId);
-    Ptr<Node> sw = NodeContainer::GetGlobal().Get(swId);
+void
+OspfController::ApplyRouting (uint64_t swDpId, Ptr<Node> host, Ptr<Node> nextJump)
+{
+  uint32_t swId = DpId2Id (swDpId);
+  Ptr<Node> sw = NodeContainer::GetGlobal ().Get (swId);
 
-    Ptr<OFSwitch13Device> ofDevice = sw->GetObject<OFSwitch13Device>();
+  Ptr<OFSwitch13Device> ofDevice = sw->GetObject<OFSwitch13Device> ();
 
-    Ipv4Address remoteAddr = host->GetObject<Ipv4>()->GetAddress(1, 0).GetLocal();
-    try
+  Ipv4Address remoteAddr = host->GetObject<Ipv4> ()->GetAddress (1, 0).GetLocal ();
+  try
     {
-      uint32_t port = ofDevice->GetPortNoConnectedTo(nextJump);
+      uint32_t port = ofDevice->GetPortNoConnectedTo (nextJump);
 
       std::ostringstream cmd;
       cmd << "flow-mod cmd=add,table=0 eth_type=0x800,ip_dst=" << remoteAddr
           << " apply:output=" << port;
 
-      NS_LOG_DEBUG("[" << swDpId << "]: " << cmd.str());
+      NS_LOG_DEBUG ("[" << swDpId << "]: " << cmd.str ());
 
-      DpctlExecute(swDpId, cmd.str());
+      DpctlExecute (swDpId, cmd.str ());
     }
-    catch (const std::exception &e)
+  catch (const std::exception &e)
     {
-      std::cerr << e.what() << '\n';
+      std::cerr << e.what () << '\n';
     }
-  }
+}
 
-  void OspfController::ApplyRoutingFromPath(std::vector<Ptr<Node>> path)
-  {
-    std::cout << "ApplyRoutingFromPath: ";
-    for (auto &i : path)
+void
+OspfController::ApplyRoutingFromPath (std::vector<Ptr<Node>> path)
+{
+  std::cout << "ApplyRoutingFromPath: ";
+  for (auto &i : path)
     {
-      std::cout << i->GetId() << " ";
+      std::cout << i->GetId () << " ";
     }
-    std::cout << std::endl;
-    Ptr<Node> hostDst = path.back();
-    for (int i = 1; i < int(path.size()) - 2; i++)
+  std::cout << std::endl;
+  Ptr<Node> hostDst = path.back ();
+  for (int i = 1; i < int (path.size ()) - 2; i++)
     {
-      ApplyRouting(Id2DpId(path.at(i)->GetId()), hostDst, path.at(i + 1));
+      ApplyRouting (Id2DpId (path.at (i)->GetId ()), hostDst, path.at (i + 1));
     }
-  }
+}
 
-  void OspfController::PrintCosts()
-  {
-    std::cout << "-----------------------------" << std::endl;
-    std::cout << "Costs: " << std::endl;
-    boost::graph_traits<Graph>::edge_iterator edgeIt, edgeEnd;
-    Graph g = Topology::GetGraph();
-    for (boost::tie(edgeIt, edgeEnd) = boost::edges(g); edgeIt != edgeEnd; ++edgeIt)
+void
+OspfController::PrintCosts ()
+{
+  std::cout << "-----------------------------" << std::endl;
+  std::cout << "Costs: " << std::endl;
+  boost::graph_traits<Graph>::edge_iterator edgeIt, edgeEnd;
+  Graph g = Topology::GetGraph ();
+  for (boost::tie (edgeIt, edgeEnd) = boost::edges (g); edgeIt != edgeEnd; ++edgeIt)
     {
       Edge ed = *edgeIt;
-      Ptr<Node> n1 = Topology::VertexToNode(ed.m_source);
-      Ptr<Node> n2 = Topology::VertexToNode(ed.m_target);
-      uint64_t weight = boost::get(edge_weight_t(), g, ed);
-      std::cout << "Edge: " << n1->GetId() << " - " << n2->GetId() << " | Weight: " << weight << std::endl;
+      Ptr<Node> n1 = Topology::VertexToNode (ed.m_source);
+      Ptr<Node> n2 = Topology::VertexToNode (ed.m_target);
+      uint64_t weight = boost::get (edge_weight_t (), g, ed);
+      std::cout << "Edge: " << n1->GetId () << " - " << n2->GetId () << " | Weight: " << weight
+                << std::endl;
     }
-  }
+}
 
-  void OspfController::UpdateRouting()
-  {
-    UpdateWeights();
-    SortStoredPathsAscending();
+void
+OspfController::UpdateRouting ()
+{
+  UpdateWeights ();
+  SortStoredPathsAscending ();
 
-    for (auto &ecp : equalCostPaths)
+  for (auto &ecp : equalCostPaths)
     {
       std::vector<std::pair<std::vector<Ptr<Node>>, int>> paths_ = ecp.second;
-      if (int(paths_.size()) == 0)
+      if (int (paths_.size ()) == 0)
         continue;
 
       for (auto &path : paths_)
-      {
-        std::vector<Ptr<Node>> shortestPath = path.first;
-        ApplyRoutingFromPath(shortestPath);
+        {
+          std::vector<Ptr<Node>> shortestPath = path.first;
+          ApplyRoutingFromPath (shortestPath);
 
-        // reverse shortest path
-        std::reverse(shortestPath.begin(), shortestPath.end());
-        ApplyRoutingFromPath(shortestPath);
-      }
+          // reverse shortest path
+          std::reverse (shortestPath.begin (), shortestPath.end ());
+          ApplyRoutingFromPath (shortestPath);
+        }
 
       // std::vector<Ptr<Node>> shortestPath = paths_.front().first;
       // ApplyRoutingFromPath(shortestPath);
@@ -534,74 +569,78 @@ namespace ns3
       // std::reverse(shortestPath.begin(), shortestPath.end());
       // ApplyRoutingFromPath(shortestPath);
     }
-    PrintCosts();
-  }
+  PrintCosts ();
+}
 
-  void OspfController::StartRoutingLoop()
-  {
-    OspfController::UpdateRouting();
-    std::cout << "-----[New Routing Loop]-----" << std::endl;
-    Simulator::Schedule(Minutes(1), &OspfController::StartRoutingLoop, this);
-  }
+void
+OspfController::StartRoutingLoop ()
+{
+  OspfController::UpdateRouting ();
+  std::cout << "-----[New Routing Loop]-----" << std::endl;
+  Simulator::Schedule (Minutes (1), &OspfController::StartRoutingLoop, this);
+}
 
-  void OspfController::StatsLoop()
-  {
-    std::cout << "-----[Stats Loop]-----" << std::endl;
-    // iterate switches
-    boost::graph_traits<Graph>::vertex_iterator vertexIt, vertexEnd;
-    for (boost::tie(vertexIt, vertexEnd) = boost::vertices(base_graph); vertexIt != vertexEnd; ++vertexIt)
+void
+OspfController::StatsLoop ()
+{
+  std::cout << "-----[Stats Loop]-----" << std::endl;
+  // iterate switches
+  boost::graph_traits<Graph>::vertex_iterator vertexIt, vertexEnd;
+  for (boost::tie (vertexIt, vertexEnd) = boost::vertices (base_graph); vertexIt != vertexEnd;
+       ++vertexIt)
     {
-      Ptr<Node> n1 = Topology::VertexToNode(*vertexIt);
-      if (n1->IsSwitch())
-      {
-        Ptr<CpuLoadBasedEnergyModel> cpuLBE = n1->GetObject<CpuLoadBasedEnergyModel>();
-        if (cpuLBE)
+      Ptr<Node> n1 = Topology::VertexToNode (*vertexIt);
+      if (n1->IsSwitch ())
         {
-          std::cout << "[MinMax] " << Names::FindName (n1) << 
-                        " " << cpuLBE->GetMinPowerConsumption() << 
-                        " " << cpuLBE->GetMaxPowerConsumption() << std::endl;
+          Ptr<CpuLoadBasedEnergyModel> cpuLBE = n1->GetObject<CpuLoadBasedEnergyModel> ();
+          if (cpuLBE)
+            {
+              std::cout << "[MinMax] " << Names::FindName (n1) << " "
+                        << cpuLBE->GetMinPowerConsumption () << " "
+                        << cpuLBE->GetMaxPowerConsumption () << std::endl;
+            }
         }
-      }
     }
-  }
+}
 
-  void OspfController::HandshakeSuccessful(Ptr<const RemoteSwitch> sw)
-  {
-    NS_LOG_FUNCTION(this << sw);
+void
+OspfController::HandshakeSuccessful (Ptr<const RemoteSwitch> sw)
+{
+  NS_LOG_FUNCTION (this << sw);
 
-    uint64_t swDpId = sw->GetDpId();
+  uint64_t swDpId = sw->GetDpId ();
 
-    // Default rules
-    DpctlExecute(swDpId, "flow-mod cmd=add,table=0,prio=0 "
-                         "apply:output=ctrl:128");
-    DpctlExecute(swDpId, "set-config miss=128");
+  // Default rules
+  DpctlExecute (swDpId, "flow-mod cmd=add,table=0,prio=0 "
+                        "apply:output=ctrl:128");
+  DpctlExecute (swDpId, "set-config miss=128");
 
-    // restringir logo aqui os switchs para nao fazerem schedulings de nada ??????? REVER
+  // restringir logo aqui os switchs para nao fazerem schedulings de nada ??????? REVER
 
-    if (m_isFirstUpdate)
+  if (m_isFirstUpdate)
     {
       // Config::SetDefault ("ns3::Ipv4GlobalRouting::RandomEcmpRouting", BooleanValue (true));
 
-      FindReferenceBandwidth();
-      SetWeightsBandwidthBased();
+      FindReferenceBandwidth ();
+      SetWeightsBandwidthBased ();
 
-      auto start = std::chrono::high_resolution_clock::now();
+      auto start = std::chrono::high_resolution_clock::now ();
 
       // pode ser melhorado este sistema de procura, aprender a usar o djikstra do boost
-      NodeContainer hosts = NodeContainer::GetGlobalHosts();
-      for (auto hst1 = hosts.Begin(); hst1 != hosts.End(); hst1++)
-      {
-        Ptr<Node> hostNode1 = NodeContainer::GetGlobal().Get((*hst1)->GetId());
-        for (auto hst2 = hst1 + 1; hst2 != hosts.End(); hst2++)
+      NodeContainer hosts = NodeContainer::GetGlobalHosts ();
+      for (auto hst1 = hosts.Begin (); hst1 != hosts.End (); hst1++)
         {
-          Ptr<Node> hostNode2 = NodeContainer::GetGlobal().Get((*hst2)->GetId());
-          // std::cout << "FindAllPaths from: " << hostNode1->GetId() << " to: " << hostNode2->GetId() << std::endl;
-          FindAllPaths(hostNode1, hostNode2); //.......
+          Ptr<Node> hostNode1 = NodeContainer::GetGlobal ().Get ((*hst1)->GetId ());
+          for (auto hst2 = hst1 + 1; hst2 != hosts.End (); hst2++)
+            {
+              Ptr<Node> hostNode2 = NodeContainer::GetGlobal ().Get ((*hst2)->GetId ());
+              // std::cout << "FindAllPaths from: " << hostNode1->GetId() << " to: " << hostNode2->GetId() << std::endl;
+              FindAllPaths (hostNode1, hostNode2); //.......
+            }
         }
-      }
-      auto end = std::chrono::high_resolution_clock::now();
-      auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
-      uint64_t milliseconds = duration.count() / 1000;
+      auto end = std::chrono::high_resolution_clock::now ();
+      auto duration = std::chrono::duration_cast<std::chrono::microseconds> (end - start);
+      uint64_t milliseconds = duration.count () / 1000;
       uint64_t seconds = milliseconds / 1000;
       milliseconds = milliseconds % 1000;
       uint64_t minutes = seconds / 60;
@@ -609,22 +648,23 @@ namespace ns3
       uint64_t hours = minutes / 60;
       minutes = minutes % 60;
 
-      std::cout << "-----> FindAllPaths Time: " << hours << "h " << minutes << "m " << seconds << "s " << milliseconds << "ms" << std::endl;
+      std::cout << "-----> FindAllPaths Time: " << hours << "h " << minutes << "m " << seconds
+                << "s " << milliseconds << "ms" << std::endl;
       std::cout << "-----------------------------" << std::endl;
 
-      ResizeStoredPaths(7); // Set here the max number of paths that can be stored
+      ResizeStoredPaths (7); // Set here the max number of paths that can be stored
 
-      StartRoutingLoop();
-      StatsLoop();
+      StartRoutingLoop ();
+      StatsLoop ();
       m_isFirstUpdate = false;
-      lastUpdate = Simulator::Now();
+      lastUpdate = Simulator::Now ();
     }
-    else if (Simulator::Now() - lastUpdate >= Minutes(1))
+  else if (Simulator::Now () - lastUpdate >= Minutes (1))
     {
-      UpdateRouting();
-      lastUpdate = Simulator::Now();
+      UpdateRouting ();
+      lastUpdate = Simulator::Now ();
     }
-    // UpdateRouting(); todos os switchs estão a fazer esta chamada desta função que deixou de ser individual para cada switch
-    //                  e passou a ser geral, fazer um indivual ????????
-  }
+  // UpdateRouting(); todos os switchs estão a fazer esta chamada desta função que deixou de ser individual para cada switch
+  //                  e passou a ser geral, fazer um indivual ????????
+}
 } // namespace ns3

@@ -21,7 +21,7 @@
  */
 
 //cada area border router deve ter uma lista de todos os hosts que estao na sua area
-// no inicio fazer o algoritmo de djikstra 
+// no inicio fazer o algoritmo de djikstra
 
 // calculo do melhor caminho:
 
@@ -29,4 +29,4 @@
 
 // 1. ver se o host de destino esta na mesma area do host de origem
 // 2. se estiver, calcular o caminho mais curto com base no algoritmo de dijkstra
-// 3. se nao estiver, calcular o caminho até ao area border router 
+// 3. se nao estiver, calcular o caminho até ao area border router
