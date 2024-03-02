@@ -1,0 +1,20 @@
+[H1]
+type = "host"
+
+[H2]
+type = "host"
+
+[S1]
+type = "switch"
+cpuCapacity = "10Mbps"
+
+[S1.chassis]
+template = "strong"
+
+[S2]
+type = "switch"
+cpuCapacity = "10Mbps"
+
+[S2.chassis]
+template = "strong"
+
