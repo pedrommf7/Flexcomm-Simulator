@@ -76,7 +76,7 @@ def plot_graph(trace_folder, min_max_data, switch_name):
 
 # Check if a filename is provided as a command-line argument
 if len(sys.argv) != 2 and len(sys.argv) != 3:
-    print("Usage: python stats_to_graph.py <trace_folder> [<output_file>]")
+    print("Usage: python consumption_cpuUsage.py <trace_folder> [<output_file>]")
     sys.exit(1)
 
 # Get the filename from the command-line argument

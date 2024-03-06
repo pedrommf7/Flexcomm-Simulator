@@ -77,7 +77,7 @@ def plot_graph(trace_folders, cpuMaxCapacity):
 
 # Check if a filename is provided as a command-line argument
 if len(sys.argv) < 2:
-    print("Usage: python stats_to_graph.py <trace_folder1> <trace_folder2> ... <trace_folderN")
+    print("Usage: python consumption_flow_basis.py <trace_folder1> <trace_folder2> ... <trace_folderN")
     sys.exit(1)
 
 print("[WARNING] This scrip can only be aplyed to topologies that contain 1 line connection between switches.")

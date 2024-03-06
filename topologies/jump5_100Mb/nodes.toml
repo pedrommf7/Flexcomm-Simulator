@@ -1,0 +1,47 @@
+[H1]
+type = "host"
+
+[H2]
+type = "host"
+
+[S1]
+type = "switch"
+cpuCapacity = "100Mbps"
+
+[S1.chassis]
+template = "strong"
+
+[S2]
+type = "switch"
+cpuCapacity = "100Mbps"
+
+[S2.chassis]
+template = "strong"
+
+[S3]
+type = "switch"
+cpuCapacity = "100Mbps"
+
+[S3.chassis]
+template = "strong"
+
+[S4]
+type = "switch"
+cpuCapacity = "100Mbps"
+
+[S4.chassis]
+template = "strong"
+
+[S5]
+type = "switch"
+cpuCapacity = "100Mbps"
+
+[S5.chassis]
+template = "strong"
+
+[S6]
+type = "switch"
+cpuCapacity = "100Mbps"
+
+[S6.chassis]
+template = "strong"
