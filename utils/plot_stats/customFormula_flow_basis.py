@@ -79,8 +79,10 @@ def collect_link_stats_data(file_path_links, file_path_switchs, file_path_consum
         consoA = merged_data[(merged_data['NodeName'] == src) & (merged_data['Time'] == time)]['Consumption'].values[0]
         consoB = merged_data[(merged_data['NodeName'] == dst) & (merged_data['Time'] == time)]['Consumption'].values[0]
         freeBW = row[1]['Free']
+        if(freeBW <= 0):
+            freeBW = 1
 
-        costs1.append( (reference_bw/freeBW) * (cpuA+cpuB)/2 )
+        costs1.append( (reference_bw/freeBW) * (cpuA+cpuB)/2)
         costs2.append( (reference_bw/freeBW) * ((cpuA+cpuB)/2)*(consoA+consoB) )
         # costs3.append( (reference_bw/freeBW) * ((cpuA*consoA)+(cpuB*consoB)))
         # costs4.append( (reference_bw/freeBW) * ((cpuA*consoA)+(cpuB*consoB))/2)
@@ -157,7 +159,7 @@ def collect_data(args, idx):
     plot_graphs(points_x, names, costs1, costs2)
 
 
-if ((len(sys.argv) < 4) or (len(sys.argv) % 2) == 0):
+if ((len(sys.argv) < 3) or (len(sys.argv) % 2) == 0):
     print("Usage: python customFormula_flow_basis.py trace_folder output_file1 nr_of_scenarios2 trace_folder output_file2 ... trace_folderN output_fileN")
     sys.exit(1)
 
