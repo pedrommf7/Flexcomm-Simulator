@@ -72,9 +72,10 @@ LinkStats::LogStatsInternal (Ptr<OutputStreamWrapper> streamWrapper)
 
 
   std::ostream *stream = streamWrapper->GetStream ();
+  double usage = 1-m_channel->GetChannelUsage ();
   *stream << std::fixed << Simulator::Now ().GetSeconds () << ";" << linkName << ";"
           << m_channel->GetChannelUsage ()
-          << ";" << m_channel->GetDataRate().GetBitRate() * (1-m_channel->GetChannelUsage ())
+          << ";" << m_channel->GetDataRate().GetBitRate() * (usage>=1?1:1-usage)
           << ";" << Names::FindName (src) << ";" << Names::FindName (dst)
           << "\n";
 }
