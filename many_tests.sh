@@ -8,7 +8,8 @@
 # done
 
 
-link_capacitys=("1Gb" "2,4Gb" "10Gb") # 1Gb, 2,4Gb, 10Gb
+link_capacitys=("100Mb" "240Mb" "1000Mb") # 1Gb, 2,4Gb, 10Gb
+# link_capacitys=("1Gb" "2,4Gb" "10Gb")
 
 for link_capacity in "${link_capacitys[@]}"
 do
