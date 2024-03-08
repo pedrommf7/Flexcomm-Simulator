@@ -516,7 +516,7 @@ OspfController::ApplyRoutingFromPath (std::vector<Ptr<Node>> path)
     }
   std::cout << std::endl;
   Ptr<Node> hostDst = path.back ();
-  for (int i = 1; i < int (path.size ()) - 2; i++)
+  for (int i = 1; i < int (path.size ()) - 1; i++)
     {
       ApplyRouting (Id2DpId (path.at (i)->GetId ()), hostDst, path.at (i + 1));
     }
