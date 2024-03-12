@@ -4,7 +4,7 @@ echo 'Insert the topology folder name:'
 read topo
 
 echo '
-------------> [COMMAND] ./utils/topo-vis.py --topology='$topo'
+------------> [COMMAND] ./utils/topo-vis.py --topology='$topo' --showHosts
 '
 ./utils/topo-vis.py --topology=$topo --showHosts &
 
@@ -15,18 +15,18 @@ echo '
 
 echo '
 
-------------> [COMMAND] ./utils/ecofen-parser.py outputs/'$topo'/ecofen-trace.csv
+------------> [COMMAND] ./utils/ecofen-parser.py outputs/'$topo'/ecofen-trace.csv --plot
 '
-./utils/ecofen-parser.py outputs/$topo/ecofen-trace.csv
+./utils/ecofen-parser.py outputs/$topo/ecofen-trace.csv --plot &
 
 echo '
 
-------------> [COMMAND] ././utils/switch-stats-parser.py outputs/'$topo'/switch-stats.csv
+------------> [COMMAND] ././utils/switch-stats-parser.py outputs/'$topo'/switch-stats.csv --plot
 '
-./utils/switch-stats-parser.py outputs/$topo/switch-stats.csv
+./utils/switch-stats-parser.py outputs/$topo/switch-stats.csv --plot &
 
 echo '
 
-------------> [COMMAND] ././utils/link-stats-parser.py outputs/'$topo'/link-stats.csv
+------------> [COMMAND] ././utils/link-stats-parser.py outputs/'$topo'/link-stats.csv --plot
 '
-./utils/link-stats-parser.py outputs/$topo/link-stats.csv
+./utils/link-stats-parser.py outputs/$topo/link-stats.csv --plot &

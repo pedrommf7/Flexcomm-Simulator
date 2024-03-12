@@ -33,6 +33,7 @@ def report_values(y):
 
 def draw_plot(x, y):
     color_index = 0
+    plt.figure("Link Stats")
     for link, usages in y.items():
         plt.plot(
             x,
@@ -47,6 +48,7 @@ def draw_plot(x, y):
     plt.legend()
     plt.xlabel("Time Interval (s)")
     plt.ylabel("Usage (%)")
+    
     plt.show()
 
 

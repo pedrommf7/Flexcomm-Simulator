@@ -99,6 +99,7 @@ def report_values(cpuUsages, nPackets, nDroppedPackets, nBytes):
 def draw_plot(x, cpuUsages, nPackets, nDroppedPackets, nBytes):
     # CpuUsage graph
     color_index = 0
+    plt.figure("Switch Stats - Cpu Usage")
     for node in cpuUsages:
         plt.plot(
             x,
@@ -114,12 +115,12 @@ def draw_plot(x, cpuUsages, nPackets, nDroppedPackets, nBytes):
     plt.legend()
     plt.xlabel("Time Interval (s)")
     plt.ylabel("Cpu Usage (%)")
-    plt.show()
 
     ################################################################
 
     # nPackets graph
     color_index = 0
+    plt.figure("Switch Stats - Processed Packets")
     for node in nPackets:
         plt.plot(
             x,
@@ -135,12 +136,12 @@ def draw_plot(x, cpuUsages, nPackets, nDroppedPackets, nBytes):
     plt.legend()
     plt.xlabel("Time Interval (s)")
     plt.ylabel("Nº Packets")
-    plt.show()
 
     ################################################################
 
     # nDroppedPackets graph
     color_index = 0
+    plt.figure("Switch Stats - Dropped Packets")
     for node in nDroppedPackets:
         plt.plot(
             x,
@@ -156,12 +157,12 @@ def draw_plot(x, cpuUsages, nPackets, nDroppedPackets, nBytes):
     plt.legend()
     plt.xlabel("Time Interval (s)")
     plt.ylabel("Nº Packets")
-    plt.show()
 
     ################################################################
 
     # nBytes graph
     color_index = 0
+    plt.figure("Switch Stats - Processed Bytes")
     for node in nBytes:
         plt.plot(
             x,
@@ -177,6 +178,7 @@ def draw_plot(x, cpuUsages, nPackets, nDroppedPackets, nBytes):
     plt.legend()
     plt.xlabel("Time Interval (s)")
     plt.ylabel("Nº Bytes")
+    
     plt.show()
 
 

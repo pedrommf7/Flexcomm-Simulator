@@ -36,7 +36,9 @@ def vis_topo(topology, showHosts):
             G.add_edge(n1, n2)
 
     # *********** Display ***********
+    plt.figure("Topology")
     nx.draw_kamada_kawai(G, with_labels=True)
+
     plt.show()
 
 

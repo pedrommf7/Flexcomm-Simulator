@@ -31,7 +31,7 @@ def report_values(consumptions, total_con):
 
 def draw_plots(x, y):
     color_index = 0
-
+    plt.figure("Energy Consumption")
     for node in y:
         plt.plot(
             x,
@@ -59,6 +59,7 @@ def draw_plots(x, y):
     plt.legend()
     plt.xlabel("Time Interval (s)")
     plt.ylabel("Consumption (W)")
+    
     plt.show()
 
 
