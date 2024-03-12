@@ -2,6 +2,7 @@
 stopTime = "2min"
 
 [flowMonitor]
+enable = true
 
 [ecofen]
 logFile = true
