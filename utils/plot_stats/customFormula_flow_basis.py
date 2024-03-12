@@ -80,9 +80,9 @@ def collect_link_stats_data(file_path_links, file_path_switchs, file_path_consum
         consoB = merged_data[(merged_data['NodeName'] == dst) & (merged_data['Time'] == time)]['Consumption'].values[0]
         freeBW = row[1]['Free']
         if(freeBW <= 0):
-            freeBW = 1
+            freeBW = 1#reference_bw*0.05
 
-        costs1.append( (reference_bw/freeBW) * (cpuA+cpuB)/2)
+        costs1.append( (reference_bw/freeBW) * (consoA+consoB) )
         costs2.append( (reference_bw/freeBW) * ((cpuA+cpuB)/2)*(consoA+consoB) )
         # costs3.append( (reference_bw/freeBW) * ((cpuA*consoA)+(cpuB*consoB)))
         # costs4.append( (reference_bw/freeBW) * ((cpuA*consoA)+(cpuB*consoB))/2)
@@ -101,24 +101,36 @@ def collect_link_stats_data(file_path_links, file_path_switchs, file_path_consum
     return c1, c2#, c3, c4
 
 # Function to plot the data
-def plot_graph(title, names, points_x, costs):
+def plot_graph(title, names, points_x, costs, n, justLastValues):
 
     plt.figure(title)
-    # plt.ylim(top=3000)
-    plt.title(f'Switch CPU Capacity: 10Mbps') #????
+    plt.title(title)
     plt.ylabel('Custom cost formula of the Path')
     plt.xlabel("Time (s)")
 
     color_index = 0
-    print(f'---->   Scenario:{title}:')
+    print(f'\t\t---->   Scenario:{title}:')
     for i in range(len(costs)):
         
         col = colors[color_index % len(colors)]
         mrk = markers[color_index % len(markers)]
         print(f'---->   cost nr{i+1}: {(costs[i])}')
         
-        plt.plot(points_x, costs[i], label=names[i], color=col, marker=mrk)
-        max_y = max(costs[i])
+        if(n>0):
+
+            if justLastValues:
+                p_x = points_x[-n:]
+                p_y = costs[i][-n:]
+            else:
+                p_x = points_x[:-n]
+                p_y = costs[i][:-n]
+        else:
+            p_x = points_x
+            p_y = costs[i]
+
+
+        plt.plot(p_x, p_y, label=names[i], color=col, marker=mrk)
+        max_y = max(p_y)
         plt.axhline(y=max_y, color=col, linestyle='--', label=f'Max: {max_y:.2f}')
 
         color_index += 1
@@ -126,9 +138,18 @@ def plot_graph(title, names, points_x, costs):
     plt.legend()
 
 def plot_graphs(points_x, names, costs1, costs2):
-    plot_graph("Média de CPU Ratio entre switchs do link", names, points_x, costs1)
-    plot_graph("Média de CPU Ratio e soma de consumo entre switchs do link", names, points_x, costs2)
-    
+    # number of last points to separate 
+    n = 6
+
+    if(n>0):
+        plot_graph(f"Soma dos consumos entre switchs de cada link (sem ultimos {n} valores)", names, points_x, costs1, n, False)
+        plot_graph(f"Soma dos consumos entre switchs de cada link (só ultimos {n} valores)", names, points_x, costs1, n, True)
+        plot_graph(f"Soma dos consumos e média de CPU Ratio entre switchs de cada link (sem ultimos {n} valores)", names, points_x, costs2, n, False)
+        plot_graph(f"Soma dos consumos e média de CPU Ratio entre switchs de cada link (só ultimos {n} valores)", names, points_x, costs2, n, True)
+    else:
+        plot_graph("Soma dos consumos entre switchs de cada link ", names, points_x, costs1, n, False)
+        plot_graph("Soma dos consumos e média de CPU Ratio entre switchs de cada link", names, points_x, costs2, n, False)
+
     plt.show()
 
 def collect_data(args, idx):
@@ -151,9 +172,9 @@ def collect_data(args, idx):
     costs1 = []
     costs2 = []
     for i in range(len(names)):
-        collected = [round(elem, 3) for elem in formula1[i]['Cost1'].tolist()]
+        collected = formula1[i]['Cost1'].tolist() #[int(elem*100)/100 for elem in 
         costs1.append(collected)
-        collected = [round(elem, 3) for elem in formula2[i]['Cost2'].tolist()]
+        collected = formula2[i]['Cost2'].tolist() #[int(elem*100)/100 for elem in
         costs2.append(collected)
     
     plot_graphs(points_x, names, costs1, costs2)
