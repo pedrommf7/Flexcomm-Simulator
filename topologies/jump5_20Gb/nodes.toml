@@ -1,0 +1,47 @@
+[H1]
+type = "host"
+
+[H2]
+type = "host"
+
+[S1]
+type = "switch"
+cpuCapacity = "20Gbps"
+
+[S1.chassis]
+template = "strong"
+
+[S2]
+type = "switch"
+cpuCapacity = "20Gbps"
+
+[S2.chassis]
+template = "strong"
+
+[S3]
+type = "switch"
+cpuCapacity = "20Gbps"
+
+[S3.chassis]
+template = "strong"
+
+[S4]
+type = "switch"
+cpuCapacity = "20Gbps"
+
+[S4.chassis]
+template = "strong"
+
+[S5]
+type = "switch"
+cpuCapacity = "20Gbps"
+
+[S5.chassis]
+template = "strong"
+
+[S6]
+type = "switch"
+cpuCapacity = "20Gbps"
+
+[S6.chassis]
+template = "strong"
