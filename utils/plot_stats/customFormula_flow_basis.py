@@ -59,7 +59,7 @@ def collect_link_stats_data(file_path_links, file_path_switchs, file_path_consum
     consumption_data = pd.read_csv(file_path_consumption, delimiter=';')
 
     merged_data = pd.merge(switchs_data, consumption_data, on=['Time', 'NodeName'])
-    merged_data = merged_data.drop(columns=['NrProccessedPackets','NrDroppedPackets','ProccessedBytes'])
+    merged_data = merged_data.drop(columns=['NrProcessedPackets','NrDroppedPackets','ProcessedBytes'])
     # print("Merged Data\n", merged_data)
 
     # Formula1: (referenceBW/freeBW) (CPU_A+CPU_B)*(Consumption_A+Consumption_B)
