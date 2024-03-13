@@ -16,6 +16,7 @@ link_capacitys=("100Mb" "240Mb" "1000Mb" "1Gb" "2,4Gb" "10Gb")
 for link_capacity in "${link_capacitys[@]}"
 do
     make run CONTROLLER=ns3::OspfController TOPO=jump5_$link_capacity OUTPUTS=$link_capacity > outputs/output_jump5_$link_capacity.txt &
+    echo "Running jump5_$link_capacity topology...\n"
     sleep 1
 done
 
