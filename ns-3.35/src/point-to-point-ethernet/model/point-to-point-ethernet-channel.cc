@@ -171,7 +171,7 @@ PointToPointEthernetChannel::UpdateUsage ()
       m_lastTime = Simulator::Now ();
       uint64_t bits = m_bytesTransmitted * 8;
       m_bytesTransmitted = 0;
-      m_usage = double((bits / u_int64_t(delta.GetSeconds ())) / GetDataRate ().GetBitRate ());
+      m_usage = (bits / delta.GetSeconds ()) / GetDataRate ().GetBitRate ();
     }
 }
 

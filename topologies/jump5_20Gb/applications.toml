@@ -2,68 +2,68 @@
 type = "constSend"
 host = "H1"
 remote = "H2"
-dataRate = "20Gbps"
+dataRate = "2Gbps"
 startTime = "9s"
 
 [app2]
 type = "constSend"
 host = "H1"
 remote = "H2"
-dataRate = "20Gbps"
+dataRate = "2Gbps"
 startTime = "19s"
 
 [app3]
 type = "constSend"
 host = "H1"
 remote = "H2"
-dataRate = "20Gbps"
+dataRate = "2Gbps"
 startTime = "29s"
 
 [app4]
 type = "constSend"
 host = "H1"
 remote = "H2"
-dataRate = "20Gbps"
+dataRate = "2Gbps"
 startTime = "39s"
 
 [app5]
 type = "constSend"
 host = "H1"
 remote = "H2"
-dataRate = "20Gbps"
+dataRate = "2Gbps"
 startTime = "49s"
 
 [app6]
 type = "constSend"
 host = "H1"
 remote = "H2"
-dataRate = "20Gbps"
+dataRate = "2Gbps"
 startTime = "59s"
 
 [app7]
 type = "constSend"
 host = "H1"
 remote = "H2"
-dataRate = "20Gbps"
+dataRate = "2Gbps"
 startTime = "69s"
 
 [app8]
 type = "constSend"
 host = "H1"
 remote = "H2"
-dataRate = "20Gbps"
+dataRate = "2Gbps"
 startTime = "79s"
 
 [app9]
 type = "constSend"
 host = "H1"
 remote = "H2"
-dataRate = "20Gbps"
+dataRate = "2Gbps"
 startTime = "89s"
 
 [app10]
 type = "constSend"
 host = "H1"
 remote = "H2"
-dataRate = "20Gbps"
+dataRate = "2Gbps"
 startTime = "99s"
