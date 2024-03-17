@@ -76,7 +76,7 @@ public:
    */
   virtual Ptr<NetDevice> GetDevice (std::size_t i) const = 0;
 
-  long double GetChannelUsage (void);
+  double GetChannelUsage (void);
 
   void ComputeUsage (Time interval, Time stop);
 
@@ -85,7 +85,7 @@ public:
   virtual DataRate GetDataRate (void);
 
 protected:
-  long double m_usage;
+  double m_usage;
 
 private:
   uint32_t m_id; //!< Channel id for this channel

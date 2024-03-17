@@ -61,7 +61,7 @@ Channel::GetId (void) const
   return m_id;
 }
 
-long double
+double
 Channel::GetChannelUsage (void)
 {
   return m_usage;
