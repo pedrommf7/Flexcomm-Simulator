@@ -174,10 +174,6 @@ PointToPointEthernetChannel::UpdateUsage ()
       uint64_t bits = m_bytesTransmitted * 8;
       m_bytesTransmitted = 0;
       m_usage = (bits / deltaSeconds) / GetDataRate ().GetBitRate ();
-      if (m_lastTime.GetSeconds() >= 88 && m_lastTime.GetSeconds() <= 96){
-        std::cout << "Time: " << m_lastTime.GetSeconds() << "; bits: " << bits << "; deltaSeconds: " << deltaSeconds << "; DataRate: " << GetDataRate ().GetBitRate () << std::endl;
-        std::cout << "Calculated value: " << m_usage << "\n" << std::endl;
-      }
     }
 }
 
