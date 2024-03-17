@@ -1,34 +1,34 @@
 [link1]
 edges = ["H1", "S1"]
-dataRate = "288Mbps"
+dataRate = "240Mbps"
 delay = "0ms"
 
 [link2]
 edges = ["S1", "S2"]
-dataRate = "288Mbps"
+dataRate = "240Mbps"
 delay = "0ms"
 
 [link3]
 edges = ["S2", "S3"]
-dataRate = "288Mbps"
+dataRate = "240Mbps"
 delay = "0ms"
 
 [link4]
 edges = ["S3", "S4"]
-dataRate = "288Mbps"
+dataRate = "240Mbps"
 delay = "0ms"
 
 [link5]
 edges = ["S4", "S5"]
-dataRate = "288Mbps"
+dataRate = "240Mbps"
 delay = "0ms"
 
 [link6]
 edges = ["S5", "S6"]
-dataRate = "288Mbps"
+dataRate = "240Mbps"
 delay = "0ms"
 
 [link7]
 edges = ["S6", "H2"]
-dataRate = "288Mbps"
+dataRate = "240Mbps"
 delay = "0ms"
