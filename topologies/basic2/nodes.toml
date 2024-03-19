@@ -6,35 +6,35 @@ type = "host"
 
 [S1]
 type = "switch"
-cpuCapacity = "5Mbps"
+cpuCapacity = "2Mbps"
 
 [S1.chassis]
 template = "default2"
 
 [S2]
 type = "switch"
-cpuCapacity = "5Mbps"
+cpuCapacity = "2Mbps"
 
 [S2.chassis]
 template = "default2"
 
 [S3]
 type = "switch"
-cpuCapacity = "5Mbps"
+cpuCapacity = "2Mbps"
 
 [S3.chassis]
 template = "default2"
 
 [S4]
 type = "switch"
-cpuCapacity = "5Mbps"
+cpuCapacity = "2Mbps"
 
 [S4.chassis]
 template = "default2"
 
 [S5]
 type = "switch"
-cpuCapacity = "5Mbps"
+cpuCapacity = "2Mbps"
 
 [S5.chassis]
 template = "default2"

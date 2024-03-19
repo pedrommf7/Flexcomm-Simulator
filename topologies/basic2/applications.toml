@@ -1,5 +1,7 @@
 [appHost1]
 type = "constSend"
+startTime = "9s"
+stopTime = "20s"
 host = "H1"
 remote = "H2"
 dataRate = "1Mbps"

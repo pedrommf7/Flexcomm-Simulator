@@ -1,5 +1,5 @@
 [simulator]
-stopTime = "5min"
+stopTime = "1min"
 
 [ecofen]
 logFile = true

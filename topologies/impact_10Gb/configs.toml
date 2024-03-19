@@ -13,3 +13,6 @@ enable = true
 interval = "5s"
 
 [linkStats]
+logFile = true
+logInterval = "5s"
+interval = "2s"

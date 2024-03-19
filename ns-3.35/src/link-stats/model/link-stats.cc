@@ -58,6 +58,17 @@ LinkStats::LogStatsInternal (Ptr<OutputStreamWrapper> streamWrapper)
 {
   std::string linkName = Names::FindName (m_channel);
 
+  uint32_t channel_id = m_channel->GetId ();
+  Ptr<Node> src, dst;
+  ChannelContainer c = ChannelContainer::GetSwitch2Switch ();
+  for (ChannelContainer::Iterator i = c.Begin (); i != c.End (); ++i)
+    {
+      if ((*i)->GetId () == channel_id)
+        {
+          src = (*i)->GetDevice (0)->GetNode ();
+          dst = (*i)->GetDevice (1)->GetNode ();
+        }
+    }
 
   std::ostream *stream = streamWrapper->GetStream ();
   double usage = m_channel->GetChannelUsage ();
@@ -66,6 +77,7 @@ LinkStats::LogStatsInternal (Ptr<OutputStreamWrapper> streamWrapper)
   *stream << std::fixed << Simulator::Now ().GetSeconds () << ";" << linkName << ";"
           << m_channel->GetChannelUsage ()
           << ";" << m_channel->GetDataRate().GetBitRate() * (1-usage)
+          << ";" << Names::FindName (src) << ";" << Names::FindName (dst)
           << "\n";
 }
 
