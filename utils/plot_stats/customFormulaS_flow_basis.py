@@ -181,7 +181,7 @@ def collect_data(args, idx):
 
 
 if ((len(sys.argv) < 3) or (len(sys.argv) % 2) == 0):
-    print("Usage: python customFormula_flow_basis.py trace_folder output_file1 nr_of_scenarios2 trace_folder output_file2 ... trace_folderN output_fileN")
+    print("Usage: python customFormulas_flow_basis.py trace_folder1 output_file1 trace_folder2 output_file2 ... trace_folderN output_fileN")
     sys.exit(1)
 
 print("[WARNING] these script only works with topologies with the same link bandwidth across all links, and logInterval equal values across links and ecofen stats")

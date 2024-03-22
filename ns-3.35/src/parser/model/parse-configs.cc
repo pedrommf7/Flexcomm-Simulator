@@ -44,7 +44,7 @@ parseEcofenConfigs (toml::table ecofenConfigs, string outPath)
   GlobalValue::GetValueByName ("SimStopTime", stopTime);
 
   consoLogger.NodeConsoAll (Time (ecofenConfigs["interval"].value_or ("5s")), stopTime.Get ());
-  
+
   if (ecofenConfigs["logFile"].value_or (false))
     consoLogger.NodeConsoAllLog (Time (ecofenConfigs["logInterval"].value_or ("5s")),
                                  stopTime.Get (), SystemPath::Append (outPath, "ecofen-trace.csv"));
@@ -77,7 +77,7 @@ parseLinkStatsConfigs (toml::table linkConfigs, string outPath)
   GlobalValue::GetValueByName ("SimStopTime", stopTime);
 
   statsLogger.ComputeStatsAll (Time (linkConfigs["interval"].value_or ("5s")), stopTime.Get ());
-  
+
   if (linkConfigs["logFile"].value_or (false))
     statsLogger.ComputeStatsAllLog (Time (linkConfigs["logInterval"].value_or ("5s")),
                                     stopTime.Get (),
