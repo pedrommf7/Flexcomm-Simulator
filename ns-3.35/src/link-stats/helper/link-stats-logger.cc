@@ -108,7 +108,7 @@ LinkStatsLogger::ComputeStatsLog (Time interval, Time stop, ChannelContainer c, 
     }
 
   std::ostream *stream = m_streamWrapper->GetStream ();
-  *stream << "Time;LinkName;LinkUsage;Free;Source;Destiny\n";
+  *stream << "Time;LinkName;LinkUsage;Free;Source;Destiny;DataRate\n";
 
   Time i = Seconds (0.0);
   while (i <= stop)

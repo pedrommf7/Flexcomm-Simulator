@@ -1,6 +1,6 @@
 [link1]
 edges = ["H1", "S1"]
-dataRate = "2400Mbps"
+dataRate = "1Gbps"
 delay = "0ms"
 
 [link2]
@@ -25,5 +25,5 @@ delay = "0ms"
 
 [link6]
 edges = ["S5", "H2"]
-dataRate = "2400Mbps"
+dataRate = "1Gbps"
 delay = "0ms"
