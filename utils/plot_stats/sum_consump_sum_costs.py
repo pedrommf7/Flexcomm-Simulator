@@ -63,7 +63,7 @@ def collect_summed_consumption_data(file_path_consumption):
     
     return data
 
-def collect_linkCosts_data(file_path_consumption, file_path_links, reference_bw):
+def collect_linkCosts_data(file_path_consumption, file_path_links):
     consumption_data = pd.read_csv(file_path_consumption, delimiter=';')
 
     links_data = pd.read_csv(file_path_links, delimiter=';')
@@ -77,11 +77,12 @@ def collect_linkCosts_data(file_path_consumption, file_path_links, reference_bw)
 
         consoB = consumption_data[(consumption_data['Time'] == time) & (consumption_data['NodeName'] == dst)]['Consumption'].values[0]
         freeBW = row[1]['Free']
+        dataRate = row[1]['DataRate']
         if(freeBW <= 0):
             freeBW = 1
 
         # Formula: (referenceBW/freeBW) (CPU_A+CPU_B)*Consumption_B
-        costsDict[time] += round((reference_bw/freeBW) * consoB , 3)
+        costsDict[time] += round((dataRate/freeBW) * consoB , 3)
     
     costs = list(costsDict.values())
     
@@ -160,13 +161,12 @@ def plot_graphs(points_x, sum_conso, sum_costs, names):
 def collect_data(traceFolders):
     sum_costs, sum_conso, names = [], [], []
 
-    for i in range(0, len(traceFolders), 2):
+    for i in range(0, len(traceFolders), 1):
         c1 = collect_summed_consumption_data(f'{traceFolders[i]}/ecofen-trace.csv')
 
-        reference_bw = find_reference_bw(traceFolders[i+1])
+        # reference_bw = find_reference_bw(traceFolders[i+1])
         c2 = collect_linkCosts_data(f'{traceFolders[i]}/ecofen-trace.csv', 
-                                    f'{traceFolders[i]}/link-stats.csv', 
-                                    reference_bw)
+                                    f'{traceFolders[i]}/link-stats.csv')
         
         name = traceFolders[i].split('/')[-1]
         
@@ -182,8 +182,11 @@ def collect_data(traceFolders):
     plot_graphs(points_x, sum_conso, sum_costs, names)
 
 
-if (len(sys.argv) < 3):
-    print("Usage: python sum_consump_sum_costs.py trace_folder1 output1 trace_folder2 output2 ... trace_folderN outputN")
+if (len(sys.argv) < 2):
+    if(sys.argv[0].startswith("./")):
+        print("Usage:", sys.argv[0], "trace_folder1 trace_folder2 ... trace_folderN")
+    else:
+        print("Usage: python", sys.argv[0], "trace_folder1 trace_folder2 ... trace_folderN")
     sys.exit(1)
 
 traceFolders = sys.argv[1:]

@@ -79,7 +79,7 @@ LinkStats::LogStatsInternal (Ptr<OutputStreamWrapper> streamWrapper)
           << m_channel->GetDataRate ().GetBitRate () * (1 - usage) 
           << ";" << Names::FindName (src)
           << ";" << Names::FindName (dst) 
-          << ";" << m_channel->GetDataRate ()
+          << ";" << m_channel->GetDataRate ().GetBitRate()
           << "\n";
 }
 
