@@ -1,0 +1,70 @@
+
+90.000000;link2;0.871858;307540176.000000;S1;S2
+90.000000;link3;0.871857;307542408.000000;S2;S3
+90.000000;link4;0.871858;307540176.000000;S3;S4
+90.000000;link5;0.871857;307542408.000000;S4;S5
+90.000000;link6;0.871858;307540176.000000;S5;S6
+
+95.000000;link2;0.086055;2193466904.000000;S1;S2
+95.000000;link3;0.086055;2193466904.000000;S2;S3
+95.000000;link4;0.086055;2193466904.000000;S3;S4
+95.000000;link5;0.086055;2193466904.000000;S4;S5
+95.000000;link6;0.086055;2193469136.000000;S5;S6
+
+
+Time: 88; bits: 4184919648; deltaSeconds: 2; DataRate: 2400000000
+Calculated value: 0.871858
+Time: 88; bits: 4184915184; deltaSeconds: 2; DataRate: 2400000000
+Calculated value: 0.871857
+Time: 88; bits: 4184919648; deltaSeconds: 2; DataRate: 2400000000
+Calculated value: 0.871858
+Time: 88; bits: 4184915184; deltaSeconds: 2; DataRate: 2400000000
+Calculated value: 0.871857
+Time: 88; bits: 4 184 919 648; deltaSeconds: 2; DataRate: 2400000000
+Calculated value: 0.871858
+
+Time: 90; bits: 151 493 648; deltaSeconds: 2; DataRate: 2400000000
+Calculated value: 0.0315612
+Time: 90; bits: 151484720; deltaSeconds: 2; DataRate: 2400000000
+Calculated value: 0.0315593
+Time: 90; bits: 151471328; deltaSeconds: 2; DataRate: 2400000000
+Calculated value: 0.0315565
+Time: 90; bits: 151462400; deltaSeconds: 2; DataRate: 2400000000
+Calculated value: 0.0315547
+Time: 90; bits: 151449008; deltaSeconds: 2; DataRate: 2400000000
+Calculated value: 0.0315519
+
+Time: 92; bits: 413066192; deltaSeconds: 2; DataRate: 2400000000
+Calculated value: 0.0860555
+Time: 92; bits: 413066192; deltaSeconds: 2; DataRate: 2400000000
+Calculated value: 0.0860555
+Time: 92; bits: 413066192; deltaSeconds: 2; DataRate: 2400000000
+Calculated value: 0.0860555
+Time: 92; bits: 413066192; deltaSeconds: 2; DataRate: 2400000000
+Calculated value: 0.0860555
+Time: 92; bits: 413066192; deltaSeconds: 2; DataRate: 2400000000
+Calculated value: 0.0860555
+
+Time: 94; bits: 413066192; deltaSeconds: 2; DataRate: 2400000000
+Calculated value: 0.0860555
+Time: 94; bits: 413066192; deltaSeconds: 2; DataRate: 2400000000
+Calculated value: 0.0860555
+Time: 94; bits: 413066192; deltaSeconds: 2; DataRate: 2400000000
+Calculated value: 0.0860555
+Time: 94; bits: 413066192; deltaSeconds: 2; DataRate: 2400000000
+Calculated value: 0.0860555
+Time: 94; bits: 413061728; deltaSeconds: 2; DataRate: 2400000000
+Calculated value: 0.0860545
+Time: 96; bits: 413066192; deltaSeconds: 2; DataRate: 2400000000
+Calculated value: 0.0860555
+Time: 96; bits: 413066192; deltaSeconds: 2; DataRate: 2400000000
+Calculated value: 0.0860555
+Time: 96; bits: 413066192; deltaSeconds: 2; DataRate: 2400000000
+Calculated value: 0.0860555
+Time: 96; bits: 413066192; deltaSeconds: 2; DataRate: 2400000000
+Calculated value: 0.0860555
+Time: 96; bits: 413066192; deltaSeconds: 2; DataRate: 2400000000
+Calculated value: 0.0860555
+
+
+OU SEJA OS LOGS SÃO DOS SEGUNDOS ANTERIORES ?? CONFIRMAR.....

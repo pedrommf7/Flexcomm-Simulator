@@ -1,0 +1,44 @@
+mkdir -p outputs/impact_2,4Gb_3jumps_10Gb
+./ns-3.35/waf -t ns-3.35 --run "flexcomm --topo=impact_2,4Gb_3jumps_10Gb --ctrl=ns3::OspfController --checksum=false --estifile=estimate.json --flexfile=flex.json --linkfailures=NONE" --cwd=../outputs 
+Waf: Entering directory `/home/gsd/Flexcomm-Simulator/ns-3.35/build'
+Waf: Leaving directory `/home/gsd/Flexcomm-Simulator/ns-3.35/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.210s)
+--------------------------------------------------------------
+Parsing Time: 0s 50ms
+Reference Bandwidth Value: 10000000000
+-----------------------------
+FindAllPaths from: 0 to: 1 -> Number of paths found: 1
+-----> FindAllPaths Time: 0h 0m 0s 0ms
+-----------------------------
+ApplyRoutingFromPath: 0 2 3 4 5 6 1 
+ApplyRoutingFromPath: 1 6 5 4 3 2 0 
+-----------------------------
+Costs: 
+Edge: 0 - 2 | Weight: 0
+Edge: 2 - 3 | Weight: 7
+Edge: 3 - 4 | Weight: 7
+Edge: 4 - 5 | Weight: 7
+Edge: 5 - 6 | Weight: 1
+Edge: 6 - 1 | Weight: 0
+-----[New Routing Loop]-----
+-----[Stats Loop]-----
+[MinMax] S1 5 120
+[MinMax] S2 5 120
+[MinMax] S3 5 120
+[MinMax] S4 5 120
+[MinMax] S5 5 120
+ApplyRoutingFromPath: 0 2 3 4 5 6 1 
+ApplyRoutingFromPath: 1 6 5 4 3 2 0 
+-----------------------------
+Costs: 
+Edge: 0 - 2 | Weight: 0
+Edge: 2 - 3 | Weight: 7
+Edge: 3 - 4 | Weight: 7
+Edge: 4 - 5 | Weight: 7
+Edge: 5 - 6 | Weight: 1
+Edge: 6 - 1 | Weight: 0
+-----[New Routing Loop]-----
+Nº Events: 690134723
+Execution Time: 0d 1h 1m 37s
+--------------------------------------------------------------

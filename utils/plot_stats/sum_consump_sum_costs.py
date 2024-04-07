@@ -68,12 +68,15 @@ def collect_linkCosts_data(file_path_consumption, file_path_links):
 
     links_data = pd.read_csv(file_path_links, delimiter=';')
 
-    costsDict1, costsDict2 = {}, {}
+    costsDict1, costsDict2, costsDict3, costsDict4, costsDict5 = {}, {}, {}, {}, {}
     for row in links_data.iterrows():
         time = row[1]['Time']
         if time not in costsDict1.keys():
             costsDict1[time] = 0
             costsDict2[time] = 0
+            costsDict3[time] = 0
+            costsDict4[time] = 0
+            costsDict5[time] = 0
         dst = row[1]['Destiny']
 
         consoB = consumption_data[(consumption_data['Time'] == time) & (consumption_data['NodeName'] == dst)]['Consumption'].values[0]
@@ -83,16 +86,32 @@ def collect_linkCosts_data(file_path_consumption, file_path_links):
         if(freeBW <= 0):
             freeBW = 1
 
+        modelAt0 = 5
+        modelAt1 = 120
+
         costsDict1[time] += (dataRate/freeBW) * consoB
         costsDict2[time] += usage * consoB
+        costsDict3[time] += usage * (consoB/modelAt0)
+        costsDict4[time] += usage * ((2*consoB)/modelAt0)
+        costsDict5[time] += usage * (consoB/modelAt1)
+
     
     costs1 = list(costsDict1.values())
     costs1 = [round(elem, 3) for elem in costs1]
 
     costs2 = list(costsDict2.values())
     costs2 = [round(elem, 3) for elem in costs2]
+
+    costs3 = list(costsDict3.values())
+    costs3 = [round(elem, 3) for elem in costs3]
+
+    costs4 = list(costsDict4.values())
+    costs4 = [round(elem, 3) for elem in costs4]
+
+    costs5 = list(costsDict5.values())
+    costs5 = [round(elem, 3) for elem in costs5]
     
-    return costs1, costs2
+    return costs1, costs2, costs3, costs4, costs5
 
 # Function to plot the data
 def plot_graph(title, label_y, points_x, points_y, names, n, justLastValues):
@@ -144,7 +163,7 @@ def plot_graph(title, label_y, points_x, points_y, names, n, justLastValues):
 
     plt.legend()
 
-def plot_graphs(points_x, sum_conso, sum_costs1, sum_costs2, names):
+def plot_graphs(points_x, sum_conso, sum_costs1, sum_costs2, sum_costs3, sum_costs4, sum_costs5, names):
     # number of last points to separate 
     n = 0
 
@@ -168,21 +187,24 @@ def plot_graphs(points_x, sum_conso, sum_costs1, sum_costs2, names):
         plot_graph(f"Soma dos custos 2 do caminho (sem ultimos {n} valores)", 'Custom cost formula of the Path', points_x, sum_costs2, names, n, False)
         # plot_graph(f"TODOS - Soma dos custos do caminho (só ultimos {n} valores)", 'Custom cost formula of the Path', points_x, sum_costs, names, n, True)
     else:
-        plot_graph("TODOS - Soma dos consumos do caminho", 'Comsumption of the Path', points_x, sum_conso, names, n, False)
-        plot_graph("TODOS - Soma dos custos 1 do caminho", 'Custom cost formula of the Path', points_x, sum_costs1, names, n, False)
+        # plot_graph("TODOS - Soma dos consumos do caminho", 'Comsumption of the Path', points_x, sum_conso, names, n, False)
+        # plot_graph("TODOS - Soma dos custos 1 do caminho", 'Custom cost formula of the Path', points_x, sum_costs1, names, n, False)
         plot_graph("TODOS - Soma dos custos 2 do caminho", 'Custom cost formula of the Path', points_x, sum_costs2, names, n, False)
+        plot_graph("TODOS - Soma dos custos 3 do caminho", 'Custom cost formula of the Path', points_x, sum_costs3, names, n, False)
+        plot_graph("TODOS - Soma dos custos 4 do caminho", 'Custom cost formula of the Path', points_x, sum_costs4, names, n, False)
+        plot_graph("TODOS - Soma dos custos 5 do caminho", 'Custom cost formula of the Path', points_x, sum_costs5, names, n, False)
 
 
     plt.show()
 
 def collect_data(traceFolders):
-    sum_costs1, sum_costs2, sum_conso, names = [], [], [], []
+    sum_costs1, sum_costs2, sum_costs3, sum_costs4, sum_costs5, sum_conso, names = [], [], [], [], [], [], []
 
     for i in range(0, len(traceFolders), 1):
         c1 = collect_summed_consumption_data(f'{traceFolders[i]}/ecofen-trace.csv')
 
         # reference_bw = find_reference_bw(traceFolders[i+1])
-        c2, c3 = collect_linkCosts_data(f'{traceFolders[i]}/ecofen-trace.csv', 
+        c2, c3, c4, c5, c6 = collect_linkCosts_data(f'{traceFolders[i]}/ecofen-trace.csv', 
                                     f'{traceFolders[i]}/link-stats.csv')
         
         name = traceFolders[i].split('/')[-1]
@@ -190,6 +212,10 @@ def collect_data(traceFolders):
         sum_conso.append(c1)
         sum_costs1.append(c2)
         sum_costs2.append(c3)
+        sum_costs3.append(c4)
+        sum_costs4.append(c5)
+        sum_costs5.append(c6)
+
         names.append(name)
 
     points_x = sum_conso[0]['Time'].tolist()
@@ -197,7 +223,7 @@ def collect_data(traceFolders):
     for i in range(len(sum_conso)):
         sum_conso[i] = sum_conso[i]['Consumption'].tolist()
 
-    plot_graphs(points_x, sum_conso, sum_costs1, sum_costs2, names)
+    plot_graphs(points_x, sum_conso, sum_costs1, sum_costs2, sum_costs3, sum_costs4, sum_costs5, names)
 
 
 if (len(sys.argv) < 2):

@@ -1,0 +1,110 @@
+		
+	
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>WIFI Routers power consumption</title>
+	<link REL="SHORTCUT ICON" HREF="images/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="ddtabmenufiles/ddcolortabs.css">
+	<link rel="stylesheet" type="text/css" href="include/style.css?dummy=1">
+	<script type="text/javascript" src="ddtabmenufiles/ddtabmenu.js"></script>
+	<script type="text/javascript" src="include/jquery.js"></script>
+	<script type="text/javascript" src="include/jquery.alphanumeric.js"></script>
+	<script type="text/javascript">
+	ddtabmenu.definemenu('ddtabs', 4);	</script>
+	<script data-ad-client="ca-pub-2739597420192699" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2739597420192699"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="layout">
+	<div style="float: left;">
+		<img alt="meter" src="images/small.meter.jpg">&nbsp;
+		<h1 style="display:inline;">The Power Consumption Database</h1>
+		<br>
+		<i>... user maintained electricity usage data</i>
+	</div>
+	<div style="float: right;">
+	
+
+		<form method="get" action="list.php">
+			<input type="text" id="query" name="query" class="" value="" maxlength="100" style="width:150px;">			<input type="submit" value="Search Product">
+		</form>
+	</div>
+	<div style="float: left; margin-top: 20px;" id="ddtabs" class="ddcolortabs">
+		<ul>
+			<li><a href="."><span>Home</span></a></li>
+			<li><a href="submit.php"><span>Submit Data</span></a></li>
+
+			<li><a href="list.php?type=13"><span>Computers</span></a></li>
+			<li><a href="list.php?type=12"><span>Game Consoles</span></a></li>
+			<li><a href="list.php?type=11"><span>WIFI Routers</span></a></li>
+			<li><a href="list.php"><span>Browse All</span></a></li>
+		</ul>
+	</div>
+	<div class="ddcolortabsline">&nbsp;</div>
+<div class="pagebarUTH"><a href="list.php?page=1&sort=stamp&type=11">1</a> <a href="list.php?page=2&sort=stamp&type=11">2</a> <a href="list.php?page=3&sort=stamp&type=11">3</a> <a href="list.php?page=4&sort=stamp&type=11">4</a> <a href="list.php?page=5&sort=stamp&type=11">5</a> <a href="list.php?page=6&sort=stamp&type=11"><b>6</b></a> <a href="list.php?page=7&sort=stamp&type=11">7</a> <a href="list.php?page=8&sort=stamp&type=11">8</a> <a href="list.php?page=9&sort=stamp&type=11">9</a> <a href="list.php?page=10&sort=stamp&type=11">10</a> <a href="list.php?page=11&sort=stamp&type=11">11</a> <a href="list.php?page=12&sort=stamp&type=11">12</a> <a href="list.php?page=13&sort=stamp&type=11">13</a> <a href="list.php?page=14&sort=stamp&type=11">14</a> ... <select id="productTypes" name="productTypes" style="" ><option   value=''> - choose - </option><option   value='36'>Adapter/Charger</option><option   value='26'>ADSL Modems</option><option   value='23'>Blu-ray Players</option><option   value='30'>Cable Modems</option><option   value='13'>Computers</option><option   value='22'>Digital TV Recorders</option><option   value='27'>DVD Players</option><option   value='29'>Fans</option><option   value='12'>Game Consoles</option><option   value='35'>Harddisk</option><option   value='38'>Light bulbs</option><option   value='18'>Media Players</option><option   value='31'>Microcontroller</option><option   value='20'>Monitors</option><option   value='16'>NASs</option><option   value='34'>Other USB products</option><option   value='19'>Printers</option><option   value='41'>Robot vacuum cleaner</option><option   value='21'>Set-Top Boxes</option><option   value='24'>Stereo Amplifiers</option><option   value='25'>Switches</option><option   value='10'>TVs</option><option   value='15'>TVs - CRT</option><option   value='6'>TVs - LCD</option><option   value='8'>TVs - LED</option><option   value='7'>TVs - Plasma</option><option   value='9'>TVs - RPTV</option><option   value='28'>Uncategorized</option><option   value='37'>Unknown</option><option   value='33'>UPS</option><option   value='32'>USB flash drives</option><option   value='17'>WHSs</option><option  selected value='11'>WIFI Routers</option><option   value='39'>Wireless plug</option><option   value='40'>Wireless speaker</option></select></div><table width="100%"><thead><tr><th></th><th><a href="list.php?page=6&sort=producttype&type=11">Type</a></th><th><a href="list.php?page=6&sort=manufacturer&type=11">Manufacturer</a></th><th><a href="list.php?page=6&sort=model&type=11">Model</a></th><th><a href="list.php?page=6&sort=value_avg&type=11">Normal</a></th><th><a href="list.php?page=6&sort=value_max&type=11">Max</a></th><th><a href="list.php?page=6&sort=url&type=11">Reference</a></th><th><a href="list.php?page=6&order=1&sort=stamp&type=11">Submitted</a></th></tr></thead><tr><td class="list"><img title="Measured by a TPCDB user" src="images/user.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=Netgear">Netgear</a></td><td class="list"><a href="product.php?id=5067">R6260</a></td><td class="list" align="right">4.00 w</td><td class="list" align="right">5.00 w</td><td class="list"></td><td class="list">2019-09-18</td></tr><tr class="odd"><td class="list"><img title="Measured by extern site" src="images/internet.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=Asus">Asus</a></td><td class="list"><a href="product.php?id=4686">RT-AC58U</a></td><td class="list" align="right">9.00 w</td><td class="list" align="right">19.00 w</td><td class="list"><a target="_new" href="https://www.pctekreviews.com/Reviews/RT_AC58U.aspx">pctekreviews.com</a></td><td class="list">2019-08-09</td></tr><tr><td class="list"><img title="Measured by extern site" src="images/internet.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=Gryphon">Gryphon</a></td><td class="list"><a href="product.php?id=4685">Gryphon</a></td><td class="list" align="right">6.30 w</td><td class="list" align="right"></td><td class="list"><a target="_new" href="https://www.tomsguide.com/us/gryphon-secure-mesh-router,review-6042.html">tomsguide.com</a></td><td class="list">2019-08-09</td></tr><tr class="odd"><td class="list"><img title="Measured by extern site" src="images/internet.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=Xiaomi">Xiaomi</a></td><td class="list"><a href="product.php?id=4684">Mi WiFi Router 3G</a></td><td class="list" align="right">8.20 w</td><td class="list" align="right">10.80 w</td><td class="list"><a target="_new" href="https://en.techreviewer.de/xiaomi-router-3g-test/">en.techreviewer.de</a></td><td class="list">2019-08-09</td></tr><tr><td class="list"><img title="Measured by extern site" src="images/internet.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=Asus">Asus</a></td><td class="list"><a href="product.php?id=4679">RT-AX88U</a></td><td class="list" align="right">8.00 w</td><td class="list" align="right">10.00 w</td><td class="list"><a target="_new" href="https://www.guru3d.com/articles_pages/asus_rt_ax88u_dual_band_ax6000_router,9.html">guru3d.com</a></td><td class="list">2019-08-09</td></tr><tr class="odd"><td class="list"><img title="Measured by a TPCDB user" src="images/user.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=TP-Link">TP-Link</a></td><td class="list"><a href="product.php?id=4454">Archer C6 V2.0</a></td><td class="list" align="right">3.50 w</td><td class="list" align="right"></td><td class="list"></td><td class="list">2019-06-27</td></tr><tr><td class="list"><img title="Measured by a TPCDB user" src="images/user.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=Nexx">Nexx</a></td><td class="list"><a href="product.php?id=3550">WT3020F</a></td><td class="list" align="right">0.90 w</td><td class="list" align="right">1.50 w</td><td class="list"></td><td class="list">2019-04-11</td></tr><tr class="odd"><td class="list"><img title="Measured by extern site" src="images/internet.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=TP-Link">TP-Link</a></td><td class="list"><a href="product.php?id=2273">Archer C7 V2</a></td><td class="list" align="right">5.60 w</td><td class="list" align="right">5.90 w</td><td class="list"><a target="_new" href="https://nl.hardware.info/reviews/6589/18/40-80211ac-routers-review-kies-de-beste-router-testresultaten-stroomverbruik">nl.hardware.info</a></td><td class="list">2019-02-14</td></tr><tr><td class="list"><img title="Measured by a TPCDB user" src="images/user.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=Netgear">Netgear</a></td><td class="list"><a href="product.php?id=2017">R7000 Nighthawk AC1900</a></td><td class="list" align="right">8.50 w</td><td class="list" align="right"></td><td class="list"></td><td class="list">2019-02-14</td></tr><tr class="odd"><td class="list"><img title="Measured by a TPCDB user" src="images/user.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=TP-Link">TP-Link</a></td><td class="list"><a href="product.php?id=1802">TL-WDR3600</a></td><td class="list" align="right">3.80 w</td><td class="list" align="right"></td><td class="list"></td><td class="list">2019-02-14</td></tr><tr><td class="list"><img title="Measured by a TPCDB user" src="images/user.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=TP-Link">TP-Link</a></td><td class="list"><a href="product.php?id=2273">Archer C7 V2</a></td><td class="list" align="right">4.60 w</td><td class="list" align="right">5.50 w</td><td class="list"></td><td class="list">2019-02-14</td></tr><tr class="odd"><td class="list"><img title="Measured by a TPCDB user" src="images/user.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=Tp-link">Tp-link</a></td><td class="list"><a href="product.php?id=2999">Archer C2300 AC2300</a></td><td class="list" align="right">8.00 w</td><td class="list" align="right"></td><td class="list"></td><td class="list">2019-02-11</td></tr><tr><td class="list"><img title="Measured by a TPCDB user" src="images/user.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=Asus">Asus</a></td><td class="list"><a href="product.php?id=2994">RT-AC86U</a></td><td class="list" align="right">11.00 w</td><td class="list" align="right"></td><td class="list"></td><td class="list">2019-02-10</td></tr><tr class="odd"><td class="list"><img title="Measured by extern site" src="images/internet.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=DKT">DKT</a></td><td class="list"><a href="product.php?id=2957">Wave2 Air</a></td><td class="list" align="right">3.70 w</td><td class="list" align="right">5.00 w</td><td class="list"><a target="_new" href="https://www.recordere.dk/2019/02/test-dansk-udviklet-wi-fi-extender-wave2-air-fra-dkt/">recordere.dk</a></td><td class="list">2019-02-06</td></tr><tr><td class="list"><img title="Measured by a TPCDB user" src="images/user.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=Dlink">Dlink</a></td><td class="list"><a href="product.php?id=2832">860l B1 (Chip: MediaTek MT7621 ver:1 eco:3)</a></td><td class="list" align="right">5.10 w</td><td class="list" align="right"></td><td class="list"></td><td class="list">2019-01-20</td></tr><tr class="odd"><td class="list"><img title="Measured by a TPCDB user" src="images/user.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=Pace+%28AT%26T%29">Pace (AT&T)</a></td><td class="list"><a href="product.php?id=2726">5268AC</a></td><td class="list" align="right">8.40 w</td><td class="list" align="right">36.00 w</td><td class="list"></td><td class="list">2019-01-06</td></tr><tr><td class="list"><img title="Measured by a TPCDB user" src="images/user.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=Asus">Asus</a></td><td class="list"><a href="product.php?id=2625">RT-N13U B1</a></td><td class="list" align="right">4.90 w</td><td class="list" align="right">5.30 w</td><td class="list"></td><td class="list">2018-12-03</td></tr><tr class="odd"><td class="list"><img title="Measured by a TPCDB user" src="images/user.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=TP-Link">TP-Link</a></td><td class="list"><a href="product.php?id=2616">Archer C1200 (AC1200)</a></td><td class="list" align="right">8.50 w</td><td class="list" align="right">9.50 w</td><td class="list"></td><td class="list">2018-11-06</td></tr><tr><td class="list"><img title="Measured by a TPCDB user" src="images/user.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=Eircom">Eircom</a></td><td class="list"><a href="product.php?id=2595">E Fibre Eir Router</a></td><td class="list" align="right">9.70 w</td><td class="list" align="right">9.70 w</td><td class="list"></td><td class="list">2018-08-28</td></tr><tr class="odd"><td class="list"><img title="Measured by a TPCDB user" src="images/user.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=Linksys">Linksys</a></td><td class="list"><a href="product.php?id=2585">VLP01 (Velop Dual-Band)</a></td><td class="list" align="right">5.20 w</td><td class="list" align="right"></td><td class="list"></td><td class="list">2018-08-11</td></tr></table>282 rows
+<br>
+<br>
+
+Help us make the database even more adequate by submitting your measurements. 
+
+<br>
+<br>
+
+<form action="submit.php" method="get">
+	<input type="hidden" name="source" value="2">
+	<button style="background-color: #ffffff;">
+	<img style="vertical-align:middle;" border="0" src="images/addsubmission.png">
+	<b>Submit data</b>
+	</button>
+</form>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+		$("#productTypes").change(function(){
+			var id = $("#productTypes").val();
+			self.location = "list.php?type=" + id;
+		});
+	});	   
+</script>
+
+	<div style="visibility:hidden;">
+		<div id="eXTReMe"><a href="http://extremetracking.com/open?login=hareskob">
+		<img src="http://t1.extreme-dm.com/i.gif" style="border: 0;"
+		height="38" width="41" id="EXim" alt="eXTReMe Tracker" /></a>
+		<script type="text/javascript"><!--
+		var EXlogin='hareskob' // Login
+		var EXvsrv='s10' // VServer
+		EXs=screen;EXw=EXs.width;navigator.appName!="Netscape"?
+		EXb=EXs.colorDepth:EXb=EXs.pixelDepth;EXsrc="src";
+		navigator.javaEnabled()==1?EXjv="y":EXjv="n";
+		EXd=document;EXw?"":EXw="na";EXb?"":EXb="na";
+		EXd.write("<img "+EXsrc+"=http://e1.extreme-dm.com",
+		"/"+EXvsrv+".g?login="+EXlogin+"&amp;",
+		"jv="+EXjv+"&amp;j=y&amp;srw="+EXw+"&amp;srb="+EXb+"&amp;",
+		"l="+escape(EXd.referrer)+" height=1 width=1>");//-->
+		</script><noscript><div id="neXTReMe"><img height="1" width="1" alt=""
+		src="http://e1.extreme-dm.com/s10.g?login=hareskob&amp;j=n&amp;jv=n" />
+		</div></noscript></div>
+	</div>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3584FQLELT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3584FQLELT');
+</script>
+
+
+	</div>
+	</body>
+</html>
+
+
+  

@@ -1,0 +1,110 @@
+		
+	
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>WIFI Routers power consumption</title>
+	<link REL="SHORTCUT ICON" HREF="images/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="ddtabmenufiles/ddcolortabs.css">
+	<link rel="stylesheet" type="text/css" href="include/style.css?dummy=1">
+	<script type="text/javascript" src="ddtabmenufiles/ddtabmenu.js"></script>
+	<script type="text/javascript" src="include/jquery.js"></script>
+	<script type="text/javascript" src="include/jquery.alphanumeric.js"></script>
+	<script type="text/javascript">
+	ddtabmenu.definemenu('ddtabs', 4);	</script>
+	<script data-ad-client="ca-pub-2739597420192699" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2739597420192699"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="layout">
+	<div style="float: left;">
+		<img alt="meter" src="images/small.meter.jpg">&nbsp;
+		<h1 style="display:inline;">The Power Consumption Database</h1>
+		<br>
+		<i>... user maintained electricity usage data</i>
+	</div>
+	<div style="float: right;">
+	
+
+		<form method="get" action="list.php">
+			<input type="text" id="query" name="query" class="" value="" maxlength="100" style="width:150px;">			<input type="submit" value="Search Product">
+		</form>
+	</div>
+	<div style="float: left; margin-top: 20px;" id="ddtabs" class="ddcolortabs">
+		<ul>
+			<li><a href="."><span>Home</span></a></li>
+			<li><a href="submit.php"><span>Submit Data</span></a></li>
+
+			<li><a href="list.php?type=13"><span>Computers</span></a></li>
+			<li><a href="list.php?type=12"><span>Game Consoles</span></a></li>
+			<li><a href="list.php?type=11"><span>WIFI Routers</span></a></li>
+			<li><a href="list.php"><span>Browse All</span></a></li>
+		</ul>
+	</div>
+	<div class="ddcolortabsline">&nbsp;</div>
+<div class="pagebarUTH">... <a href="list.php?page=2&sort=stamp&type=11">2</a> <a href="list.php?page=3&sort=stamp&type=11">3</a> <a href="list.php?page=4&sort=stamp&type=11">4</a> <a href="list.php?page=5&sort=stamp&type=11">5</a> <a href="list.php?page=6&sort=stamp&type=11">6</a> <a href="list.php?page=7&sort=stamp&type=11">7</a> <a href="list.php?page=8&sort=stamp&type=11">8</a> <a href="list.php?page=9&sort=stamp&type=11">9</a> <a href="list.php?page=10&sort=stamp&type=11"><b>10</b></a> <a href="list.php?page=11&sort=stamp&type=11">11</a> <a href="list.php?page=12&sort=stamp&type=11">12</a> <a href="list.php?page=13&sort=stamp&type=11">13</a> <a href="list.php?page=14&sort=stamp&type=11">14</a> <a href="list.php?page=15&sort=stamp&type=11">15</a> <select id="productTypes" name="productTypes" style="" ><option   value=''> - choose - </option><option   value='36'>Adapter/Charger</option><option   value='26'>ADSL Modems</option><option   value='23'>Blu-ray Players</option><option   value='30'>Cable Modems</option><option   value='13'>Computers</option><option   value='22'>Digital TV Recorders</option><option   value='27'>DVD Players</option><option   value='29'>Fans</option><option   value='12'>Game Consoles</option><option   value='35'>Harddisk</option><option   value='38'>Light bulbs</option><option   value='18'>Media Players</option><option   value='31'>Microcontroller</option><option   value='20'>Monitors</option><option   value='16'>NASs</option><option   value='34'>Other USB products</option><option   value='19'>Printers</option><option   value='41'>Robot vacuum cleaner</option><option   value='21'>Set-Top Boxes</option><option   value='24'>Stereo Amplifiers</option><option   value='25'>Switches</option><option   value='10'>TVs</option><option   value='15'>TVs - CRT</option><option   value='6'>TVs - LCD</option><option   value='8'>TVs - LED</option><option   value='7'>TVs - Plasma</option><option   value='9'>TVs - RPTV</option><option   value='28'>Uncategorized</option><option   value='37'>Unknown</option><option   value='33'>UPS</option><option   value='32'>USB flash drives</option><option   value='17'>WHSs</option><option  selected value='11'>WIFI Routers</option><option   value='39'>Wireless plug</option><option   value='40'>Wireless speaker</option></select></div><table width="100%"><thead><tr><th></th><th><a href="list.php?page=10&sort=producttype&type=11">Type</a></th><th><a href="list.php?page=10&sort=manufacturer&type=11">Manufacturer</a></th><th><a href="list.php?page=10&sort=model&type=11">Model</a></th><th><a href="list.php?page=10&sort=value_avg&type=11">Normal</a></th><th><a href="list.php?page=10&sort=value_max&type=11">Max</a></th><th><a href="list.php?page=10&sort=url&type=11">Reference</a></th><th><a href="list.php?page=10&order=1&sort=stamp&type=11">Submitted</a></th></tr></thead><tr><td class="list"><img title="Measured by extern site" src="images/internet.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=D-Link">D-Link</a></td><td class="list"><a href="product.php?id=2040">DIR-857</a></td><td class="list" align="right">8.50 w</td><td class="list" align="right">14.20 w</td><td class="list"><a target="_new" href="http://nl.hardware.info/productinfo/147916/d-link-dir-857#tab:testresults">nl.hardware.info</a></td><td class="list">2014-07-20</td></tr><tr class="odd"><td class="list"><img title="Measured by extern site" src="images/internet.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=D-Link">D-Link</a></td><td class="list"><a href="product.php?id=2039">DHP-1565 (Wireless-N Powerline)</a></td><td class="list" align="right">5.80 w</td><td class="list" align="right">8.10 w</td><td class="list"><a target="_new" href="http://nl.hardware.info/productinfo/138129/d-link-dhp-1565-wireless-n-powerline-gigabit-router#tab:testresults">nl.hardware.info</a></td><td class="list">2014-07-20</td></tr><tr><td class="list"><img title="Measured by extern site" src="images/internet.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=D-Link">D-Link</a></td><td class="list"><a href="product.php?id=2038">DIR-865L (AC 1750)</a></td><td class="list" align="right">9.20 w</td><td class="list" align="right">11.30 w</td><td class="list"><a target="_new" href="http://nl.hardware.info/productinfo/157841/d-link-dir-865l-wireless-ac-1750-dual-band-cloud-router#tab:testresults">nl.hardware.info</a></td><td class="list">2014-07-20</td></tr><tr class="odd"><td class="list"><img title="Measured by extern site" src="images/internet.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=D-Link">D-Link</a></td><td class="list"><a href="product.php?id=2037">DIR-880L</a></td><td class="list" align="right">7.80 w</td><td class="list" align="right">11.00 w</td><td class="list"><a target="_new" href="http://nl.hardware.info/productinfo/214350/d-link-dir-880l#tab:testresults">nl.hardware.info</a></td><td class="list">2014-07-20</td></tr><tr><td class="list"><img title="Measured by extern site" src="images/internet.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=D-Link">D-Link</a></td><td class="list"><a href="product.php?id=2036">DIR-860L</a></td><td class="list" align="right">8.10 w</td><td class="list" align="right">10.80 w</td><td class="list"><a target="_new" href="http://nl.hardware.info/productinfo/192942/d-link-dir-860l#tab:testresults">nl.hardware.info</a></td><td class="list">2014-07-20</td></tr><tr class="odd"><td class="list"><img title="Measured by extern site" src="images/internet.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=Belkin">Belkin</a></td><td class="list"><a href="product.php?id=2035">F9K1113AS (AC 1200)</a></td><td class="list" align="right">9.10 w</td><td class="list" align="right">10.50 w</td><td class="list"><a target="_new" href="http://nl.hardware.info/productinfo/156420/belkin-ac-1200-db-wi-fi-dual-band-ac+-gigabit-router#tab:testresults">nl.hardware.info</a></td><td class="list">2014-07-20</td></tr><tr><td class="list"><img title="Measured by extern site" src="images/internet.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=Belkin">Belkin</a></td><td class="list"><a href="product.php?id=2034">F9K1112AS (AC 1000)</a></td><td class="list" align="right">8.60 w</td><td class="list" align="right">10.20 w</td><td class="list"><a target="_new" href="http://nl.hardware.info/productinfo/156419/belkin-ac-1000-db-wi-fi-dual-band-ac+-gigabit-router#tab:testresults">nl.hardware.info</a></td><td class="list">2014-07-20</td></tr><tr class="odd"><td class="list"><img title="Measured by extern site" src="images/internet.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=Belkin">Belkin</a></td><td class="list"><a href="product.php?id=2033">F9K1103AS (Play N750)</a></td><td class="list" align="right">6.00 w</td><td class="list" align="right">10.00 w</td><td class="list"><a target="_new" href="http://nl.hardware.info/productinfo/129418/belkin-play-n750#tab:testresults">nl.hardware.info</a></td><td class="list">2014-07-20</td></tr><tr><td class="list"><img title="Measured by extern site" src="images/internet.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=Belkin">Belkin</a></td><td class="list"><a href="product.php?id=2032">F9K1102DE (Play N600)</a></td><td class="list" align="right">5.00 w</td><td class="list" align="right">7.00 w</td><td class="list"><a target="_new" href="http://nl.hardware.info/productinfo/129441/belkin-play-n600#tab:testresults">nl.hardware.info</a></td><td class="list">2014-07-20</td></tr><tr class="odd"><td class="list"><img title="Measured by extern site" src="images/internet.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=Edimax">Edimax</a></td><td class="list"><a href="product.php?id=2031">BR-6675ND</a></td><td class="list" align="right">5.00 w</td><td class="list" align="right">8.00 w</td><td class="list"><a target="_new" href="http://nl.hardware.info/productinfo/133924/edimax-br-6675nd#tab:testresults">nl.hardware.info</a></td><td class="list">2014-07-20</td></tr><tr><td class="list"><img title="Measured by extern site" src="images/internet.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=D-Link">D-Link</a></td><td class="list"><a href="product.php?id=2030">DIR-826L</a></td><td class="list" align="right">4.80 w</td><td class="list" align="right">6.80 w</td><td class="list"><a target="_new" href="http://nl.hardware.info/productinfo/157124/d-link-dir-826l#tab:testresults">nl.hardware.info</a></td><td class="list">2014-07-20</td></tr><tr class="odd"><td class="list"><img title="Measured by extern site" src="images/internet.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=Edimax">Edimax</a></td><td class="list"><a href="product.php?id=2029">BR-6475nD</a></td><td class="list" align="right">4.60 w</td><td class="list" align="right">6.00 w</td><td class="list"><a target="_new" href="http://nl.hardware.info/productinfo/126429/edimax-br-6475nd#tab:testresults">nl.hardware.info</a></td><td class="list">2014-07-20</td></tr><tr><td class="list"><img title="Measured by extern site" src="images/internet.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=TP-Link">TP-Link</a></td><td class="list"><a href="product.php?id=2028">TL-WR1043ND v2</a></td><td class="list" align="right">4.00 w</td><td class="list" align="right">6.50 w</td><td class="list"><a target="_new" href="https://nl.hardware.info/product/205029/tp-link-tl-wr1043nd-v2">nl.hardware.info</a></td><td class="list">2014-07-20</td></tr><tr class="odd"><td class="list"><img title="Measured by extern site" src="images/internet.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=TP-Link">TP-Link</a></td><td class="list"><a href="product.php?id=2027">Archer C2</a></td><td class="list" align="right">3.50 w</td><td class="list" align="right">4.20 w</td><td class="list"><a target="_new" href="http://nl.hardware.info/productinfo/213865/tp-link-archer-c2#tab:testresults">nl.hardware.info</a></td><td class="list">2014-07-20</td></tr><tr><td class="list"><img title="Measured by extern site" src="images/internet.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=D-Link">D-Link</a></td><td class="list"><a href="product.php?id=2026">DIR-636L</a></td><td class="list" align="right">3.20 w</td><td class="list" align="right">4.90 w</td><td class="list"><a target="_new" href="http://nl.hardware.info/productinfo/157123/d-link-dir-636l#tab:testresults">nl.hardware.info</a></td><td class="list">2014-07-20</td></tr><tr class="odd"><td class="list"><img title="Measured by extern site" src="images/internet.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=Edimax">Edimax</a></td><td class="list"><a href="product.php?id=2025">BR-6478AC</a></td><td class="list" align="right">3.10 w</td><td class="list" align="right">4.10 w</td><td class="list"><a target="_new" href="http://nl.hardware.info/productinfo/193570/edimax-br-6478ac#tab:testresults">nl.hardware.info</a></td><td class="list">2014-07-20</td></tr><tr><td class="list"><img title="Measured by extern site" src="images/internet.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=D-Link">D-Link</a></td><td class="list"><a href="product.php?id=2024">DIR-645 (Wireless N Home Router)</a></td><td class="list" align="right">2.70 w</td><td class="list" align="right">6.00 w</td><td class="list"><a target="_new" href="http://nl.hardware.info/productinfo/129358/d-link-dir-645-wireless-n-home-router#tab:testresults">nl.hardware.info</a></td><td class="list">2014-07-20</td></tr><tr class="odd"><td class="list"><img title="Measured by extern site" src="images/internet.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=Linksys">Linksys</a></td><td class="list"><a href="product.php?id=2023">E900</a></td><td class="list" align="right">2.40 w</td><td class="list" align="right">4.70 w</td><td class="list"><a target="_new" href="http://nl.hardware.info/productinfo/150459/linksys-e900#tab:testresults">nl.hardware.info</a></td><td class="list">2014-07-20</td></tr><tr><td class="list"><img title="Measured by extern site" src="images/internet.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=ZyXEL">ZyXEL</a></td><td class="list"><a href="product.php?id=2022">NBG-6503</a></td><td class="list" align="right">2.40 w</td><td class="list" align="right">2.90 w</td><td class="list"><a target="_new" href="http://nl.hardware.info/productinfo/193192/zyxel-nbg6503#tab:testresults">nl.hardware.info</a></td><td class="list">2014-07-20</td></tr><tr class="odd"><td class="list"><img title="Measured by extern site" src="images/internet.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=D-Link">D-Link</a></td><td class="list"><a href="product.php?id=2021">DIR-810L</a></td><td class="list" align="right">2.20 w</td><td class="list" align="right">3.20 w</td><td class="list"><a target="_new" href="http://nl.hardware.info/productinfo/188450/d-link-dir-810l#tab:testresults">nl.hardware.info</a></td><td class="list">2014-07-20</td></tr></table>282 rows
+<br>
+<br>
+
+Help us make the database even more adequate by submitting your measurements. 
+
+<br>
+<br>
+
+<form action="submit.php" method="get">
+	<input type="hidden" name="source" value="2">
+	<button style="background-color: #ffffff;">
+	<img style="vertical-align:middle;" border="0" src="images/addsubmission.png">
+	<b>Submit data</b>
+	</button>
+</form>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+		$("#productTypes").change(function(){
+			var id = $("#productTypes").val();
+			self.location = "list.php?type=" + id;
+		});
+	});	   
+</script>
+
+	<div style="visibility:hidden;">
+		<div id="eXTReMe"><a href="http://extremetracking.com/open?login=hareskob">
+		<img src="http://t1.extreme-dm.com/i.gif" style="border: 0;"
+		height="38" width="41" id="EXim" alt="eXTReMe Tracker" /></a>
+		<script type="text/javascript"><!--
+		var EXlogin='hareskob' // Login
+		var EXvsrv='s10' // VServer
+		EXs=screen;EXw=EXs.width;navigator.appName!="Netscape"?
+		EXb=EXs.colorDepth:EXb=EXs.pixelDepth;EXsrc="src";
+		navigator.javaEnabled()==1?EXjv="y":EXjv="n";
+		EXd=document;EXw?"":EXw="na";EXb?"":EXb="na";
+		EXd.write("<img "+EXsrc+"=http://e1.extreme-dm.com",
+		"/"+EXvsrv+".g?login="+EXlogin+"&amp;",
+		"jv="+EXjv+"&amp;j=y&amp;srw="+EXw+"&amp;srb="+EXb+"&amp;",
+		"l="+escape(EXd.referrer)+" height=1 width=1>");//-->
+		</script><noscript><div id="neXTReMe"><img height="1" width="1" alt=""
+		src="http://e1.extreme-dm.com/s10.g?login=hareskob&amp;j=n&amp;jv=n" />
+		</div></noscript></div>
+	</div>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3584FQLELT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3584FQLELT');
+</script>
+
+
+	</div>
+	</body>
+</html>
+
+
+  

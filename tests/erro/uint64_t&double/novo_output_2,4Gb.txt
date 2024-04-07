@@ -1,0 +1,211 @@
+mkdir -p outputs/jump5_2,4Gb
+./ns-3.35/waf -t ns-3.35 --run "flexcomm --topo=jump5_2,4Gb --ctrl=ns3::OspfController --checksum=false --estifile=estimate.json --flexfile=flex.json --linkfailures=NONE" --cwd=../outputs 
+Waf: Entering directory `/home/gsd/Flexcomm-Simulator/ns-3.35/build'
+[ 390/1540] Compiling install-ns3-header: ns3/channel.h
+[1411/1540] Compiling ns-3.35/src/network/helper/simple-net-device-helper.cc
+[1412/1540] Compiling ns-3.35/src/network/utils/error-channel.cc
+[1413/1540] Compiling ns-3.35/src/network/utils/simple-net-device.cc
+[1414/1540] Compiling ns-3.35/src/network/utils/simple-channel.cc
+[1415/1540] Compiling ns-3.35/src/network/helper/channel-container.cc
+[1417/1540] Compiling ns-3.35/src/network/model/channel-list.cc
+[1418/1540] Compiling ns-3.35/src/network/model/channel.cc
+[1419/1540] Compiling ns-3.35/src/bridge/model/bridge-net-device.cc
+[1420/1540] Compiling ns-3.35/src/bridge/helper/bridge-helper.cc
+[1421/1540] Compiling ns-3.35/src/bridge/model/bridge-channel.cc
+[1422/1540] Compiling ns-3.35/src/internet/model/global-router-interface.cc
+[1423/1540] Compiling ns-3.35/src/internet/model/global-route-manager.cc
+[1424/1540] Compiling ns-3.35/src/internet/model/candidate-queue.cc
+[1425/1540] Compiling ns-3.35/src/internet/model/global-route-manager-impl.cc
+[1426/1540] Compiling ns-3.35/src/internet/helper/ipv4-global-routing-helper.cc
+[1427/1540] Compiling ns-3.35/src/internet/model/loopback-net-device.cc
+[1428/1540] Compiling ns-3.35/src/internet/helper/internet-stack-helper.cc
+[1431/1540] Compiling ns-3.35/src/csma/model/csma-channel.cc
+[1432/1540] Compiling ns-3.35/src/csma/model/csma-net-device.cc
+[1433/1540] Compiling ns-3.35/src/csma/helper/csma-helper.cc
+[1445/1540] Compiling ns-3.35/src/point-to-point/model/point-to-point-channel.cc
+[1452/1540] Compiling ns-3.35/src/point-to-point/model/point-to-point-net-device.cc
+[1453/1540] Compiling ns-3.35/src/point-to-point/helper/point-to-point-helper.cc
+[1454/1540] Compiling ns-3.35/src/virtual-net-device/model/virtual-net-device.cc
+[1455/1540] Compiling ns-3.35/src/ofswitch13/model/ofswitch13-port.cc
+[1456/1540] Compiling ns-3.35/src/ofswitch13/model/simple-controller.cc
+[1457/1540] Compiling ns-3.35/src/ofswitch13/model/ofswitch13-socket-handler.cc
+[1458/1540] Compiling ns-3.35/src/ofswitch13/model/ospf-controller.cc
+[1459/1540] Compiling ns-3.35/src/ofswitch13/model/ofswitch13-device.cc
+[1460/1540] Compiling ns-3.35/src/ofswitch13/helper/ofswitch13-internal-helper.cc
+[1461/1540] Compiling ns-3.35/src/ofswitch13/model/ofswitch13-learning-controller.cc
+[1462/1540] Compiling ns-3.35/src/ofswitch13/model/ofswitch13-interface.cc
+[1463/1540] Compiling ns-3.35/src/ofswitch13/model/ofswitch13-controller.cc
+[1464/1540] Linking ns-3.35/build/lib/libns3.35-network-optimized.so
+[1465/1540] Compiling ns-3.35/src/ofswitch13/model/ofswitch13-queue.cc
+[1466/1540] Compiling ns-3.35/src/ofswitch13/helper/ofswitch13-external-helper.cc
+[1467/1540] Compiling ns-3.35/src/ofswitch13/helper/ofswitch13-helper.cc
+[1468/1540] Compiling ns-3.35/src/ofswitch13/model/simple-controller-flex.cc
+[1469/1540] Compiling ns-3.35/src/ofswitch13/helper/ofswitch13-stats-calculator.cc
+[1470/1540] Linking ns-3.35/build/lib/libns3.35-bridge-optimized.so
+[1471/1540] Linking ns-3.35/build/lib/libns3.35-traffic-control-optimized.so
+[1472/1540] Linking ns-3.35/build/lib/libns3.35-csma-optimized.so
+[1473/1540] Compiling ns-3.35/src/ofswitch13/model/ofswitch13-priority-queue.cc
+[1474/1540] Compiling ns-3.35/src/ofswitch13/helper/ofswitch13-device-container.cc
+[1475/1540] Linking ns-3.35/build/lib/libns3.35-config-store-optimized.so
+[1476/1540] Linking ns-3.35/build/lib/libns3.35-virtual-net-device-optimized.so
+[1477/1540] Compiling ns-3.35/src/ecofen/model/node-energy-model.cc
+[1478/1540] Compiling ns-3.35/src/ecofen/model/cpu-load-based-energy-model.cc
+[1479/1540] Compiling ns-3.35/src/ecofen/model/cpu-load-based-discrete-energy-model.cc
+[1480/1540] Compiling ns-3.35/src/link-stats/helper/link-stats-logger.cc
+[1481/1540] Compiling ns-3.35/src/link-stats/model/link-stats.cc
+[1482/1540] Linking ns-3.35/build/lib/libns3.35-internet-optimized.so
+[1483/1540] Compiling ns-3.35/src/link-stats/helper/link-stats-helper.cc
+[1484/1540] Linking ns-3.35/build/lib/libns3.35-point-to-point-optimized.so
+[1485/1540] Compiling ns-3.35/src/parser/model/parse-links.cc
+[1486/1540] Compiling ns-3.35/src/parser/model/parse-configs.cc
+[1487/1540] Compiling ns-3.35/src/parser/model/parse-apps.cc
+[1488/1540] Compiling ns-3.35/src/parser/model/parse-nodes.cc
+[1489/1540] Compiling ns-3.35/src/point-to-point-ethernet/helper/point-to-point-ethernet-helper.cc
+[1490/1540] Compiling ns-3.35/src/point-to-point-ethernet/model/point-to-point-ethernet-net-device.cc
+[1491/1540] Compiling ns-3.35/src/point-to-point-ethernet/model/point-to-point-ethernet-channel.cc
+[1492/1540] Compiling ns-3.35/src/switch-stats/model/switch-stats.cc
+[1493/1540] Compiling ns-3.35/src/switch-stats/helper/switch-stats-helper.cc
+[1494/1540] Compiling ns-3.35/src/switch-stats/helper/switch-stats-logger.cc
+[1495/1540] Compiling ns-3.35/src/tap-bridge/model/tap-bridge.cc
+[1496/1540] Linking ns-3.35/build/lib/libns3.35-link-stats-optimized.so
+[1497/1540] Compiling ns-3.35/src/topology/helper/topology-helper.cc
+[1498/1540] Compiling ns-3.35/src/topology/model/topology.cc
+[1499/1540] Linking ns-3.35/build/utils/ns3.35-bench-packets-optimized
+[1500/1540] Compiling ns-3.35/scratch/ofswitch13-first.cc
+[1501/1540] Compiling ns-3.35/utils/print-introspected-doxygen.cc
+[1502/1540] Linking ns-3.35/build/lib/libns3.35-applications-optimized.so
+[1503/1540] Linking ns-3.35/build/lib/libns3.35-flow-monitor-optimized.so
+[1504/1540] Linking ns-3.35/build/lib/libns3.35-internet-apps-optimized.so
+[1505/1540] Linking ns-3.35/build/lib/libns3.35-point-to-point-ethernet-optimized.so
+[1506/1540] Linking ns-3.35/build/lib/libns3.35-tap-bridge-optimized.so
+[1507/1540] Linking ns-3.35/build/lib/libns3.35-ofswitch13-optimized.so
+[1508/1540] Linking ns-3.35/build/lib/libns3.35-ecofen-optimized.so
+[1509/1540] Linking ns-3.35/build/lib/libns3.35-switch-stats-optimized.so
+[1510/1540] Linking ns-3.35/build/lib/libns3.35-parser-optimized.so
+[1511/1540] Linking ns-3.35/build/lib/libns3.35-topology-optimized.so
+[1512/1540] Linking ns-3.35/build/scratch/ofswitch13-first
+[1513/1540] Linking ns-3.35/build/scratch/scratch-simulator
+[1514/1540] Linking ns-3.35/build/scratch/subdir/subdir
+[1515/1540] Linking ns-3.35/build/scratch/flexcomm
+[1516/1540] Linking ns-3.35/build/scratch/ecofen-simple
+[1517/1540] Linking ns-3.35/build/utils/ns3.35-test-runner-optimized
+[1518/1540] Linking ns-3.35/build/utils/ns3.35-print-introspected-doxygen-optimized
+Waf: Leaving directory `/home/gsd/Flexcomm-Simulator/ns-3.35/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (7.146s)
+--------------------------------------------------------------
+Parsing Time: 0s 30ms
+Reference Bandwidth Value: 2400000000
+-----------------------------
+FindAllPaths from: 0 to: 1 -> Number of paths found: 1
+-----> FindAllPaths Time: 0h 0m 0s 0ms
+-----------------------------
+ApplyRoutingFromPath: 0 2 3 4 5 6 7 1 
+ApplyRoutingFromPath: 1 7 6 5 4 3 2 0 
+-----------------------------
+Costs: 
+Edge: 0 - 2 | Weight: 0
+Edge: 2 - 3 | Weight: 1
+Edge: 3 - 4 | Weight: 1
+Edge: 4 - 5 | Weight: 1
+Edge: 5 - 6 | Weight: 1
+Edge: 6 - 7 | Weight: 1
+Edge: 7 - 1 | Weight: 0
+-----[New Routing Loop]-----
+-----[Stats Loop]-----
+[MinMax] S1 5 120
+[MinMax] S2 5 120
+[MinMax] S3 5 120
+[MinMax] S4 5 120
+[MinMax] S5 5 120
+[MinMax] S6 5 120
+ApplyRoutingFromPath: 0 2 3 4 5 6 7 1 
+ApplyRoutingFromPath: 1 7 6 5 4 3 2 0 
+-----------------------------
+Costs: 
+Edge: 0 - 2 | Weight: 0
+Edge: 2 - 3 | Weight: 1
+Edge: 3 - 4 | Weight: 1
+Edge: 4 - 5 | Weight: 1
+Edge: 5 - 6 | Weight: 1
+Edge: 6 - 7 | Weight: 1
+Edge: 7 - 1 | Weight: 0
+-----[New Routing Loop]-----
+Time: 88; bits: 4184919648; deltaSeconds: 2; DataRate: 2400000000
+Calculated value: 0.871858
+
+Time: 88; bits: 4184915184; deltaSeconds: 2; DataRate: 2400000000
+Calculated value: 0.871857
+
+Time: 88; bits: 4184919648; deltaSeconds: 2; DataRate: 2400000000
+Calculated value: 0.871858
+
+Time: 88; bits: 4184915184; deltaSeconds: 2; DataRate: 2400000000
+Calculated value: 0.871857
+
+Time: 88; bits: 4184919648; deltaSeconds: 2; DataRate: 2400000000
+Calculated value: 0.871858
+
+Time: 90; bits: 4446460944; deltaSeconds: 2; DataRate: 2400000000
+Calculated value: 0.926346
+
+Time: 90; bits: 4446452016; deltaSeconds: 2; DataRate: 2400000000
+Calculated value: 0.926344
+
+Time: 90; bits: 4446438624; deltaSeconds: 2; DataRate: 2400000000
+Calculated value: 0.926341
+
+Time: 90; bits: 4446429696; deltaSeconds: 2; DataRate: 2400000000
+Calculated value: 0.92634
+
+Time: 90; bits: 4446416304; deltaSeconds: 2; DataRate: 2400000000
+Calculated value: 0.926337
+
+Time: 92; bits: 4708033488; deltaSeconds: 2; DataRate: 2400000000
+Calculated value: 0.98084
+
+Time: 92; bits: 4708033488; deltaSeconds: 2; DataRate: 2400000000
+Calculated value: 0.98084
+
+Time: 92; bits: 4708033488; deltaSeconds: 2; DataRate: 2400000000
+Calculated value: 0.98084
+
+Time: 92; bits: 4708033488; deltaSeconds: 2; DataRate: 2400000000
+Calculated value: 0.98084
+
+Time: 92; bits: 4708033488; deltaSeconds: 2; DataRate: 2400000000
+Calculated value: 0.98084
+
+Time: 94; bits: 4708033488; deltaSeconds: 2; DataRate: 2400000000
+Calculated value: 0.98084
+
+Time: 94; bits: 4708033488; deltaSeconds: 2; DataRate: 2400000000
+Calculated value: 0.98084
+
+Time: 94; bits: 4708033488; deltaSeconds: 2; DataRate: 2400000000
+Calculated value: 0.98084
+
+Time: 94; bits: 4708033488; deltaSeconds: 2; DataRate: 2400000000
+Calculated value: 0.98084
+
+Time: 94; bits: 4708029024; deltaSeconds: 2; DataRate: 2400000000
+Calculated value: 0.980839
+
+Time: 96; bits: 4708033488; deltaSeconds: 2; DataRate: 2400000000
+Calculated value: 0.98084
+
+Time: 96; bits: 4708033488; deltaSeconds: 2; DataRate: 2400000000
+Calculated value: 0.98084
+
+Time: 96; bits: 4708033488; deltaSeconds: 2; DataRate: 2400000000
+Calculated value: 0.98084
+
+Time: 96; bits: 4708033488; deltaSeconds: 2; DataRate: 2400000000
+Calculated value: 0.98084
+
+Time: 96; bits: 4708033488; deltaSeconds: 2; DataRate: 2400000000
+Calculated value: 0.98084
+
+Nº Events: 803106522
+Execution Time: 0d 0h 42m 3s
+--------------------------------------------------------------
