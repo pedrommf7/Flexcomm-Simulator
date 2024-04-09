@@ -462,17 +462,32 @@ OspfController::UpdateWeights ()
       // }
       // std::cout << "-----------------------------" << std::endl;
 
-      double totCons = 0;
+      // double totCons = 0;
       // totCons = n1Consumption + n2Consumption;
       // std ::cout << "Total Consumption from node: " << n1->GetId() << " to: " << n2->GetId() << " : " << totCons << std::endl;
 
-      int new_weight = weight + totCons;
+      // int new_weight = weight + totCons;
+      int new_weight = weight;
+
+      // link cost formula
+      double n2Consumption;
+      Ptr<NodeEnergyModel> noem2 = n2->GetObject<NodeEnergyModel> ();
+      if(!noem2)
+        continue;
+      n2Consumption = noem2->GetCurrentPowerConsumption(); 
+      
+      Ptr<Channel> chnl = Topology::GetChannel(n1, n2);
+      if(chnl == NULL)
+        continue;
+      double linkUsage =  chnl->GetChannelUsage();
+
+      new_weight = linkUsage * n2Consumption;
+
       if (new_weight < 0)
         {
           std::cout << "WARNING NEGATIVE WEIGHT: " << new_weight << std::endl;
+          new_weight = 0;
         }
-      new_weight = new_weight < 0 ? 0 : new_weight;
-      // expressao produz nrs negativos, mas depois insere 0 no maximo
 
       Topology::UpdateEdgeWeight (n1, n2, new_weight);
     }
@@ -514,7 +529,7 @@ OspfController::ApplyRoutingFromPath (std::vector<Ptr<Node>> path)
     {
       std::cout << i->GetId () << " ";
     }
-  std::cout << std::endl;
+  std::cout << "  (" << Topology::CalculateCost(path) << ")" << std::endl;
   Ptr<Node> hostDst = path.back ();
   for (int i = 1; i < int (path.size ()) - 1; i++)
     {
@@ -552,22 +567,15 @@ OspfController::UpdateRouting ()
       if (int (paths_.size ()) == 0)
         continue;
 
-      for (auto &path : paths_)
-        {
-          std::vector<Ptr<Node>> shortestPath = path.first;
-          ApplyRoutingFromPath (shortestPath);
+      
+      // TO-DO: load balancer ???
+      std::vector<Ptr<Node>> shortestPath = paths_.at(0).first;
 
-          // reverse shortest path
-          std::reverse (shortestPath.begin (), shortestPath.end ());
-          ApplyRoutingFromPath (shortestPath);
-        }
+      ApplyRoutingFromPath (shortestPath);
 
-      // std::vector<Ptr<Node>> shortestPath = paths_.front().first;
-      // ApplyRoutingFromPath(shortestPath);
-
-      // // reverse shortest path
-      // std::reverse(shortestPath.begin(), shortestPath.end());
-      // ApplyRoutingFromPath(shortestPath);
+      // reverse shortest path
+      std::reverse (shortestPath.begin (), shortestPath.end ());
+      ApplyRoutingFromPath (shortestPath);
     }
   PrintCosts ();
 }
@@ -580,28 +588,28 @@ OspfController::StartRoutingLoop ()
   Simulator::Schedule (Minutes (1), &OspfController::StartRoutingLoop, this);
 }
 
-void
-OspfController::StatsLoop ()
-{
-  std::cout << "-----[Stats Loop]-----" << std::endl;
-  // iterate switches
-  boost::graph_traits<Graph>::vertex_iterator vertexIt, vertexEnd;
-  for (boost::tie (vertexIt, vertexEnd) = boost::vertices (base_graph); vertexIt != vertexEnd;
-       ++vertexIt)
-    {
-      Ptr<Node> n1 = Topology::VertexToNode (*vertexIt);
-      if (n1->IsSwitch ())
-        {
-          Ptr<CpuLoadBasedEnergyModel> cpuLBE = n1->GetObject<CpuLoadBasedEnergyModel> ();
-          if (cpuLBE)
-            {
-              std::cout << "[MinMax] " << Names::FindName (n1) << " "
-                        << cpuLBE->GetMinPowerConsumption () << " "
-                        << cpuLBE->GetMaxPowerConsumption () << std::endl;
-            }
-        }
-    }
-}
+// void
+// OspfController::StatsLoop ()
+// {
+//   std::cout << "-----[Stats Loop]-----" << std::endl;
+//   // iterate switches
+//   boost::graph_traits<Graph>::vertex_iterator vertexIt, vertexEnd;
+//   for (boost::tie (vertexIt, vertexEnd) = boost::vertices (base_graph); vertexIt != vertexEnd;
+//        ++vertexIt)
+//     {
+//       Ptr<Node> n1 = Topology::VertexToNode (*vertexIt);
+//       if (n1->IsSwitch ())
+//         {
+//           Ptr<CpuLoadBasedEnergyModel> cpuLBE = n1->GetObject<CpuLoadBasedEnergyModel> ();
+//           if (cpuLBE)
+//             {
+//               std::cout << "[MinMax] " << Names::FindName (n1) << " "
+//                         << cpuLBE->GetMinPowerConsumption () << " "
+//                         << cpuLBE->GetMaxPowerConsumption () << std::endl;
+//             }
+//         }
+//     }
+// }
 
 void
 OspfController::HandshakeSuccessful (Ptr<const RemoteSwitch> sw)
@@ -634,8 +642,7 @@ OspfController::HandshakeSuccessful (Ptr<const RemoteSwitch> sw)
           for (auto hst2 = hst1 + 1; hst2 != hosts.End (); hst2++)
             {
               Ptr<Node> hostNode2 = NodeContainer::GetGlobal ().Get ((*hst2)->GetId ());
-              // std::cout << "FindAllPaths from: " << hostNode1->GetId() << " to: " << hostNode2->GetId() << std::endl;
-              FindAllPaths (hostNode1, hostNode2); //.......
+              FindAllPaths (hostNode1, hostNode2);
             }
         }
       auto end = std::chrono::high_resolution_clock::now ();
@@ -655,7 +662,7 @@ OspfController::HandshakeSuccessful (Ptr<const RemoteSwitch> sw)
       ResizeStoredPaths (7); // Set here the max number of paths that can be stored
 
       StartRoutingLoop ();
-      StatsLoop ();
+      // StatsLoop ();
       m_isFirstUpdate = false;
       lastUpdate = Simulator::Now ();
     }
