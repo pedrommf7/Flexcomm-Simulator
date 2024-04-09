@@ -130,12 +130,13 @@ NodeEnergyModel::GetTotalPowerConsumption (Ptr<Node> node)
       if ((edev != NULL) && (dev->GetInstanceTypeId ().GetName () != "ns3::LoopbackNetDevice"))
         {
           double temp = edev->GetPowerConsumption (); // consumption of the net devices
-          conso += temp;
           if (temp < 0)
             {
               NS_LOG_UNCOND ("AAA! Negative port conso on node " << node->GetId () << " netdev "
                                                                  << i);
             }
+          else
+            conso += temp;
         }
     }
   return conso;
