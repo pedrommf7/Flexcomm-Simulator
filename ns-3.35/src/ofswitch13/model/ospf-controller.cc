@@ -437,7 +437,7 @@ OspfController::UpdateWeights ()
       double linkUsage =  chnl->GetChannelUsage();
       // std::cout << "GetChannelUsage from node: " << n1->GetId() << " to: " << n2->GetId() << " : " << linkUsage << std::endl;
 
-      int new_weight = linkUsage * n2Consumption;
+      int new_weight = (1+linkUsage) * n2Consumption;
 
       if (new_weight <= 0)
         {
@@ -508,6 +508,10 @@ OspfController::PrintCosts ()
       Edge ed = *edgeIt;
       Ptr<Node> n1 = Topology::VertexToNode (ed.m_source);
       Ptr<Node> n2 = Topology::VertexToNode (ed.m_target);
+      
+      if(!n1->IsSwitch() || !n2->IsSwitch())
+        continue;
+      
       uint64_t weight = boost::get (edge_weight_t (), g, ed);
       std::cout << "Edge: " << n1->GetId () << " - " << n2->GetId () << " | Weight: " << weight
                 << std::endl;
