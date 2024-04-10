@@ -50,7 +50,7 @@ private:
   void UpdateWeights ();
   void UpdateDistances ();
   void SetWeightsBandwidthBased ();
-  void AddHostsKey (std::pair<Ptr<Node>, Ptr<Node>> key);
+  std::pair<Ptr<Node>, Ptr<Node>> AddHostsKey (Ptr<Node>source, Ptr<Node> destination);
   void StorePath (Ptr<Node> source, Ptr<Node> destination, std::vector<Ptr<Node>> path,
                   int distance);
   //void CleanPaths(Ptr<Node> switchNode, Ptr<Node> hostNode);
