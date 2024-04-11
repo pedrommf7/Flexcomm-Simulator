@@ -189,6 +189,8 @@ OspfController::ResizeStoredPaths (int maxStorageNumber)
         {
           paths_.resize (maxStorageNumber);
         }
+      
+      ecp.second = paths_;
     }
 }
 
@@ -344,8 +346,18 @@ OspfController::UpdateDistances ()
       for (auto &path : paths_)
         {
           int distance = Topology::CalculateCost (path.first);
+
+          std::cout << "\t\t\tPath: ";
+          for (auto &node : path.first)
+            {
+              std::cout << node->GetId () << " ";
+            }
+          std::cout << " | Distance: " << distance << std::endl;
+
           path.second = distance;
         }
+      
+      ecp.second = paths_;
     }
 }
 
