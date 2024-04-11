@@ -353,14 +353,12 @@ void
 OspfController::UpdateWeights ()
 {
   boost::graph_traits<Graph>::edge_iterator edgeIt, edgeEnd;
-  for (boost::tie (edgeIt, edgeEnd) = boost::edges (base_graph); edgeIt != edgeEnd; ++edgeIt)
+  Graph g = Topology::GetGraph ();
+  for (boost::tie (edgeIt, edgeEnd) = boost::edges (g); edgeIt != edgeEnd; ++edgeIt)
     {
       Edge ed = *edgeIt;
       Ptr<Node> n1 = Topology::VertexToNode (ed.m_source);
       Ptr<Node> n2 = Topology::VertexToNode (ed.m_target);
-      uint64_t weight =
-          boost::get (edge_weight_t (), base_graph,
-                      ed); // ver se preciso de fazer como est ano topology a separar pelos Nodes
 
       int index = int (Simulator::Now ().GetMinutes ()) % 60;
 
@@ -515,6 +513,21 @@ OspfController::PrintCosts ()
       uint64_t weight = boost::get (edge_weight_t (), g, ed);
       std::cout << "Edge: " << n1->GetId () << " - " << n2->GetId () << " | Weight: " << weight
                 << std::endl;
+    }
+  std::cout << "Equal Cost Paths: " << std::endl;
+  for (auto &ecp : equalCostPaths)
+    {
+      std::vector<std::pair<std::vector<Ptr<Node>>, int>> paths_ = ecp.second;
+      std::cout << "Source: " << ecp.first.first->GetId () << " - Destiny: " << ecp.first.second->GetId () << std::endl;
+      for (auto &path : paths_)
+        {
+          std::cout << "Path: ";
+          for (auto &node : path.first)
+            {
+              std::cout << node->GetId () << " ";
+            }
+          std::cout << " | Distance: " << path.second << std::endl;
+        }
     }
 }
 
