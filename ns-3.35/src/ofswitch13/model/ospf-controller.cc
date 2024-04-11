@@ -346,14 +346,6 @@ OspfController::UpdateDistances ()
       for (auto &path : paths_)
         {
           int distance = Topology::CalculateCost (path.first);
-
-          std::cout << "\t\t\tPath: ";
-          for (auto &node : path.first)
-            {
-              std::cout << node->GetId () << " ";
-            }
-          std::cout << " | Distance: " << distance << std::endl;
-
           path.second = distance;
         }
       
@@ -526,21 +518,6 @@ OspfController::PrintCosts ()
       std::cout << "Edge: " << n1->GetId () << " - " << n2->GetId () << " | Weight: " << weight
                 << std::endl;
     }
-  std::cout << "Equal Cost Paths: " << std::endl;
-  for (auto &ecp : equalCostPaths)
-    {
-      std::vector<std::pair<std::vector<Ptr<Node>>, int>> paths_ = ecp.second;
-      std::cout << "Source: " << ecp.first.first->GetId () << " - Destiny: " << ecp.first.second->GetId () << std::endl;
-      for (auto &path : paths_)
-        {
-          std::cout << "Path: ";
-          for (auto &node : path.first)
-            {
-              std::cout << node->GetId () << " ";
-            }
-          std::cout << " | Distance: " << path.second << std::endl;
-        }
-    }
 }
 
 void
@@ -549,6 +526,7 @@ OspfController::UpdateRouting ()
   UpdateWeights ();
   SortStoredPathsAscending ();
 
+  int i = 0;
   for (auto &ecp : equalCostPaths)
     {
       std::vector<std::pair<std::vector<Ptr<Node>>, int>> paths_ = ecp.second;
@@ -558,10 +536,14 @@ OspfController::UpdateRouting ()
       // TO-DO: load balancer ???
       std::vector<Ptr<Node>> shortestPath = paths_.at(0).first;
 
+      std::cout << "<#>" << i;
+      i++;
       ApplyRoutingFromPath (shortestPath);
 
       // reverse shortest path
       std::reverse (shortestPath.begin (), shortestPath.end ());
+      std::cout << "<#>" << i;
+      i++;
       ApplyRoutingFromPath (shortestPath);
     }
   PrintCosts ();
