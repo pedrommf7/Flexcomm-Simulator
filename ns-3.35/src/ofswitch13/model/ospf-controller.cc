@@ -114,11 +114,7 @@ OspfController::SortStoredPathsAscending ()
 std::pair<Ptr<Node>, Ptr<Node>>
 OspfController::AddHostsKey (Ptr<Node> source, Ptr<Node> destination)
 {
-  std::pair<Ptr<Node>, Ptr<Node>> key;
-  if (source->GetId () < destination->GetId ())
-    key = std::make_pair (source, destination);
-  else
-    key = std::make_pair (destination, source);
+  std::pair<Ptr<Node>, Ptr<Node>> key = std::make_pair (source, destination);
 
   if (std::find_if (
         equalCostPaths.begin (), equalCostPaths.end (), [key] (const auto &ecp) {
@@ -161,15 +157,31 @@ OspfController::GetPaths (std::pair<Ptr<Node>, Ptr<Node>> key)
 void
 OspfController::StorePath (Ptr<Node> source, Ptr<Node> destination, std::vector<Ptr<Node>> path, int distance)
 {
-  std::pair<Ptr<Node>, Ptr<Node>> key = OspfController::AddHostsKey (source, destination);
-
+  std::pair<Ptr<Node>, Ptr<Node>> key1 = OspfController::AddHostsKey (source, destination);
   for (auto &ecp : equalCostPaths)
     {
-      if (ecp.first == key)
+      if (ecp.first == key1)
         {
           std::vector<std::pair<std::vector<Ptr<Node>>, int>> paths_ = ecp.second;
           if (!OspfController::CheckExistsPath (path, paths_))
             {
+              std::vector<Ptr<Node>> path_ = path;
+              paths_.emplace_back (std::move(path_), distance);
+              ecp.second = paths_;
+            }
+          break;
+        }
+    }
+
+  std::pair<Ptr<Node>, Ptr<Node>> key2 = OspfController::AddHostsKey (destination, source);
+  for (auto &ecp : equalCostPaths)
+    {
+      if (ecp.first == key2)
+        {
+          std::vector<std::pair<std::vector<Ptr<Node>>, int>> paths_ = ecp.second;
+          if (!OspfController::CheckExistsPath (path, paths_))
+            {
+              std::reverse (path.begin (), path.end ());
               paths_.emplace_back (std::move(path), distance);
               ecp.second = paths_;
             }
@@ -536,15 +548,16 @@ OspfController::UpdateRouting ()
       // TO-DO: load balancer ???
       std::vector<Ptr<Node>> shortestPath = paths_.at(0).first;
 
-      std::cout << "<#>" << i;
+      int index = int (Simulator::Now ().GetMinutes ()) % 60;
+      std::cout << "<#>" << i << "_" << index;
       i++;
       ApplyRoutingFromPath (shortestPath);
 
       // reverse shortest path
-      std::reverse (shortestPath.begin (), shortestPath.end ());
-      std::cout << "<#>" << i;
-      i++;
-      ApplyRoutingFromPath (shortestPath);
+      // std::reverse (shortestPath.begin (), shortestPath.end ());
+      // std::cout << "<#>" << i;
+      // i++;
+      // ApplyRoutingFromPath (shortestPath);
     }
   PrintCosts ();
 }
