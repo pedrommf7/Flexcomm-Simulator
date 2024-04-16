@@ -48,7 +48,7 @@ type = "host"
 
 [S1]
 type = "switch"
-cpuCapacity = "1Gbps"
+cpuCapacity = "7Gbps"
 
 [S1.chassis]
 model = "enabledPorts"
@@ -64,7 +64,7 @@ consumptions = [0.014, 0.013, 0.011]
 
 [S2]
 type = "switch"
-cpuCapacity = "1Gbps"
+cpuCapacity = "3Gbps"
 
 [S2.chassis]
 model = "enabledPorts"
@@ -80,7 +80,7 @@ consumptions = [0.014, 0.013, 0.011]
 
 [S3]
 type = "switch"
-cpuCapacity = "1Gbps"
+cpuCapacity = "3Gbps"
 
 [S3.chassis]
 model = "enabledPorts"
@@ -96,7 +96,7 @@ consumptions = [0.014, 0.013, 0.011]
 
 [S4]
 type = "switch"
-cpuCapacity = "1Gbps"
+cpuCapacity = "3Gbps"
 
 [S4.chassis]
 model = "enabledPorts"
@@ -112,7 +112,7 @@ consumptions = [0.014, 0.013, 0.011]
 
 [S5]
 type = "switch"
-cpuCapacity = "1Gbps"
+cpuCapacity = "7Gbps"
 
 [S5.chassis]
 model = "enabledPorts"
@@ -128,7 +128,7 @@ consumptions = [0.014, 0.013, 0.011]
 
 [S6]
 type = "switch"
-cpuCapacity = "1Gbps"
+cpuCapacity = "4Gbps"
 
 [S6.chassis]
 model = "enabledPorts"
@@ -144,7 +144,7 @@ consumptions = [0.014, 0.013, 0.011]
 
 [S7]
 type = "switch"
-cpuCapacity = "1Gbps"
+cpuCapacity = "2Gbps"
 
 [S7.chassis]
 model = "enabledPorts"
@@ -160,7 +160,7 @@ consumptions = [0.014, 0.013, 0.011]
 
 [S8]
 type = "switch"
-cpuCapacity = "1Gbps"
+cpuCapacity = "8Gbps"
 
 [S8.chassis]
 model = "enabledPorts"
@@ -176,7 +176,7 @@ consumptions = [0.014, 0.013, 0.011]
 
 [S9]
 type = "switch"
-cpuCapacity = "1Gbps"
+cpuCapacity = "7Gbps"
 
 [S9.chassis]
 model = "enabledPorts"
