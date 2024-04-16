@@ -1,0 +1,62 @@
+[app1]
+host = "H1"
+remote = "H5"
+startTime = "61s"
+type = "constSend"
+dataRate = "100Mbps"
+
+[app2]
+host = "H6"
+remote = "H2"
+startTime = "121s"
+type = "constSend"
+dataRate = "200Mbps"
+
+[app3]
+host = "H2"
+remote = "H7"
+startTime = "181s"
+type = "constSend"
+dataRate = "200Mbps"
+
+[app4]
+host = "H3"
+remote = "H13"
+startTime = "241s"
+type = "constSend"
+dataRate = "100Mbps"
+
+[app5]
+host = "H1"
+remote = "H9"
+startTime = "301s"
+type = "constSend"
+dataRate = "50Mbps"
+
+[app6]
+host = "H1"
+remote = "H8"
+startTime = "361s"
+type = "constSend"
+dataRate = "50Mbps"
+
+[app7]
+host = "H3"
+remote = "H8"
+startTime = "421s"
+type = "constSend"
+dataRate = "50Mbps"
+
+[app8]
+host = "H9"
+remote = "H10"
+startTime = "481s"
+type = "constSend"
+dataRate = "700Mbps"
+
+[app9]
+host = "H12"
+remote = "H11"
+startTime = "541s"
+type = "constSend"
+dataRate = "800Mbps"

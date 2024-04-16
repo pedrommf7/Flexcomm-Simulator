@@ -1,0 +1,191 @@
+[H1]
+type = "host"
+
+[H2]
+type = "host"
+
+[H3]
+type = "host"
+
+[H4]
+type = "host"
+
+[H5]
+type = "host"
+
+[H6]
+type = "host"
+
+[H7]
+type = "host"
+
+[H8]
+type = "host"
+
+[H9]
+type = "host"
+
+[H10]
+type = "host"
+
+[H11]
+type = "host"
+
+[H12]
+type = "host"
+
+[H13]
+type = "host"
+
+[H14]
+type = "host"
+
+[H15]
+type = "host"
+
+[H16]
+type = "host"
+
+[S1]
+type = "switch"
+cpuCapacity = "1Gbps"
+
+[S1.chassis]
+model = "enabledPorts"
+idleConso = 108
+dataRates = ["1Gbps", "2400Mbps", "10Gbps"]
+consumptions = [0.31, 0.52, 1.57]
+
+[S1.interfaces]
+model = "dataRate"
+unit = "100Mbps"
+dataRates = ["1Gbps", "2400Mbps", "10Gbps"]
+consumptions = [0.014, 0.013, 0.011]
+
+[S2]
+type = "switch"
+cpuCapacity = "1Gbps"
+
+[S2.chassis]
+model = "enabledPorts"
+idleConso = 108
+dataRates = ["1Gbps", "2400Mbps", "10Gbps"]
+consumptions = [0.31, 0.52, 1.57]
+
+[S2.interfaces]
+model = "dataRate"
+unit = "100Mbps"
+dataRates = ["1Gbps", "2400Mbps", "10Gbps"]
+consumptions = [0.014, 0.013, 0.011]
+
+[S3]
+type = "switch"
+cpuCapacity = "1Gbps"
+
+[S3.chassis]
+model = "enabledPorts"
+idleConso = 108
+dataRates = ["1Gbps", "2400Mbps", "10Gbps"]
+consumptions = [0.31, 0.52, 1.57]
+
+[S3.interfaces]
+model = "dataRate"
+unit = "100Mbps"
+dataRates = ["1Gbps", "2400Mbps", "10Gbps"]
+consumptions = [0.014, 0.013, 0.011]
+
+[S4]
+type = "switch"
+cpuCapacity = "1Gbps"
+
+[S4.chassis]
+model = "enabledPorts"
+idleConso = 108
+dataRates = ["1Gbps", "2400Mbps", "10Gbps"]
+consumptions = [0.31, 0.52, 1.57]
+
+[S4.interfaces]
+model = "dataRate"
+unit = "100Mbps"
+dataRates = ["1Gbps", "2400Mbps", "10Gbps"]
+consumptions = [0.014, 0.013, 0.011]
+
+[S5]
+type = "switch"
+cpuCapacity = "1Gbps"
+
+[S5.chassis]
+model = "enabledPorts"
+idleConso = 108
+dataRates = ["1Gbps", "2400Mbps", "10Gbps"]
+consumptions = [0.31, 0.52, 1.57]
+
+[S5.interfaces]
+model = "dataRate"
+unit = "100Mbps"
+dataRates = ["1Gbps", "2400Mbps", "10Gbps"]
+consumptions = [0.014, 0.013, 0.011]
+
+[S6]
+type = "switch"
+cpuCapacity = "1Gbps"
+
+[S6.chassis]
+model = "enabledPorts"
+idleConso = 108
+dataRates = ["1Gbps", "2400Mbps", "10Gbps"]
+consumptions = [0.31, 0.52, 1.57]
+
+[S6.interfaces]
+model = "dataRate"
+unit = "100Mbps"
+dataRates = ["1Gbps", "2400Mbps", "10Gbps"]
+consumptions = [0.014, 0.013, 0.011]
+
+[S7]
+type = "switch"
+cpuCapacity = "1Gbps"
+
+[S7.chassis]
+model = "enabledPorts"
+idleConso = 108
+dataRates = ["1Gbps", "2400Mbps", "10Gbps"]
+consumptions = [0.31, 0.52, 1.57]
+
+[S7.interfaces]
+model = "dataRate"
+unit = "100Mbps"
+dataRates = ["1Gbps", "2400Mbps", "10Gbps"]
+consumptions = [0.014, 0.013, 0.011]
+
+[S8]
+type = "switch"
+cpuCapacity = "1Gbps"
+
+[S8.chassis]
+model = "enabledPorts"
+idleConso = 108
+dataRates = ["1Gbps", "2400Mbps", "10Gbps"]
+consumptions = [0.31, 0.52, 1.57]
+
+[S8.interfaces]
+model = "dataRate"
+unit = "100Mbps"
+dataRates = ["1Gbps", "2400Mbps", "10Gbps"]
+consumptions = [0.014, 0.013, 0.011]
+
+[S9]
+type = "switch"
+cpuCapacity = "1Gbps"
+
+[S9.chassis]
+model = "enabledPorts"
+idleConso = 108
+dataRates = ["1Gbps", "2400Mbps", "10Gbps"]
+consumptions = [0.31, 0.52, 1.57]
+
+[S9.interfaces]
+model = "dataRate"
+unit = "100Mbps"
+dataRates = ["1Gbps", "2400Mbps", "10Gbps"]
+consumptions = [0.014, 0.013, 0.011]
