@@ -540,7 +540,7 @@ OspfController::UpdateRouting ()
       std::vector<Ptr<Node>> shortestPath = paths_.at (0).first;
 
       int index = int (Simulator::Now ().GetMinutes ()) % 60;
-      std::cout << "<#>" << i << "_" << index;
+      std::cout << i << " " << index << " ";
       i++;
       ApplyRoutingFromPath (shortestPath);
 

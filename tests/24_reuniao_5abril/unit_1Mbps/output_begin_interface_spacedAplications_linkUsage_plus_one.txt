@@ -1,0 +1,995 @@
+mkdir -p outputs/begin_interface_spacedAplications
+./ns-3.35/waf -t ns-3.35 --run "flexcomm --topo=begin_interface_spacedAplications --ctrl=ns3::OspfController --checksum=false --estifile=estimate.json --flexfile=flex.json --linkfailures=NONE" --cwd=../outputs 
+Waf: Entering directory `/home/gsd/Flexcomm-Simulator/ns-3.35/build'
+Waf: Leaving directory `/home/gsd/Flexcomm-Simulator/ns-3.35/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.108s)
+../topologies/begin_interface_spacedAplications/flex.json not found. Skipping flexibility values.
+../topologies/begin_interface_spacedAplications/estimate.json not found. Skipping estimate values.
+Topology templates file not found
+--------------------------------------------------------------
+Parsing Time: 0s 40ms
+Reference Bandwidth Value: 1000000000
+-----------------------------
+FindAllPaths from: 0 to: 1 -> Number of paths found: 1
+FindAllPaths from: 0 to: 2 -> Number of paths found: 1
+FindAllPaths from: 0 to: 3 -> Number of paths found: 1
+FindAllPaths from: 0 to: 4 -> Number of paths found: 14
+FindAllPaths from: 0 to: 5 -> Number of paths found: 14
+FindAllPaths from: 0 to: 6 -> Number of paths found: 14
+FindAllPaths from: 0 to: 7 -> Number of paths found: 14
+FindAllPaths from: 1 to: 2 -> Number of paths found: 1
+FindAllPaths from: 1 to: 3 -> Number of paths found: 1
+FindAllPaths from: 1 to: 4 -> Number of paths found: 14
+FindAllPaths from: 1 to: 5 -> Number of paths found: 14
+FindAllPaths from: 1 to: 6 -> Number of paths found: 14
+FindAllPaths from: 1 to: 7 -> Number of paths found: 14
+FindAllPaths from: 2 to: 3 -> Number of paths found: 1
+FindAllPaths from: 2 to: 4 -> Number of paths found: 14
+FindAllPaths from: 2 to: 5 -> Number of paths found: 14
+FindAllPaths from: 2 to: 6 -> Number of paths found: 14
+FindAllPaths from: 2 to: 7 -> Number of paths found: 14
+FindAllPaths from: 3 to: 4 -> Number of paths found: 14
+FindAllPaths from: 3 to: 5 -> Number of paths found: 14
+FindAllPaths from: 3 to: 6 -> Number of paths found: 14
+FindAllPaths from: 3 to: 7 -> Number of paths found: 14
+FindAllPaths from: 4 to: 5 -> Number of paths found: 1
+FindAllPaths from: 4 to: 6 -> Number of paths found: 1
+FindAllPaths from: 4 to: 7 -> Number of paths found: 1
+FindAllPaths from: 5 to: 6 -> Number of paths found: 1
+FindAllPaths from: 5 to: 7 -> Number of paths found: 1
+FindAllPaths from: 6 to: 7 -> Number of paths found: 1
+-----> FindAllPaths Time: 0h 0m 0s 7ms
+-----------------------------
+<#>0_0ApplyRoutingFromPath: 0 8 1   (220)
+<#>1_0ApplyRoutingFromPath: 1 8 0   (220)
+<#>2_0ApplyRoutingFromPath: 0 8 2   (220)
+<#>3_0ApplyRoutingFromPath: 2 8 0   (220)
+<#>4_0ApplyRoutingFromPath: 0 8 3   (220)
+<#>5_0ApplyRoutingFromPath: 3 8 0   (220)
+<#>6_0ApplyRoutingFromPath: 0 8 9 12 16 4   (436)
+<#>7_0ApplyRoutingFromPath: 4 16 12 9 8 0   (436)
+<#>8_0ApplyRoutingFromPath: 0 8 9 12 16 5   (436)
+<#>9_0ApplyRoutingFromPath: 5 16 12 9 8 0   (436)
+<#>10_0ApplyRoutingFromPath: 0 8 9 12 16 6   (436)
+<#>11_0ApplyRoutingFromPath: 6 16 12 9 8 0   (436)
+<#>12_0ApplyRoutingFromPath: 0 8 9 12 16 7   (436)
+<#>13_0ApplyRoutingFromPath: 7 16 12 9 8 0   (436)
+<#>14_0ApplyRoutingFromPath: 1 8 2   (220)
+<#>15_0ApplyRoutingFromPath: 2 8 1   (220)
+<#>16_0ApplyRoutingFromPath: 1 8 3   (220)
+<#>17_0ApplyRoutingFromPath: 3 8 1   (220)
+<#>18_0ApplyRoutingFromPath: 1 8 9 12 16 4   (436)
+<#>19_0ApplyRoutingFromPath: 4 16 12 9 8 1   (436)
+<#>20_0ApplyRoutingFromPath: 1 8 9 12 16 5   (436)
+<#>21_0ApplyRoutingFromPath: 5 16 12 9 8 1   (436)
+<#>22_0ApplyRoutingFromPath: 1 8 9 12 16 6   (436)
+<#>23_0ApplyRoutingFromPath: 6 16 12 9 8 1   (436)
+<#>24_0ApplyRoutingFromPath: 1 8 9 12 16 7   (436)
+<#>25_0ApplyRoutingFromPath: 7 16 12 9 8 1   (436)
+<#>26_0ApplyRoutingFromPath: 2 8 3   (220)
+<#>27_0ApplyRoutingFromPath: 3 8 2   (220)
+<#>28_0ApplyRoutingFromPath: 2 8 9 12 16 4   (436)
+<#>29_0ApplyRoutingFromPath: 4 16 12 9 8 2   (436)
+<#>30_0ApplyRoutingFromPath: 2 8 9 12 16 5   (436)
+<#>31_0ApplyRoutingFromPath: 5 16 12 9 8 2   (436)
+<#>32_0ApplyRoutingFromPath: 2 8 9 12 16 6   (436)
+<#>33_0ApplyRoutingFromPath: 6 16 12 9 8 2   (436)
+<#>34_0ApplyRoutingFromPath: 2 8 9 12 16 7   (436)
+<#>35_0ApplyRoutingFromPath: 7 16 12 9 8 2   (436)
+<#>36_0ApplyRoutingFromPath: 3 8 9 12 16 4   (436)
+<#>37_0ApplyRoutingFromPath: 4 16 12 9 8 3   (436)
+<#>38_0ApplyRoutingFromPath: 3 8 9 12 16 5   (436)
+<#>39_0ApplyRoutingFromPath: 5 16 12 9 8 3   (436)
+<#>40_0ApplyRoutingFromPath: 3 8 9 12 16 6   (436)
+<#>41_0ApplyRoutingFromPath: 6 16 12 9 8 3   (436)
+<#>42_0ApplyRoutingFromPath: 3 8 9 12 16 7   (436)
+<#>43_0ApplyRoutingFromPath: 7 16 12 9 8 3   (436)
+<#>44_0ApplyRoutingFromPath: 4 16 5   (0)
+<#>45_0ApplyRoutingFromPath: 5 16 4   (0)
+<#>46_0ApplyRoutingFromPath: 4 16 6   (0)
+<#>47_0ApplyRoutingFromPath: 6 16 4   (0)
+<#>48_0ApplyRoutingFromPath: 4 16 7   (0)
+<#>49_0ApplyRoutingFromPath: 7 16 4   (0)
+<#>50_0ApplyRoutingFromPath: 5 16 6   (0)
+<#>51_0ApplyRoutingFromPath: 6 16 5   (0)
+<#>52_0ApplyRoutingFromPath: 5 16 7   (0)
+<#>53_0ApplyRoutingFromPath: 7 16 5   (0)
+<#>54_0ApplyRoutingFromPath: 6 16 7   (0)
+<#>55_0ApplyRoutingFromPath: 7 16 6   (0)
+-----------------------------
+ Time(seconds): 4.48e-07
+Link Costs: 
+Edge: 10 - 13 | Weight: 108
+Edge: 10 - 14 | Weight: 108
+Edge: 11 - 15 | Weight: 108
+Edge: 15 - 14 | Weight: 108
+Edge: 12 - 16 | Weight: 110
+Edge: 13 - 16 | Weight: 110
+Edge: 14 - 16 | Weight: 110
+Edge: 9 - 12 | Weight: 108
+Edge: 8 - 9 | Weight: 108
+Edge: 8 - 10 | Weight: 109
+Edge: 8 - 11 | Weight: 108
+Edge: 9 - 13 | Weight: 108
+Edge: 10 - 12 | Weight: 108
+-----[New Routing Loop]-----
+<#>0_1ApplyRoutingFromPath: 0 8 1   (220)
+<#>1_1ApplyRoutingFromPath: 1 8 0   (220)
+<#>2_1ApplyRoutingFromPath: 0 8 2   (220)
+<#>3_1ApplyRoutingFromPath: 2 8 0   (220)
+<#>4_1ApplyRoutingFromPath: 0 8 3   (220)
+<#>5_1ApplyRoutingFromPath: 3 8 0   (220)
+<#>6_1ApplyRoutingFromPath: 0 8 9 12 16 4   (436)
+<#>7_1ApplyRoutingFromPath: 4 16 12 9 8 0   (436)
+<#>8_1ApplyRoutingFromPath: 0 8 9 12 16 5   (436)
+<#>9_1ApplyRoutingFromPath: 5 16 12 9 8 0   (436)
+<#>10_1ApplyRoutingFromPath: 0 8 9 12 16 6   (436)
+<#>11_1ApplyRoutingFromPath: 6 16 12 9 8 0   (436)
+<#>12_1ApplyRoutingFromPath: 0 8 9 12 16 7   (436)
+<#>13_1ApplyRoutingFromPath: 7 16 12 9 8 0   (436)
+<#>14_1ApplyRoutingFromPath: 1 8 2   (220)
+<#>15_1ApplyRoutingFromPath: 2 8 1   (220)
+<#>16_1ApplyRoutingFromPath: 1 8 3   (220)
+<#>17_1ApplyRoutingFromPath: 3 8 1   (220)
+<#>18_1ApplyRoutingFromPath: 1 8 9 12 16 4   (436)
+<#>19_1ApplyRoutingFromPath: 4 16 12 9 8 1   (436)
+<#>20_1ApplyRoutingFromPath: 1 8 9 12 16 5   (436)
+<#>21_1ApplyRoutingFromPath: 5 16 12 9 8 1   (436)
+<#>22_1ApplyRoutingFromPath: 1 8 9 12 16 6   (436)
+<#>23_1ApplyRoutingFromPath: 6 16 12 9 8 1   (436)
+<#>24_1ApplyRoutingFromPath: 1 8 9 12 16 7   (436)
+<#>25_1ApplyRoutingFromPath: 7 16 12 9 8 1   (436)
+<#>26_1ApplyRoutingFromPath: 2 8 3   (220)
+<#>27_1ApplyRoutingFromPath: 3 8 2   (220)
+<#>28_1ApplyRoutingFromPath: 2 8 9 12 16 4   (436)
+<#>29_1ApplyRoutingFromPath: 4 16 12 9 8 2   (436)
+<#>30_1ApplyRoutingFromPath: 2 8 9 12 16 5   (436)
+<#>31_1ApplyRoutingFromPath: 5 16 12 9 8 2   (436)
+<#>32_1ApplyRoutingFromPath: 2 8 9 12 16 6   (436)
+<#>33_1ApplyRoutingFromPath: 6 16 12 9 8 2   (436)
+<#>34_1ApplyRoutingFromPath: 2 8 9 12 16 7   (436)
+<#>35_1ApplyRoutingFromPath: 7 16 12 9 8 2   (436)
+<#>36_1ApplyRoutingFromPath: 3 8 9 12 16 4   (436)
+<#>37_1ApplyRoutingFromPath: 4 16 12 9 8 3   (436)
+<#>38_1ApplyRoutingFromPath: 3 8 9 12 16 5   (436)
+<#>39_1ApplyRoutingFromPath: 5 16 12 9 8 3   (436)
+<#>40_1ApplyRoutingFromPath: 3 8 9 12 16 6   (436)
+<#>41_1ApplyRoutingFromPath: 6 16 12 9 8 3   (436)
+<#>42_1ApplyRoutingFromPath: 3 8 9 12 16 7   (436)
+<#>43_1ApplyRoutingFromPath: 7 16 12 9 8 3   (436)
+<#>44_1ApplyRoutingFromPath: 4 16 5   (0)
+<#>45_1ApplyRoutingFromPath: 5 16 4   (0)
+<#>46_1ApplyRoutingFromPath: 4 16 6   (0)
+<#>47_1ApplyRoutingFromPath: 6 16 4   (0)
+<#>48_1ApplyRoutingFromPath: 4 16 7   (0)
+<#>49_1ApplyRoutingFromPath: 7 16 4   (0)
+<#>50_1ApplyRoutingFromPath: 5 16 6   (0)
+<#>51_1ApplyRoutingFromPath: 6 16 5   (0)
+<#>52_1ApplyRoutingFromPath: 5 16 7   (0)
+<#>53_1ApplyRoutingFromPath: 7 16 5   (0)
+<#>54_1ApplyRoutingFromPath: 6 16 7   (0)
+<#>55_1ApplyRoutingFromPath: 7 16 6   (0)
+-----------------------------
+ Time(seconds): 60
+Link Costs: 
+Edge: 10 - 13 | Weight: 108
+Edge: 10 - 14 | Weight: 108
+Edge: 11 - 15 | Weight: 108
+Edge: 15 - 14 | Weight: 108
+Edge: 12 - 16 | Weight: 110
+Edge: 13 - 16 | Weight: 110
+Edge: 14 - 16 | Weight: 110
+Edge: 9 - 12 | Weight: 108
+Edge: 8 - 9 | Weight: 108
+Edge: 8 - 10 | Weight: 109
+Edge: 8 - 11 | Weight: 108
+Edge: 9 - 13 | Weight: 108
+Edge: 10 - 12 | Weight: 108
+-----[New Routing Loop]-----
+<#>0_2ApplyRoutingFromPath: 0 8 1   (222)
+<#>1_2ApplyRoutingFromPath: 1 8 0   (222)
+<#>2_2ApplyRoutingFromPath: 0 8 2   (222)
+<#>3_2ApplyRoutingFromPath: 2 8 0   (222)
+<#>4_2ApplyRoutingFromPath: 0 8 3   (222)
+<#>5_2ApplyRoutingFromPath: 3 8 0   (222)
+<#>6_2ApplyRoutingFromPath: 0 8 10 13 16 4   (439)
+<#>7_2ApplyRoutingFromPath: 4 16 13 10 8 0   (439)
+<#>8_2ApplyRoutingFromPath: 0 8 10 13 16 5   (439)
+<#>9_2ApplyRoutingFromPath: 5 16 13 10 8 0   (439)
+<#>10_2ApplyRoutingFromPath: 0 8 10 13 16 6   (439)
+<#>11_2ApplyRoutingFromPath: 6 16 13 10 8 0   (439)
+<#>12_2ApplyRoutingFromPath: 0 8 10 13 16 7   (439)
+<#>13_2ApplyRoutingFromPath: 7 16 13 10 8 0   (439)
+<#>14_2ApplyRoutingFromPath: 1 8 2   (222)
+<#>15_2ApplyRoutingFromPath: 2 8 1   (222)
+<#>16_2ApplyRoutingFromPath: 1 8 3   (222)
+<#>17_2ApplyRoutingFromPath: 3 8 1   (222)
+<#>18_2ApplyRoutingFromPath: 1 8 10 13 16 4   (439)
+<#>19_2ApplyRoutingFromPath: 4 16 13 10 8 1   (439)
+<#>20_2ApplyRoutingFromPath: 1 8 10 13 16 5   (439)
+<#>21_2ApplyRoutingFromPath: 5 16 13 10 8 1   (439)
+<#>22_2ApplyRoutingFromPath: 1 8 10 13 16 6   (439)
+<#>23_2ApplyRoutingFromPath: 6 16 13 10 8 1   (439)
+<#>24_2ApplyRoutingFromPath: 1 8 10 13 16 7   (439)
+<#>25_2ApplyRoutingFromPath: 7 16 13 10 8 1   (439)
+<#>26_2ApplyRoutingFromPath: 2 8 3   (222)
+<#>27_2ApplyRoutingFromPath: 3 8 2   (222)
+<#>28_2ApplyRoutingFromPath: 2 8 10 13 16 4   (439)
+<#>29_2ApplyRoutingFromPath: 4 16 13 10 8 2   (439)
+<#>30_2ApplyRoutingFromPath: 2 8 10 13 16 5   (439)
+<#>31_2ApplyRoutingFromPath: 5 16 13 10 8 2   (439)
+<#>32_2ApplyRoutingFromPath: 2 8 10 13 16 6   (439)
+<#>33_2ApplyRoutingFromPath: 6 16 13 10 8 2   (439)
+<#>34_2ApplyRoutingFromPath: 2 8 10 13 16 7   (439)
+<#>35_2ApplyRoutingFromPath: 7 16 13 10 8 2   (439)
+<#>36_2ApplyRoutingFromPath: 3 8 10 13 16 4   (439)
+<#>37_2ApplyRoutingFromPath: 4 16 13 10 8 3   (439)
+<#>38_2ApplyRoutingFromPath: 3 8 10 13 16 5   (439)
+<#>39_2ApplyRoutingFromPath: 5 16 13 10 8 3   (439)
+<#>40_2ApplyRoutingFromPath: 3 8 10 13 16 6   (439)
+<#>41_2ApplyRoutingFromPath: 6 16 13 10 8 3   (439)
+<#>42_2ApplyRoutingFromPath: 3 8 10 13 16 7   (439)
+<#>43_2ApplyRoutingFromPath: 7 16 13 10 8 3   (439)
+<#>44_2ApplyRoutingFromPath: 4 16 5   (0)
+<#>45_2ApplyRoutingFromPath: 5 16 4   (0)
+<#>46_2ApplyRoutingFromPath: 4 16 6   (0)
+<#>47_2ApplyRoutingFromPath: 6 16 4   (0)
+<#>48_2ApplyRoutingFromPath: 4 16 7   (0)
+<#>49_2ApplyRoutingFromPath: 7 16 4   (0)
+<#>50_2ApplyRoutingFromPath: 5 16 6   (0)
+<#>51_2ApplyRoutingFromPath: 6 16 5   (0)
+<#>52_2ApplyRoutingFromPath: 5 16 7   (0)
+<#>53_2ApplyRoutingFromPath: 7 16 5   (0)
+<#>54_2ApplyRoutingFromPath: 6 16 7   (0)
+<#>55_2ApplyRoutingFromPath: 7 16 6   (0)
+-----------------------------
+ Time(seconds): 120
+Link Costs: 
+Edge: 10 - 13 | Weight: 108
+Edge: 10 - 14 | Weight: 108
+Edge: 11 - 15 | Weight: 108
+Edge: 15 - 14 | Weight: 108
+Edge: 12 - 16 | Weight: 123
+Edge: 13 - 16 | Weight: 111
+Edge: 14 - 16 | Weight: 111
+Edge: 9 - 12 | Weight: 124
+Edge: 8 - 9 | Weight: 124
+Edge: 8 - 10 | Weight: 109
+Edge: 8 - 11 | Weight: 108
+Edge: 9 - 13 | Weight: 108
+Edge: 10 - 12 | Weight: 111
+-----[New Routing Loop]-----
+<#>0_3ApplyRoutingFromPath: 0 8 1   (226)
+<#>1_3ApplyRoutingFromPath: 1 8 0   (226)
+<#>2_3ApplyRoutingFromPath: 0 8 2   (226)
+<#>3_3ApplyRoutingFromPath: 2 8 0   (226)
+<#>4_3ApplyRoutingFromPath: 0 8 3   (226)
+<#>5_3ApplyRoutingFromPath: 3 8 0   (226)
+<#>6_3ApplyRoutingFromPath: 0 8 9 12 16 4   (442)
+<#>7_3ApplyRoutingFromPath: 4 16 12 9 8 0   (442)
+<#>8_3ApplyRoutingFromPath: 0 8 9 12 16 5   (442)
+<#>9_3ApplyRoutingFromPath: 5 16 12 9 8 0   (442)
+<#>10_3ApplyRoutingFromPath: 0 8 9 12 16 6   (442)
+<#>11_3ApplyRoutingFromPath: 6 16 12 9 8 0   (442)
+<#>12_3ApplyRoutingFromPath: 0 8 9 12 16 7   (442)
+<#>13_3ApplyRoutingFromPath: 7 16 12 9 8 0   (442)
+<#>14_3ApplyRoutingFromPath: 1 8 2   (226)
+<#>15_3ApplyRoutingFromPath: 2 8 1   (226)
+<#>16_3ApplyRoutingFromPath: 1 8 3   (226)
+<#>17_3ApplyRoutingFromPath: 3 8 1   (226)
+<#>18_3ApplyRoutingFromPath: 1 8 9 12 16 4   (442)
+<#>19_3ApplyRoutingFromPath: 4 16 12 9 8 1   (442)
+<#>20_3ApplyRoutingFromPath: 1 8 9 12 16 5   (442)
+<#>21_3ApplyRoutingFromPath: 5 16 12 9 8 1   (442)
+<#>22_3ApplyRoutingFromPath: 1 8 9 12 16 6   (442)
+<#>23_3ApplyRoutingFromPath: 6 16 12 9 8 1   (442)
+<#>24_3ApplyRoutingFromPath: 1 8 9 12 16 7   (442)
+<#>25_3ApplyRoutingFromPath: 7 16 12 9 8 1   (442)
+<#>26_3ApplyRoutingFromPath: 2 8 3   (226)
+<#>27_3ApplyRoutingFromPath: 3 8 2   (226)
+<#>28_3ApplyRoutingFromPath: 2 8 9 12 16 4   (442)
+<#>29_3ApplyRoutingFromPath: 4 16 12 9 8 2   (442)
+<#>30_3ApplyRoutingFromPath: 2 8 9 12 16 5   (442)
+<#>31_3ApplyRoutingFromPath: 5 16 12 9 8 2   (442)
+<#>32_3ApplyRoutingFromPath: 2 8 9 12 16 6   (442)
+<#>33_3ApplyRoutingFromPath: 6 16 12 9 8 2   (442)
+<#>34_3ApplyRoutingFromPath: 2 8 9 12 16 7   (442)
+<#>35_3ApplyRoutingFromPath: 7 16 12 9 8 2   (442)
+<#>36_3ApplyRoutingFromPath: 3 8 9 12 16 4   (442)
+<#>37_3ApplyRoutingFromPath: 4 16 12 9 8 3   (442)
+<#>38_3ApplyRoutingFromPath: 3 8 9 12 16 5   (442)
+<#>39_3ApplyRoutingFromPath: 5 16 12 9 8 3   (442)
+<#>40_3ApplyRoutingFromPath: 3 8 9 12 16 6   (442)
+<#>41_3ApplyRoutingFromPath: 6 16 12 9 8 3   (442)
+<#>42_3ApplyRoutingFromPath: 3 8 9 12 16 7   (442)
+<#>43_3ApplyRoutingFromPath: 7 16 12 9 8 3   (442)
+<#>44_3ApplyRoutingFromPath: 4 16 5   (0)
+<#>45_3ApplyRoutingFromPath: 5 16 4   (0)
+<#>46_3ApplyRoutingFromPath: 4 16 6   (0)
+<#>47_3ApplyRoutingFromPath: 6 16 4   (0)
+<#>48_3ApplyRoutingFromPath: 4 16 7   (0)
+<#>49_3ApplyRoutingFromPath: 7 16 4   (0)
+<#>50_3ApplyRoutingFromPath: 5 16 6   (0)
+<#>51_3ApplyRoutingFromPath: 6 16 5   (0)
+<#>52_3ApplyRoutingFromPath: 5 16 7   (0)
+<#>53_3ApplyRoutingFromPath: 7 16 5   (0)
+<#>54_3ApplyRoutingFromPath: 6 16 7   (0)
+<#>55_3ApplyRoutingFromPath: 7 16 6   (0)
+-----------------------------
+ Time(seconds): 180
+Link Costs: 
+Edge: 10 - 13 | Weight: 140
+Edge: 10 - 14 | Weight: 108
+Edge: 11 - 15 | Weight: 108
+Edge: 15 - 14 | Weight: 108
+Edge: 12 - 16 | Weight: 113
+Edge: 13 - 16 | Weight: 137
+Edge: 14 - 16 | Weight: 113
+Edge: 9 - 12 | Weight: 108
+Edge: 8 - 9 | Weight: 108
+Edge: 8 - 10 | Weight: 140
+Edge: 8 - 11 | Weight: 108
+Edge: 9 - 13 | Weight: 115
+Edge: 10 - 12 | Weight: 108
+-----[New Routing Loop]-----
+<#>0_4ApplyRoutingFromPath: 0 8 1   (226)
+<#>1_4ApplyRoutingFromPath: 1 8 0   (226)
+<#>2_4ApplyRoutingFromPath: 0 8 2   (226)
+<#>3_4ApplyRoutingFromPath: 2 8 0   (226)
+<#>4_4ApplyRoutingFromPath: 0 8 3   (226)
+<#>5_4ApplyRoutingFromPath: 3 8 0   (226)
+<#>6_4ApplyRoutingFromPath: 0 8 10 14 16 4   (443)
+<#>7_4ApplyRoutingFromPath: 4 16 14 10 8 0   (443)
+<#>8_4ApplyRoutingFromPath: 0 8 10 14 16 5   (443)
+<#>9_4ApplyRoutingFromPath: 5 16 14 10 8 0   (443)
+<#>10_4ApplyRoutingFromPath: 0 8 10 14 16 6   (443)
+<#>11_4ApplyRoutingFromPath: 6 16 14 10 8 0   (443)
+<#>12_4ApplyRoutingFromPath: 0 8 10 14 16 7   (443)
+<#>13_4ApplyRoutingFromPath: 7 16 14 10 8 0   (443)
+<#>14_4ApplyRoutingFromPath: 1 8 2   (226)
+<#>15_4ApplyRoutingFromPath: 2 8 1   (226)
+<#>16_4ApplyRoutingFromPath: 1 8 3   (226)
+<#>17_4ApplyRoutingFromPath: 3 8 1   (226)
+<#>18_4ApplyRoutingFromPath: 1 8 10 14 16 4   (443)
+<#>19_4ApplyRoutingFromPath: 4 16 14 10 8 1   (443)
+<#>20_4ApplyRoutingFromPath: 1 8 10 14 16 5   (443)
+<#>21_4ApplyRoutingFromPath: 5 16 14 10 8 1   (443)
+<#>22_4ApplyRoutingFromPath: 1 8 10 14 16 6   (443)
+<#>23_4ApplyRoutingFromPath: 6 16 14 10 8 1   (443)
+<#>24_4ApplyRoutingFromPath: 1 8 10 14 16 7   (443)
+<#>25_4ApplyRoutingFromPath: 7 16 14 10 8 1   (443)
+<#>26_4ApplyRoutingFromPath: 2 8 3   (226)
+<#>27_4ApplyRoutingFromPath: 3 8 2   (226)
+<#>28_4ApplyRoutingFromPath: 2 8 10 14 16 4   (443)
+<#>29_4ApplyRoutingFromPath: 4 16 14 10 8 2   (443)
+<#>30_4ApplyRoutingFromPath: 2 8 10 14 16 5   (443)
+<#>31_4ApplyRoutingFromPath: 5 16 14 10 8 2   (443)
+<#>32_4ApplyRoutingFromPath: 2 8 10 14 16 6   (443)
+<#>33_4ApplyRoutingFromPath: 6 16 14 10 8 2   (443)
+<#>34_4ApplyRoutingFromPath: 2 8 10 14 16 7   (443)
+<#>35_4ApplyRoutingFromPath: 7 16 14 10 8 2   (443)
+<#>36_4ApplyRoutingFromPath: 3 8 10 14 16 4   (443)
+<#>37_4ApplyRoutingFromPath: 4 16 14 10 8 3   (443)
+<#>38_4ApplyRoutingFromPath: 3 8 10 14 16 5   (443)
+<#>39_4ApplyRoutingFromPath: 5 16 14 10 8 3   (443)
+<#>40_4ApplyRoutingFromPath: 3 8 10 14 16 6   (443)
+<#>41_4ApplyRoutingFromPath: 6 16 14 10 8 3   (443)
+<#>42_4ApplyRoutingFromPath: 3 8 10 14 16 7   (443)
+<#>43_4ApplyRoutingFromPath: 7 16 14 10 8 3   (443)
+<#>44_4ApplyRoutingFromPath: 4 16 5   (0)
+<#>45_4ApplyRoutingFromPath: 5 16 4   (0)
+<#>46_4ApplyRoutingFromPath: 4 16 6   (0)
+<#>47_4ApplyRoutingFromPath: 6 16 4   (0)
+<#>48_4ApplyRoutingFromPath: 4 16 7   (0)
+<#>49_4ApplyRoutingFromPath: 7 16 4   (0)
+<#>50_4ApplyRoutingFromPath: 5 16 6   (0)
+<#>51_4ApplyRoutingFromPath: 6 16 5   (0)
+<#>52_4ApplyRoutingFromPath: 5 16 7   (0)
+<#>53_4ApplyRoutingFromPath: 7 16 5   (0)
+<#>54_4ApplyRoutingFromPath: 6 16 7   (0)
+<#>55_4ApplyRoutingFromPath: 7 16 6   (0)
+-----------------------------
+ Time(seconds): 240
+Link Costs: 
+Edge: 10 - 13 | Weight: 108
+Edge: 10 - 14 | Weight: 108
+Edge: 11 - 15 | Weight: 108
+Edge: 15 - 14 | Weight: 108
+Edge: 12 - 16 | Weight: 145
+Edge: 13 - 16 | Weight: 113
+Edge: 14 - 16 | Weight: 113
+Edge: 9 - 12 | Weight: 148
+Edge: 8 - 9 | Weight: 148
+Edge: 8 - 10 | Weight: 109
+Edge: 8 - 11 | Weight: 108
+Edge: 9 - 13 | Weight: 108
+Edge: 10 - 12 | Weight: 116
+-----[New Routing Loop]-----
+<#>0_5ApplyRoutingFromPath: 0 8 1   (228)
+<#>1_5ApplyRoutingFromPath: 1 8 0   (228)
+<#>2_5ApplyRoutingFromPath: 0 8 2   (228)
+<#>3_5ApplyRoutingFromPath: 2 8 0   (228)
+<#>4_5ApplyRoutingFromPath: 0 8 3   (228)
+<#>5_5ApplyRoutingFromPath: 3 8 0   (228)
+<#>6_5ApplyRoutingFromPath: 0 8 9 13 16 4   (444)
+<#>7_5ApplyRoutingFromPath: 4 16 13 9 8 0   (444)
+<#>8_5ApplyRoutingFromPath: 0 8 9 13 16 5   (444)
+<#>9_5ApplyRoutingFromPath: 5 16 13 9 8 0   (444)
+<#>10_5ApplyRoutingFromPath: 0 8 9 13 16 6   (444)
+<#>11_5ApplyRoutingFromPath: 6 16 13 9 8 0   (444)
+<#>12_5ApplyRoutingFromPath: 0 8 9 13 16 7   (444)
+<#>13_5ApplyRoutingFromPath: 7 16 13 9 8 0   (444)
+<#>14_5ApplyRoutingFromPath: 1 8 2   (228)
+<#>15_5ApplyRoutingFromPath: 2 8 1   (228)
+<#>16_5ApplyRoutingFromPath: 1 8 3   (228)
+<#>17_5ApplyRoutingFromPath: 3 8 1   (228)
+<#>18_5ApplyRoutingFromPath: 1 8 9 13 16 4   (444)
+<#>19_5ApplyRoutingFromPath: 4 16 13 9 8 1   (444)
+<#>20_5ApplyRoutingFromPath: 1 8 9 13 16 5   (444)
+<#>21_5ApplyRoutingFromPath: 5 16 13 9 8 1   (444)
+<#>22_5ApplyRoutingFromPath: 1 8 9 13 16 6   (444)
+<#>23_5ApplyRoutingFromPath: 6 16 13 9 8 1   (444)
+<#>24_5ApplyRoutingFromPath: 1 8 9 13 16 7   (444)
+<#>25_5ApplyRoutingFromPath: 7 16 13 9 8 1   (444)
+<#>26_5ApplyRoutingFromPath: 2 8 3   (228)
+<#>27_5ApplyRoutingFromPath: 3 8 2   (228)
+<#>28_5ApplyRoutingFromPath: 2 8 9 13 16 4   (444)
+<#>29_5ApplyRoutingFromPath: 4 16 13 9 8 2   (444)
+<#>30_5ApplyRoutingFromPath: 2 8 9 13 16 5   (444)
+<#>31_5ApplyRoutingFromPath: 5 16 13 9 8 2   (444)
+<#>32_5ApplyRoutingFromPath: 2 8 9 13 16 6   (444)
+<#>33_5ApplyRoutingFromPath: 6 16 13 9 8 2   (444)
+<#>34_5ApplyRoutingFromPath: 2 8 9 13 16 7   (444)
+<#>35_5ApplyRoutingFromPath: 7 16 13 9 8 2   (444)
+<#>36_5ApplyRoutingFromPath: 3 8 9 13 16 4   (444)
+<#>37_5ApplyRoutingFromPath: 4 16 13 9 8 3   (444)
+<#>38_5ApplyRoutingFromPath: 3 8 9 13 16 5   (444)
+<#>39_5ApplyRoutingFromPath: 5 16 13 9 8 3   (444)
+<#>40_5ApplyRoutingFromPath: 3 8 9 13 16 6   (444)
+<#>41_5ApplyRoutingFromPath: 6 16 13 9 8 3   (444)
+<#>42_5ApplyRoutingFromPath: 3 8 9 13 16 7   (444)
+<#>43_5ApplyRoutingFromPath: 7 16 13 9 8 3   (444)
+<#>44_5ApplyRoutingFromPath: 4 16 5   (0)
+<#>45_5ApplyRoutingFromPath: 5 16 4   (0)
+<#>46_5ApplyRoutingFromPath: 4 16 6   (0)
+<#>47_5ApplyRoutingFromPath: 6 16 4   (0)
+<#>48_5ApplyRoutingFromPath: 4 16 7   (0)
+<#>49_5ApplyRoutingFromPath: 7 16 4   (0)
+<#>50_5ApplyRoutingFromPath: 5 16 6   (0)
+<#>51_5ApplyRoutingFromPath: 6 16 5   (0)
+<#>52_5ApplyRoutingFromPath: 5 16 7   (0)
+<#>53_5ApplyRoutingFromPath: 7 16 5   (0)
+<#>54_5ApplyRoutingFromPath: 6 16 7   (0)
+<#>55_5ApplyRoutingFromPath: 7 16 6   (0)
+-----------------------------
+ Time(seconds): 300
+Link Costs: 
+Edge: 10 - 13 | Weight: 108
+Edge: 10 - 14 | Weight: 156
+Edge: 11 - 15 | Weight: 108
+Edge: 15 - 14 | Weight: 118
+Edge: 12 - 16 | Weight: 114
+Edge: 13 - 16 | Weight: 114
+Edge: 14 - 16 | Weight: 152
+Edge: 9 - 12 | Weight: 108
+Edge: 8 - 9 | Weight: 108
+Edge: 8 - 10 | Weight: 157
+Edge: 8 - 11 | Weight: 108
+Edge: 9 - 13 | Weight: 108
+Edge: 10 - 12 | Weight: 108
+-----[New Routing Loop]-----
+<#>0_6ApplyRoutingFromPath: 0 8 1   (234)
+<#>1_6ApplyRoutingFromPath: 1 8 0   (234)
+<#>2_6ApplyRoutingFromPath: 0 8 2   (234)
+<#>3_6ApplyRoutingFromPath: 2 8 0   (234)
+<#>4_6ApplyRoutingFromPath: 0 8 3   (234)
+<#>5_6ApplyRoutingFromPath: 3 8 0   (234)
+<#>6_6ApplyRoutingFromPath: 0 8 10 12 16 4   (451)
+<#>7_6ApplyRoutingFromPath: 4 16 12 10 8 0   (451)
+<#>8_6ApplyRoutingFromPath: 0 8 10 12 16 5   (451)
+<#>9_6ApplyRoutingFromPath: 5 16 12 10 8 0   (451)
+<#>10_6ApplyRoutingFromPath: 0 8 10 12 16 6   (451)
+<#>11_6ApplyRoutingFromPath: 6 16 12 10 8 0   (451)
+<#>12_6ApplyRoutingFromPath: 0 8 10 12 16 7   (451)
+<#>13_6ApplyRoutingFromPath: 7 16 12 10 8 0   (451)
+<#>14_6ApplyRoutingFromPath: 1 8 2   (234)
+<#>15_6ApplyRoutingFromPath: 2 8 1   (234)
+<#>16_6ApplyRoutingFromPath: 1 8 3   (234)
+<#>17_6ApplyRoutingFromPath: 3 8 1   (234)
+<#>18_6ApplyRoutingFromPath: 1 8 10 12 16 4   (451)
+<#>19_6ApplyRoutingFromPath: 4 16 12 10 8 1   (451)
+<#>20_6ApplyRoutingFromPath: 1 8 10 12 16 5   (451)
+<#>21_6ApplyRoutingFromPath: 5 16 12 10 8 1   (451)
+<#>22_6ApplyRoutingFromPath: 1 8 10 12 16 6   (451)
+<#>23_6ApplyRoutingFromPath: 6 16 12 10 8 1   (451)
+<#>24_6ApplyRoutingFromPath: 1 8 10 12 16 7   (451)
+<#>25_6ApplyRoutingFromPath: 7 16 12 10 8 1   (451)
+<#>26_6ApplyRoutingFromPath: 2 8 3   (234)
+<#>27_6ApplyRoutingFromPath: 3 8 2   (234)
+<#>28_6ApplyRoutingFromPath: 2 8 10 12 16 4   (451)
+<#>29_6ApplyRoutingFromPath: 4 16 12 10 8 2   (451)
+<#>30_6ApplyRoutingFromPath: 2 8 10 12 16 5   (451)
+<#>31_6ApplyRoutingFromPath: 5 16 12 10 8 2   (451)
+<#>32_6ApplyRoutingFromPath: 2 8 10 12 16 6   (451)
+<#>33_6ApplyRoutingFromPath: 6 16 12 10 8 2   (451)
+<#>34_6ApplyRoutingFromPath: 2 8 10 12 16 7   (451)
+<#>35_6ApplyRoutingFromPath: 7 16 12 10 8 2   (451)
+<#>36_6ApplyRoutingFromPath: 3 8 10 12 16 4   (451)
+<#>37_6ApplyRoutingFromPath: 4 16 12 10 8 3   (451)
+<#>38_6ApplyRoutingFromPath: 3 8 10 12 16 5   (451)
+<#>39_6ApplyRoutingFromPath: 5 16 12 10 8 3   (451)
+<#>40_6ApplyRoutingFromPath: 3 8 10 12 16 6   (451)
+<#>41_6ApplyRoutingFromPath: 6 16 12 10 8 3   (451)
+<#>42_6ApplyRoutingFromPath: 3 8 10 12 16 7   (451)
+<#>43_6ApplyRoutingFromPath: 7 16 12 10 8 3   (451)
+<#>44_6ApplyRoutingFromPath: 4 16 5   (0)
+<#>45_6ApplyRoutingFromPath: 5 16 4   (0)
+<#>46_6ApplyRoutingFromPath: 4 16 6   (0)
+<#>47_6ApplyRoutingFromPath: 6 16 4   (0)
+<#>48_6ApplyRoutingFromPath: 4 16 7   (0)
+<#>49_6ApplyRoutingFromPath: 7 16 4   (0)
+<#>50_6ApplyRoutingFromPath: 5 16 6   (0)
+<#>51_6ApplyRoutingFromPath: 6 16 5   (0)
+<#>52_6ApplyRoutingFromPath: 5 16 7   (0)
+<#>53_6ApplyRoutingFromPath: 7 16 5   (0)
+<#>54_6ApplyRoutingFromPath: 6 16 7   (0)
+<#>55_6ApplyRoutingFromPath: 7 16 6   (0)
+-----------------------------
+ Time(seconds): 360
+Link Costs: 
+Edge: 10 - 13 | Weight: 122
+Edge: 10 - 14 | Weight: 108
+Edge: 11 - 15 | Weight: 108
+Edge: 15 - 14 | Weight: 108
+Edge: 12 - 16 | Weight: 117
+Edge: 13 - 16 | Weight: 174
+Edge: 14 - 16 | Weight: 117
+Edge: 9 - 12 | Weight: 108
+Edge: 8 - 9 | Weight: 182
+Edge: 8 - 10 | Weight: 109
+Edge: 8 - 11 | Weight: 108
+Edge: 9 - 13 | Weight: 182
+Edge: 10 - 12 | Weight: 108
+-----[New Routing Loop]-----
+<#>0_7ApplyRoutingFromPath: 0 8 1   (238)
+<#>1_7ApplyRoutingFromPath: 1 8 0   (238)
+<#>2_7ApplyRoutingFromPath: 0 8 2   (238)
+<#>3_7ApplyRoutingFromPath: 2 8 0   (238)
+<#>4_7ApplyRoutingFromPath: 0 8 3   (238)
+<#>5_7ApplyRoutingFromPath: 3 8 0   (238)
+<#>6_7ApplyRoutingFromPath: 0 8 9 13 16 4   (454)
+<#>7_7ApplyRoutingFromPath: 4 16 13 9 8 0   (454)
+<#>8_7ApplyRoutingFromPath: 0 8 9 13 16 5   (454)
+<#>9_7ApplyRoutingFromPath: 5 16 13 9 8 0   (454)
+<#>10_7ApplyRoutingFromPath: 0 8 9 13 16 6   (454)
+<#>11_7ApplyRoutingFromPath: 6 16 13 9 8 0   (454)
+<#>12_7ApplyRoutingFromPath: 0 8 9 13 16 7   (454)
+<#>13_7ApplyRoutingFromPath: 7 16 13 9 8 0   (454)
+<#>14_7ApplyRoutingFromPath: 1 8 2   (238)
+<#>15_7ApplyRoutingFromPath: 2 8 1   (238)
+<#>16_7ApplyRoutingFromPath: 1 8 3   (238)
+<#>17_7ApplyRoutingFromPath: 3 8 1   (238)
+<#>18_7ApplyRoutingFromPath: 1 8 9 13 16 4   (454)
+<#>19_7ApplyRoutingFromPath: 4 16 13 9 8 1   (454)
+<#>20_7ApplyRoutingFromPath: 1 8 9 13 16 5   (454)
+<#>21_7ApplyRoutingFromPath: 5 16 13 9 8 1   (454)
+<#>22_7ApplyRoutingFromPath: 1 8 9 13 16 6   (454)
+<#>23_7ApplyRoutingFromPath: 6 16 13 9 8 1   (454)
+<#>24_7ApplyRoutingFromPath: 1 8 9 13 16 7   (454)
+<#>25_7ApplyRoutingFromPath: 7 16 13 9 8 1   (454)
+<#>26_7ApplyRoutingFromPath: 2 8 3   (238)
+<#>27_7ApplyRoutingFromPath: 3 8 2   (238)
+<#>28_7ApplyRoutingFromPath: 2 8 9 13 16 4   (454)
+<#>29_7ApplyRoutingFromPath: 4 16 13 9 8 2   (454)
+<#>30_7ApplyRoutingFromPath: 2 8 9 13 16 5   (454)
+<#>31_7ApplyRoutingFromPath: 5 16 13 9 8 2   (454)
+<#>32_7ApplyRoutingFromPath: 2 8 9 13 16 6   (454)
+<#>33_7ApplyRoutingFromPath: 6 16 13 9 8 2   (454)
+<#>34_7ApplyRoutingFromPath: 2 8 9 13 16 7   (454)
+<#>35_7ApplyRoutingFromPath: 7 16 13 9 8 2   (454)
+<#>36_7ApplyRoutingFromPath: 3 8 9 13 16 4   (454)
+<#>37_7ApplyRoutingFromPath: 4 16 13 9 8 3   (454)
+<#>38_7ApplyRoutingFromPath: 3 8 9 13 16 5   (454)
+<#>39_7ApplyRoutingFromPath: 5 16 13 9 8 3   (454)
+<#>40_7ApplyRoutingFromPath: 3 8 9 13 16 6   (454)
+<#>41_7ApplyRoutingFromPath: 6 16 13 9 8 3   (454)
+<#>42_7ApplyRoutingFromPath: 3 8 9 13 16 7   (454)
+<#>43_7ApplyRoutingFromPath: 7 16 13 9 8 3   (454)
+<#>44_7ApplyRoutingFromPath: 4 16 5   (0)
+<#>45_7ApplyRoutingFromPath: 5 16 4   (0)
+<#>46_7ApplyRoutingFromPath: 4 16 6   (0)
+<#>47_7ApplyRoutingFromPath: 6 16 4   (0)
+<#>48_7ApplyRoutingFromPath: 4 16 7   (0)
+<#>49_7ApplyRoutingFromPath: 7 16 4   (0)
+<#>50_7ApplyRoutingFromPath: 5 16 6   (0)
+<#>51_7ApplyRoutingFromPath: 6 16 5   (0)
+<#>52_7ApplyRoutingFromPath: 5 16 7   (0)
+<#>53_7ApplyRoutingFromPath: 7 16 5   (0)
+<#>54_7ApplyRoutingFromPath: 6 16 7   (0)
+<#>55_7ApplyRoutingFromPath: 7 16 6   (0)
+-----------------------------
+ Time(seconds): 420
+Link Costs: 
+Edge: 10 - 13 | Weight: 108
+Edge: 10 - 14 | Weight: 108
+Edge: 11 - 15 | Weight: 108
+Edge: 15 - 14 | Weight: 108
+Edge: 12 - 16 | Weight: 197
+Edge: 13 - 16 | Weight: 119
+Edge: 14 - 16 | Weight: 119
+Edge: 9 - 12 | Weight: 127
+Edge: 8 - 9 | Weight: 108
+Edge: 8 - 10 | Weight: 210
+Edge: 8 - 11 | Weight: 108
+Edge: 9 - 13 | Weight: 108
+Edge: 10 - 12 | Weight: 210
+-----[New Routing Loop]-----
+<#>0_8ApplyRoutingFromPath: 0 8 1   (244)
+<#>1_8ApplyRoutingFromPath: 1 8 0   (244)
+<#>2_8ApplyRoutingFromPath: 0 8 2   (244)
+<#>3_8ApplyRoutingFromPath: 2 8 0   (244)
+<#>4_8ApplyRoutingFromPath: 0 8 3   (244)
+<#>5_8ApplyRoutingFromPath: 3 8 0   (244)
+<#>6_8ApplyRoutingFromPath: 0 8 10 14 16 4   (461)
+<#>7_8ApplyRoutingFromPath: 4 16 14 10 8 0   (461)
+<#>8_8ApplyRoutingFromPath: 0 8 10 14 16 5   (461)
+<#>9_8ApplyRoutingFromPath: 5 16 14 10 8 0   (461)
+<#>10_8ApplyRoutingFromPath: 0 8 10 14 16 6   (461)
+<#>11_8ApplyRoutingFromPath: 6 16 14 10 8 0   (461)
+<#>12_8ApplyRoutingFromPath: 0 8 10 14 16 7   (461)
+<#>13_8ApplyRoutingFromPath: 7 16 14 10 8 0   (461)
+<#>14_8ApplyRoutingFromPath: 1 8 2   (244)
+<#>15_8ApplyRoutingFromPath: 2 8 1   (244)
+<#>16_8ApplyRoutingFromPath: 1 8 3   (244)
+<#>17_8ApplyRoutingFromPath: 3 8 1   (244)
+<#>18_8ApplyRoutingFromPath: 1 8 10 14 16 4   (461)
+<#>19_8ApplyRoutingFromPath: 4 16 14 10 8 1   (461)
+<#>20_8ApplyRoutingFromPath: 1 8 10 14 16 5   (461)
+<#>21_8ApplyRoutingFromPath: 5 16 14 10 8 1   (461)
+<#>22_8ApplyRoutingFromPath: 1 8 10 14 16 6   (461)
+<#>23_8ApplyRoutingFromPath: 6 16 14 10 8 1   (461)
+<#>24_8ApplyRoutingFromPath: 1 8 10 14 16 7   (461)
+<#>25_8ApplyRoutingFromPath: 7 16 14 10 8 1   (461)
+<#>26_8ApplyRoutingFromPath: 2 8 3   (244)
+<#>27_8ApplyRoutingFromPath: 3 8 2   (244)
+<#>28_8ApplyRoutingFromPath: 2 8 10 14 16 4   (461)
+<#>29_8ApplyRoutingFromPath: 4 16 14 10 8 2   (461)
+<#>30_8ApplyRoutingFromPath: 2 8 10 14 16 5   (461)
+<#>31_8ApplyRoutingFromPath: 5 16 14 10 8 2   (461)
+<#>32_8ApplyRoutingFromPath: 2 8 10 14 16 6   (461)
+<#>33_8ApplyRoutingFromPath: 6 16 14 10 8 2   (461)
+<#>34_8ApplyRoutingFromPath: 2 8 10 14 16 7   (461)
+<#>35_8ApplyRoutingFromPath: 7 16 14 10 8 2   (461)
+<#>36_8ApplyRoutingFromPath: 3 8 10 14 16 4   (461)
+<#>37_8ApplyRoutingFromPath: 4 16 14 10 8 3   (461)
+<#>38_8ApplyRoutingFromPath: 3 8 10 14 16 5   (461)
+<#>39_8ApplyRoutingFromPath: 5 16 14 10 8 3   (461)
+<#>40_8ApplyRoutingFromPath: 3 8 10 14 16 6   (461)
+<#>41_8ApplyRoutingFromPath: 6 16 14 10 8 3   (461)
+<#>42_8ApplyRoutingFromPath: 3 8 10 14 16 7   (461)
+<#>43_8ApplyRoutingFromPath: 7 16 14 10 8 3   (461)
+<#>44_8ApplyRoutingFromPath: 4 16 5   (0)
+<#>45_8ApplyRoutingFromPath: 5 16 4   (0)
+<#>46_8ApplyRoutingFromPath: 4 16 6   (0)
+<#>47_8ApplyRoutingFromPath: 6 16 4   (0)
+<#>48_8ApplyRoutingFromPath: 4 16 7   (0)
+<#>49_8ApplyRoutingFromPath: 7 16 4   (0)
+<#>50_8ApplyRoutingFromPath: 5 16 6   (0)
+<#>51_8ApplyRoutingFromPath: 6 16 5   (0)
+<#>52_8ApplyRoutingFromPath: 5 16 7   (0)
+<#>53_8ApplyRoutingFromPath: 7 16 5   (0)
+<#>54_8ApplyRoutingFromPath: 6 16 7   (0)
+<#>55_8ApplyRoutingFromPath: 7 16 6   (0)
+-----------------------------
+ Time(seconds): 480
+Link Costs: 
+Edge: 10 - 13 | Weight: 133
+Edge: 10 - 14 | Weight: 108
+Edge: 11 - 15 | Weight: 108
+Edge: 15 - 14 | Weight: 108
+Edge: 12 - 16 | Weight: 122
+Edge: 13 - 16 | Weight: 229
+Edge: 14 - 16 | Weight: 122
+Edge: 9 - 12 | Weight: 108
+Edge: 8 - 9 | Weight: 249
+Edge: 8 - 10 | Weight: 109
+Edge: 8 - 11 | Weight: 108
+Edge: 9 - 13 | Weight: 249
+Edge: 10 - 12 | Weight: 108
+-----[New Routing Loop]-----
+<#>0_9ApplyRoutingFromPath: 0 8 1   (248)
+<#>1_9ApplyRoutingFromPath: 1 8 0   (248)
+<#>2_9ApplyRoutingFromPath: 0 8 2   (248)
+<#>3_9ApplyRoutingFromPath: 2 8 0   (248)
+<#>4_9ApplyRoutingFromPath: 0 8 3   (248)
+<#>5_9ApplyRoutingFromPath: 3 8 0   (248)
+<#>6_9ApplyRoutingFromPath: 0 8 9 12 16 4   (464)
+<#>7_9ApplyRoutingFromPath: 4 16 12 9 8 0   (464)
+<#>8_9ApplyRoutingFromPath: 0 8 9 12 16 5   (464)
+<#>9_9ApplyRoutingFromPath: 5 16 12 9 8 0   (464)
+<#>10_9ApplyRoutingFromPath: 0 8 9 12 16 6   (464)
+<#>11_9ApplyRoutingFromPath: 6 16 12 9 8 0   (464)
+<#>12_9ApplyRoutingFromPath: 0 8 9 12 16 7   (464)
+<#>13_9ApplyRoutingFromPath: 7 16 12 9 8 0   (464)
+<#>14_9ApplyRoutingFromPath: 1 8 2   (248)
+<#>15_9ApplyRoutingFromPath: 2 8 1   (248)
+<#>16_9ApplyRoutingFromPath: 1 8 3   (248)
+<#>17_9ApplyRoutingFromPath: 3 8 1   (248)
+<#>18_9ApplyRoutingFromPath: 1 8 9 12 16 4   (464)
+<#>19_9ApplyRoutingFromPath: 4 16 12 9 8 1   (464)
+<#>20_9ApplyRoutingFromPath: 1 8 9 12 16 5   (464)
+<#>21_9ApplyRoutingFromPath: 5 16 12 9 8 1   (464)
+<#>22_9ApplyRoutingFromPath: 1 8 9 12 16 6   (464)
+<#>23_9ApplyRoutingFromPath: 6 16 12 9 8 1   (464)
+<#>24_9ApplyRoutingFromPath: 1 8 9 12 16 7   (464)
+<#>25_9ApplyRoutingFromPath: 7 16 12 9 8 1   (464)
+<#>26_9ApplyRoutingFromPath: 2 8 3   (248)
+<#>27_9ApplyRoutingFromPath: 3 8 2   (248)
+<#>28_9ApplyRoutingFromPath: 2 8 9 12 16 4   (464)
+<#>29_9ApplyRoutingFromPath: 4 16 12 9 8 2   (464)
+<#>30_9ApplyRoutingFromPath: 2 8 9 12 16 5   (464)
+<#>31_9ApplyRoutingFromPath: 5 16 12 9 8 2   (464)
+<#>32_9ApplyRoutingFromPath: 2 8 9 12 16 6   (464)
+<#>33_9ApplyRoutingFromPath: 6 16 12 9 8 2   (464)
+<#>34_9ApplyRoutingFromPath: 2 8 9 12 16 7   (464)
+<#>35_9ApplyRoutingFromPath: 7 16 12 9 8 2   (464)
+<#>36_9ApplyRoutingFromPath: 3 8 9 12 16 4   (464)
+<#>37_9ApplyRoutingFromPath: 4 16 12 9 8 3   (464)
+<#>38_9ApplyRoutingFromPath: 3 8 9 12 16 5   (464)
+<#>39_9ApplyRoutingFromPath: 5 16 12 9 8 3   (464)
+<#>40_9ApplyRoutingFromPath: 3 8 9 12 16 6   (464)
+<#>41_9ApplyRoutingFromPath: 6 16 12 9 8 3   (464)
+<#>42_9ApplyRoutingFromPath: 3 8 9 12 16 7   (464)
+<#>43_9ApplyRoutingFromPath: 7 16 12 9 8 3   (464)
+<#>44_9ApplyRoutingFromPath: 4 16 5   (0)
+<#>45_9ApplyRoutingFromPath: 5 16 4   (0)
+<#>46_9ApplyRoutingFromPath: 4 16 6   (0)
+<#>47_9ApplyRoutingFromPath: 6 16 4   (0)
+<#>48_9ApplyRoutingFromPath: 4 16 7   (0)
+<#>49_9ApplyRoutingFromPath: 7 16 4   (0)
+<#>50_9ApplyRoutingFromPath: 5 16 6   (0)
+<#>51_9ApplyRoutingFromPath: 6 16 5   (0)
+<#>52_9ApplyRoutingFromPath: 5 16 7   (0)
+<#>53_9ApplyRoutingFromPath: 7 16 5   (0)
+<#>54_9ApplyRoutingFromPath: 6 16 7   (0)
+<#>55_9ApplyRoutingFromPath: 7 16 6   (0)
+-----------------------------
+ Time(seconds): 540
+Link Costs: 
+Edge: 10 - 13 | Weight: 108
+Edge: 10 - 14 | Weight: 273
+Edge: 11 - 15 | Weight: 108
+Edge: 15 - 14 | Weight: 136
+Edge: 12 - 16 | Weight: 124
+Edge: 13 - 16 | Weight: 124
+Edge: 14 - 16 | Weight: 248
+Edge: 9 - 12 | Weight: 108
+Edge: 8 - 9 | Weight: 108
+Edge: 8 - 10 | Weight: 274
+Edge: 8 - 11 | Weight: 108
+Edge: 9 - 13 | Weight: 108
+Edge: 10 - 12 | Weight: 108
+-----[New Routing Loop]-----
+<#>0_10ApplyRoutingFromPath: 0 8 1   (244)
+<#>1_10ApplyRoutingFromPath: 1 8 0   (244)
+<#>2_10ApplyRoutingFromPath: 0 8 2   (244)
+<#>3_10ApplyRoutingFromPath: 2 8 0   (244)
+<#>4_10ApplyRoutingFromPath: 0 8 3   (244)
+<#>5_10ApplyRoutingFromPath: 3 8 0   (244)
+<#>6_10ApplyRoutingFromPath: 0 8 10 13 16 4   (461)
+<#>7_10ApplyRoutingFromPath: 4 16 13 10 8 0   (461)
+<#>8_10ApplyRoutingFromPath: 0 8 10 13 16 5   (461)
+<#>9_10ApplyRoutingFromPath: 5 16 13 10 8 0   (461)
+<#>10_10ApplyRoutingFromPath: 0 8 10 13 16 6   (461)
+<#>11_10ApplyRoutingFromPath: 6 16 13 10 8 0   (461)
+<#>12_10ApplyRoutingFromPath: 0 8 10 13 16 7   (461)
+<#>13_10ApplyRoutingFromPath: 7 16 13 10 8 0   (461)
+<#>14_10ApplyRoutingFromPath: 1 8 2   (244)
+<#>15_10ApplyRoutingFromPath: 2 8 1   (244)
+<#>16_10ApplyRoutingFromPath: 1 8 3   (244)
+<#>17_10ApplyRoutingFromPath: 3 8 1   (244)
+<#>18_10ApplyRoutingFromPath: 1 8 10 13 16 4   (461)
+<#>19_10ApplyRoutingFromPath: 4 16 13 10 8 1   (461)
+<#>20_10ApplyRoutingFromPath: 1 8 10 13 16 5   (461)
+<#>21_10ApplyRoutingFromPath: 5 16 13 10 8 1   (461)
+<#>22_10ApplyRoutingFromPath: 1 8 10 13 16 6   (461)
+<#>23_10ApplyRoutingFromPath: 6 16 13 10 8 1   (461)
+<#>24_10ApplyRoutingFromPath: 1 8 10 13 16 7   (461)
+<#>25_10ApplyRoutingFromPath: 7 16 13 10 8 1   (461)
+<#>26_10ApplyRoutingFromPath: 2 8 3   (244)
+<#>27_10ApplyRoutingFromPath: 3 8 2   (244)
+<#>28_10ApplyRoutingFromPath: 2 8 10 13 16 4   (461)
+<#>29_10ApplyRoutingFromPath: 4 16 13 10 8 2   (461)
+<#>30_10ApplyRoutingFromPath: 2 8 10 13 16 5   (461)
+<#>31_10ApplyRoutingFromPath: 5 16 13 10 8 2   (461)
+<#>32_10ApplyRoutingFromPath: 2 8 10 13 16 6   (461)
+<#>33_10ApplyRoutingFromPath: 6 16 13 10 8 2   (461)
+<#>34_10ApplyRoutingFromPath: 2 8 10 13 16 7   (461)
+<#>35_10ApplyRoutingFromPath: 7 16 13 10 8 2   (461)
+<#>36_10ApplyRoutingFromPath: 3 8 10 13 16 4   (461)
+<#>37_10ApplyRoutingFromPath: 4 16 13 10 8 3   (461)
+<#>38_10ApplyRoutingFromPath: 3 8 10 13 16 5   (461)
+<#>39_10ApplyRoutingFromPath: 5 16 13 10 8 3   (461)
+<#>40_10ApplyRoutingFromPath: 3 8 10 13 16 6   (461)
+<#>41_10ApplyRoutingFromPath: 6 16 13 10 8 3   (461)
+<#>42_10ApplyRoutingFromPath: 3 8 10 13 16 7   (461)
+<#>43_10ApplyRoutingFromPath: 7 16 13 10 8 3   (461)
+<#>44_10ApplyRoutingFromPath: 4 16 5   (0)
+<#>45_10ApplyRoutingFromPath: 5 16 4   (0)
+<#>46_10ApplyRoutingFromPath: 4 16 6   (0)
+<#>47_10ApplyRoutingFromPath: 6 16 4   (0)
+<#>48_10ApplyRoutingFromPath: 4 16 7   (0)
+<#>49_10ApplyRoutingFromPath: 7 16 4   (0)
+<#>50_10ApplyRoutingFromPath: 5 16 6   (0)
+<#>51_10ApplyRoutingFromPath: 6 16 5   (0)
+<#>52_10ApplyRoutingFromPath: 5 16 7   (0)
+<#>53_10ApplyRoutingFromPath: 7 16 5   (0)
+<#>54_10ApplyRoutingFromPath: 6 16 7   (0)
+<#>55_10ApplyRoutingFromPath: 7 16 6   (0)
+-----------------------------
+ Time(seconds): 600
+Link Costs: 
+Edge: 10 - 13 | Weight: 108
+Edge: 10 - 14 | Weight: 108
+Edge: 11 - 15 | Weight: 108
+Edge: 15 - 14 | Weight: 108
+Edge: 12 - 16 | Weight: 229
+Edge: 13 - 16 | Weight: 122
+Edge: 14 - 16 | Weight: 122
+Edge: 9 - 12 | Weight: 249
+Edge: 8 - 9 | Weight: 249
+Edge: 8 - 10 | Weight: 109
+Edge: 8 - 11 | Weight: 108
+Edge: 9 - 13 | Weight: 108
+Edge: 10 - 12 | Weight: 133
+-----[New Routing Loop]-----
+<#>0_11ApplyRoutingFromPath: 0 8 1   (232)
+<#>1_11ApplyRoutingFromPath: 1 8 0   (232)
+<#>2_11ApplyRoutingFromPath: 0 8 2   (232)
+<#>3_11ApplyRoutingFromPath: 2 8 0   (232)
+<#>4_11ApplyRoutingFromPath: 0 8 3   (232)
+<#>5_11ApplyRoutingFromPath: 3 8 0   (232)
+<#>6_11ApplyRoutingFromPath: 0 8 9 12 16 4   (448)
+<#>7_11ApplyRoutingFromPath: 4 16 12 9 8 0   (448)
+<#>8_11ApplyRoutingFromPath: 0 8 9 12 16 5   (448)
+<#>9_11ApplyRoutingFromPath: 5 16 12 9 8 0   (448)
+<#>10_11ApplyRoutingFromPath: 0 8 9 12 16 6   (448)
+<#>11_11ApplyRoutingFromPath: 6 16 12 9 8 0   (448)
+<#>12_11ApplyRoutingFromPath: 0 8 9 12 16 7   (448)
+<#>13_11ApplyRoutingFromPath: 7 16 12 9 8 0   (448)
+<#>14_11ApplyRoutingFromPath: 1 8 2   (232)
+<#>15_11ApplyRoutingFromPath: 2 8 1   (232)
+<#>16_11ApplyRoutingFromPath: 1 8 3   (232)
+<#>17_11ApplyRoutingFromPath: 3 8 1   (232)
+<#>18_11ApplyRoutingFromPath: 1 8 9 12 16 4   (448)
+<#>19_11ApplyRoutingFromPath: 4 16 12 9 8 1   (448)
+<#>20_11ApplyRoutingFromPath: 1 8 9 12 16 5   (448)
+<#>21_11ApplyRoutingFromPath: 5 16 12 9 8 1   (448)
+<#>22_11ApplyRoutingFromPath: 1 8 9 12 16 6   (448)
+<#>23_11ApplyRoutingFromPath: 6 16 12 9 8 1   (448)
+<#>24_11ApplyRoutingFromPath: 1 8 9 12 16 7   (448)
+<#>25_11ApplyRoutingFromPath: 7 16 12 9 8 1   (448)
+<#>26_11ApplyRoutingFromPath: 2 8 3   (232)
+<#>27_11ApplyRoutingFromPath: 3 8 2   (232)
+<#>28_11ApplyRoutingFromPath: 2 8 9 12 16 4   (448)
+<#>29_11ApplyRoutingFromPath: 4 16 12 9 8 2   (448)
+<#>30_11ApplyRoutingFromPath: 2 8 9 12 16 5   (448)
+<#>31_11ApplyRoutingFromPath: 5 16 12 9 8 2   (448)
+<#>32_11ApplyRoutingFromPath: 2 8 9 12 16 6   (448)
+<#>33_11ApplyRoutingFromPath: 6 16 12 9 8 2   (448)
+<#>34_11ApplyRoutingFromPath: 2 8 9 12 16 7   (448)
+<#>35_11ApplyRoutingFromPath: 7 16 12 9 8 2   (448)
+<#>36_11ApplyRoutingFromPath: 3 8 9 12 16 4   (448)
+<#>37_11ApplyRoutingFromPath: 4 16 12 9 8 3   (448)
+<#>38_11ApplyRoutingFromPath: 3 8 9 12 16 5   (448)
+<#>39_11ApplyRoutingFromPath: 5 16 12 9 8 3   (448)
+<#>40_11ApplyRoutingFromPath: 3 8 9 12 16 6   (448)
+<#>41_11ApplyRoutingFromPath: 6 16 12 9 8 3   (448)
+<#>42_11ApplyRoutingFromPath: 3 8 9 12 16 7   (448)
+<#>43_11ApplyRoutingFromPath: 7 16 12 9 8 3   (448)
+<#>44_11ApplyRoutingFromPath: 4 16 5   (0)
+<#>45_11ApplyRoutingFromPath: 5 16 4   (0)
+<#>46_11ApplyRoutingFromPath: 4 16 6   (0)
+<#>47_11ApplyRoutingFromPath: 6 16 4   (0)
+<#>48_11ApplyRoutingFromPath: 4 16 7   (0)
+<#>49_11ApplyRoutingFromPath: 7 16 4   (0)
+<#>50_11ApplyRoutingFromPath: 5 16 6   (0)
+<#>51_11ApplyRoutingFromPath: 6 16 5   (0)
+<#>52_11ApplyRoutingFromPath: 5 16 7   (0)
+<#>53_11ApplyRoutingFromPath: 7 16 5   (0)
+<#>54_11ApplyRoutingFromPath: 6 16 7   (0)
+<#>55_11ApplyRoutingFromPath: 7 16 6   (0)
+-----------------------------
+ Time(seconds): 660
+Link Costs: 
+Edge: 10 - 13 | Weight: 173
+Edge: 10 - 14 | Weight: 108
+Edge: 11 - 15 | Weight: 108
+Edge: 15 - 14 | Weight: 108
+Edge: 12 - 16 | Weight: 116
+Edge: 13 - 16 | Weight: 166
+Edge: 14 - 16 | Weight: 116
+Edge: 9 - 12 | Weight: 108
+Edge: 8 - 9 | Weight: 108
+Edge: 8 - 10 | Weight: 174
+Edge: 8 - 11 | Weight: 108
+Edge: 9 - 13 | Weight: 121
+Edge: 10 - 12 | Weight: 108
+-----[New Routing Loop]-----
+<#>0_12ApplyRoutingFromPath: 0 8 1   (222)
+<#>1_12ApplyRoutingFromPath: 1 8 0   (222)
+<#>2_12ApplyRoutingFromPath: 0 8 2   (222)
+<#>3_12ApplyRoutingFromPath: 2 8 0   (222)
+<#>4_12ApplyRoutingFromPath: 0 8 3   (222)
+<#>5_12ApplyRoutingFromPath: 3 8 0   (222)
+<#>6_12ApplyRoutingFromPath: 0 8 10 14 16 4   (439)
+<#>7_12ApplyRoutingFromPath: 4 16 14 10 8 0   (439)
+<#>8_12ApplyRoutingFromPath: 0 8 10 14 16 5   (439)
+<#>9_12ApplyRoutingFromPath: 5 16 14 10 8 0   (439)
+<#>10_12ApplyRoutingFromPath: 0 8 10 14 16 6   (439)
+<#>11_12ApplyRoutingFromPath: 6 16 14 10 8 0   (439)
+<#>12_12ApplyRoutingFromPath: 0 8 10 14 16 7   (439)
+<#>13_12ApplyRoutingFromPath: 7 16 14 10 8 0   (439)
+<#>14_12ApplyRoutingFromPath: 1 8 2   (222)
+<#>15_12ApplyRoutingFromPath: 2 8 1   (222)
+<#>16_12ApplyRoutingFromPath: 1 8 3   (222)
+<#>17_12ApplyRoutingFromPath: 3 8 1   (222)
+<#>18_12ApplyRoutingFromPath: 1 8 10 14 16 4   (439)
+<#>19_12ApplyRoutingFromPath: 4 16 14 10 8 1   (439)
+<#>20_12ApplyRoutingFromPath: 1 8 10 14 16 5   (439)
+<#>21_12ApplyRoutingFromPath: 5 16 14 10 8 1   (439)
+<#>22_12ApplyRoutingFromPath: 1 8 10 14 16 6   (439)
+<#>23_12ApplyRoutingFromPath: 6 16 14 10 8 1   (439)
+<#>24_12ApplyRoutingFromPath: 1 8 10 14 16 7   (439)
+<#>25_12ApplyRoutingFromPath: 7 16 14 10 8 1   (439)
+<#>26_12ApplyRoutingFromPath: 2 8 3   (222)
+<#>27_12ApplyRoutingFromPath: 3 8 2   (222)
+<#>28_12ApplyRoutingFromPath: 2 8 10 14 16 4   (439)
+<#>29_12ApplyRoutingFromPath: 4 16 14 10 8 2   (439)
+<#>30_12ApplyRoutingFromPath: 2 8 10 14 16 5   (439)
+<#>31_12ApplyRoutingFromPath: 5 16 14 10 8 2   (439)
+<#>32_12ApplyRoutingFromPath: 2 8 10 14 16 6   (439)
+<#>33_12ApplyRoutingFromPath: 6 16 14 10 8 2   (439)
+<#>34_12ApplyRoutingFromPath: 2 8 10 14 16 7   (439)
+<#>35_12ApplyRoutingFromPath: 7 16 14 10 8 2   (439)
+<#>36_12ApplyRoutingFromPath: 3 8 10 14 16 4   (439)
+<#>37_12ApplyRoutingFromPath: 4 16 14 10 8 3   (439)
+<#>38_12ApplyRoutingFromPath: 3 8 10 14 16 5   (439)
+<#>39_12ApplyRoutingFromPath: 5 16 14 10 8 3   (439)
+<#>40_12ApplyRoutingFromPath: 3 8 10 14 16 6   (439)
+<#>41_12ApplyRoutingFromPath: 6 16 14 10 8 3   (439)
+<#>42_12ApplyRoutingFromPath: 3 8 10 14 16 7   (439)
+<#>43_12ApplyRoutingFromPath: 7 16 14 10 8 3   (439)
+<#>44_12ApplyRoutingFromPath: 4 16 5   (0)
+<#>45_12ApplyRoutingFromPath: 5 16 4   (0)
+<#>46_12ApplyRoutingFromPath: 4 16 6   (0)
+<#>47_12ApplyRoutingFromPath: 6 16 4   (0)
+<#>48_12ApplyRoutingFromPath: 4 16 7   (0)
+<#>49_12ApplyRoutingFromPath: 7 16 4   (0)
+<#>50_12ApplyRoutingFromPath: 5 16 6   (0)
+<#>51_12ApplyRoutingFromPath: 6 16 5   (0)
+<#>52_12ApplyRoutingFromPath: 5 16 7   (0)
+<#>53_12ApplyRoutingFromPath: 7 16 5   (0)
+<#>54_12ApplyRoutingFromPath: 6 16 7   (0)
+<#>55_12ApplyRoutingFromPath: 7 16 6   (0)
+-----------------------------
+ Time(seconds): 720
+Link Costs: 
+Edge: 10 - 13 | Weight: 108
+Edge: 10 - 14 | Weight: 108
+Edge: 11 - 15 | Weight: 108
+Edge: 15 - 14 | Weight: 108
+Edge: 12 - 16 | Weight: 123
+Edge: 13 - 16 | Weight: 111
+Edge: 14 - 16 | Weight: 111
+Edge: 9 - 12 | Weight: 124
+Edge: 8 - 9 | Weight: 124
+Edge: 8 - 10 | Weight: 109
+Edge: 8 - 11 | Weight: 108
+Edge: 9 - 13 | Weight: 108
+Edge: 10 - 12 | Weight: 111
+-----[New Routing Loop]-----
+Nº Events: 1086632580
+Execution Time: 0d 1h 14m 18s
+--------------------------------------------------------------
