@@ -514,12 +514,36 @@ OspfController::PrintCosts ()
       Ptr<Node> n1 = Topology::VertexToNode (ed.m_source);
       Ptr<Node> n2 = Topology::VertexToNode (ed.m_target);
 
-      if (!n1->IsSwitch () || !n2->IsSwitch ())
+      Ptr<Channel> chnl = Topology::GetChannel (n1, n2);
+      if (chnl == NULL)
         continue;
+      
+      double linkUsage = chnl->GetChannelUsage ();
+      // std::cout << "GetChannelUsage from node: " << n1->GetId() << " to: " << n2->GetId() << " : " << linkUsage << std::endl;
+      
+      Ptr<NodeEnergyModel> noem1 = n1->GetObject<NodeEnergyModel> ();
+      if (noem1){
+        double n1Consumption = noem1->GetCurrentPowerConsumption ();
+        // std::cout << "GetTotalPowerConsumption from node: " << n2->GetId() << " : " << n2Consumption << std::endl;
 
-      uint64_t weight = boost::get (edge_weight_t (), g, ed);
-      std::cout << "Edge: " << n1->GetId () << " - " << n2->GetId () << " | Weight: " << weight
-                << std::endl;
+        int weight = (1 + linkUsage) * n1Consumption;
+
+        std::cout << "Edge: " << n2->GetId () << " -> " << n1->GetId () << " | Weight: " << weight << std::endl;
+      }
+      
+      Ptr<NodeEnergyModel> noem2 = n2->GetObject<NodeEnergyModel> ();
+      if (noem2){
+        double n2Consumption = noem2->GetCurrentPowerConsumption ();
+        // std::cout << "GetTotalPowerConsumption from node: " << n2->GetId() << " : " << n2Consumption << std::endl;
+
+        int weight = (1 + linkUsage) * n2Consumption;
+
+        std::cout << "Edge: " << n1->GetId () << " -> " << n2->GetId () << " | Weight: " << weight << std::endl;
+      }
+
+      // uint64_t weight = boost::get (edge_weight_t (), g, ed);
+      // std::cout << "Edge: " << n1->GetId () << " - " << n2->GetId () << " | Weight: " << weight
+      //           << std::endl;
     }
 }
 
