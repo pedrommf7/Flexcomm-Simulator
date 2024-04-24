@@ -200,10 +200,7 @@ OspfController::SearchWithDepth (Ptr<Node> source, Ptr<Node> destiny,
                                  std::vector<Ptr<Node>> &ignore, int maxDepth, int currentDepth)
 {
   std::vector<std::vector<Ptr<Node>>> allPaths = {};
-  if (source == destiny)
-    return allPaths; // return empty vector
-
-  if (currentDepth >= maxDepth)
+  if (source == destiny || currentDepth > maxDepth)
     return allPaths; // return empty vector to stop the search
 
   std::vector<Ptr<Node>> successors = Topology::GetSuccessors (source);
@@ -232,6 +229,41 @@ OspfController::SearchWithDepth (Ptr<Node> source, Ptr<Node> destiny,
   return allPaths;
 }
 
+std::vector<std::vector<Ptr<Node>>>
+OspfController::SearchWithCost (Ptr<Node> source, Ptr<Node> destiny,
+                                 std::vector<Ptr<Node>> &ignore, int maxCost, int currentCost)
+{
+  std::vector<std::vector<Ptr<Node>>> allPaths = {};
+  if (source == destiny || currentCost > maxCost)
+    return allPaths; // return empty vector to stop the search
+
+  std::vector<Ptr<Node>> successors = Topology::GetSuccessors (source);
+  if (std::find (successors.begin (), successors.end (), destiny) != successors.end ())
+    {
+      allPaths.push_back ({destiny});
+      return allPaths;
+    }
+
+  ignore.push_back (source);
+  for (auto i : successors)
+    {
+      if (std::find (ignore.begin (), ignore.end (), i) == ignore.end ())
+        {
+          int edgWeight = Topology::GetEdgeWeight (source, i);
+          std::vector<std::vector<Ptr<Node>>> res =
+              SearchWithCost (i, destiny, ignore, maxCost, currentCost + edgWeight);
+          for (auto &j : res)
+            {
+              j.reserve (j.size () + 1);
+              j.insert (j.begin (), i);
+              allPaths.push_back (std::move (j));
+            }
+        }
+    }
+  ignore.pop_back ();
+  return allPaths;
+}
+
 void
 OspfController::FindAllPaths (Ptr<Node> source, Ptr<Node> destination)
 {
@@ -241,9 +273,12 @@ OspfController::FindAllPaths (Ptr<Node> source, Ptr<Node> destination)
   std::vector<Ptr<Node>> ignore = std::vector<Ptr<Node>> () = {};
 
   double ratio = 1.5; // change here to manage the max depth of the search
-  int MAX_DEPTH = int (ratio * FindMaxDepth (source, destination)) + 2;
+  // int MAX_DEPTH = int (ratio * FindDepth (source, destination)) + 2;
+
+  int MAX_COST = int(ratio * FindCost(source, destination)) + 2;
+
   std::vector<std::vector<Ptr<Node>>> res =
-      SearchWithDepth (source, destination, ignore, MAX_DEPTH, 0);
+      SearchWithCost (source, destination, ignore, MAX_COST, 0);
 
   for (auto &p : res)
     {
@@ -304,10 +339,17 @@ OspfController::FindReferenceBandwidth ()
 }
 
 int
-OspfController::FindMaxDepth (Ptr<Node> source, Ptr<Node> destiny)
+OspfController::FindDepth (Ptr<Node> source, Ptr<Node> destiny)
 {
   int nrJumps = int ((Topology::DijkstraShortestPath (source, destiny)).size ());
   return --nrJumps;
+}
+
+int
+OspfController::FindCost (Ptr<Node> source, Ptr<Node> destiny)
+{
+  int cost = Topology::CalculateCost(Topology::DijkstraShortestPath (source, destiny));
+  return cost;
 }
 
 void
@@ -624,6 +666,25 @@ OspfController::HandshakeSuccessful (Ptr<const RemoteSwitch> sw)
 
   if (m_isFirstUpdate)
     {
+      // associate id's with given names
+      NodeContainer allNodes = NodeContainer::GetGlobal();
+      for (auto it = allNodes.Begin (); it != allNodes.End (); it++)
+        {
+          Ptr<Node> node = NodeContainer::GetGlobal ().Get ((*it)->GetId ());
+          std::cout << "Node: " << node->GetId () << " | Name: " << Names::FindName (node) << std::endl;
+        }
+      //associate links with given names
+      ChannelContainer c = ChannelContainer::GetGlobal ();
+      for (ChannelContainer::Iterator i = c.Begin (); i != c.End (); ++i)
+        {
+          Ptr<Node> src = (*i)->GetDevice (0)->GetNode ();
+          Ptr<Node> dst = (*i)->GetDevice (1)->GetNode ();
+
+          std::string linkName = Names::FindName ((*i));
+
+          std::cout << "Link: " << linkName << " | Source: " << src->GetId () << " | Destiny: " << dst->GetId () << std::endl;
+        }
+
       // Config::SetDefault ("ns3::Ipv4GlobalRouting::RandomEcmpRouting", BooleanValue (true));
 
       FindReferenceBandwidth ();

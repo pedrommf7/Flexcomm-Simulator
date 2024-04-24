@@ -45,7 +45,6 @@ protected:
 
 private:
   void PrintCosts ();
-  void StatsLoop ();
   void UpdateRouting ();
   void UpdateWeights ();
   void UpdateDistances ();
@@ -54,14 +53,16 @@ private:
   void StorePath (Ptr<Node> source, Ptr<Node> destination, std::vector<Ptr<Node>> path,
                   int distance);
   //void CleanPaths(Ptr<Node> switchNode, Ptr<Node> hostNode);
-  std::vector<std::vector<Ptr<Node>>> Search (Ptr<Node> init, Ptr<Node> destiny,
-                                              std::vector<Ptr<Node>> &ignore);
   std::vector<std::vector<Ptr<Node>>> SearchWithDepth (Ptr<Node> init, Ptr<Node> destiny,
                                                        std::vector<Ptr<Node>> &ignore, int maxDepth,
                                                        int currentDepth);
+  std::vector<std::vector<Ptr<Node>>> SearchWithCost (Ptr<Node> source, Ptr<Node> destiny,
+                                                       std::vector<Ptr<Node>> &ignore, int maxCost, 
+                                                       int currentCost);
   void FindAllPaths (Ptr<Node> source, Ptr<Node> destination);
   std::vector<Ptr<Node>> GetShortesPath (Ptr<Node> source, Ptr<Node> destination);
-  int FindMaxDepth (Ptr<Node> source, Ptr<Node> destiny);
+  int FindDepth (Ptr<Node> source, Ptr<Node> destiny);
+  int FindCost (Ptr<Node> source, Ptr<Node> destiny);
   void ResizeStoredPaths (int maxStorageNumber);
   void StartRoutingLoop ();
   void SortStoredPathsAscending ();
