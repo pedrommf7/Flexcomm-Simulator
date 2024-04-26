@@ -7,7 +7,7 @@ import pandas as pd
 
 from common import colors, markers
 
-def parse_output_file(filename):
+def parse_weights_file(filename):
     data = {}
     with open(filename, 'r') as file:
         current_time = None
@@ -95,8 +95,8 @@ def createPoints(infoWeights, infoLinks, pathsToTrack, links):
     
     return separated_x, separated_y
 
-def plot_graph(title, points_x, points_y, names):
-    print("Title: \n\t", title)
+def plot_graph(title, filename, points_x, points_y, names):
+    # print("Title: \n\t", title)
     # print("label_y: \n\t", label_y)
 
     # for i in range(len(points_x)):
@@ -111,7 +111,7 @@ def plot_graph(title, points_x, points_y, names):
     print("points_y: \n\t", points_y)
     print("names: \n\t", names)
 
-    plt.figure(title)
+    plt.figure(filename)
     plt.title(title)
     plt.ylabel("Cost of the path")
     plt.xlabel("Amount of traffic of the path (bps)")
@@ -145,13 +145,13 @@ if (len(sys.argv) != 3):
     if(sys.argv[0].startswith("./")):
         print("Usage:", sys.argv[0], "weights_file link_stats_file")
     else:
-        print("Usage: python", sys.argv[0], "output_file link_stats_file")
+        print("Usage: python", sys.argv[0], "weights_file link_stats_file")
     sys.exit(1)
 
-output_file = sys.argv[1]
+weights_file = sys.argv[1]
 link_stats_file = sys.argv[2]
 
-info_weight = parse_output_file(output_file)
+info_weight = parse_weights_file(weights_file)
 info_links = parse_links_file(link_stats_file)
 
 names = [
@@ -187,4 +187,4 @@ links = [
 
 points_x, points_y = createPoints(info_weight, info_links, pathsToTrack, links)
 
-plot_graph("Cost of the path vs Amount of traffic of the path", points_x, points_y, names)
+plot_graph("Cost of the path vs Amount of traffic of the path", weights_file, points_x, points_y, names)
