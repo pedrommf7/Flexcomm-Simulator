@@ -57,8 +57,8 @@ private:
                                                        std::vector<Ptr<Node>> &ignore, int maxDepth,
                                                        int currentDepth);
   std::vector<std::vector<Ptr<Node>>> SearchWithCost (Ptr<Node> source, Ptr<Node> destiny,
-                                                       std::vector<Ptr<Node>> &ignore, int maxCost, 
-                                                       int currentCost);
+                                                      std::vector<Ptr<Node>> &ignore, int maxCost,
+                                                      int currentCost);
   void FindAllPaths (Ptr<Node> source, Ptr<Node> destination);
   std::vector<Ptr<Node>> GetShortesPath (Ptr<Node> source, Ptr<Node> destination);
   int FindDepth (Ptr<Node> source, Ptr<Node> destiny);

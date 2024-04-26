@@ -230,8 +230,8 @@ OspfController::SearchWithDepth (Ptr<Node> source, Ptr<Node> destiny,
 }
 
 std::vector<std::vector<Ptr<Node>>>
-OspfController::SearchWithCost (Ptr<Node> source, Ptr<Node> destiny,
-                                 std::vector<Ptr<Node>> &ignore, int maxCost, int currentCost)
+OspfController::SearchWithCost (Ptr<Node> source, Ptr<Node> destiny, std::vector<Ptr<Node>> &ignore,
+                                int maxCost, int currentCost)
 {
   std::vector<std::vector<Ptr<Node>>> allPaths = {};
   if (source == destiny || currentCost > maxCost)
@@ -275,7 +275,7 @@ OspfController::FindAllPaths (Ptr<Node> source, Ptr<Node> destination)
   double ratio = 1.5; // change here to manage the max depth of the search
   // int MAX_DEPTH = int (ratio * FindDepth (source, destination)) + 2;
 
-  int MAX_COST = int(ratio * FindCost(source, destination)) + 2;
+  int MAX_COST = int (ratio * FindCost (source, destination)) + 2;
 
   std::vector<std::vector<Ptr<Node>>> res =
       SearchWithCost (source, destination, ignore, MAX_COST, 0);
@@ -348,7 +348,7 @@ OspfController::FindDepth (Ptr<Node> source, Ptr<Node> destiny)
 int
 OspfController::FindCost (Ptr<Node> source, Ptr<Node> destiny)
 {
-  int cost = Topology::CalculateCost(Topology::DijkstraShortestPath (source, destiny));
+  int cost = Topology::CalculateCost (Topology::DijkstraShortestPath (source, destiny));
   return cost;
 }
 
@@ -559,29 +559,33 @@ OspfController::PrintCosts ()
       Ptr<Channel> chnl = Topology::GetChannel (n1, n2);
       if (chnl == NULL)
         continue;
-      
+
       double linkUsage = chnl->GetChannelUsage ();
       // std::cout << "GetChannelUsage from node: " << n1->GetId() << " to: " << n2->GetId() << " : " << linkUsage << std::endl;
-      
+
       Ptr<NodeEnergyModel> noem1 = n1->GetObject<NodeEnergyModel> ();
-      if (noem1){
-        double n1Consumption = noem1->GetCurrentPowerConsumption ();
-        // std::cout << "GetTotalPowerConsumption from node: " << n2->GetId() << " : " << n2Consumption << std::endl;
+      if (noem1)
+        {
+          double n1Consumption = noem1->GetCurrentPowerConsumption ();
+          // std::cout << "GetTotalPowerConsumption from node: " << n2->GetId() << " : " << n2Consumption << std::endl;
 
-        int weight = (1 + linkUsage) * n1Consumption;
+          int weight = (1 + linkUsage) * n1Consumption;
 
-        std::cout << "Edge: " << n2->GetId () << " -> " << n1->GetId () << " | Weight: " << weight << std::endl;
-      }
-      
+          std::cout << "Edge: " << n2->GetId () << " -> " << n1->GetId () << " | Weight: " << weight
+                    << std::endl;
+        }
+
       Ptr<NodeEnergyModel> noem2 = n2->GetObject<NodeEnergyModel> ();
-      if (noem2){
-        double n2Consumption = noem2->GetCurrentPowerConsumption ();
-        // std::cout << "GetTotalPowerConsumption from node: " << n2->GetId() << " : " << n2Consumption << std::endl;
+      if (noem2)
+        {
+          double n2Consumption = noem2->GetCurrentPowerConsumption ();
+          // std::cout << "GetTotalPowerConsumption from node: " << n2->GetId() << " : " << n2Consumption << std::endl;
 
-        int weight = (1 + linkUsage) * n2Consumption;
+          int weight = (1 + linkUsage) * n2Consumption;
 
-        std::cout << "Edge: " << n1->GetId () << " -> " << n2->GetId () << " | Weight: " << weight << std::endl;
-      }
+          std::cout << "Edge: " << n1->GetId () << " -> " << n2->GetId () << " | Weight: " << weight
+                    << std::endl;
+        }
 
       // uint64_t weight = boost::get (edge_weight_t (), g, ed);
       // std::cout << "Edge: " << n1->GetId () << " - " << n2->GetId () << " | Weight: " << weight
@@ -667,11 +671,12 @@ OspfController::HandshakeSuccessful (Ptr<const RemoteSwitch> sw)
   if (m_isFirstUpdate)
     {
       // associate id's with given names
-      NodeContainer allNodes = NodeContainer::GetGlobal();
+      NodeContainer allNodes = NodeContainer::GetGlobal ();
       for (auto it = allNodes.Begin (); it != allNodes.End (); it++)
         {
           Ptr<Node> node = NodeContainer::GetGlobal ().Get ((*it)->GetId ());
-          std::cout << "Node: " << node->GetId () << " | Name: " << Names::FindName (node) << std::endl;
+          std::cout << "Node: " << node->GetId () << " | Name: " << Names::FindName (node)
+                    << std::endl;
         }
       //associate links with given names
       ChannelContainer c = ChannelContainer::GetGlobal ();
@@ -682,7 +687,8 @@ OspfController::HandshakeSuccessful (Ptr<const RemoteSwitch> sw)
 
           std::string linkName = Names::FindName ((*i));
 
-          std::cout << "Link: " << linkName << " | Source: " << src->GetId () << " | Destiny: " << dst->GetId () << std::endl;
+          std::cout << "Link: " << linkName << " | Source: " << src->GetId ()
+                    << " | Destiny: " << dst->GetId () << std::endl;
         }
 
       // Config::SetDefault ("ns3::Ipv4GlobalRouting::RandomEcmpRouting", BooleanValue (true));
