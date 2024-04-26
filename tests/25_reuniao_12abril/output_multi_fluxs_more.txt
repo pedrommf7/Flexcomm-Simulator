@@ -3,21 +3,85 @@ mkdir -p outputs/multi_fluxs_more
 Waf: Entering directory `/home/gsd/Flexcomm-Simulator/ns-3.35/build'
 Waf: Leaving directory `/home/gsd/Flexcomm-Simulator/ns-3.35/build'
 Build commands will be stored in build/compile_commands.json
-'build' finished successfully (0.098s)
+'build' finished successfully (0.107s)
 ../topologies/multi_fluxs_more/flex.json not found. Skipping flexibility values.
 ../topologies/multi_fluxs_more/estimate.json not found. Skipping estimate values.
 Topology templates file not found
 --------------------------------------------------------------
 Parsing Time: 0s 50ms
+Node: 0 | Name: H1
+Node: 1 | Name: H10
+Node: 2 | Name: H11
+Node: 3 | Name: H12
+Node: 4 | Name: H13
+Node: 5 | Name: H14
+Node: 6 | Name: H15
+Node: 7 | Name: H16
+Node: 8 | Name: H2
+Node: 9 | Name: H3
+Node: 10 | Name: H4
+Node: 11 | Name: H5
+Node: 12 | Name: H6
+Node: 13 | Name: H7
+Node: 14 | Name: H8
+Node: 15 | Name: H9
+Node: 16 | Name: S1
+Node: 17 | Name: S2
+Node: 18 | Name: S3
+Node: 19 | Name: S4
+Node: 20 | Name: S5
+Node: 21 | Name: S6
+Node: 22 | Name: S7
+Node: 23 | Name: S8
+Node: 24 | Name: S9
+Node: 25 | Name: controller
+Link: link1 | Source: 0 | Destiny: 16
+Link: link10 | Source: 1 | Destiny: 20
+Link: link11 | Source: 2 | Destiny: 20
+Link: link12 | Source: 3 | Destiny: 20
+Link: link13 | Source: 4 | Destiny: 22
+Link: link14 | Source: 5 | Destiny: 22
+Link: link15 | Source: 6 | Destiny: 22
+Link: link16 | Source: 7 | Destiny: 22
+Link: link17 | Source: 16 | Destiny: 17
+Link: link18 | Source: 16 | Destiny: 18
+Link: link19 | Source: 16 | Destiny: 19
+Link: link2 | Source: 8 | Destiny: 16
+Link: link20 | Source: 17 | Destiny: 20
+Link: link21 | Source: 17 | Destiny: 21
+Link: link22 | Source: 18 | Destiny: 20
+Link: link23 | Source: 18 | Destiny: 21
+Link: link24 | Source: 19 | Destiny: 21
+Link: link25 | Source: 19 | Destiny: 22
+Link: link26 | Source: 20 | Destiny: 24
+Link: link27 | Source: 21 | Destiny: 24
+Link: link28 | Source: 22 | Destiny: 23
+Link: link29 | Source: 23 | Destiny: 24
+Link: link3 | Source: 9 | Destiny: 16
+Link: link4 | Source: 10 | Destiny: 16
+Link: link5 | Source: 11 | Destiny: 24
+Link: link6 | Source: 12 | Destiny: 24
+Link: link7 | Source: 13 | Destiny: 24
+Link: link8 | Source: 14 | Destiny: 24
+Link: link9 | Source: 15 | Destiny: 20
+Link:  | Source: 25 | Destiny: 16
+Link:  | Source: 25 | Destiny: 17
+Link:  | Source: 25 | Destiny: 18
+Link:  | Source: 25 | Destiny: 19
+Link:  | Source: 25 | Destiny: 20
+Link:  | Source: 25 | Destiny: 21
+Link:  | Source: 25 | Destiny: 22
+Link:  | Source: 25 | Destiny: 23
+Link:  | Source: 25 | Destiny: 24
 Reference Bandwidth Value: 1000000000
 -----------------------------
 FindAllPaths from: 0 to: 1 -> Number of paths found: 10
 FindAllPaths from: 0 to: 2 -> Number of paths found: 10
 FindAllPaths from: 0 to: 3 -> Number of paths found: 10
-FindAllPaths from: 0 to: 4 -> Number of paths found: 12
-FindAllPaths from: 0 to: 5 -> Number of paths found: 12
-FindAllPaths from: 0 to: 6 -> Number of paths found: 12
-FindAllPaths from: 0 to: 7 -> Number of paths found: 12
+FindAllPaths from: 0 to: 4 -> Number of paths found: 8
+FindAllPaths from: 0 to: 5 -> Number of paths found: 8
+FindAllPaths from: 0 to: 6 -> Number of paths found: 8
+FindAllPaths from: 0 to: 7 -> Number of paths found: 8
 FindAllPaths from: 0 to: 8 -> Number of paths found: 1
 FindAllPaths from: 0 to: 9 -> Number of paths found: 1
 FindAllPaths from: 0 to: 10 -> Number of paths found: 1
@@ -28,10 +92,10 @@ FindAllPaths from: 0 to: 14 -> Number of paths found: 14
 FindAllPaths from: 0 to: 15 -> Number of paths found: 10
 FindAllPaths from: 1 to: 2 -> Number of paths found: 1
 FindAllPaths from: 1 to: 3 -> Number of paths found: 1
-FindAllPaths from: 1 to: 4 -> Number of paths found: 18
-FindAllPaths from: 1 to: 5 -> Number of paths found: 18
-FindAllPaths from: 1 to: 6 -> Number of paths found: 18
-FindAllPaths from: 1 to: 7 -> Number of paths found: 18
+FindAllPaths from: 1 to: 4 -> Number of paths found: 14
+FindAllPaths from: 1 to: 5 -> Number of paths found: 14
+FindAllPaths from: 1 to: 6 -> Number of paths found: 14
+FindAllPaths from: 1 to: 7 -> Number of paths found: 14
 FindAllPaths from: 1 to: 8 -> Number of paths found: 10
 FindAllPaths from: 1 to: 9 -> Number of paths found: 10
 FindAllPaths from: 1 to: 10 -> Number of paths found: 10
@@ -41,10 +105,10 @@ FindAllPaths from: 1 to: 13 -> Number of paths found: 3
 FindAllPaths from: 1 to: 14 -> Number of paths found: 3
 FindAllPaths from: 1 to: 15 -> Number of paths found: 1
 FindAllPaths from: 2 to: 3 -> Number of paths found: 1
-FindAllPaths from: 2 to: 4 -> Number of paths found: 18
-FindAllPaths from: 2 to: 5 -> Number of paths found: 18
-FindAllPaths from: 2 to: 6 -> Number of paths found: 18
-FindAllPaths from: 2 to: 7 -> Number of paths found: 18
+FindAllPaths from: 2 to: 4 -> Number of paths found: 14
+FindAllPaths from: 2 to: 5 -> Number of paths found: 14
+FindAllPaths from: 2 to: 6 -> Number of paths found: 14
+FindAllPaths from: 2 to: 7 -> Number of paths found: 14
 FindAllPaths from: 2 to: 8 -> Number of paths found: 10
 FindAllPaths from: 2 to: 9 -> Number of paths found: 10
 FindAllPaths from: 2 to: 10 -> Number of paths found: 10
@@ -53,10 +117,10 @@ FindAllPaths from: 2 to: 12 -> Number of paths found: 3
 FindAllPaths from: 2 to: 13 -> Number of paths found: 3
 FindAllPaths from: 2 to: 14 -> Number of paths found: 3
 FindAllPaths from: 2 to: 15 -> Number of paths found: 1
-FindAllPaths from: 3 to: 4 -> Number of paths found: 18
-FindAllPaths from: 3 to: 5 -> Number of paths found: 18
-FindAllPaths from: 3 to: 6 -> Number of paths found: 18
-FindAllPaths from: 3 to: 7 -> Number of paths found: 18
+FindAllPaths from: 3 to: 4 -> Number of paths found: 14
+FindAllPaths from: 3 to: 5 -> Number of paths found: 14
+FindAllPaths from: 3 to: 6 -> Number of paths found: 14
+FindAllPaths from: 3 to: 7 -> Number of paths found: 14
 FindAllPaths from: 3 to: 8 -> Number of paths found: 10
 FindAllPaths from: 3 to: 9 -> Number of paths found: 10
 FindAllPaths from: 3 to: 10 -> Number of paths found: 10
@@ -68,41 +132,41 @@ FindAllPaths from: 3 to: 15 -> Number of paths found: 1
 FindAllPaths from: 4 to: 5 -> Number of paths found: 1
 FindAllPaths from: 4 to: 6 -> Number of paths found: 1
 FindAllPaths from: 4 to: 7 -> Number of paths found: 1
-FindAllPaths from: 4 to: 8 -> Number of paths found: 12
-FindAllPaths from: 4 to: 9 -> Number of paths found: 12
-FindAllPaths from: 4 to: 10 -> Number of paths found: 12
+FindAllPaths from: 4 to: 8 -> Number of paths found: 8
+FindAllPaths from: 4 to: 9 -> Number of paths found: 8
+FindAllPaths from: 4 to: 10 -> Number of paths found: 8
 FindAllPaths from: 4 to: 11 -> Number of paths found: 8
 FindAllPaths from: 4 to: 12 -> Number of paths found: 8
 FindAllPaths from: 4 to: 13 -> Number of paths found: 8
 FindAllPaths from: 4 to: 14 -> Number of paths found: 8
-FindAllPaths from: 4 to: 15 -> Number of paths found: 18
+FindAllPaths from: 4 to: 15 -> Number of paths found: 14
 FindAllPaths from: 5 to: 6 -> Number of paths found: 1
 FindAllPaths from: 5 to: 7 -> Number of paths found: 1
-FindAllPaths from: 5 to: 8 -> Number of paths found: 12
-FindAllPaths from: 5 to: 9 -> Number of paths found: 12
-FindAllPaths from: 5 to: 10 -> Number of paths found: 12
+FindAllPaths from: 5 to: 8 -> Number of paths found: 8
+FindAllPaths from: 5 to: 9 -> Number of paths found: 8
+FindAllPaths from: 5 to: 10 -> Number of paths found: 8
 FindAllPaths from: 5 to: 11 -> Number of paths found: 8
 FindAllPaths from: 5 to: 12 -> Number of paths found: 8
 FindAllPaths from: 5 to: 13 -> Number of paths found: 8
 FindAllPaths from: 5 to: 14 -> Number of paths found: 8
-FindAllPaths from: 5 to: 15 -> Number of paths found: 18
+FindAllPaths from: 5 to: 15 -> Number of paths found: 14
 FindAllPaths from: 6 to: 7 -> Number of paths found: 1
-FindAllPaths from: 6 to: 8 -> Number of paths found: 12
-FindAllPaths from: 6 to: 9 -> Number of paths found: 12
-FindAllPaths from: 6 to: 10 -> Number of paths found: 12
+FindAllPaths from: 6 to: 8 -> Number of paths found: 8
+FindAllPaths from: 6 to: 9 -> Number of paths found: 8
+FindAllPaths from: 6 to: 10 -> Number of paths found: 8
 FindAllPaths from: 6 to: 11 -> Number of paths found: 8
 FindAllPaths from: 6 to: 12 -> Number of paths found: 8
 FindAllPaths from: 6 to: 13 -> Number of paths found: 8
 FindAllPaths from: 6 to: 14 -> Number of paths found: 8
-FindAllPaths from: 6 to: 15 -> Number of paths found: 18
-FindAllPaths from: 7 to: 8 -> Number of paths found: 12
-FindAllPaths from: 7 to: 9 -> Number of paths found: 12
-FindAllPaths from: 7 to: 10 -> Number of paths found: 12
+FindAllPaths from: 6 to: 15 -> Number of paths found: 14
+FindAllPaths from: 7 to: 8 -> Number of paths found: 8
+FindAllPaths from: 7 to: 9 -> Number of paths found: 8
+FindAllPaths from: 7 to: 10 -> Number of paths found: 8
 FindAllPaths from: 7 to: 11 -> Number of paths found: 8
 FindAllPaths from: 7 to: 12 -> Number of paths found: 8
 FindAllPaths from: 7 to: 13 -> Number of paths found: 8
 FindAllPaths from: 7 to: 14 -> Number of paths found: 8
-FindAllPaths from: 7 to: 15 -> Number of paths found: 18
+FindAllPaths from: 7 to: 15 -> Number of paths found: 14
 FindAllPaths from: 8 to: 9 -> Number of paths found: 1
 FindAllPaths from: 8 to: 10 -> Number of paths found: 1
 FindAllPaths from: 8 to: 11 -> Number of paths found: 14
@@ -131,7 +195,7 @@ FindAllPaths from: 12 to: 15 -> Number of paths found: 3
 FindAllPaths from: 13 to: 14 -> Number of paths found: 1
 FindAllPaths from: 13 to: 15 -> Number of paths found: 3
 FindAllPaths from: 14 to: 15 -> Number of paths found: 3
------> FindAllPaths Time: 0h 0m 0s 44ms
+-----> FindAllPaths Time: 0h 0m 0s 41ms
 -----------------------------
 0 0 ApplyRoutingFromPath: 0 16 17 20 1   (438)
 1 0 ApplyRoutingFromPath: 1 20 17 16 0   (438)
@@ -8142,5 +8206,5 @@ Edge: 14 -> 24 | Weight: 110
 Edge: 15 -> 20 | Weight: 110
 -----[New Routing Loop]-----
 Nº Events: 8604740005
-Execution Time: 0d 12h 5m 1s
+Execution Time: 0d 12h 4m 9s
 --------------------------------------------------------------
