@@ -35,8 +35,6 @@
 #include "ns3/energy-api-module.h"
 #include "ns3/cpu-load-based-energy-model.h"
 
-#include <chrono> //remove after
-
 NS_LOG_COMPONENT_DEFINE ("OspfController");
 
 namespace ns3 {
@@ -401,6 +399,8 @@ OspfController::UpdateDistances ()
 void
 OspfController::UpdateWeights ()
 {
+  int index = int (Simulator::Now ().GetMinutes ()) % 60;
+
   boost::graph_traits<Graph>::edge_iterator edgeIt, edgeEnd;
   Graph g = Topology::GetGraph ();
   for (boost::tie (edgeIt, edgeEnd) = boost::edges (g); edgeIt != edgeEnd; ++edgeIt)
@@ -409,67 +409,8 @@ OspfController::UpdateWeights ()
       Ptr<Node> n1 = Topology::VertexToNode (ed.m_source);
       Ptr<Node> n2 = Topology::VertexToNode (ed.m_target);
 
-      int index = int (Simulator::Now ().GetMinutes ()) % 60;
-
       // float flex1 = EnergyAPI::GetFlexArrayAt(Names::FindName(n1), index);
-
-      // float flex2 = EnergyAPI::GetFlexArrayAt(Names::FindName(n2), index);
-
-      // tambem podemos usar a taxa de utilizacao da do link para a flexibilidade impactar + ou - no peso
-      // Ptr<Channel> chnl = Topology::GetChannel(n1, n2);
-      // double usagePercentage =  chnl->GetChannelUsage(); //valor em percentagem !!!
-      // int new_weight = int (weight - (flex1 + flex2)/2 * (1-usagePercentage)); // quando maior for a utilizacao menor é o impacto da flexibilidade
-
-      // ponderar se vemos a flexibildade como um valor unico e nao é preciso guardar a informacao inicial
-      // pode ser bom caso os switches sejam iguais e tenham o mesmo consumo, a formula de cima seria boa????
-      // mas podia escaxar porque calcula o min e nao o max, o djikstra so lida com pesos positivos, volta à situação??
-      //
-
-      // alterar aqui a expressão que se pretende usar para calcular o impacto da flexibilidade
-      // int new_weight = int(weight - (flex1 + flex2) / 2);
-      // Ptr<NodeEnergyModel> noem1 = n1->GetObject<NodeEnergyModel> ();
-      // double n1Consumption = 0, n2Consumption = 0;
-      // if (noem1){
-      //   Ptr<OFSwitch13Device> of = n1->GetObject<OFSwitch13Device> ();
-      //   std::cout << "----[]------->CPU precentage from node: " << n1->GetId() << " : " << of->GetCpuUsage() << std::endl;
-
-      //   n1Consumption = noem1->GetTotalPowerConsumption(n1);
-      //   std::cout << "GetTotalPowerConsumption from node: " << n1->GetId() << " : " << n1Consumption << std::endl;
-
-      //   // n1Consumption = noem1->GetPowerDrawn();
-      //   // std::cout << "GetPowerDrawn from node: " << n1->GetId() << " : " << n1Consumption << std::endl;
-
-      //   // n1Consumption = noem1->GetCurrentPowerConsumption();
-      //   // std::cout << "GetCurrentPowerConsumption from node: " << n1->GetId() << " : " << n1Consumption << std::endl;
-
-      //   // n1Consumption = noem1->GetPowerPerGB();
-      //   // std::cout << "GetPowerPerGB from node: " << n1->GetId() << " : " << n1Consumption << std::endl;
-      // }
-
-      // Ptr<NodeEnergyModel> noem2 = n2->GetObject<NodeEnergyModel> ();
-      // if (noem2){
-      //   Ptr<OFSwitch13Device> of = n2->GetObject<OFSwitch13Device> ();
-      //   std::cout << "----[]------->CPU precentage from node: " << n2->GetId() << " : " << of->GetCpuUsage() << std::endl;
-
-      //   n2Consumption = noem2->GetTotalPowerConsumption(n2);
-      //   std::cout << "GetTotalPowerConsumption from node: " << n2->GetId() << " : " << n2Consumption << std::endl;
-
-      //   // n2Consumption = noem2->GetPowerDrawn();
-      //   // std::cout << "GetPowerDrawn from node: " << n2->GetId() << " : " << n2Consumption << std::endl;
-
-      //   // n2Consumption = noem2->GetCurrentPowerConsumption();
-      //   // std::cout << "GetCurrentPowerConsumption from node: " << n2->GetId() << " : " << n2Consumption << std::endl;
-
-      //   // n2Consumption = noem2->GetPowerPerGB();
-      //   // std::cout << "GetPowerPerGB from node: " << n2->GetId() << " : " << n2Consumption << std::endl;
-      // }
-      // std::cout << "-----------------------------" << std::endl;
-
-      // double totCons = 0;
-      // totCons = n1Consumption + n2Consumption;
-      // std ::cout << "Total Consumption from node: " << n1->GetId() << " to: " << n2->GetId() << " : " << totCons << std::endl;
-
-      // int new_weight = weight + totCons;
+      float flex2 = EnergyAPI::GetFlexArrayAt(Names::FindName(n2), index);
 
       // link cost formula
       Ptr<NodeEnergyModel> noem2 = n2->GetObject<NodeEnergyModel> ();
@@ -483,8 +424,8 @@ OspfController::UpdateWeights ()
         continue;
       double linkUsage = chnl->GetChannelUsage ();
       // std::cout << "GetChannelUsage from node: " << n1->GetId() << " to: " << n2->GetId() << " : " << linkUsage << std::endl;
-
-      int new_weight = (1 + linkUsage) * n2Consumption;
+      
+      int new_weight = ((1 + linkUsage) * n2Consumption) + flex2;
 
       if (new_weight <= 0)
         {
@@ -545,6 +486,8 @@ OspfController::ApplyRoutingFromPath (std::vector<Ptr<Node>> path)
 void
 OspfController::PrintCosts ()
 {
+  int index = int (Simulator::Now ().GetMinutes ()) % 60;
+
   std::cout << "-----------------------------" << std::endl;
   std::cout << " Time(seconds): " << Simulator::Now ().GetSeconds () << std::endl;
   std::cout << "Link Costs: " << std::endl;
@@ -555,6 +498,9 @@ OspfController::PrintCosts ()
       Edge ed = *edgeIt;
       Ptr<Node> n1 = Topology::VertexToNode (ed.m_source);
       Ptr<Node> n2 = Topology::VertexToNode (ed.m_target);
+
+      float flex1 = EnergyAPI::GetFlexArrayAt(Names::FindName(n1), index);
+      float flex2 = EnergyAPI::GetFlexArrayAt(Names::FindName(n2), index);
 
       Ptr<Channel> chnl = Topology::GetChannel (n1, n2);
       if (chnl == NULL)
@@ -569,7 +515,7 @@ OspfController::PrintCosts ()
           double n1Consumption = noem1->GetCurrentPowerConsumption ();
           // std::cout << "GetTotalPowerConsumption from node: " << n2->GetId() << " : " << n2Consumption << std::endl;
 
-          int weight = (1 + linkUsage) * n1Consumption;
+          int weight = ((1 + linkUsage) * n1Consumption) + flex1;
 
           std::cout << "Edge: " << n2->GetId () << " -> " << n1->GetId () << " | Weight: " << weight
                     << std::endl;
@@ -581,15 +527,11 @@ OspfController::PrintCosts ()
           double n2Consumption = noem2->GetCurrentPowerConsumption ();
           // std::cout << "GetTotalPowerConsumption from node: " << n2->GetId() << " : " << n2Consumption << std::endl;
 
-          int weight = (1 + linkUsage) * n2Consumption;
+          int weight = ((1 + linkUsage) * n2Consumption) + flex2;
 
           std::cout << "Edge: " << n1->GetId () << " -> " << n2->GetId () << " | Weight: " << weight
                     << std::endl;
         }
-
-      // uint64_t weight = boost::get (edge_weight_t (), g, ed);
-      // std::cout << "Edge: " << n1->GetId () << " - " << n2->GetId () << " | Weight: " << weight
-      //           << std::endl;
     }
 }
 
@@ -613,12 +555,6 @@ OspfController::UpdateRouting ()
       std::cout << i << " " << index << " ";
       i++;
       ApplyRoutingFromPath (shortestPath);
-
-      // reverse shortest path
-      // std::reverse (shortestPath.begin (), shortestPath.end ());
-      // std::cout << "<#>" << i;
-      // i++;
-      // ApplyRoutingFromPath (shortestPath);
     }
   PrintCosts ();
 }
@@ -630,29 +566,6 @@ OspfController::StartRoutingLoop ()
   std::cout << "-----[New Routing Loop]-----" << std::endl;
   Simulator::Schedule (Minutes (1), &OspfController::StartRoutingLoop, this);
 }
-
-// void
-// OspfController::StatsLoop ()
-// {
-//   std::cout << "-----[Stats Loop]-----" << std::endl;
-//   // iterate switches
-//   boost::graph_traits<Graph>::vertex_iterator vertexIt, vertexEnd;
-//   for (boost::tie (vertexIt, vertexEnd) = boost::vertices (base_graph); vertexIt != vertexEnd;
-//        ++vertexIt)
-//     {
-//       Ptr<Node> n1 = Topology::VertexToNode (*vertexIt);
-//       if (n1->IsSwitch ())
-//         {
-//           Ptr<CpuLoadBasedEnergyModel> cpuLBE = n1->GetObject<CpuLoadBasedEnergyModel> ();
-//           if (cpuLBE)
-//             {
-//               std::cout << "[MinMax] " << Names::FindName (n1) << " "
-//                         << cpuLBE->GetMinPowerConsumption () << " "
-//                         << cpuLBE->GetMaxPowerConsumption () << std::endl;
-//             }
-//         }
-//     }
-// }
 
 void
 OspfController::HandshakeSuccessful (Ptr<const RemoteSwitch> sw)
@@ -696,8 +609,6 @@ OspfController::HandshakeSuccessful (Ptr<const RemoteSwitch> sw)
       FindReferenceBandwidth ();
       SetWeightsBandwidthBased ();
 
-      auto start = std::chrono::high_resolution_clock::now ();
-
       // pode ser melhorado este sistema de procura, aprender a usar o djikstra do boost
       NodeContainer hosts = NodeContainer::GetGlobalHosts ();
       for (auto hst1 = hosts.Begin (); hst1 != hosts.End (); hst1++)
@@ -709,21 +620,9 @@ OspfController::HandshakeSuccessful (Ptr<const RemoteSwitch> sw)
               FindAllPaths (hostNode1, hostNode2);
             }
         }
-      auto end = std::chrono::high_resolution_clock::now ();
-      auto duration = std::chrono::duration_cast<std::chrono::microseconds> (end - start);
-      uint64_t milliseconds = duration.count () / 1000;
-      uint64_t seconds = milliseconds / 1000;
-      milliseconds = milliseconds % 1000;
-      uint64_t minutes = seconds / 60;
-      seconds = seconds % 60;
-      uint64_t hours = minutes / 60;
-      minutes = minutes % 60;
-
-      std::cout << "-----> FindAllPaths Time: " << hours << "h " << minutes << "m " << seconds
-                << "s " << milliseconds << "ms" << std::endl;
       std::cout << "-----------------------------" << std::endl;
 
-      ResizeStoredPaths (20); // Set here the max number of paths that can be stored VER MELHOR !!!!
+      ResizeStoredPaths (20); // Set here the max number of paths that can be stored VER MELHOR !!!!, se calhar tirar !!!
 
       StartRoutingLoop ();
       // StatsLoop ();
