@@ -193,6 +193,51 @@ OspfController::ResizeStoredPaths (int maxStorageNumber)
 
 // -----------------------------------------------------------------
 
+int
+OspfController::MyJumpCalculateCost (Ptr<Node> from, Ptr<Node> to)
+{
+  int index = int (Simulator::Now ().GetMinutes ()) % 60;
+  float flex2 = EnergyAPI::GetFlexArrayAt(Names::FindName(to), index);
+
+  Ptr<NodeEnergyModel> noem2 = to->GetObject<NodeEnergyModel> ();
+  if (!noem2)
+    return 0;
+  double toConsumption = noem2->GetCurrentPowerConsumption ();
+
+  Ptr<Channel> chnl = Topology::GetChannel (from, to);
+  if (chnl == NULL)
+    return 0;
+  double linkUsage = chnl->GetChannelUsage ();
+      
+  int weight = ((1 + linkUsage) * toConsumption) + flex2;
+
+  if (weight <= 0)
+    {
+      if (weight < 0)
+        std::cout << "WARNING NEGATIVE WEIGHT: " << weight << std::endl;
+      weight = 1; // max?????
+    }
+    
+  return weight;
+}
+
+int
+OspfController::MyCalculateCost (std::vector<Ptr<Node>> path)
+{
+  int cost = 0;
+  for (auto i = path.begin (); i != path.end () - 1; i++)
+    {
+      int c = MyJumpCalculateCost (*i, *(i + 1));
+      if (cost < 0)
+        std::cerr << "[Calculate Cost]Error: Edge not exists!" << std::endl;
+      else
+        cost += c;
+    }
+  return cost;
+}
+
+// -----------------------------------------------------------------
+
 std::vector<std::vector<Ptr<Node>>>
 OspfController::SearchWithDepth (Ptr<Node> source, Ptr<Node> destiny,
                                  std::vector<Ptr<Node>> &ignore, int maxDepth, int currentDepth)
@@ -247,18 +292,19 @@ OspfController::SearchWithCost (Ptr<Node> source, Ptr<Node> destiny, std::vector
     {
       if (std::find (ignore.begin (), ignore.end (), i) == ignore.end ())
         {
-          int edgWeight = Topology::GetEdgeWeight (source, i);
+          int edgWeight = Topology::GetEdgeWeight (source, i); //
           std::vector<std::vector<Ptr<Node>>> res =
               SearchWithCost (i, destiny, ignore, maxCost, currentCost + edgWeight);
           for (auto &j : res)
             {
+              // rever como se estãoa inserir elementos
               j.reserve (j.size () + 1);
               j.insert (j.begin (), i);
               allPaths.push_back (std::move (j));
             }
         }
     }
-  ignore.pop_back ();
+  ignore.pop_back (); // retirar???
   return allPaths;
 }
 
@@ -267,16 +313,15 @@ OspfController::FindAllPaths (Ptr<Node> source, Ptr<Node> destination)
 {
   std::cout << "FindAllPaths from: " << source->GetId () << " to: " << destination->GetId ()
             << " -> ";
-  //                      SEARCH WITH DEPTH n SHORTEST PATHS WITH LIMITATION ON NUMBER OF HOPS
+  //  SEARCH WITH DEPTH n SHORTEST PATHS WITH LIMITATION ON NUMBER OF HOPS
   std::vector<Ptr<Node>> ignore = std::vector<Ptr<Node>> () = {};
 
   double ratio = 1.5; // change here to manage the max depth of the search
-  // int MAX_DEPTH = int (ratio * FindDepth (source, destination)) + 2;
-
-  int MAX_COST = int (ratio * FindCost (source, destination)) + 2;
+  int MAX_DEPTH = int (ratio * FindDepth (source, destination));
+  //int MAX_COST = int (ratio * FindCost (source, destination));
 
   std::vector<std::vector<Ptr<Node>>> res =
-      SearchWithCost (source, destination, ignore, MAX_COST, 0);
+      SearchWithDepth (source, destination, ignore, MAX_DEPTH, 0);
 
   for (auto &p : res)
     {
@@ -388,7 +433,7 @@ OspfController::UpdateDistances ()
 
       for (auto &path : paths_)
         {
-          int distance = Topology::CalculateCost (path.first);
+          int distance = OspfController::MyCalculateCost (path.first); // mudar aqui !!!!! para calcular o custo com a fórmula personalizada !!!!!
           path.second = distance;
         }
 
@@ -475,7 +520,10 @@ OspfController::ApplyRoutingFromPath (std::vector<Ptr<Node>> path)
     {
       std::cout << i->GetId () << " ";
     }
-  std::cout << "  (" << Topology::CalculateCost (path) << ")" << std::endl;
+  std::cout 
+  //<< "  (" << Topology::CalculateCost (path) << ")" 
+  << std::endl;
+
   Ptr<Node> hostDst = path.back ();
   for (int i = 1; i < int (path.size ()) - 1; i++)
     {

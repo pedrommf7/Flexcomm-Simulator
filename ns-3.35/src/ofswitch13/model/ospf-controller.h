@@ -44,6 +44,9 @@ protected:
   void FindReferenceBandwidth ();
 
 private:
+  int MyJumpCalculateCost (Ptr<Node> from, Ptr<Node> to);
+  int MyCalculateCost (std::vector<Ptr<Node>> path);
+
   void PrintCosts ();
   void UpdateRouting ();
   void UpdateWeights ();
