@@ -36,8 +36,14 @@ def vis_topo(topology, showHosts):
             G.add_edge(n1, n2)
 
     # *********** Display ***********
-    plt.figure("Topology")
-    nx.draw_kamada_kawai(G, with_labels=True)
+    plt.figure(f"Topology: {topology}")
+    color_map = []
+    for node in G:
+        if nodes_file[node]["type"] == "switch":
+            color_map.append("blue")
+        else:
+            color_map.append("red")
+    nx.draw_kamada_kawai(G, node_color=color_map, with_labels=True)
 
     plt.show()
 
