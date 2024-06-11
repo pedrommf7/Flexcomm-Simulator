@@ -8,3 +8,7 @@ mudar equalCostPaths para um 'map' e dar refactoring ao código
 
 ver a questão do utilização dos links antes de atribuir fluxos
 
+
+URGENTE: ver a questão da atualização do custo dos caminhos!! rever lógica toda
+
+ideia, não guardar os pesos, e só recalcular e guardar o peso do caminho quando for necessário, ou seja, quando se for procurar o caminho mais curto ?????
