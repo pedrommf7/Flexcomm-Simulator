@@ -197,19 +197,19 @@ int
 OspfController::MyJumpCalculateCost (Ptr<Node> from, Ptr<Node> to)
 {
   int index = int (Simulator::Now ().GetMinutes ()) % 60;
-  float flex2 = EnergyAPI::GetFlexArrayAt(Names::FindName(to), index);
+  float outFlex = EnergyAPI::GetFlexArrayAt(Names::FindName(to), index);
 
   Ptr<NodeEnergyModel> noem2 = to->GetObject<NodeEnergyModel> ();
   if (!noem2)
     return 0;
-  double toConsumption = noem2->GetCurrentPowerConsumption ();
+  double outConsumption = noem2->GetCurrentPowerConsumption ();
 
   Ptr<Channel> chnl = Topology::GetChannel (from, to);
   if (chnl == NULL)
     return 0;
   double linkUsage = chnl->GetChannelUsage ();
       
-  int weight = ((1 + linkUsage) * toConsumption) + flex2;
+  int weight = ((1 + linkUsage) * outConsumption) + outFlex;
 
   if (weight <= 0)
     {
@@ -311,8 +311,6 @@ OspfController::SearchWithCost (Ptr<Node> source, Ptr<Node> destiny, std::vector
 void
 OspfController::FindAllPaths (Ptr<Node> source, Ptr<Node> destination)
 {
-  std::cout << "FindAllPaths from: " << source->GetId () << " to: " << destination->GetId ()
-            << " -> ";
   //  SEARCH WITH DEPTH n SHORTEST PATHS WITH LIMITATION ON NUMBER OF HOPS
   std::vector<Ptr<Node>> ignore = std::vector<Ptr<Node>> () = {};
 
@@ -325,6 +323,14 @@ OspfController::FindAllPaths (Ptr<Node> source, Ptr<Node> destination)
 
   for (auto &p : res)
     {
+      if(Names::FindName(Topology::GetSuccessors(source)[0])=="S1" && Names::FindName(Topology::GetSuccessors(destination)[0])=="S9"){
+
+        std::cout << "PATH:";
+        for (auto &i : p)
+          std::cout << Names::FindName(i) << " ";
+        std::cout << std::endl;
+      }
+
       p.insert (p.begin (), source);
 
       int distance = Topology::CalculateCost (p);
@@ -333,8 +339,10 @@ OspfController::FindAllPaths (Ptr<Node> source, Ptr<Node> destination)
     }
 
   int tam = (int) res.size ();
-  if (tam > 0)
-    std::cout << "Number of paths found: " << tam << std::endl;
+  std::cout << "------------> FindAllPaths from: " << Names::FindName(Topology::GetSuccessors(source)[0]) << " to: " << Names::FindName(Topology::GetSuccessors(destination)[0]) << " -> Number of paths foundd: " << tam << std::endl;
+  if (tam > 0){
+    std::cout << "FindAllPaths from: " << source->GetId () << " to: " << destination->GetId () << " -> Number of paths found: " << tam << std::endl;
+  }
   else
     {
       NS_LOG_ERROR ("No paths found");
