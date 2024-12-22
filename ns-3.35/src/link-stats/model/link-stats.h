@@ -27,6 +27,9 @@
 #include "ns3/channel.h"
 #include "ns3/output-stream-wrapper.h"
 
+#include "ns3/node.h"
+#include "ns3/channel-container.h"
+
 namespace ns3 {
 
 class LinkStats : public Object

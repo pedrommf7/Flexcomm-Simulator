@@ -171,8 +171,7 @@ HePhy::GetPpduFormats (void) const
   return m_hePpduFormats;
 }
 
-Time
-HePhy::GetLSigDuration (WifiPreamble /* preamble */) const
+Time HePhy::GetLSigDuration (WifiPreamble /* preamble */) const
 {
   return MicroSeconds (8); //L-SIG + RL-SIG
 }
@@ -1229,8 +1228,7 @@ HePhy::CalculateNonHtReferenceRate (WifiCodeRate codeRate, uint16_t constellatio
   return dataRate;
 }
 
-bool
-HePhy::IsModeAllowed (uint16_t /* channelWidth */, uint8_t /* nss */)
+bool HePhy::IsModeAllowed (uint16_t /* channelWidth */, uint8_t /* nss */)
 {
   return true;
 }

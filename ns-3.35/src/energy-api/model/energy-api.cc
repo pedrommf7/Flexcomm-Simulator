@@ -29,6 +29,8 @@ namespace ns3 {
 
 using namespace std;
 
+NS_LOG_COMPONENT_DEFINE ("EnergyAPI");
+
 NS_OBJECT_ENSURE_REGISTERED (EnergyAPI);
 
 map<string, vector<float>> EnergyAPI::m_flexes = map<string, vector<float>> ();
@@ -63,6 +65,34 @@ EnergyAPI::GetEstimateArray (string id)
 {
   // TODO: Check if id exists
   return m_estimates[id];
+}
+
+float
+EnergyAPI::GetFlexArrayAt (string id, int atIndex) // if id or index does not exist, return 0
+{
+  try
+    {
+      return m_flexes[id].at (atIndex);
+    }
+  catch (const std::exception &e)
+    {
+      NS_LOG_ERROR ("EnergyAPI: " << e.what ());
+      return 0;
+    }
+}
+
+float
+EnergyAPI::GetEstimateArrayAt (string id, int atIndex) // if id or index does not exist, return 0
+{
+  try
+    {
+      return m_estimates[id].at (atIndex);
+    }
+  catch (const std::exception &e)
+    {
+      NS_LOG_ERROR ("EnergyAPI: " << e.what ());
+      return 0;
+    }
 }
 
 void

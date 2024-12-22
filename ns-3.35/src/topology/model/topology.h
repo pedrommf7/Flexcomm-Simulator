@@ -31,7 +31,6 @@
 using namespace boost;
 
 namespace ns3 {
-
 typedef adjacency_list<vecS, vecS, undirectedS, Ptr<Node>, property<edge_weight_t, int>> Graph;
 typedef graph_traits<Graph>::vertex_descriptor Vertex;
 typedef graph_traits<Graph>::edge_descriptor Edge;
@@ -59,8 +58,16 @@ public:
   static std::vector<std::pair<std::vector<Ptr<Node>>, int>> DijkstraShortestPaths (Ptr<Node> src,
                                                                                     Ptr<Node> dst);
 
+  static std::vector<std::pair<std::vector<Ptr<Node>>, int>>
+  Dijkstra_k_ShortestPaths (Ptr<Node> src, Ptr<Node> dst, int k_paths);
+
   static void UpdateEdgeWeight (Ptr<Node> n1, Ptr<Node> n2, int newWeight);
   static int GetEdgeWeight (Ptr<Node> n1, Ptr<Node> n2);
+  static int CalculateCost (std::vector<Ptr<Node>> path);
+  static Edge GetEdge (Vertex v1, Vertex v2);
+  static Edge GetEdge (Ptr<Node> n1, Ptr<Node> n2);
+  static Ptr<Channel> RemoveLink (Vertex v1, Vertex v2);
+  static Ptr<Channel> RemoveLink (Ptr<Node> n1, Ptr<Node> n2);
 
   static Graph GetGraph ();
 
@@ -71,6 +78,8 @@ public:
 
   static Ptr<Channel> GetChannel (Ptr<Node> n1, Ptr<Node> n2);
 
+  static std::vector<Ptr<Node>> GetSuccessors (Ptr<Node> node);
+
 private:
   static Graph m_graph;
 
@@ -80,6 +89,11 @@ private:
   static std::map<Ipv4Address, Vertex> m_ip_to_vertex;
   static std::map<Vertex, Ipv4Address> m_vertex_to_ip;
   static std::map<Edge, Ptr<Channel>> m_channels;
+
+  static void AddLink (Vertex v1, Vertex v2, int cost, Ptr<Channel> channel);
+  static std::vector<Vertex> GetSuccessors (Vertex vd);
+  static int GetEdgeWeight (Vertex v1, Vertex v2);
+  static int CalculateCost (std::vector<Vertex> path);
 
   static std::vector<Vertex> DijkstraShortestPathsInternal (Vertex src);
   static std::vector<Vertex> DijkstraShortestPathInternal (Vertex src, Vertex dst);

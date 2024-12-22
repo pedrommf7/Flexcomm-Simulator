@@ -263,9 +263,8 @@ NeverLosVehicleChannelConditionModel::~NeverLosVehicleChannelConditionModel ()
 {
 }
 
-Ptr<ChannelCondition>
-NeverLosVehicleChannelConditionModel::GetChannelCondition (Ptr<const MobilityModel> /* a */,
-                                                           Ptr<const MobilityModel> /* b */) const
+Ptr<ChannelCondition> NeverLosVehicleChannelConditionModel::GetChannelCondition (
+    Ptr<const MobilityModel> /* a */, Ptr<const MobilityModel> /* b */) const
 {
 
   Ptr<ChannelCondition> c = CreateObject<ChannelCondition> (ChannelCondition::NLOSv);
@@ -273,8 +272,7 @@ NeverLosVehicleChannelConditionModel::GetChannelCondition (Ptr<const MobilityMod
   return c;
 }
 
-int64_t
-NeverLosVehicleChannelConditionModel::AssignStreams (int64_t /* stream */)
+int64_t NeverLosVehicleChannelConditionModel::AssignStreams (int64_t /* stream */)
 {
   return 0;
 }

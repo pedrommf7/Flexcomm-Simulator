@@ -23,6 +23,7 @@
 #define PARSER_H
 
 #include "ns3/core-module.h"
+#include "ns3/netdevice-energy-helper.h"
 #include "ns3/node-energy-helper.h"
 
 namespace ns3 {
@@ -33,7 +34,9 @@ public:
   static void ParseTopology (std::string topoName, std::string estiFile, std::string flexFile,
                              std::string linkFailuresFile);
 
-  static std::map<std::string, Ptr<NodeEnergyHelper>> m_templates;
+  static std::map<std::string, Ptr<NodeEnergyHelper>> m_chassisTemplates;
+  static std::map<std::string, Ptr<NetdeviceEnergyHelper>> m_interfaceTemplates;
+  static std::map<Ptr<Node>, Ptr<NetdeviceEnergyHelper>> m_interfaceEnergyModels;
 };
 
 } // namespace ns3

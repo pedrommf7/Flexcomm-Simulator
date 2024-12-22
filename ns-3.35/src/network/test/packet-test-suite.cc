@@ -1093,7 +1093,7 @@ PacketTagListTest::DoRun (void)
     }
   }
 
-  {// Removal
+  { // Removal
 #define RemoveCheck(n)                            \
   {                                               \
     PacketTagList p##n = ref;                     \
@@ -1102,46 +1102,46 @@ PacketTagListTest::DoRun (void)
     CheckRefList (p##n, "remove " #n " copy", n); \
   }
 
-   {// Remove single tags from list
-    std::cout << GetName () << "check removal of each tag" << std::endl;
-  RemoveCheck (1);
-  RemoveCheck (2);
-  RemoveCheck (3);
-  RemoveCheck (4);
-  RemoveCheck (5);
-  RemoveCheck (6);
-  RemoveCheck (7);
-}
+    { // Remove single tags from list
+      std::cout << GetName () << "check removal of each tag" << std::endl;
+      RemoveCheck (1);
+      RemoveCheck (2);
+      RemoveCheck (3);
+      RemoveCheck (4);
+      RemoveCheck (5);
+      RemoveCheck (6);
+      RemoveCheck (7);
+    }
 
-{ // Remove in the presence of a merge
-  std::cout << GetName () << "check removal doesn't disturb merge " << std::endl;
-  PacketTagList ptl = ref;
-  ptl.Remove (t7);
-  ptl.Remove (t6);
-  ptl.Remove (t5);
+    { // Remove in the presence of a merge
+      std::cout << GetName () << "check removal doesn't disturb merge " << std::endl;
+      PacketTagList ptl = ref;
+      ptl.Remove (t7);
+      ptl.Remove (t6);
+      ptl.Remove (t5);
 
-  PacketTagList mrg = ptl; // merged list
-  ATestTag<8> m5 (1);
-  mrg.Add (m5); // ptl and mrg differ
-  ptl.Add (t5);
-  ptl.Add (t6);
-  ptl.Add (t7);
+      PacketTagList mrg = ptl; // merged list
+      ATestTag<8> m5 (1);
+      mrg.Add (m5); // ptl and mrg differ
+      ptl.Add (t5);
+      ptl.Add (t6);
+      ptl.Add (t7);
 
-  CheckRefList (ref, "post merge, orig");
-  CheckRefList (ptl, "post merge, long chain");
-  const char *msg = "post merge, short chain";
-  CheckRef (mrg, t1, msg, false);
-  CheckRef (mrg, t2, msg, false);
-  CheckRef (mrg, t3, msg, false);
-  CheckRef (mrg, t4, msg, false);
-  CheckRef (mrg, m5, msg, false);
-}
+      CheckRefList (ref, "post merge, orig");
+      CheckRefList (ptl, "post merge, long chain");
+      const char *msg = "post merge, short chain";
+      CheckRef (mrg, t1, msg, false);
+      CheckRef (mrg, t2, msg, false);
+      CheckRef (mrg, t3, msg, false);
+      CheckRef (mrg, t4, msg, false);
+      CheckRef (mrg, m5, msg, false);
+    }
 #undef RemoveCheck
-} // Removal
+  } // Removal
 
-{ // Replace
+  { // Replace
 
-  std::cout << GetName () << "check replacing each tag" << std::endl;
+    std::cout << GetName () << "check replacing each tag" << std::endl;
 
 #define ReplaceCheck(n)                           \
   t##n.m_data = 2;                                \
@@ -1152,71 +1152,71 @@ PacketTagListTest::DoRun (void)
     CheckRef (p##n, t##n, "replace " #n " copy"); \
   }
 
-  ReplaceCheck (1);
-  ReplaceCheck (2);
-  ReplaceCheck (3);
-  ReplaceCheck (4);
-  ReplaceCheck (5);
-  ReplaceCheck (6);
-  ReplaceCheck (7);
-}
+    ReplaceCheck (1);
+    ReplaceCheck (2);
+    ReplaceCheck (3);
+    ReplaceCheck (4);
+    ReplaceCheck (5);
+    ReplaceCheck (6);
+    ReplaceCheck (7);
+  }
 
-{ // Timing
-  std::cout << GetName () << "add+remove timing" << std::endl;
-  int flm = std::numeric_limits<int>::max ();
-  const int nIterations = 100;
-  for (int i = 0; i < nIterations; ++i)
-    {
-      int now = AddRemoveTime ();
-      if (now < flm)
-        flm = now;
-    }
-  std::cout << GetName () << "min add+remove time: " << std::setw (8) << flm << " ticks"
-            << std::endl;
+  { // Timing
+    std::cout << GetName () << "add+remove timing" << std::endl;
+    int flm = std::numeric_limits<int>::max ();
+    const int nIterations = 100;
+    for (int i = 0; i < nIterations; ++i)
+      {
+        int now = AddRemoveTime ();
+        if (now < flm)
+          flm = now;
+      }
+    std::cout << GetName () << "min add+remove time: " << std::setw (8) << flm << " ticks"
+              << std::endl;
 
-  std::cout << GetName () << "remove timing" << std::endl;
-  // tags numbered from 1, so add one for (unused) entry at 0
-  std::vector<int> rmn (tagLast + 1, std::numeric_limits<int>::max ());
-  for (int i = 0; i < nIterations; ++i)
-    {
-      for (int j = 1; j <= tagLast; ++j)
-        {
-          int now = 0;
-          switch (j)
-            {
-            case 7:
-              now = RemoveTime (ref, t7);
-              break;
-            case 6:
-              now = RemoveTime (ref, t6);
-              break;
-            case 5:
-              now = RemoveTime (ref, t5);
-              break;
-            case 4:
-              now = RemoveTime (ref, t4);
-              break;
-            case 3:
-              now = RemoveTime (ref, t3);
-              break;
-            case 2:
-              now = RemoveTime (ref, t2);
-              break;
-            case 1:
-              now = RemoveTime (ref, t1);
-              break;
-            } // switch
+    std::cout << GetName () << "remove timing" << std::endl;
+    // tags numbered from 1, so add one for (unused) entry at 0
+    std::vector<int> rmn (tagLast + 1, std::numeric_limits<int>::max ());
+    for (int i = 0; i < nIterations; ++i)
+      {
+        for (int j = 1; j <= tagLast; ++j)
+          {
+            int now = 0;
+            switch (j)
+              {
+              case 7:
+                now = RemoveTime (ref, t7);
+                break;
+              case 6:
+                now = RemoveTime (ref, t6);
+                break;
+              case 5:
+                now = RemoveTime (ref, t5);
+                break;
+              case 4:
+                now = RemoveTime (ref, t4);
+                break;
+              case 3:
+                now = RemoveTime (ref, t3);
+                break;
+              case 2:
+                now = RemoveTime (ref, t2);
+                break;
+              case 1:
+                now = RemoveTime (ref, t1);
+                break;
+              } // switch
 
-          if (now < rmn[j])
-            rmn[j] = now;
-        } // for tag j
-    } // for iteration i
-  for (int j = tagLast; j > 0; --j)
-    {
-      std::cout << GetName () << "min remove time: t" << j << ": " << std::setw (8) << rmn[j]
-                << " ticks" << std::endl;
-    }
-} // Timing
+            if (now < rmn[j])
+              rmn[j] = now;
+          } // for tag j
+      } // for iteration i
+    for (int j = tagLast; j > 0; --j)
+      {
+        std::cout << GetName () << "min remove time: t" << j << ": " << std::setw (8) << rmn[j]
+                  << " ticks" << std::endl;
+      }
+  } // Timing
 }
 
 /**

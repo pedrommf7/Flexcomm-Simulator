@@ -81,8 +81,7 @@ AmpduAggregationTest::AmpduAggregationTest ()
 {
 }
 
-void
-AmpduAggregationTest::MpduDiscarded (WifiMacDropReason, Ptr<const WifiMacQueueItem>)
+void AmpduAggregationTest::MpduDiscarded (WifiMacDropReason, Ptr<const WifiMacQueueItem>)
 {
   m_discarded = true;
 }

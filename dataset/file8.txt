@@ -1,0 +1,110 @@
+		
+	
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>WIFI Routers power consumption</title>
+	<link REL="SHORTCUT ICON" HREF="images/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="ddtabmenufiles/ddcolortabs.css">
+	<link rel="stylesheet" type="text/css" href="include/style.css?dummy=1">
+	<script type="text/javascript" src="ddtabmenufiles/ddtabmenu.js"></script>
+	<script type="text/javascript" src="include/jquery.js"></script>
+	<script type="text/javascript" src="include/jquery.alphanumeric.js"></script>
+	<script type="text/javascript">
+	ddtabmenu.definemenu('ddtabs', 4);	</script>
+	<script data-ad-client="ca-pub-2739597420192699" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2739597420192699"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="layout">
+	<div style="float: left;">
+		<img alt="meter" src="images/small.meter.jpg">&nbsp;
+		<h1 style="display:inline;">The Power Consumption Database</h1>
+		<br>
+		<i>... user maintained electricity usage data</i>
+	</div>
+	<div style="float: right;">
+	
+
+		<form method="get" action="list.php">
+			<input type="text" id="query" name="query" class="" value="" maxlength="100" style="width:150px;">			<input type="submit" value="Search Product">
+		</form>
+	</div>
+	<div style="float: left; margin-top: 20px;" id="ddtabs" class="ddcolortabs">
+		<ul>
+			<li><a href="."><span>Home</span></a></li>
+			<li><a href="submit.php"><span>Submit Data</span></a></li>
+
+			<li><a href="list.php?type=13"><span>Computers</span></a></li>
+			<li><a href="list.php?type=12"><span>Game Consoles</span></a></li>
+			<li><a href="list.php?type=11"><span>WIFI Routers</span></a></li>
+			<li><a href="list.php"><span>Browse All</span></a></li>
+		</ul>
+	</div>
+	<div class="ddcolortabsline">&nbsp;</div>
+<div class="pagebarUTH"><a href="list.php?page=1&sort=stamp&type=11">1</a> <a href="list.php?page=2&sort=stamp&type=11">2</a> <a href="list.php?page=3&sort=stamp&type=11">3</a> <a href="list.php?page=4&sort=stamp&type=11">4</a> <a href="list.php?page=5&sort=stamp&type=11">5</a> <a href="list.php?page=6&sort=stamp&type=11">6</a> <a href="list.php?page=7&sort=stamp&type=11">7</a> <a href="list.php?page=8&sort=stamp&type=11"><b>8</b></a> <a href="list.php?page=9&sort=stamp&type=11">9</a> <a href="list.php?page=10&sort=stamp&type=11">10</a> <a href="list.php?page=11&sort=stamp&type=11">11</a> <a href="list.php?page=12&sort=stamp&type=11">12</a> <a href="list.php?page=13&sort=stamp&type=11">13</a> <a href="list.php?page=14&sort=stamp&type=11">14</a> <a href="list.php?page=15&sort=stamp&type=11">15</a> <select id="productTypes" name="productTypes" style="" ><option   value=''> - choose - </option><option   value='36'>Adapter/Charger</option><option   value='26'>ADSL Modems</option><option   value='23'>Blu-ray Players</option><option   value='30'>Cable Modems</option><option   value='13'>Computers</option><option   value='22'>Digital TV Recorders</option><option   value='27'>DVD Players</option><option   value='29'>Fans</option><option   value='12'>Game Consoles</option><option   value='35'>Harddisk</option><option   value='38'>Light bulbs</option><option   value='18'>Media Players</option><option   value='31'>Microcontroller</option><option   value='20'>Monitors</option><option   value='16'>NASs</option><option   value='34'>Other USB products</option><option   value='19'>Printers</option><option   value='41'>Robot vacuum cleaner</option><option   value='21'>Set-Top Boxes</option><option   value='24'>Stereo Amplifiers</option><option   value='25'>Switches</option><option   value='10'>TVs</option><option   value='15'>TVs - CRT</option><option   value='6'>TVs - LCD</option><option   value='8'>TVs - LED</option><option   value='7'>TVs - Plasma</option><option   value='9'>TVs - RPTV</option><option   value='28'>Uncategorized</option><option   value='37'>Unknown</option><option   value='33'>UPS</option><option   value='32'>USB flash drives</option><option   value='17'>WHSs</option><option  selected value='11'>WIFI Routers</option><option   value='39'>Wireless plug</option><option   value='40'>Wireless speaker</option></select></div><table width="100%"><thead><tr><th></th><th><a href="list.php?page=8&sort=producttype&type=11">Type</a></th><th><a href="list.php?page=8&sort=manufacturer&type=11">Manufacturer</a></th><th><a href="list.php?page=8&sort=model&type=11">Model</a></th><th><a href="list.php?page=8&sort=value_avg&type=11">Normal</a></th><th><a href="list.php?page=8&sort=value_max&type=11">Max</a></th><th><a href="list.php?page=8&sort=url&type=11">Reference</a></th><th><a href="list.php?page=8&order=1&sort=stamp&type=11">Submitted</a></th></tr></thead><tr><td class="list"><img title="Manufacturers product info" src="images/info.gif"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=Xiaomi">Xiaomi</a></td><td class="list"><a href="product.php?id=2288">Mi Wi-Fi Nano</a></td><td class="list" align="right">1.50 w</td><td class="list" align="right">1.50 w</td><td class="list"><a target="_new" href="http://xiaomi-mi.com/mi-wifi/xiaomi-mi-wifi-router-nano-white/">xiaomi-mi.com</a></td><td class="list">2016-04-15</td></tr><tr class="odd"><td class="list"><img title="Measured by extern site" src="images/internet.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=D-Link">D-Link</a></td><td class="list"><a href="product.php?id=2285">DIR-505</a></td><td class="list" align="right">1.50 w</td><td class="list" align="right">1.50 w</td><td class="list"><a target="_new" href="http://us.hardware.info/product/benchmarks/9/routers?products%5B%5D=166604&specId=3665&tcId=167">us.hardware.info</a></td><td class="list">2016-04-15</td></tr><tr><td class="list"><img title="Measured by a TPCDB user" src="images/user.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=AVM">AVM</a></td><td class="list"><a href="product.php?id=2274">AVM FRITZ!Wlan Repeater N/G (DE interface)</a></td><td class="list" align="right">2.65 w</td><td class="list" align="right"></td><td class="list"></td><td class="list">2016-03-16</td></tr><tr class="odd"><td class="list"><img title="Measured by a TPCDB user" src="images/user.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=TP-Link">TP-Link</a></td><td class="list"><a href="product.php?id=2273">Archer C7 V2</a></td><td class="list" align="right">4.60 w</td><td class="list" align="right"></td><td class="list"></td><td class="list">2016-03-16</td></tr><tr><td class="list"><img title="Measured by a TPCDB user" src="images/user.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=Asus">Asus</a></td><td class="list"><a href="product.php?id=2268">RT-N12 D</a></td><td class="list" align="right">2.30 w</td><td class="list" align="right"></td><td class="list"></td><td class="list">2016-01-08</td></tr><tr class="odd"><td class="list"><img title="Measured by extern site" src="images/internet.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=Buffalo+Technology">Buffalo Technology</a></td><td class="list"><a href="product.php?id=2265">WHR-1166D-EU</a></td><td class="list" align="right">2.10 w</td><td class="list" align="right">3.60 w</td><td class="list"><a target="_new" href="http://www.hardwareluxx.de/community/f67/buffalo-whr-1166d-eu-router-access-point-client-bridge-repeater-captive-portal-1086530.html">hardwareluxx.de</a></td><td class="list">2015-12-31</td></tr><tr><td class="list"><img title="Measured by a TPCDB user" src="images/user.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=Ruckus">Ruckus</a></td><td class="list"><a href="product.php?id=2258">zf7962</a></td><td class="list" align="right">5.80 w</td><td class="list" align="right"></td><td class="list"></td><td class="list">2015-11-06</td></tr><tr class="odd"><td class="list"><img title="Measured by a TPCDB user" src="images/user.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=ZyXEL">ZyXEL</a></td><td class="list"><a href="product.php?id=2254">WAP3205v1</a></td><td class="list" align="right">2.60 w</td><td class="list" align="right"></td><td class="list"></td><td class="list">2015-08-20</td></tr><tr><td class="list"><img title="Measured by a TPCDB user" src="images/user.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=Netgear">Netgear</a></td><td class="list"><a href="product.php?id=1539">WNR3500L</a></td><td class="list" align="right">5.70 w</td><td class="list" align="right"></td><td class="list"></td><td class="list">2015-08-20</td></tr><tr class="odd"><td class="list"><img title="Measured by a TPCDB user" src="images/user.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=Western+Digital">Western Digital</a></td><td class="list"><a href="product.php?id=2225">Western Digital My Net N600</a></td><td class="list" align="right">2.60 w</td><td class="list" align="right"></td><td class="list"></td><td class="list">2015-08-05</td></tr><tr><td class="list"><img title="Measured by a TPCDB user" src="images/user.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=Linksys">Linksys</a></td><td class="list"><a href="product.php?id=2050">E3200</a></td><td class="list" align="right">7.70 w</td><td class="list" align="right"></td><td class="list"></td><td class="list">2015-08-01</td></tr><tr class="odd"><td class="list"><img title="Measured by a TPCDB user" src="images/user.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=Trendnet">Trendnet</a></td><td class="list"><a href="product.php?id=2223">TEW-811DRU</a></td><td class="list" align="right">5.60 w</td><td class="list" align="right"></td><td class="list"><a target="_new" href="https://slickdeals.net/forums/showpost.php?p=77141515&postcount=72">slickdeals.net</a></td><td class="list">2015-07-28</td></tr><tr><td class="list"><img title="Measured by a TPCDB user" src="images/user.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=TP-Link">TP-Link</a></td><td class="list"><a href="product.php?id=2222">TL-WR702N</a></td><td class="list" align="right">0.80 w</td><td class="list" align="right">1.30 w</td><td class="list"><a target="_new" href="http://www.tp-link.com.de/products/details/?categoryid=241&model=TL-WR702N">tp-link.com.de</a></td><td class="list">2015-07-08</td></tr><tr class="odd"><td class="list"><img title="Measured by a TPCDB user" src="images/user.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=TP-Link">TP-Link</a></td><td class="list"><a href="product.php?id=2221">TL-WR710N</a></td><td class="list" align="right">0.80 w</td><td class="list" align="right">1.10 w</td><td class="list"><a target="_new" href="http://tp-link.de/products/details/?categoryid=241&model=TL-WR710N">tp-link.de</a></td><td class="list">2015-07-01</td></tr><tr><td class="list"><img title="Measured by a TPCDB user" src="images/user.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=Edimax">Edimax</a></td><td class="list"><a href="product.php?id=2212">BR-6228NS V2</a></td><td class="list" align="right">1.75 w</td><td class="list" align="right">2.00 w</td><td class="list"></td><td class="list">2015-05-12</td></tr><tr class="odd"><td class="list"><img title="Text" src="images/paper.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=Asus">Asus</a></td><td class="list"><a href="product.php?id=2174">RT-AC87U</a></td><td class="list" align="right">10.80 w</td><td class="list" align="right">11.40 w</td><td class="list"><a target="_new" href="http://www.heise.de/ct/ausgabe/2014-25-kurz-vorgestellt-WLAN-Router-2449624.html">heise.de</a></td><td class="list">2014-11-19</td></tr><tr><td class="list"><img title="Text" src="images/paper.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=AVM">AVM</a></td><td class="list"><a href="product.php?id=2173">Fritz!WLAN Repeater DVB-C</a></td><td class="list" align="right">2.80 w</td><td class="list" align="right">5.20 w</td><td class="list"><a target="_new" href="http://www.heise.de/ct/ausgabe/2014-25-kurz-vorgestellt-Netzwerk-TV-Empfaenger-2449885.html">heise.de</a></td><td class="list">2014-11-19</td></tr><tr class="odd"><td class="list"><img title="Text" src="images/paper.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=AVM">AVM</a></td><td class="list"><a href="product.php?id=2172">Fritz!WLAN Repeater 1750E</a></td><td class="list" align="right">2.80 w</td><td class="list" align="right">3.30 w</td><td class="list"><a target="_new" href="http://www.heise.de/ct/ausgabe/2014-25-kurz-vorgestellt-WLAN-Repeater-2449686.html">heise.de</a></td><td class="list">2014-11-19</td></tr><tr><td class="list"><img title="Measured by extern site" src="images/internet.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=Apple">Apple</a></td><td class="list"><a href="product.php?id=2092">A1354 Airport Extreme</a></td><td class="list" align="right">7.80 w</td><td class="list" align="right">8.40 w</td><td class="list"><a target="_new" href="http://www.nrdc.org/energy/files/residential-network-IP.pdf">nrdc.org</a></td><td class="list">2014-07-26</td></tr><tr class="odd"><td class="list"><img title="Measured by extern site" src="images/internet.png"><td class="list"><a href="list.php?type=11">WIFI Routers</a></td><td class="list"><a href="list.php?type=11&query=Netgear">Netgear</a></td><td class="list"><a href="product.php?id=2091">WNDR3400</a></td><td class="list" align="right">5.50 w</td><td class="list" align="right">5.70 w</td><td class="list"><a target="_new" href="http://www.nrdc.org/energy/files/residential-network-IP.pdf">nrdc.org</a></td><td class="list">2014-07-26</td></tr></table>282 rows
+<br>
+<br>
+
+Help us make the database even more adequate by submitting your measurements. 
+
+<br>
+<br>
+
+<form action="submit.php" method="get">
+	<input type="hidden" name="source" value="2">
+	<button style="background-color: #ffffff;">
+	<img style="vertical-align:middle;" border="0" src="images/addsubmission.png">
+	<b>Submit data</b>
+	</button>
+</form>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+		$("#productTypes").change(function(){
+			var id = $("#productTypes").val();
+			self.location = "list.php?type=" + id;
+		});
+	});	   
+</script>
+
+	<div style="visibility:hidden;">
+		<div id="eXTReMe"><a href="http://extremetracking.com/open?login=hareskob">
+		<img src="http://t1.extreme-dm.com/i.gif" style="border: 0;"
+		height="38" width="41" id="EXim" alt="eXTReMe Tracker" /></a>
+		<script type="text/javascript"><!--
+		var EXlogin='hareskob' // Login
+		var EXvsrv='s10' // VServer
+		EXs=screen;EXw=EXs.width;navigator.appName!="Netscape"?
+		EXb=EXs.colorDepth:EXb=EXs.pixelDepth;EXsrc="src";
+		navigator.javaEnabled()==1?EXjv="y":EXjv="n";
+		EXd=document;EXw?"":EXw="na";EXb?"":EXb="na";
+		EXd.write("<img "+EXsrc+"=http://e1.extreme-dm.com",
+		"/"+EXvsrv+".g?login="+EXlogin+"&amp;",
+		"jv="+EXjv+"&amp;j=y&amp;srw="+EXw+"&amp;srb="+EXb+"&amp;",
+		"l="+escape(EXd.referrer)+" height=1 width=1>");//-->
+		</script><noscript><div id="neXTReMe"><img height="1" width="1" alt=""
+		src="http://e1.extreme-dm.com/s10.g?login=hareskob&amp;j=n&amp;jv=n" />
+		</div></noscript></div>
+	</div>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3584FQLELT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3584FQLELT');
+</script>
+
+
+	</div>
+	</body>
+</html>
+
+
+  
